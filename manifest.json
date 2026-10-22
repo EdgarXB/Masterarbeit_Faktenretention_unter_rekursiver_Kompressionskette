@@ -35,13 +35,25 @@
     },
     {
       "file": "05_analyze.py",
-      "physical_lines": 144,
-      "nonempty_noncomment_lines": 134
+      "physical_lines": 150,
+      "nonempty_noncomment_lines": 140
     }
   ],
-  "total_executable_python_files": 38,
-  "total_python_physical_lines": 14711,
+  "total_executable_python_files": 42,
+  "total_python_physical_lines": 15016,
   "files": [
+    {
+      "file": ".gitattributes",
+      "bytes": 537,
+      "sha256": "0fe72e6c1fc06f0e3b95faa9fd72e29814fba3e3f875c06ba1c8f507d7ea13c0",
+      "immutable": true
+    },
+    {
+      "file": ".gitignore",
+      "bytes": 70,
+      "sha256": "e5fd0ddeda5dc71f2e47a8be110ccf82dee704d70677e0e26dc9f1497c86609f",
+      "immutable": true
+    },
     {
       "file": "01_prepare.py",
       "bytes": 1250,
@@ -68,14 +80,20 @@
     },
     {
       "file": "05_analyze.py",
-      "bytes": 10482,
-      "sha256": "10470fa1c77e746d7fa83a05b817c93299ef3be659dd9a6fbbefe7555b79c8ed",
+      "bytes": 10989,
+      "sha256": "8743f9b4161f4c48b04e0a1026e7cbf2681caf21075b160980a090f331ad79bd",
       "immutable": true
     },
     {
       "file": "README.md",
-      "bytes": 14002,
-      "sha256": "8f4e498a27e9f21a956d43d71e310f13fee4fbd1706ddad16c137f4412bcc90f",
+      "bytes": 19674,
+      "sha256": "c4d004c76e7e2adec0923bd645a0ddc7f78600e4dccf64cc837e0b1694806eea",
+      "immutable": true
+    },
+    {
+      "file": "RELEASE_CHECKLIST.md",
+      "bytes": 3658,
+      "sha256": "7bcb82b970d36d30395b1559ce0e222ce5fa6fad97da99d2b47d3f3db4d3c6e0",
       "immutable": true
     },
     {
@@ -85,9 +103,21 @@
       "immutable": true
     },
     {
+      "file": "data/MODELLBEZUG.md",
+      "bytes": 4752,
+      "sha256": "b11fdabbed92c5cf87e7733366353b758a601e6af4231e6937fcdc7f8e39cb7a",
+      "immutable": true
+    },
+    {
       "file": "data/MODEL_INVENTORY.json",
       "bytes": 1613,
       "sha256": "d5bcb36bb9d41133221aa5b3c202f1a05eb57a1d685e94e580c301c7ba9083b7",
+      "immutable": true
+    },
+    {
+      "file": "data/analysis_environment.json",
+      "bytes": 1020,
+      "sha256": "a1da03f8ac0a2f5d8731e824f6a8127ebf552c758708fde7fab0a42e3fda8e48",
       "immutable": true
     },
     {
@@ -110,8 +140,8 @@
     },
     {
       "file": "data/code/analysis__03_QA_Faktenretention_Laengenkontrolle.py",
-      "bytes": 75642,
-      "sha256": "c3789171eefe0796f64fc981676a2fb2b3d08b3fe95af92e9d74442f71eef8c9",
+      "bytes": 75769,
+      "sha256": "638acd7d442a3f9456ed405990026a985443b0dfd4a44983cb0086220f29a700",
       "immutable": true
     },
     {
@@ -212,14 +242,20 @@
     },
     {
       "file": "data/code/extract_atomic_facts.py",
-      "bytes": 25530,
-      "sha256": "83278f11b0ad5661f6def1b889e30142ee236eea3dcd7c5fb7e762950b3e1714",
+      "bytes": 25613,
+      "sha256": "b6653860b5f3878c2905665604fe4f5a9aade5eb507c64a8e43d89f8829d19a4",
       "immutable": true
     },
     {
       "file": "data/code/generate_cot_candidate_rollouts.py",
-      "bytes": 21731,
-      "sha256": "3f95b14f544c7dcf56af7616a5472a99683f32ebbb76c0284d59b82a424552aa",
+      "bytes": 21820,
+      "sha256": "9eed4c4dd8e2da6c2f1f6b64fd39e3fe8c75a4d4ad1a14cbebc0566d31759947",
+      "immutable": true
+    },
+    {
+      "file": "data/code/input_checks.py",
+      "bytes": 2218,
+      "sha256": "5c8883deb1042eadf876ee0b0552dc8b622a96c47b6b8a6ad729e781aca397e8",
       "immutable": true
     },
     {
@@ -248,20 +284,26 @@
     },
     {
       "file": "data/code/request_budget.py",
-      "bytes": 4511,
-      "sha256": "90811420965db30dbd559cc6f74bc30e7bdf42c457d07b7d335f1cf616865b5e",
+      "bytes": 4594,
+      "sha256": "d6343e64ffcce3290bd643b66b81960254c5b94fa74cb486108309e5b7a9ecd2",
       "immutable": true
     },
     {
       "file": "data/code/research_pipeline.py",
-      "bytes": 21135,
-      "sha256": "b34bb88b8785fd53399c7a5e45bd6d0d90fe312ad13624e2d89f57b9b0722872",
+      "bytes": 22581,
+      "sha256": "7e67fb7cee4074a8ad6956870291fa404cdf4892785dc68419a04ce80b3d1490",
+      "immutable": true
+    },
+    {
+      "file": "data/code/runtime_checks.py",
+      "bytes": 2202,
+      "sha256": "1f4af02d7d321beb703ec6e022331a2bcab9eba72055b5d6e58e39d5c9bc8301",
       "immutable": true
     },
     {
       "file": "data/code/score_and_prune_automatecot_candidates.py",
-      "bytes": 10224,
-      "sha256": "dc0cc46a028a4abbb21e1c417e4b24ba5df2c95009d18ae94c2c9b86c53bbe7e",
+      "bytes": 10317,
+      "sha256": "93a7f5663f8352c15b68c7616d28e70cd3a0664e12e6597075f1047890d3e1f1",
       "immutable": true
     },
     {
@@ -272,14 +314,14 @@
     },
     {
       "file": "data/code/select_autocot_demonstrations.py",
-      "bytes": 8639,
-      "sha256": "1755ca97bca0fbd5bffcbe38352a4794cd28f5143ee029322567285e1729387c",
+      "bytes": 8732,
+      "sha256": "dbf45b24de3db5ecc7bc013d4860aca328cb66c515fb5502aaa85a7dc38f19c1",
       "immutable": true
     },
     {
       "file": "data/code/select_automatecot_demonstrations.py",
-      "bytes": 21586,
-      "sha256": "9caf8a442f609478429ab429bbfa3423a5c9bb0632404b28e0005c579204151b",
+      "bytes": 21753,
+      "sha256": "5244afaff0616f53b991a164e35f7d4493f7393e49fcfc2968a47b3eaf4ca429",
       "immutable": true
     },
     {
@@ -290,8 +332,8 @@
     },
     {
       "file": "data/code_provenance.json",
-      "bytes": 1174515,
-      "sha256": "44d449a50d41e6b7ac9ad27ebba22772ce8e981e7435a7f1b2d1950c3a481905",
+      "bytes": 1178692,
+      "sha256": "a1d698f13c44c86efe1e4154d3ba5dd62491db479251ae0a7915531098c387bd",
       "immutable": true
     },
     {
@@ -301,9 +343,21 @@
       "immutable": true
     },
     {
+      "file": "data/ergebnislinks.json",
+      "bytes": 2562,
+      "sha256": "22da4005dd5bf2318a17b5695606756acd3410f1b656aab4a5f96e1f66899101",
+      "immutable": true
+    },
+    {
       "file": "data/fakten.csv.gz",
       "bytes": 129075,
       "sha256": "f9e8a0406713ce79ba4dc97d644acc8be5920724993a0b7924da32be9b50fffd",
+      "immutable": true
+    },
+    {
+      "file": "data/frozen_assets.sha256",
+      "bytes": 5060,
+      "sha256": "d7a2343a0c5358156b39f5286502da7caebd0cd8916d7dfe240c14e454a41eb8",
       "immutable": true
     },
     {
@@ -415,9 +469,21 @@
       "immutable": true
     },
     {
+      "file": "data/tests/test_audit.py",
+      "bytes": 5721,
+      "sha256": "4d209b865d19905c1d2cb43903fca47f7dfbb8a6ed25e43720ee5382912aa9fe",
+      "immutable": true
+    },
+    {
+      "file": "data/tests/test_frozen_statistics.py",
+      "bytes": 4007,
+      "sha256": "251b40dd39dfba4726a19ac050ac7230bded4c27113eef5b8bc739da7e3ade3f",
+      "immutable": true
+    },
+    {
       "file": "data/tests/test_pipeline.py",
-      "bytes": 9061,
-      "sha256": "bae478988dbe1b73448991f24afdc74b143a5f128880e46b1dea1a424161ec03",
+      "bytes": 10812,
+      "sha256": "434ad456286a0a1b2e7f70f667f8a35f3d7c3340f96ad19a8bb5010efaaed41d",
       "immutable": true
     },
     {
@@ -425,6 +491,12 @@
       "bytes": 1097306,
       "sha256": "dd3380f557745c07ba7eff0de12c601cbd1200eb8a492791f3e303b9ca107633",
       "immutable": true
+    },
+    {
+      "file": "figures/laengenadjustierte_retention.png",
+      "bytes": 271015,
+      "sha256": "49887fcc242e9cf593800d894425cb560696d78abc584e2b216d05e67464592f",
+      "immutable": false
     },
     {
       "file": "figures/neuberechnet.zip",
@@ -439,9 +511,33 @@
       "immutable": true
     },
     {
+      "file": "figures/qa_methodenvergleiche.png",
+      "bytes": 152034,
+      "sha256": "d28b8521b41a3657f605860b57b8f1da115183d320e3d316e79ba4d3bd15cb49",
+      "immutable": false
+    },
+    {
+      "file": "figures/qa_retentionsverlauf.png",
+      "bytes": 215452,
+      "sha256": "ed079f5c4d5b68485ba742f0f0aa1f087f6279f77f3a108ab4fe2cfc3c265e4c",
+      "immutable": false
+    },
+    {
+      "file": "figures/sekundaermetriken_methodenordnung.png",
+      "bytes": 243750,
+      "sha256": "0dbabc5b6a860230aa94d527c454c91a0b71e737bec5f9517101b1c53427252e",
+      "immutable": false
+    },
+    {
+      "file": "figures/verlust_entitaetstypen.png",
+      "bytes": 787111,
+      "sha256": "ce3653efde0b8856a1ba95bbf950dd8e94d8700bacb41c40a0a50680ee6d2f9f",
+      "immutable": false
+    },
+    {
       "file": "prompts/README.md",
-      "bytes": 858,
-      "sha256": "c99f96740086e7b1e5c4d63dc3f231bf14effbfcfb39f6f627e93096bc0edaca",
+      "bytes": 903,
+      "sha256": "dbf9d1aeb98ccc0996079004d23080cb83671b76d0b7aafb2ecfe3203eb221c8",
       "immutable": true
     },
     {
@@ -541,6 +637,18 @@
       "immutable": true
     },
     {
+      "file": "prompts/manifest.json",
+      "bytes": 7541,
+      "sha256": "1c99a698b3ee40e8e72942ee262b1f50ed6e96375f9990032fd5706acbee9828",
+      "immutable": true
+    },
+    {
+      "file": "requirements-analysis.lock.txt",
+      "bytes": 1443,
+      "sha256": "4a3d6d2cfa1fbdbe51d371c2b69765ab316f763c99e538d1e1c020d060bb79b0",
+      "immutable": true
+    },
+    {
       "file": "requirements.txt",
       "bytes": 245,
       "sha256": "1244728236fdd6c6505372931f7d0a71207b604de141a5484e9f5234c5230821",
@@ -559,9 +667,27 @@
       "immutable": false
     },
     {
+      "file": "results/AUDIT_PRUEFBERICHT.md",
+      "bytes": 5836,
+      "sha256": "736f26ca29fd4e208cee7fbe1795a27ecfccb6159b8d7246383cf5f113c8e274",
+      "immutable": false
+    },
+    {
       "file": "results/abbildungspruefung.json",
       "bytes": 9733,
       "sha256": "a06aa7b35116a23fdfe0fc294b3056224d0f82d2cf94f9eae95aaa2064098435",
+      "immutable": false
+    },
+    {
+      "file": "results/audit_checks.json",
+      "bytes": 1813,
+      "sha256": "9ab8d533a7279fa02a5512a71a6a2048174da3fefa4cbd2776ef5f11fe1f2e5b",
+      "immutable": false
+    },
+    {
+      "file": "results/audit_tests.log",
+      "bytes": 5899,
+      "sha256": "60462c83c19dca7ff336c3c7770f719e9ea06c67ca86f756d758c5769a1c1f21",
       "immutable": false
     },
     {
@@ -673,6 +799,12 @@
       "immutable": false
     },
     {
+      "file": "results/laenge_retention_und_raenge.csv",
+      "bytes": 5385,
+      "sha256": "3b7b96ae70d2a1580113e85cdfc50e26a1724b094ce174c443fd587031b3ef24",
+      "immutable": false
+    },
+    {
       "file": "results/neuberechnet.zip",
       "bytes": 8163107,
       "sha256": "eca586f12c1e580a79e4250f5df53d8b636a4e9f45241be073d0cbc346f33703",
@@ -703,6 +835,18 @@
       "immutable": false
     },
     {
+      "file": "results/qa_methodenvergleiche_pp_95ci.csv",
+      "bytes": 2131,
+      "sha256": "303050a2f237794a4ce289a8a25412c97303d1e1ee7747faec8cdf0022040c6c",
+      "immutable": false
+    },
+    {
+      "file": "results/qa_retention_mittelwerte_95ci.csv",
+      "bytes": 3411,
+      "sha256": "d611ac7d712e4ab73828e171bf18cf0f2b543541fa24b5046b564111b656a9aa",
+      "immutable": false
+    },
+    {
       "file": "results/qa_scorer_pruefung.json",
       "bytes": 210,
       "sha256": "a8c47ae6cf83619ad38209a41625a6d1ea26954aabdf86b025fd311fead71b47",
@@ -712,6 +856,12 @@
       "file": "results/schnittstellentests.txt",
       "bytes": 6094,
       "sha256": "a01c655bf1f27a7123275c19d3ccb2f3e8a89135de90b6377286a1f728b07a86",
+      "immutable": false
+    },
+    {
+      "file": "results/sekundaermetriken_24_gruppen_95ci.csv",
+      "bytes": 33174,
+      "sha256": "d7fb66c7e4f2cc40bfdedbe5594d7dadc2013771101abe924767926f7514b324",
       "immutable": false
     },
     {
@@ -725,6 +875,16 @@
       "bytes": 166304,
       "sha256": "bc124b6f73f9b850647d25748eca3d451314344fef66f942416f470d7cc2a709",
       "immutable": false
+    },
+    {
+      "file": "results/verlust_retention_entitaetstypen_95ci.csv",
+      "bytes": 22356,
+      "sha256": "ba5773e8a3fa9c764df8cad03bb44af8a60b027053f95adb068bbf9b438cd1c4",
+      "immutable": false
     }
-  ]
+  ],
+  "audit_date": "2026-10-23",
+  "supported_platform": "Linux x86_64; Linux in WSL2 vorgesehen, nicht separat getestet",
+  "analysis_environment": "data/analysis_environment.json",
+  "frozen_checksums": "data/frozen_assets.sha256"
 }

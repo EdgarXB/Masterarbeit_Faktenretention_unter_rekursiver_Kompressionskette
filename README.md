@@ -4,16 +4,26 @@ Der Anhang enthält zwei getrennte Wege: **A: vorhandene Ergebnisse offline repr
 
 ## A. Ergebnisse ohne GPU reproduzieren — Standard
 
-Python 3.13 wird empfohlen. Eine eigene Umgebung anlegen und die Analyseabhängigkeiten installieren:
+Offiziell unterstützt wird **Linux x86_64**. Unter Windows ist ausschließlich eine Linux-Installation in **WSL2** vorgesehen; native Windows- und macOS-Kompatibilität wird nicht zugesagt. Tatsächlich geprüft wurde Linux; eine eigene WSL2-Installation wurde nicht separat getestet.
+
+Der Anhang enthält die Artikel, Antworten, Tabellen und Grafiken bereits. Für den Einstieg sind keine Modelle nötig: Repository klonen, die getestete Python-Umgebung einrichten und die Offline-Skripte ausführen. Alle Befehle gehören in ein **Linux-Terminal**. Git, curl und [uv](https://docs.astral.sh/uv/getting-started/installation/) müssen verfügbar sein; falls uv fehlt, einmalig `curl -LsSf https://astral.sh/uv/install.sh | sh` ausführen und das Terminal neu öffnen.
 
 ```bash
-python3 -m venv .venv
-.venv/bin/python -m pip install -r requirements.txt
+git clone https://github.com/EdgarXB/Masterarbeit_Faktenretention_unter_rekursiver_Kompressionskette.git
+cd Masterarbeit_Faktenretention_unter_rekursiver_Kompressionskette
+uv python install 3.13.15
+uv venv --python 3.13.15 .venv
+uv pip sync --python .venv/bin/python requirements-analysis.lock.txt
+.venv/bin/python 05_analyze.py --check-environment
 .venv/bin/python 01_prepare.py
 .venv/bin/python 02_demonstrations.py
 .venv/bin/python 04_evaluate.py
 .venv/bin/python 05_analyze.py
 ```
+
+[uv unterstützt eine explizite Python-Patchversion](https://docs.astral.sh/uv/concepts/python-versions/). Getestet sind **CPython 3.13.15**, NumPy 2.5.4, Pandas 3.0.6, SciPy 1.18.1, statsmodels 0.15.0, Patsy 1.0.3, Matplotlib 3.11.2, nbformat 5.11.1, nbclient 0.11.0, nbconvert 7.17.2 und ipykernel 7.4.0. Der vollständige getestete Stand mit 76 Paketen steht in [requirements-analysis.lock.txt](requirements-analysis.lock.txt), die maschinenlesbare Cache-Anforderung in [data/analysis_environment.json](data/analysis_environment.json). `requirements.txt` bleibt die kurze Liste direkter Analyseabhängigkeiten. Die Modellumgebung hat andere Versionen und darf die Analyseumgebung nicht überschreiben.
+
+Vor dem Entpacken der Auswertungsdaten prüft `05_analyze.py` Plattform, benötigte Pakete und bei Verwendung der Regressionscaches die exakten Python-/Paketversionen. Eine Abweichung wird mit Soll-/Ist-Version und Installationshinweis beendet. Der originale Fingerprint prüft zusätzlich weiterhin Daten, Designmatrix, Punktkoeffizienten und Worker; gleiche Versionen allein garantieren auf anderer Hardware noch keinen Cachetreffer. Fehlende Caches starten keine automatische Neuberechnung.
 
 Die Installation benötigt gegebenenfalls Internet für Python-Pakete. **Die anschließende Ergebnisreproduktion benötigt weder Internet noch GPU noch Modellgewichte.** `03_generate.py` ohne Aktivierungsflag prüft ebenfalls ausschließlich den eingefrorenen Bestand.
 
@@ -27,9 +37,23 @@ Die Installation benötigt gegebenenfalls Internet für Python-Pakete. **Die ans
 
 Die neu berechneten Regressionscaches werden in `results/neuberechnet.zip` gespeichert. Dieser Befehl benötigt CPU-Zeit, keine Modelle. Er wurde bei Erstellung dieses Anhangs nicht ausgeführt.
 
+## Wichtigste Ergebnisse und Kapitel der Masterarbeit
+
+Die verlinkten Ansichtskopien sind **byteidentisch** mit den jeweiligen Mitgliedern in [originaltabellen.zip](results/originaltabellen.zip) und [originalabbildungen.zip](figures/originalabbildungen.zip). Herkunft und SHA-256: [data/ergebnislinks.json](data/ergebnislinks.json). Die Masterarbeit selbst ist nicht Teil des Repositorys; die Kapitelnummern beziehen sich auf ihre vorliegende Fassung.
+
+| Kapitel | Tabelle | Abbildung |
+|---|---|---|
+| 4.2.1 QA-Retentionsverlauf | [24 Retentionsmittelwerte und 95-%-Intervalle](results/qa_retention_mittelwerte_95ci.csv) | [Retentionsverlauf](figures/qa_retentionsverlauf.png) |
+| 4.2.2 Gepaarter Methodenvergleich | [16 Methodenvergleiche in Prozentpunkten](results/qa_methodenvergleiche_pp_95ci.csv) | [Kontraste](figures/qa_methodenvergleiche.png) |
+| 4.3.2 Längenadjustierte Faktenretention | [Retention und Rangfolgen](results/laenge_retention_und_raenge.csv) | [Längenadjustierte Retention](figures/laengenadjustierte_retention.png) |
+| 4.4.2 Unterschiede nach Entitätstyp | [Entitätsretention mit Intervallen](results/verlust_retention_entitaetstypen_95ci.csv) | [Entitätstypen](figures/verlust_entitaetstypen.png) |
+| 4.5 Weitere Evaluationsmetriken | [Sekundärmetriken](results/sekundaermetriken_24_gruppen_95ci.csv) | [Methodenordnung](figures/sekundaermetriken_methodenordnung.png) |
+
+Weitere Tabellen einschließlich Human Validation (4.1), längengematchter Vergleiche (4.3.3) und ergänzender Sensitivitäten sind im [Tabellenregister](results/tabellenregister.csv) ihren Archivnamen zugeordnet.
+
 ## B. Neue Artikel — zuerst ein begrenzter Mini-Test
 
-Eingabe ist eine UTF-8-CSV mit `article` und `highlights`, optional `dataset_index` und `article_id`. Artikel müssen nach der originalen Regex-Wortregel 795–805 Wörter enthalten. Leere Highlights und doppelte Artikel werden ausgeschlossen; Verarbeitung aufsteigend nach `dataset_index`, bei fehlendem Index in Dateireihenfolge. Eigene Texte erhalten `dataset=user_csv`; mitgelieferte `dataset`/`config`-Spalten werden übernommen. Die tatsächliche Eingabedatei wird mit SHA-256 dokumentiert. Für eine CNN/DailyMail-Reproduktion sind die offiziellen Splits von `abisee/cnn_dailymail`, Konfiguration `3.0.0`, zu verwenden.
+Eingabe ist eine UTF-8-CSV mit `article` und `highlights`, optional `dataset_index` und `article_id`. Artikel müssen nach der originalen Regex-Wortregel 795–805 Wörter enthalten. Leere Highlights und doppelte Artikel werden ausgeschlossen; doppelte `dataset_index`-Werte innerhalb eines Splits werden **vor jeder Generierung abgelehnt**, auch bei einer Artikelbegrenzung und auch bei einer Kollision mit automatisch vergebenen Indizes; Verarbeitung aufsteigend nach `dataset_index`, bei fehlendem Index in Dateireihenfolge. Eigene Texte erhalten `dataset=user_csv`; mitgelieferte `dataset`/`config`-Spalten werden übernommen. Die tatsächliche Eingabedatei wird mit SHA-256 dokumentiert. Für eine CNN/DailyMail-Reproduktion sind die offiziellen Splits von `abisee/cnn_dailymail`, Konfiguration `3.0.0`, zu verwenden.
 
 Zunächst ohne Modellzugriff vorbereiten:
 
@@ -88,6 +112,8 @@ Hierfür werden bis zu 240 Trainingsartikel (mindestens 130) und genau 30 Validi
 python 02_demonstrations.py --construct --full-experiment --train train.csv --validation validation.csv --resources resources.json --output results/neue_demos --max-requests 100000 --device cuda
 ```
 
+Unterbrochene Konstruktionen werden mit demselben Befehl und unveränderten Eingaben fortgesetzt. Bereits vorbereitete Artikeldateien werden nur wiederverwendet, wenn Eingabedatei-Hash, vorbereitete Datei, vollständige Zeilen, Split, Limit und gespeicherte Einstellungen exakt übereinstimmen. Das bestehende Anfragebudget wird nicht zurückgesetzt; geänderte Geräte, Ressourcen, Daten oder Einstellungen werden abgelehnt. Alte Vorbereitungen ohne vollständigen Konfigurationsbeleg können nicht als identisch bestätigt werden und benötigen ein neues Ausgabeverzeichnis.
+
 Das Budget ist eine bewusst zu wählende Obergrenze, keine Zusage, dass die Konstruktion darunter fertig wird. Temperatur **1,1**, Thinking-Wrapper mit 512-Token-Anweisung und Reflexionsintervall 512 bleiben hier erhalten; die Anweisung ist keine technisch erzwungene Tokenobergrenze. Der Hauptlauf verwendet dagegen Temperatur 0 und den aktiven Wrapper ausschließlich bei Zero-Shot-CoT (1.024). Die neue Bank wird später mit `03_generate.py ... --bank results/neue_demos/prompts` explizit ausgewählt. Der Standardweg optimiert niemals Demonstrationen. Originale Rechen- und Auswahlfunktionen werden ausgeführt; die Phasenverbindung und Pfadadapter stehen in `data/code/research_pipeline.py`.
 
 ## Externe Modelle und Ressourcen
@@ -100,7 +126,7 @@ Keine Modellgewichte sind enthalten. `data/models.json` dokumentiert die drei ex
 | Fakten/Fragen | thesis-gemma:v1 | 6316f0629137b426c9d9b853ffc4c8209589f30ee39aebede6285096c0ff47e7 |
 | QA | thesis-qwen38-qa:v1 | d80421b9191aff0d4d8ea0911068452f11f3963e3e282c6b9d778932c4b268b3 |
 
-`data/MODEL_INVENTORY.json` enthält die separaten Weight-Digests, Größen und dokumentierten Bezugskennungen: Seed `modelscope.cn/unsloth/Seed-OSS-36B-Instruct-GGUF:Q4_K_M`, QA `hf.co/ggml-org/Qwen3.8-27B-GGUF:Q4_K_M`. Für die Gemma-Gewichte ist kein gleichwertig vollständiger Bezugsweg dokumentiert. `data/model_metadata/` enthält die kleinen vorhandenen Ollama-Manifeste/Template-/Parameterblobs, **keine Gewichte**. Die heutige externe Verfügbarkeit wurde nicht geprüft; andere Quantisierungen, Templates, Digests oder Modellversionen sind keine nachgewiesen äquivalenten Ersatzversionen. Zur exakten Reproduktion müssen die dokumentierten Originalblobs verfügbar sein.
+`data/MODEL_INVENTORY.json` enthält die separaten Weight-Digests, Größen und dokumentierten Bezugskennungen: Seed `modelscope.cn/unsloth/Seed-OSS-36B-Instruct-GGUF:Q4_K_M`, QA `hf.co/ggml-org/Qwen3.8-27B-GGUF:Q4_K_M`. Für die Gemma-Gewichte ist kein gleichwertig vollständiger Bezugsweg dokumentiert. `data/model_metadata/` enthält die kleinen vorhandenen Ollama-Manifeste/Template-/Parameterblobs, **keine Gewichte**. Der aktuelle Bezugsstand einschließlich nachgewiesenem Seed-Gewichtshash und Beschaffungsgrenzen für die ursprünglichen QA-/Gemma-Gewichte steht in [data/MODELLBEZUG.md](data/MODELLBEZUG.md); andere Quantisierungen, Templates, Digests oder Modellversionen sind keine nachgewiesen äquivalenten Ersatzversionen. Zur exakten Reproduktion müssen die dokumentierten Originalblobs verfügbar sein.
 
 `resources.json` aus `data/resources.example.json` kopieren und ausschließlich ausdrücklich gewünschte lokale Pfade eintragen (relativ zur JSON-Datei oder absolut zu eigenen Ressourcen). Keine Pfade des ursprünglichen Rechners werden vorausgesetzt.
 
@@ -114,12 +140,18 @@ Keine Modellgewichte sind enthalten. `data/models.json` dokumentiert die drei ex
 
 Die Modellverzeichnisse enthalten die vollständigen Originaldateien; ihr Ordnername muss der Revision entsprechen oder eine `revision.txt` mit der Revision enthalten. Das ist eine Versionsdeklaration, kein vollständiger kryptografischer Gewichtsbeweis. Offizielle Modellrepositories liegen auf Hugging Face, der SummaC-Head im Repository `tingofurro/summac`. Es gibt keinen automatischen Ressourcenbezug. GPU/CUDA und Ollama sind externe Laufzeitvoraussetzungen; die SummaC-Metrik verwendet standardmäßig CPU, die Demonstrationskonstruktion wahlweise CPU/CUDA.
 
-Dokumentierte Bibliotheksschalter: Offline-Auswertung setzt `CUDA_VISIBLE_DEVICES=''`, BLAS/OpenMP/NumExpr auf einen Thread, `MPLCONFIGDIR` auf die Arbeitskopie, `PYTHONHASHSEED=32`, `PYTHONDONTWRITEBYTECODE=1`, `HF_HUB_OFFLINE=1`, `TRANSFORMERS_OFFLINE=1`. Metrikphasen setzen die beiden HF-Schalter gegen implizite Downloads. Es gibt keine privaten Hilfsbibliotheken oder erforderlichen geheimen Umgebungsvariablen. Das Anfrage-Locking verwendet `fcntl` und benötigt Linux/macOS bzw. WSL.
+Dokumentierte Bibliotheksschalter: Offline-Auswertung setzt `CUDA_VISIBLE_DEVICES=''`, BLAS/OpenMP/NumExpr auf einen Thread, `MPLCONFIGDIR` auf die Arbeitskopie, `PYTHONHASHSEED=32`, `PYTHONDONTWRITEBYTECODE=1`, `HF_HUB_OFFLINE=1`, `TRANSFORMERS_OFFLINE=1`. Metrikphasen setzen die beiden HF-Schalter gegen implizite Downloads. Es gibt keine privaten Hilfsbibliotheken oder erforderlichen geheimen Umgebungsvariablen. Das Anfrage-Locking verwendet `fcntl` und benötigt Linux; unter Windows ist WSL2 erforderlich. Native Windows-Ausführung ist nicht unterstützt.
 
 ## Prüfungen und Umfang
 
 ```bash
-.venv/bin/python data/tests/test_pipeline.py
+.venv/bin/python -m unittest discover -s data/tests -p 'test_*.py'
 ```
 
 Dieser Test sperrt echte Netzverbindungen und simuliert Modellantworten. Er prüft Mini-Ende-zu-Ende, Wiederaufnahme, sämtliche Methoden/Stufen und den phasenübergreifenden Budgetabbruch. Das ist kein Test der Modellqualität. Die wirkliche Modellpipeline wurde bei Erstellung wegen der Vorgabe **null neue LLM-Aufrufe** nicht ausgeführt. Vollständige wissenschaftliche und historische Grenzen: `data/DATEN_UND_METHODIK.md`. Kritischer Vorher-/Nachher-Audit, Prüfresultate und Codeumfang: `results/ABSCHLUSSBERICHT.md`. Statische Quellenherkunft und dokumentierte Anpassungen: `data/code_provenance.json`.
+
+## Git-Clones und Release-Stand
+
+[.gitattributes](.gitattributes) verhindert automatische LF-/CRLF-Konvertierung der eingefrorenen Daten, Prompts und Referenzartefakte. Deren ursprüngliche Prüfsummen stehen unverändert in den vorhandenen Inventaren; [data/frozen_assets.sha256](data/frozen_assets.sha256) prüft zusätzlich 47 festgehaltene Bestandsdateien einschließlich unveränderter wissenschaftlicher Kernfunktionen. Code und bearbeitbare Dokumentation verwenden LF. Einen bestehenden fehlerhaft konvertierten Checkout frisch klonen; Prüfsummen nicht an konvertierte Daten anpassen.
+
+Ein unveränderlicher GitHub-Release wird ausschließlich manuell nach [RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md) erstellt. Diese Überarbeitung veröffentlicht keinen Release und setzt keinen Release-Tag. Der gezielte Audit-Nachweis steht in [results/AUDIT_PRUEFBERICHT.md](results/AUDIT_PRUEFBERICHT.md).

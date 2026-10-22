@@ -11,6 +11,7 @@ import json
 import sys
 import time
 from request_budget import activate, save_json
+from input_checks import validate_article_keys
 from summary_rules import count_words, bounds_for_target, lead_k, direct_prompt, seed_raw, extract_text, extract_thinking, complete_sentence
 
 PACKAGE = Path(__file__).resolve().parents[2]
@@ -48,13 +49,16 @@ def safe_output(path):
     return path
 
 
-def prepare_articles(source, output, *, limit=None, split='test'):
+def prepare_articles(source, output, *, limit=None, split='test', resume=False):
     output=safe_output(output)
     rows=read_csv(source)
     if not rows or not {'article','highlights'}.issubset(rows[0]):
         raise ValueError('Artikel-CSV benötigt article und highlights.')
     prepared=[];seen=set();excluded=[]
     indexed=[(int(row.get('dataset_index') or i),i,row) for i,row in enumerate(rows)]
+    # Auch Kollisionen zwischen expliziten Indizes und automatisch vergebenen Zeilenindizes ablehnen.
+    validate_article_keys([dict(dataset_index=index, split=split) for index,_,_ in indexed],
+                          require_article_ids=False)
     for dataset_index, position, row in sorted(indexed):
         article=str(row['article']).strip();highlights=str(row['highlights']).strip()
         digest=hashlib.sha256(article.encode()).hexdigest()
@@ -67,10 +71,24 @@ def prepare_articles(source, output, *, limit=None, split='test'):
         if limit is not None and len(prepared)>=limit:break
     if not prepared:raise ValueError('Keine Artikel erfüllen die ursprüngliche 795–805-Wort-Regel.')
     target=output/'data/articles.csv'
-    if target.exists():raise ValueError('Artikeldatei bereits vorhanden; neues Ausgabeverzeichnis wählen.')
+    receipt_path=output/'preparation.json'
+    receipt=dict(protocol_version=1,source_sha256=sha(source),accepted=len(prepared),excluded_positions=excluded,
+        options=dict(limit=limit,split=split),
+        rule='795..805 regex words, nonempty highlights, ascending dataset_index, unique article SHA-256')
+    if target.exists() or receipt_path.exists():
+        if not resume:
+            raise ValueError('Artikeldatei bereits vorhanden; neues Ausgabeverzeichnis wählen.')
+        if not target.is_file() or not receipt_path.is_file():
+            raise ValueError('Unvollständige Vorbereitung: Artikeldatei und preparation.json werden gemeinsam benötigt.')
+        stored=json.loads(receipt_path.read_text())
+        expected={**receipt,'prepared_sha256':sha(target)}
+        if stored!=expected or read_csv(target)!=prepared:
+            raise ValueError('Vorbereitete Daten oder Konfiguration verändert bzw. nicht nachweisbar identisch. '
+                             'Keine Generierung gestartet; neues Ausgabeverzeichnis verwenden.')
+        validate_article_keys(prepared)
+        return target
     write_csv(target,prepared)
-    save_json(output/'preparation.json',dict(source_sha256=sha(source),accepted=len(prepared),excluded_positions=excluded,
-        rule='795..805 regex words, nonempty highlights, ascending dataset_index, unique article SHA-256'))
+    save_json(receipt_path,{**receipt,'prepared_sha256':sha(target)})
     return target
 
 
@@ -95,6 +113,7 @@ def start_run(run, *, mode, method='plain', article_limit=1, stages=None, max_re
     run=safe_output(run);stages=stages or ([500] if mode=='mini' else STAGES)
     if mode=='mini' and not 1<=article_limit<=5:raise ValueError('Mini-Test: 1–5 Artikel.')
     articles=read_csv(run/'data/articles.csv')
+    validate_article_keys(articles)
     if mode=='mini':articles=articles[:article_limit]
     methods=[method] if mode=='mini' else METHODS
     if not articles:raise ValueError('Keine vorbereiteten Artikel.')
@@ -129,6 +148,7 @@ def start_run(run, *, mode, method='plain', article_limit=1, stages=None, max_re
 def generate_facts(run, config):
     import extract_atomic_facts as original
     run=Path(run)
+    validate_article_keys(read_csv(run/'data/selected_articles.csv'))
     run_original(original.main,['--articles',run/'data/selected_articles.csv','--output-dir',run/'facts',
         '--experiment-run-id','reproduction','--model','facts='+MODELS['facts']['name'],
         '--preferred-canonical-model',MODELS['facts']['name'],'--host',config['host'],
@@ -158,6 +178,7 @@ def generate_summaries(run, config, bank=None):
     from iterative_summarize import ollama_generate
     run=Path(run);bank=Path(bank) if bank else PACKAGE/'prompts'
     articles=read_csv(run/'data/selected_articles.csv');records=[]
+    validate_article_keys(articles)
     for position,article in enumerate(articles):
         generative=METHODS[1:];shift=position%len(generative)
         order=['lead_k',*generative[shift:],*generative[:shift]]
@@ -212,6 +233,7 @@ def generate_summaries(run, config, bank=None):
 def generate_qa(run, config):
     import answer_summary_questions as original
     run=Path(run)
+    validate_article_keys(read_csv(run/'data/selected_articles.csv'))
     arguments=['--facts',run/'data/canonical_facts.csv','--summary-file',run/'data/summaries.csv',
         '--output-dir',run/'qa','--experiment-run-id','reproduction','--model','qa='+MODELS['qa']['name'],
         '--host',config['host'],'--temperature','0.0','--seed','32','--num-ctx','8192',
@@ -266,8 +288,8 @@ def construct_demonstrations(train, validation, output, *, resources, max_reques
     output=safe_output(output)
     metric_resources.configure(resources)
     embedding=metric_resources.local_model('embedding');metric_resources.summac_resources()
-    train_file=prepare_articles(train,output/'candidate_input',limit=240,split='train')
-    validation_file=prepare_articles(validation,output/'validation_input',limit=30,split='validation')
+    train_file=prepare_articles(train,output/'candidate_input',limit=240,split='train',resume=True)
+    validation_file=prepare_articles(validation,output/'validation_input',limit=30,split='validation',resume=True)
     training=read_csv(train_file);validating=read_csv(validation_file)
     if len(training)<130 or len(validating)!=30:
         raise ValueError('Originales Kandidatenprotokoll benötigt mindestens 130 Trainings- und genau 30 Validierungsartikel; maximal 240 Training.')
@@ -275,7 +297,8 @@ def construct_demonstrations(train, validation, output, *, resources, max_reques
     if train_hashes & validation_hashes:raise ValueError('Trainings-/Validierungsartikel überschneiden sich.')
     config=dict(mode='full',article_ids=['train:'+r['dataset_index'] for r in training]+['validation:'+r['dataset_index'] for r in validating],
         methods=['auto_cot','few_shot_cot','automate_cot'],max_requests=max_requests,host=host,models=MODELS,
-        required_roles=['summary'],phase='demonstration_construction',resources=resources,
+        required_roles=['summary'],phase='demonstration_construction',resources=resources,device=device,
+        implementation_sha256=sha(__file__),
         train_sha256=sha(train_file),validation_sha256=sha(validation_file))
     print(json.dumps(dict(phase=config['phase'],training_articles=len(training),validation_articles=len(validating),
                           maximum_requests=max_requests,temperature=1.1,thinking_budget_instruction=512),indent=2))

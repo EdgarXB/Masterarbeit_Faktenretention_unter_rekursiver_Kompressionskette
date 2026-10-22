@@ -360,6 +360,10 @@ def main() -> int:
     checkpoint_dir.mkdir(exist_ok=True)
     pools = json.loads(args.pools.read_text(encoding="utf-8"))
     validation_all = load_jsonl(args.validation_candidates)
+    from input_checks import validate_candidate_keys
+    for pool in pools.values():
+        validate_candidate_keys(pool)
+    validate_candidate_keys(validation_all)
     rouge = rouge_scorer.RougeScorer(["rougeL"], use_stemmer=True)
     final_selections: dict[str, list[dict[str, Any]]] = {}
     reports: dict[str, Any] = {}

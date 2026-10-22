@@ -4,6 +4,8 @@ from pathlib import Path
 import os,sys
 
 def main(work, recompute_bootstrap=False, workers=1):
+    from runtime_checks import check_analysis_environment
+    check_analysis_environment(strict_cache=not recompute_bootstrap)
     WORK=__import__('pathlib').Path(work).resolve()
     __import__('os').chdir(WORK/('supplement' if '03_QA_Faktenretention_Laengenkontrolle'[0].isdigit() else 'project/02_Auswertung'))
     from pathlib import Path

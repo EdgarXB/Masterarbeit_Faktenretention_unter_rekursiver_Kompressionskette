@@ -4,6 +4,8 @@ Keine Verbindung und keine Generierung beim Import. Nur activate() schaltet
 explizit ausgewählte Experimentphasen frei. Reservierung erfolgt vor jedem POST.
 """
 from pathlib import Path
+from runtime_checks import require_supported_platform
+require_supported_platform()
 import fcntl
 import json
 import os
