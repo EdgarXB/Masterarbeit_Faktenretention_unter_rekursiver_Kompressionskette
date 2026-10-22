@@ -668,8 +668,8 @@
     },
     {
       "file": "results/AUDIT_PRUEFBERICHT.md",
-      "bytes": 5752,
-      "sha256": "7d70ac4cd5d197204636c03a77d2b478a619792ed6671923fa44c22e196568bd",
+      "bytes": 5836,
+      "sha256": "736f26ca29fd4e208cee7fbe1795a27ecfccb6159b8d7246383cf5f113c8e274",
       "immutable": false
     },
     {
@@ -680,8 +680,8 @@
     },
     {
       "file": "results/audit_checks.json",
-      "bytes": 1780,
-      "sha256": "8c96de5b4f8786c79390f74c64e37844e656cb0a100c749ce25604e32323f5a2",
+      "bytes": 1813,
+      "sha256": "9ab8d533a7279fa02a5512a71a6a2048174da3fefa4cbd2776ef5f11fe1f2e5b",
       "immutable": false
     },
     {

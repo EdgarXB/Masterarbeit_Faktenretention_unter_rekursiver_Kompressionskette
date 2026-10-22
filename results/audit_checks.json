@@ -48,5 +48,6 @@
   "demonstration_resume_test": "simulated interruption; same prepared files and request counter reused; changed source/options/device rejected",
   "release_created": false,
   "release_tag_created": false,
-  "github_pr_blocker": "GitHub connector rejects source-branch creation with 403 Resource not accessible by integration"
+  "github_pr_blocker": null,
+  "github_pull_request": "https://github.com/EdgarXB/Masterarbeit_Faktenretention_unter_rekursiver_Kompressionskette/pull/1"
 }

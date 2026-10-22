@@ -10,6 +10,8 @@
 - **Wiederaufnahme nach simuliertem Abbruch**: vorbereitete Trainings- und Validierungsartikel werden bei identischer Quelldatei, identischem Inhalt und belegter Konfiguration wiederverwendet. Datei-Hash und Änderungszeit bleiben unverändert; das Anfragekonto wird nicht zurückgesetzt. Veränderte Quellen, Vorbereitungsoptionen und Geräte führen zum Abbruch. Die originalen Modellparameter und Optimierungs-/Auswahlregeln bleiben erhalten.
 - **README-Links geprüft**: fünf zentrale Tabellen und fünf Abbildungen sind als bytegleiche Kopien der bestehenden Referenzarchive verlinkt, mit belegter Zuordnung zu Kapitel 4.2–4.5. Der veraltete Verweis auf Text-/Wrapperfunktionen in `03_generate.py` zeigt jetzt auf `data/code/summary_rules.py`.
 - Syntaxprüfung aller Python-Dateien. Die wissenschaftlichen Scorer-, Statistik-, Bootstrap-Worker- und Text-/Prompt-Kernmodule sind bytegleich zum Ausgangsstand. In angepassten Originalmodulen kamen nur vorgeschaltete Prüfungen hinzu. Die Änderungen der ausführbaren Originalkopien stehen als zusätzliche Audit-Diffs in `data/code_provenance.json`.
+- **GitHub-Veröffentlichung geprüft**: Branch `fix/audit-reproduzierbarkeit` hochgeladen und [Pull Request #1](https://github.com/EdgarXB/Masterarbeit_Faktenretention_unter_rekursiver_Kompressionskette/pull/1) gegen `main` erstellt. Die Anmeldung erfolgte über die GitHub CLI ohne sudo; der zuvor blockierte Schreibzugriff der Anbindung wurde dadurch umgangen.
+
 
 Maschinenlesbarer Nachweis: [audit_checks.json](audit_checks.json). Testprotokoll: [audit_tests.log](audit_tests.log). **0 echte LLM-Aufrufe, 0 Modelldownloads, keine neuen Experimente.**
 
@@ -23,6 +25,5 @@ Maschinenlesbarer Nachweis: [audit_checks.json](audit_checks.json). Testprotokol
 
 ## Notwendige manuelle Schritte
 
-- Für einen GitHub-Pull-Request ist eine schreibfähige GitHub-Anmeldung nötig. Die vorhandene Anbindung lehnt das Anlegen des Änderungsbranches mit HTTP 403 ab. Änderungen und Commit werden lokal vorbereitet; ein PR wird erst nach nachgewiesenem Upload als erstellt gemeldet.
 - Vor einer echten Experimentwiederholung die fehlenden exakten Originalblobs beschaffen und deren Digests prüfen. Für Offline-Ergebnisreproduktion sind sie nicht erforderlich.
 - Einen Release ausschließlich nach [RELEASE_CHECKLIST.md](../RELEASE_CHECKLIST.md) manuell veröffentlichen: geprüfte Commit-SHA auswählen, Release-Unveränderlichkeit einschalten, Version taggen, ZIP/Prüfsumme an einen Entwurf anhängen, erst anschließend veröffentlichen. **Kein Release und kein Release-Tag wurden automatisch erstellt.**
