@@ -1,0 +1,62 @@
+[
+  {
+    "file": "results/qa_retention_mittelwerte_95ci.csv",
+    "archive": "results/originaltabellen.zip",
+    "member": "qa__retention_mittelwerte_95ci.csv",
+    "sha256": "d611ac7d712e4ab73828e171bf18cf0f2b543541fa24b5046b564111b656a9aa"
+  },
+  {
+    "file": "results/qa_methodenvergleiche_pp_95ci.csv",
+    "archive": "results/originaltabellen.zip",
+    "member": "qa__vier_gepaarte_kontraste_pp_95ci.csv",
+    "sha256": "303050a2f237794a4ce289a8a25412c97303d1e1ee7747faec8cdf0022040c6c"
+  },
+  {
+    "file": "results/laenge_retention_und_raenge.csv",
+    "archive": "results/originaltabellen.zip",
+    "member": "laenge__retention_und_drei_rangfolgen_24_gruppen.csv",
+    "sha256": "3b7b96ae70d2a1580113e85cdfc50e26a1724b094ce174c443fd587031b3ef24"
+  },
+  {
+    "file": "results/verlust_retention_entitaetstypen_95ci.csv",
+    "archive": "results/originaltabellen.zip",
+    "member": "verlust__retention_entitaetstyp_methoden_stufen_95ci.csv",
+    "sha256": "ba5773e8a3fa9c764df8cad03bb44af8a60b027053f95adb068bbf9b438cd1c4"
+  },
+  {
+    "file": "results/sekundaermetriken_24_gruppen_95ci.csv",
+    "archive": "results/originaltabellen.zip",
+    "member": "metriken__mittelwerte_24_gruppen_alle_metriken_95ci.csv",
+    "sha256": "d7fb66c7e4f2cc40bfdedbe5594d7dadc2013771101abe924767926f7514b324"
+  },
+  {
+    "file": "figures/qa_retentionsverlauf.png",
+    "archive": "figures/originalabbildungen.zip",
+    "member": "qa__01_retentionsverlauf.png",
+    "sha256": "ed079f5c4d5b68485ba742f0f0aa1f087f6279f77f3a108ab4fe2cfc3c265e4c"
+  },
+  {
+    "file": "figures/qa_methodenvergleiche.png",
+    "archive": "figures/originalabbildungen.zip",
+    "member": "qa__02_gepaarte_kontraste.png",
+    "sha256": "d28b8521b41a3657f605860b57b8f1da115183d320e3d316e79ba4d3bd15cb49"
+  },
+  {
+    "file": "figures/laengenadjustierte_retention.png",
+    "archive": "figures/originalabbildungen.zip",
+    "member": "laenge__V01_adjustierte_retention_punktdiagramm.png",
+    "sha256": "49887fcc242e9cf593800d894425cb560696d78abc584e2b216d05e67464592f"
+  },
+  {
+    "file": "figures/verlust_entitaetstypen.png",
+    "archive": "figures/originalabbildungen.zip",
+    "member": "verlust__02_retention_nach_entitaetstyp.png",
+    "sha256": "ce3653efde0b8856a1ba95bbf950dd8e94d8700bacb41c40a0a50680ee6d2f9f"
+  },
+  {
+    "file": "figures/sekundaermetriken_methodenordnung.png",
+    "archive": "figures/originalabbildungen.zip",
+    "member": "metriken__abbildung_4_5_1_methodenordnung_qa.png",
+    "sha256": "0dbabc5b6a860230aa94d527c454c91a0b71e737bec5f9517101b1c53427252e"
+  }
+]

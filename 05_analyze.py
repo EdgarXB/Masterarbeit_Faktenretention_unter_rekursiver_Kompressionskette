@@ -7,13 +7,14 @@ from pathlib import Path
 import sys
 sys.path.insert(0,str(Path(__file__).resolve().parent/'data/code'))
 import argparse,hashlib,gzip,json,os,subprocess,tempfile,zipfile
-import numpy as np
-import pandas as pd
+from runtime_checks import check_analysis_environment
 ROOT=Path(__file__).resolve().parent
 NOTEBOOKS=['hauptexperiment_01_qa_faktenretention', 'hauptexperiment_02_laengeneinhaltung', 'hauptexperiment_03_verlustmuster', 'hauptexperiment_04_weitere_evaluationsmetriken', 'human_validation_faktenrelevanz', 'human_validation_qa_faktenretention', 'hauptexperiment_05_alle_texttabellen', 'hauptexperiment_06_laengenmatched_vergleichsmatrizen', '01_Lead_k_Qualitaetskontrolle', '02_QA_Faktenretention_Sensitivitaet', '03_QA_Faktenretention_Laengenkontrolle', '04_LLM_Scorervergleich']
 def compare_table(new_path, reference_bytes, label):
     """Alle numerischen Tabellenfelder vergleichen; Pfad-/Laufzeitbelege getrennt halten."""
     import io
+    import numpy as np
+    import pandas as pd
     try:
         old_bytes = gzip.decompress(reference_bytes) if new_path.name.endswith('.gz') else reference_bytes
         old = pd.read_csv(io.BytesIO(old_bytes), keep_default_na=False, low_memory=False)
@@ -61,7 +62,12 @@ def main():
     parser.add_argument('--work',type=Path,help='Expliziter Arbeits-/Ausgabeort')
     parser.add_argument('--recompute-regression-bootstrap',action='store_true')
     parser.add_argument('--workers',type=int,default=1)
+    parser.add_argument('--check-environment',action='store_true',help='Nur Plattform und getestete Cache-Umgebung prüfen')
     args = parser.parse_args()
+    needs_cache = not args.run and (args.only is None or args.only == '03_QA_Faktenretention_Laengenkontrolle')
+    status=check_analysis_environment(strict_cache=needs_cache and not args.recompute_regression_bootstrap)
+    if args.check_environment:
+        print(json.dumps(status,ensure_ascii=False,indent=2));return
     if args.run:
         from offline_guard import install
         install()

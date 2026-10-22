@@ -1,0 +1,16 @@
+# Byteidentische Forschungsdaten: keine implizite LF-/CRLF-Konvertierung.
+* -text
+# Nur bearbeitbarer Code und Dokumentation erhalten LF im Checkout.
+*.py text eol=lf
+*.md text eol=lf
+/requirements*.txt text eol=lf
+/.gitattributes text eol=lf
+/.gitignore text eol=lf
+# Eingefrorene Daten, Prompts und Referenzartefakte haben Vorrang.
+/data/** -text
+/prompts/** -text
+/results/** -text
+/figures/** -text
+# Diese Dateien sind ausführbarer Quellcode, keine eingefrorenen Messwerte.
+/data/code/*.py text eol=lf
+/data/tests/*.py text eol=lf

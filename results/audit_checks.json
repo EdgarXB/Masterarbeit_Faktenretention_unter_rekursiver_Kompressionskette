@@ -1,0 +1,52 @@
+{
+  "audit_date": "2026-10-23",
+  "tests_passed": 15,
+  "actual_llm_generation_requests": 0,
+  "model_downloads": 0,
+  "frozen_assets_unchanged": 47,
+  "logical_original_sources_verified": 6288,
+  "qa_labels_matched": 48000,
+  "article_cells_matched": 2400,
+  "observed_retention_groups_and_intervals_matched": 24,
+  "adjusted_retention_groups_and_intervals_matched": 24,
+  "paired_method_contrasts_matched": 16,
+  "numeric_tolerance": 1e-12,
+  "scientific_core_files_byte_unchanged": true,
+  "view_copies_match_archives": 10,
+  "fresh_locked_environment_packages": 76,
+  "locked_environment_dependency_check": true,
+  "clone_checks": {
+    "clone_checks": [
+      {
+        "core_autocrlf": "false",
+        "frozen_assets": 47,
+        "logical_sources": 6288,
+        "data_verification_passed": true,
+        "environment_check_passed": true
+      },
+      {
+        "core_autocrlf": "input",
+        "frozen_assets": 47,
+        "logical_sources": 6288,
+        "data_verification_passed": true,
+        "environment_check_passed": true
+      },
+      {
+        "core_autocrlf": "true",
+        "frozen_assets": 47,
+        "logical_sources": 6288,
+        "data_verification_passed": true,
+        "environment_check_passed": true
+      }
+    ],
+    "original_qa_tables_matched": 25,
+    "actual_llm_generation_requests": 0
+  },
+  "native_windows_supported": false,
+  "wsl2_separately_tested": false,
+  "real_demonstration_resume_tested": false,
+  "demonstration_resume_test": "simulated interruption; same prepared files and request counter reused; changed source/options/device rejected",
+  "release_created": false,
+  "release_tag_created": false,
+  "github_pr_blocker": "GitHub connector rejects source-branch creation with 403 Resource not accessible by integration"
+}

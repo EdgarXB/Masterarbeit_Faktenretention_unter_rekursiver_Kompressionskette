@@ -88,6 +88,7 @@ class ConstructionControlTest(unittest.TestCase):
         from unittest.mock import patch
         import types
         calls=[]
+        interrupted=[False]
         with tempfile.TemporaryDirectory(prefix='anhang_demo_mock_') as temporary:
             root=Path(temporary);out=root/'bank'
             def articles(path,n,prefix):
@@ -96,6 +97,9 @@ class ConstructionControlTest(unittest.TestCase):
             def phase(name):
                 def main():
                     args=sys.argv[1:];calls.append((name,args))
+                    if name=='generate_cot_candidate_rollouts' and not interrupted[0]:
+                        interrupted[0]=True
+                        raise RuntimeError('simulated interruption after article preparation')
                     destination=Path(args[args.index('--output-dir')+1]);destination.mkdir(parents=True,exist_ok=True)
                     if name in ['select_autocot_demonstrations','select_automatecot_demonstrations']:
                         method='auto_cot' if name=='select_autocot_demonstrations' else 'automate_cot'
@@ -115,7 +119,22 @@ class ConstructionControlTest(unittest.TestCase):
             fake_resources=types.SimpleNamespace(configure=lambda r:None,local_model=lambda role:root, summac_resources=lambda:(root,root))
             fake_modules['metric_resources']=fake_resources
             with patch.dict(sys.modules,fake_modules),patch.object(urllib.request,'urlopen',deny_network):
+                with self.assertRaisesRegex(RuntimeError,'simulated interruption'):
+                    pipeline.construct_demonstrations(root/'train.csv',root/'validation.csv',out,resources={},max_requests=100000,verify_models=False)
+                paths=[out/'candidate_input/data/articles.csv',out/'validation_input/data/articles.csv']
+                unchanged=[(path.stat().st_mtime_ns,pipeline.sha(path)) for path in paths]
+                calls.clear()
+                budget.save_json(out/'request_ledger.json',dict(actual_generation_requests=0,simulated_requests=3))
                 bank=pipeline.construct_demonstrations(root/'train.csv',root/'validation.csv',out,resources={},max_requests=100000,verify_models=False)
+                self.assertEqual(unchanged,[(path.stat().st_mtime_ns,pipeline.sha(path)) for path in paths])
+                self.assertEqual(json.loads((out/'request_ledger.json').read_text())['simulated_requests'],3)
+                with self.assertRaisesRegex(ValueError,'andere Daten, Modelle oder Einstellungen'):
+                    pipeline.construct_demonstrations(root/'train.csv',root/'validation.csv',out,resources={},max_requests=100000,device='cuda',verify_models=False)
+                old_calls=len(calls)
+                (root/'train.csv').write_text((root/'train.csv').read_text().replace('A reference.','Changed reference.'))
+                with self.assertRaisesRegex(ValueError,'verändert'):
+                    pipeline.construct_demonstrations(root/'train.csv',root/'validation.csv',out,resources={},max_requests=100000,verify_models=False)
+                self.assertEqual(len(calls),old_calls)
             self.assertTrue((bank/'bank_manifest.json').is_file())
             self.assertEqual([n for n,a in calls],[names[0],names[0],*names[1:]])
             args=dict(calls[4:5])['select_automatecot_demonstrations']
