@@ -1,0 +1,1609 @@
+{
+  "created_at_utc": "2026-09-30T21:15:45Z",
+  "method": "few_shot_cot",
+  "construction": "uniform random sampling without replacement from the common Auto-CoT/Automate-CoT eligible pool",
+  "common_pool_definition": "Candidates retained in automate_cot_pruned_pools.json that also pass the Auto-CoT quality gate, including its 512-word rationale upper bound.",
+  "selection_seed": 32,
+  "rng": "Python random.Random; one seeded stream; stages processed in order 500, 300, 150, 75",
+  "sample_size_per_stage": 5,
+  "source_artifacts": {
+    "automate_cot_retained_pools": {
+      "path": "experiments/autocot_automatecot_100/automate_cot_pruning/automate_cot_pruned_pools.json",
+      "sha256": "73ca1de1344e82a6f7454f859436b53a8c52844fa93e88f4e3f6479b06685394"
+    },
+    "automate_cot_selection_report": {
+      "path": "experiments/autocot_automatecot_100/automate_cot_pruning/automate_cot_pruning_report.json",
+      "sha256": "14ae93f65042f0eaf5951e08e3bfc2049af1c63f5e2c74e3576ae4a99388ca71"
+    },
+    "auto_cot_selection_report": {
+      "path": "experiments/autocot_automatecot_100/auto_cot_selection/auto_cot_selection_report.json",
+      "sha256": "d1fdac2a681c17cb0ba31f6b2d723a7f9d8266934d32289a82bb985349a79c3f"
+    }
+  },
+  "eligibility_rules": [
+    "candidate retained in the 100-item Automate-CoT stage pool",
+    "non-empty stage input, rationale, and final summary",
+    "at least 25 substantive rationale words",
+    "at most 512 rationale words (Auto-CoT upper bound)",
+    "stage input in the expected source-length window",
+    "final summary in the preregistered +/-5% target window",
+    "final summary ends with a complete sentence"
+  ],
+  "word_count_rule_for_runtime_targets": "regex \\b\\w+\\b, matching the final experiment",
+  "stages": {
+    "500": {
+      "automate_retained_pool_size": 100,
+      "common_eligible_pool_size": 35,
+      "excluded_by_auto_cot_gate": [
+        {
+          "candidate_id": "train:9827:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:18212:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:9381:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:11668:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:3932:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:7050:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:5405:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:14119:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:11631:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:8537:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:6639:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:24298:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:9358:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:23261:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:11793:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:21048:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:6726:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:4667:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:5382:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:17249:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:13572:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:18023:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:17082:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:21448:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:9633:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:14593:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:21186:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:4502:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:12830:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:16998:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:7836:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:4964:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:10238:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:17192:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:9587:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:10066:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:10522:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:11862:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:12146:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:13140:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:7036:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:12166:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:10097:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:16951:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:14912:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:11875:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:22786:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:13033:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:12540:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:13356:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:10090:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:3679:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:4023:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:4219:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:13455:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:12203:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:3384:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:22922:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:21969:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:3462:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:24765:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:15978:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:20355:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:10352:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:12235:500",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        }
+      ],
+      "ordered_selected_candidate_ids": [
+        "train:11458:500",
+        "train:17125:500",
+        "train:14913:500",
+        "train:25676:500",
+        "train:22782:500"
+      ],
+      "selected_demonstrations": [
+        {
+          "position": 1,
+          "candidate_id": "train:11458:500",
+          "dataset_index": "11458",
+          "article_id": "89",
+          "input_word_count": 800,
+          "thinking_word_count": 400,
+          "substantive_thinking_word_count": 365,
+          "response_word_count": 492,
+          "summac_rank_within_stage": 96,
+          "input_sha256": "ba147a2b8104a9f1c9b42364570b6b2f81dfd3c716762f64dd9ba974e97c2278",
+          "thinking_sha256": "1e43139c821eef93d632af35b4a4a6b96c6707a3103024cbb1bda6ff1a154720",
+          "response_sha256": "29b6236c9b249743651cef2ba699892c50a3d95e2a826aaaa6791a0363b9e1a1"
+        },
+        {
+          "position": 2,
+          "candidate_id": "train:17125:500",
+          "dataset_index": "17125",
+          "article_id": "146",
+          "input_word_count": 798,
+          "thinking_word_count": 504,
+          "substantive_thinking_word_count": 469,
+          "response_word_count": 515,
+          "summac_rank_within_stage": 43,
+          "input_sha256": "678900c4978dc3e3fa27b6251bfe1e571fafd4e8ccc36412e5049ba1500904e0",
+          "thinking_sha256": "7d55adcd5a4c73946cd52a356990116847feae6df5ca58b5ce40820c62ae8466",
+          "response_sha256": "45528ed9e06dcafdec7f36e84be91b3e92cdc159409cecbfbec814bfd3128687"
+        },
+        {
+          "position": 3,
+          "candidate_id": "train:14913:500",
+          "dataset_index": "14913",
+          "article_id": "132",
+          "input_word_count": 805,
+          "thinking_word_count": 434,
+          "substantive_thinking_word_count": 399,
+          "response_word_count": 524,
+          "summac_rank_within_stage": 28,
+          "input_sha256": "4b2c33ee1ec2c023fb44adcb52445d5601e3327f382fbf57c6b13a96b33eb75f",
+          "thinking_sha256": "7f40d0e717d0d6d7911343bcf22dc597e36a65502ecaf026564e94fc62ec6b69",
+          "response_sha256": "8749269b70ad4d9d75daf1b21b66ea00eda670705e71d13f8412d19eec5ee96b"
+        },
+        {
+          "position": 4,
+          "candidate_id": "train:25676:500",
+          "dataset_index": "25676",
+          "article_id": "207",
+          "input_word_count": 797,
+          "thinking_word_count": 466,
+          "substantive_thinking_word_count": 431,
+          "response_word_count": 481,
+          "summac_rank_within_stage": 19,
+          "input_sha256": "fb239e488dc25557fc2a32d55932c4897916f8d62cff94eaf7e63dd2fda1d9af",
+          "thinking_sha256": "74750e7dc1f6bb0db7971eab7b5d7aa08d5cc2be99f42eae530d3631b60b7788",
+          "response_sha256": "d4766f81f9c2d7ec1981fcdf674e5717faf44d28991f79d1d555578c0f649c7a"
+        },
+        {
+          "position": 5,
+          "candidate_id": "train:22782:500",
+          "dataset_index": "22782",
+          "article_id": "180",
+          "input_word_count": 798,
+          "thinking_word_count": 152,
+          "substantive_thinking_word_count": 135,
+          "response_word_count": 481,
+          "summac_rank_within_stage": 18,
+          "input_sha256": "d5705ad379ead026d7211c9ff1795aa6ebd555d397709627115ae38941b04ae3",
+          "thinking_sha256": "d16d24e7903fd7a358479f0f9e16cd6aaf2f19546f764f086098459f695c130d",
+          "response_sha256": "be8a39ff3ef17554aeae998dc44261a005570599339adecb19566557cb51a0d6"
+        }
+      ]
+    },
+    "300": {
+      "automate_retained_pool_size": 100,
+      "common_eligible_pool_size": 48,
+      "excluded_by_auto_cot_gate": [
+        {
+          "candidate_id": "train:13140:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:12563:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:9381:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:11725:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:11631:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:10070:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:24765:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:14796:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:20599:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:18212:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:13143:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:11668:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:19697:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:9827:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:20357:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:15469:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:11793:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:15978:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:9387:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:15808:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:6639:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:24629:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:13356:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:7050:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:8806:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:21993:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:12830:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:11458:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:20941:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:12540:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:12146:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:9384:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:15004:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:14119:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:7630:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:18498:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:5382:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:22922:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:9232:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:8034:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:24943:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:10066:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:4219:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:21506:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:21934:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:5524:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:5388:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:25676:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:14912:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:4297:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:14453:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:24298:300",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        }
+      ],
+      "ordered_selected_candidate_ids": [
+        "train:25475:300",
+        "train:10233:300",
+        "train:9587:300",
+        "train:10238:300",
+        "train:11239:300"
+      ],
+      "selected_demonstrations": [
+        {
+          "position": 1,
+          "candidate_id": "train:25475:300",
+          "dataset_index": "25475",
+          "article_id": "205",
+          "input_word_count": 486,
+          "thinking_word_count": 384,
+          "substantive_thinking_word_count": 349,
+          "response_word_count": 304,
+          "summac_rank_within_stage": 41,
+          "input_sha256": "ca383eff203b7465ad7f45a77c732754adb39296adf3dd23f5edd2fb265bc31c",
+          "thinking_sha256": "27fa0b348247f7dfc39ae4233b44544e5e8eb5c685a770a82274fec6532624e9",
+          "response_sha256": "ac070e7e77361a434e49982f6c75ccc201c24414c8de6b89966d5b865c912d35"
+        },
+        {
+          "position": 2,
+          "candidate_id": "train:10233:300",
+          "dataset_index": "10233",
+          "article_id": "75",
+          "input_word_count": 508,
+          "thinking_word_count": 353,
+          "substantive_thinking_word_count": 318,
+          "response_word_count": 314,
+          "summac_rank_within_stage": 10,
+          "input_sha256": "f7426feac890a80958d8f1b93b5a44b1857c85c42d393cfbaad318bdd1eda472",
+          "thinking_sha256": "5ff4925170fdd4c6577b99fc1fad67534c3bfc82177784dd819bfed3fa8ffa70",
+          "response_sha256": "d60020be68f1680fccd3b2e878a173f1b3eec9cbae5b6efcfd8321d37ee7acc6"
+        },
+        {
+          "position": 3,
+          "candidate_id": "train:9587:300",
+          "dataset_index": "9587",
+          "article_id": "65",
+          "input_word_count": 494,
+          "thinking_word_count": 288,
+          "substantive_thinking_word_count": 271,
+          "response_word_count": 304,
+          "summac_rank_within_stage": 44,
+          "input_sha256": "c2ef6e3ed1b115e64351338d02d6e30ab089b5640d18de259a5c3aa2bd8ab2f3",
+          "thinking_sha256": "bda23ad0e791438003a1953a97c8c7c6c55cc475d3fa5345899bc1abf69b034b",
+          "response_sha256": "03500d687b9b7520bd8f48547e981e503b940ee15d03fa610a09816ed0a38dd3"
+        },
+        {
+          "position": 4,
+          "candidate_id": "train:10238:300",
+          "dataset_index": "10238",
+          "article_id": "76",
+          "input_word_count": 510,
+          "thinking_word_count": 175,
+          "substantive_thinking_word_count": 158,
+          "response_word_count": 298,
+          "summac_rank_within_stage": 43,
+          "input_sha256": "fb5c53b2d642bdc710699ed62aa1b0445edf4eb7ef619b1521042947423d5a0f",
+          "thinking_sha256": "75ea2fbd0e886ed95ecb782731daa2644cbaf760465eb524679d915c7f65d26d",
+          "response_sha256": "01ca4e66b3a8a53196d17657d80df2fa117d2bd28b7b3dd7abaafd8385ea3281"
+        },
+        {
+          "position": 5,
+          "candidate_id": "train:11239:300",
+          "dataset_index": "11239",
+          "article_id": "86",
+          "input_word_count": 508,
+          "thinking_word_count": 212,
+          "substantive_thinking_word_count": 195,
+          "response_word_count": 311,
+          "summac_rank_within_stage": 99,
+          "input_sha256": "dcf4b3f90073fc40d6d0b3c803ac7c6d898a972439804e3d9e8b382899bc8d21",
+          "thinking_sha256": "0ebef31efb48d778ded9e41b60b799030b8f79212346c02c41f4b2d1c191fc53",
+          "response_sha256": "4d04276c437db4602e184b31022fbdf6132ab67099f115036710a2164ed3dd1b"
+        }
+      ]
+    },
+    "150": {
+      "automate_retained_pool_size": 100,
+      "common_eligible_pool_size": 62,
+      "excluded_by_auto_cot_gate": [
+        {
+          "candidate_id": "train:10233:150",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:14119:150",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:10066:150",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:21934:150",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:15469:150",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:11458:150",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:11668:150",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:24674:150",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:7242:150",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:20599:150",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:13143:150",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:9827:150",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:10090:150",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:21048:150",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:3014:150",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:6639:150",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:9712:150",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:13356:150",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:5547:150",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:11216:150",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:20357:150",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:23017:150",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:12894:150",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:19697:150",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:25475:150",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:9387:150",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:25602:150",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:15808:150",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:4219:150",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:5601:150",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:23583:150",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:11138:150",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:9241:150",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:7958:150",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:7036:150",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:18862:150",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:12733:150",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:17413:150",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        }
+      ],
+      "ordered_selected_candidate_ids": [
+        "train:20941:150",
+        "train:24765:150",
+        "train:21448:150",
+        "train:7856:150",
+        "train:10570:150"
+      ],
+      "selected_demonstrations": [
+        {
+          "position": 1,
+          "candidate_id": "train:20941:150",
+          "dataset_index": "20941",
+          "article_id": "170",
+          "input_word_count": 292,
+          "thinking_word_count": 376,
+          "substantive_thinking_word_count": 341,
+          "response_word_count": 150,
+          "summac_rank_within_stage": 37,
+          "input_sha256": "14b23e04db14d7ea46c3826674c1f03595ec77012e2ac80c587217bf9f935c8f",
+          "thinking_sha256": "be7e4b4ad1d664650c0164ad82ea1e80fe78264e7855887781bef532d3a17468",
+          "response_sha256": "708cfd1a9e22a1fb0a6677d340ce30f98ce3f7033bb658494d57803f8357d3d3"
+        },
+        {
+          "position": 2,
+          "candidate_id": "train:24765:150",
+          "dataset_index": "24765",
+          "article_id": "200",
+          "input_word_count": 309,
+          "thinking_word_count": 373,
+          "substantive_thinking_word_count": 338,
+          "response_word_count": 154,
+          "summac_rank_within_stage": 50,
+          "input_sha256": "f2d001dc3a353960d2cfafd42b9b1ae6207094c33467e4bb0c0538566c358a84",
+          "thinking_sha256": "1585fcd4a92c19dcd8e56822e3fb29869ef749be7aa5fdcaf377e83fad2b2dbb",
+          "response_sha256": "d4c7c3c64c0e27dd2a4f2320421836def922b617aa801ad11b7f945b6cad10c1"
+        },
+        {
+          "position": 3,
+          "candidate_id": "train:21448:150",
+          "dataset_index": "21448",
+          "article_id": "173",
+          "input_word_count": 299,
+          "thinking_word_count": 456,
+          "substantive_thinking_word_count": 421,
+          "response_word_count": 156,
+          "summac_rank_within_stage": 64,
+          "input_sha256": "1369dab1998b513378c68d7fc986387a7bc31316b486d52930ad63a0d072b0f2",
+          "thinking_sha256": "24da16b412a7fb9a7201eae796357a9eec79f2bf544f04d9c71aff2a2c2dc6d6",
+          "response_sha256": "93404e9aac5bb1d32668f38f6f52f668832763aa5838eb8ff70be96fd21d16ee"
+        },
+        {
+          "position": 4,
+          "candidate_id": "train:7856:150",
+          "dataset_index": "7856",
+          "article_id": "48",
+          "input_word_count": 297,
+          "thinking_word_count": 176,
+          "substantive_thinking_word_count": 159,
+          "response_word_count": 152,
+          "summac_rank_within_stage": 57,
+          "input_sha256": "effee1eda019b08297cebc19ce54f9785ba533f0de027bf5df7f6a84f3c13cd7",
+          "thinking_sha256": "a1bdec74f7ddf1db2620be6fecb19ff8ee5d5232486c2b0b72fa41ad32f56a66",
+          "response_sha256": "d4261ee9b6c0dceddd82144178ee19ad0606766371eed9d8489773b4e65d7474"
+        },
+        {
+          "position": 5,
+          "candidate_id": "train:10570:150",
+          "dataset_index": "10570",
+          "article_id": "82",
+          "input_word_count": 313,
+          "thinking_word_count": 210,
+          "substantive_thinking_word_count": 193,
+          "response_word_count": 155,
+          "summac_rank_within_stage": 26,
+          "input_sha256": "e970c2ed8acf5d4dffbed1fec6db94e5c205d484bdd1e400f76fe3872fcc9920",
+          "thinking_sha256": "4d6ce81bc1496d21d30a0925a437e08dd0fc60b290f1db6dd55d5906446f922a",
+          "response_sha256": "49616bca75f2a105a1151ad602f81b57def6da1bd23128bf207e570c16bf2b32"
+        }
+      ]
+    },
+    "75": {
+      "automate_retained_pool_size": 100,
+      "common_eligible_pool_size": 53,
+      "excluded_by_auto_cot_gate": [
+        {
+          "candidate_id": "train:7856:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:5388:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:11239:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:24976:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:13524:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:16672:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:25017:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:21969:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:23759:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:23615:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:6639:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:3014:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:5382:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:8058:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:11793:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:23017:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:23641:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:10097:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:17748:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:9387:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:4963:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:25475:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:20054:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:4865:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:9384:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:19078:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:24674:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:25676:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:13356:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:5405:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:4270:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:19697:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:7836:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:9980:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:4516:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:24298:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:18862:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:22782:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:7002:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:8380:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:10233:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:7630:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:8659:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:14912:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:12830:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:10522:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        },
+        {
+          "candidate_id": "train:12540:75",
+          "reasons": [
+            "rationale_exceeds_512_word_auto_cot_limit"
+          ]
+        }
+      ],
+      "ordered_selected_candidate_ids": [
+        "train:24943:75",
+        "train:6726:75",
+        "train:24463:75",
+        "train:18212:75",
+        "train:3932:75"
+      ],
+      "selected_demonstrations": [
+        {
+          "position": 1,
+          "candidate_id": "train:24943:75",
+          "dataset_index": "24943",
+          "article_id": "201",
+          "input_word_count": 154,
+          "thinking_word_count": 205,
+          "substantive_thinking_word_count": 188,
+          "response_word_count": 78,
+          "summac_rank_within_stage": 44,
+          "input_sha256": "8b73b905d308d8730c1e41a6647b615caff5644c464bd47310883aab3544ddae",
+          "thinking_sha256": "991ef062547d3c6b21e34ef6ea2e780369a3ed090bfb4e3e4a6e2ddbe6f60586",
+          "response_sha256": "da98351cf09b63e031d8fd7ef4d3d68cffe8868d9d6c293df0a025c6d743123e"
+        },
+        {
+          "position": 2,
+          "candidate_id": "train:6726:75",
+          "dataset_index": "6726",
+          "article_id": "36",
+          "input_word_count": 148,
+          "thinking_word_count": 178,
+          "substantive_thinking_word_count": 161,
+          "response_word_count": 73,
+          "summac_rank_within_stage": 15,
+          "input_sha256": "53baa8c36791dc4cf6b83722251fc48eb67f314ce23b5d735b2e1bff06848410",
+          "thinking_sha256": "944ef90a97058f2da29cc1fad45ec6fc8c4a10f1c2a7e80f919943c78180335f",
+          "response_sha256": "bbbf5f24d44d06bf8b8044eaa28cedadcada179bdfdf76a6986d7dad9aae16b5"
+        },
+        {
+          "position": 3,
+          "candidate_id": "train:24463:75",
+          "dataset_index": "24463",
+          "article_id": "196",
+          "input_word_count": 143,
+          "thinking_word_count": 326,
+          "substantive_thinking_word_count": 291,
+          "response_word_count": 75,
+          "summac_rank_within_stage": 30,
+          "input_sha256": "87ce03696a0cfd962450dd2a3e6a6b1059680cab5f0fb9da3a9eca4fd878ed45",
+          "thinking_sha256": "205624cf7578053501e0a3b2b2e9379d680625714a3ee986c33fe7277c524591",
+          "response_sha256": "1a0401327261157c2c2d893fa36c456d15780391262a2b43846f9947d3fae676"
+        },
+        {
+          "position": 4,
+          "candidate_id": "train:18212:75",
+          "dataset_index": "18212",
+          "article_id": "153",
+          "input_word_count": 149,
+          "thinking_word_count": 484,
+          "substantive_thinking_word_count": 449,
+          "response_word_count": 73,
+          "summac_rank_within_stage": 49,
+          "input_sha256": "c6cdc3fb5e551b1b27adc894269b6988404799de9f3e31fc07ad52cb42fbb2e6",
+          "thinking_sha256": "54a9b3bcd8bc5559bb39ce5ca5994d8ff87f761a6203a891941165d10d229cb1",
+          "response_sha256": "2491b1d7b383280cc57ddf74774e45446ae7e7647bcfb7bcd00cae113975d7e9"
+        },
+        {
+          "position": 5,
+          "candidate_id": "train:3932:75",
+          "dataset_index": "3932",
+          "article_id": "9",
+          "input_word_count": 142,
+          "thinking_word_count": 446,
+          "substantive_thinking_word_count": 411,
+          "response_word_count": 72,
+          "summac_rank_within_stage": 19,
+          "input_sha256": "e5f42573063d6d25cfb7f4f64f0d02f845fa059ff3e9b6583c653883765e34fa",
+          "thinking_sha256": "369e6ebf63a521dfab689fe2adc72b988f160c935cf9c1033dc036233c18d1f3",
+          "response_sha256": "d9015fb1749450c2078adf6f2d640ef2849b704e6394adfc3b1dddb51aeab52c"
+        }
+      ]
+    }
+  },
+  "prompts": {
+    "500": {
+      "path": "few_shot_cot_500.txt",
+      "sha256": "57e414045d7e5b13ac30fa9f9a486e91e78027944bdbfe67a22cca7407259e2d",
+      "demonstration_count": 5
+    },
+    "300": {
+      "path": "few_shot_cot_300.txt",
+      "sha256": "86d449b880f316bc8ba3012cf1708b42911d744dd6a00c85c738037ef5889929",
+      "demonstration_count": 5
+    },
+    "150": {
+      "path": "few_shot_cot_150.txt",
+      "sha256": "3785fe221c91374abe87ba7e273aa62197bfa2a34b9ec5560981b4e454b9173d",
+      "demonstration_count": 5
+    },
+    "75": {
+      "path": "few_shot_cot_75.txt",
+      "sha256": "678fbdea3841c7217598eaa5e7bf42118054559f6a8ff64d02c037f8aafe0a67",
+      "demonstration_count": 5
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "n_article_cells": 2400,
+  "compared_fields": {
+    "n_total": true,
+    "n_valid": true,
+    "n_missing": true,
+    "n_retained": true,
+    "n_lost": true,
+    "n_reference_discordant": true,
+    "retention_observed": true,
+    "retention_lower": true,
+    "retention_upper": true,
+    "fully_observed": true,
+    "generation_chain_failure": true
+  },
+  "source": "same frozen source passed through generic new-run analysis",
+  "actual_generation_requests": 0,
+  "bootstrap_groups_compared": 24,
+  "bootstrap_mean_and_intervals_match": true
+}

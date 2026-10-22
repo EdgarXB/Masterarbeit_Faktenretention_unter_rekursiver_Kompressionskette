@@ -1,0 +1,10 @@
+{
+  "articles": 100,
+  "facts": 2000,
+  "summaries": 2400,
+  "qa_positions": 48000,
+  "technical_missing": 196,
+  "empty_outputs": 2,
+  "checked_source_files": 6288,
+  "llm_generation_calls": 0
+}

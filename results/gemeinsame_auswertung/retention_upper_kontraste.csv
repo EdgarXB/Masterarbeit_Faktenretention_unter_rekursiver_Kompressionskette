@@ -1,0 +1,17 @@
+first,second,contrast,stage_target_words,policy,n_articles,mean,ci_low,ci_high,n_first_higher,n_tied,n_first_lower
+zero_shot_cot,plain,Zero-Shot-CoT − Plain,500,retention_upper,100,16.9,14.2,19.7,84,9,7
+zero_shot_cot,plain,Zero-Shot-CoT − Plain,300,retention_upper,100,17.75,15.0,20.45,85,8,7
+zero_shot_cot,plain,Zero-Shot-CoT − Plain,150,retention_upper,100,8.3,5.35,11.1,70,10,20
+zero_shot_cot,plain,Zero-Shot-CoT − Plain,75,retention_upper,100,-5.0,-7.75,-2.3499999999999996,29,16,55
+few_shot_cot,plain,Few-Shot-CoT − Plain,500,retention_upper,100,9.4,6.850000000000001,11.95,68,13,19
+few_shot_cot,plain,Few-Shot-CoT − Plain,300,retention_upper,100,10.9,8.35,13.45,77,6,17
+few_shot_cot,plain,Few-Shot-CoT − Plain,150,retention_upper,100,5.700000000000001,3.25,8.15,59,16,25
+few_shot_cot,plain,Few-Shot-CoT − Plain,75,retention_upper,100,0.8000000000000003,-1.65,3.2500000000000004,44,16,40
+auto_cot,few_shot_cot,Auto-CoT − Few-Shot-CoT,500,retention_upper,100,7.05,4.8,9.35,59,21,20
+auto_cot,few_shot_cot,Auto-CoT − Few-Shot-CoT,300,retention_upper,100,7.2,5.05,9.4,65,16,19
+auto_cot,few_shot_cot,Auto-CoT − Few-Shot-CoT,150,retention_upper,100,7.15,4.49875,9.85,63,14,23
+auto_cot,few_shot_cot,Auto-CoT − Few-Shot-CoT,75,retention_upper,100,4.35,1.9500000000000002,6.7,55,17,28
+automate_cot,auto_cot,Automate-CoT − Auto-CoT,500,retention_upper,100,1.9999999999999991,0.049999999999998865,3.9999999999999987,45,23,32
+automate_cot,auto_cot,Automate-CoT − Auto-CoT,300,retention_upper,100,0.9999999999999994,-1.050000000000001,3.049999999999999,42,24,34
+automate_cot,auto_cot,Automate-CoT − Auto-CoT,150,retention_upper,100,-4.1499999999999995,-6.649999999999999,-1.7499999999999993,27,20,53
+automate_cot,auto_cot,Automate-CoT − Auto-CoT,75,retention_upper,100,-1.9999999999999998,-4.3512499999999985,0.40000000000000013,33,23,44

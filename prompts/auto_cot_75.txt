@@ -1,0 +1,108 @@
+Task: Learn the compression behavior from the five ordered demonstrations, then summarize the new input in approximately 75 words. Think step by step before the final answer.
+The accepted length interval is 71-79 words. Preserve the most important facts supported by the new input, do not invent facts, and end with a complete sentence.
+Output plain prose only after the exact label FINAL_SUMMARY:. Do not put text after it.
+
+DEMONSTRATION 1 — compress to approximately 75 words
+INPUT:
+While much of the U.S. faces job loss, the South fares better, with 7% unemployment (December 2023, BLS) and growing sectors: oil/gas (engineering jobs via Careerbuilder), healthcare (senior appeal driving aging industries), and "recession-proof" education. Job fairs draw crowds—Miami’s 2009 Mega Fair attracted 1,000+ Floridians, focusing on nursing/education/public safety; even Disney (which shed 5% of staff) recruited. Attendee Alex Barrino called it a "comforting sign." In Charlotte, TweetMyJobs.com sends cell alerts for jobs, but older seekers struggle with online tools. Financial firms (per Robert Half) hire despite the economy, aiding those laid off from Bank of America/Wachovia. Winston-Salem’s baseball team has 150 openings, but competition is fierce; Akila Covington, unemployed a year post-US Airways, stressed urgency. Overall, the South offers pathways via industries, fairs, and tools, but challenges persist: competition and older workers’ tech literacy barriers.
+
+STEP-BY-STEP REASONING:
+Got it, let's tackle this. First, I need to identify the key facts. The main point is that the South has better job prospects than much of the U.S., with 7% unemployment (December 2023, BLS). Growing sectors: oil/gas, healthcare (senior demand), education. Job fairs (like Miami’s 2009 Mega Fair) and tools (TweetMyJobs.com) help, but there are challenges: competition and older workers struggling with online tools. Also, financial firms hire despite the economy, and examples like Disney recruiting, Winston-Salem baseball team openings.
+
+Now, need to condense to 71-79 words. Start with the South faring better amid U.S. job loss: 7% unemployment (Dec 2023 BLS). Growing sectors: oil/gas, healthcare (senior demand), education. Job fairs (Miami’s 2009 Mega Fair) and tools (TweetMyJobs) aid, but challenges persist: competition, older workers’ tech issues. Financial firms hire; examples like Disney, Winston-Salem baseball. End with complete sentence.
+<seed:cot_budget_reflect>I have used 512 tokens, and there are 0 tokens remaining for use.</seed:cot_budget_reflect>
+
+FINAL_SUMMARY:
+While much of the U.S. faces job loss, the South fares better with 7% unemployment (December 2023, BLS), boasting growing sectors—oil/gas, healthcare (driven by senior demand), and education. Job fairs (e.g., Miami’s 2009 Mega Fair) and tools like TweetMyJobs aid seekers, but challenges persist: competition and older workers’ struggles with online tools; financial firms still hire, though openings like Winston-Salem’s baseball team face fierce competition.
+
+
+DEMONSTRATION 2 — compress to approximately 75 words
+INPUT:
+On Tuesday, Barcelona secured a 4-0 away win over Viktoria Plzen to advance to Champions League knockout stage, with milestones: Lionel Messi scored his second hat-trick in four days—200th Barça goal (penalty after Marian Cisovsky’s red card), first-half injury-time strike, and stoppage-time finish (202nd club goal). Cesc Fabregas headed the fourth. Coach Josep Guardiola reached his 200th match, Barça scoring 500 goals (Messi 160) and conceding 17 under him; Victor Valdes set a club record 877 minutes without conceding. Other key results: Arsenal failed to qualify from Group F after 0-0 draw with Marseille; Apoel Nicosia shocked Porto 2-1 to stay top of Group G; Zenit beat Shakhtar 1-0, leaving Shakhtar bottom. Valencia beat Bayer Leverkusen 3-1 (Jonas’ 10-second CL goal), Chelsea drew 1-1 at Genk, Milan drew 1-1 with BATE, Dortmund beat Olympiakos 1-0.
+
+STEP-BY-STEP REASONING:
+Got it, let's tackle this. First, I need to identify the most important facts from the source. The main event is Barcelona's 4-0 win over Viktoria Plzen, advancing to Champions League knockout stage. Then, Messi's milestones: second hat-trick in four days, 200th Barça goal (penalty after red card), 202nd club goal. Fabregas headed the fourth. Guardiola's 200th match, Barça's stats under him (500 goals, 17 conceded), Valdes' record minutes without conceding. Also, other key results: Arsenal failed to qualify (0-0 Marseille), Apoel shocked Porto 2-1 (Group G top), Zenit 1-0 Shakhtar (Shakhtar bottom), Valencia 3-1 Leverkusen (Jonas' 10s goal), Chelsea 1-1 Genk, Milan 1-1 BATE, Dortmund 1-0 Olympiakos.
+
+Now, need to condense to 68-76 words. Prioritize Barça's win and Messi's milestones first, then Guardiola's milestone, then key other results. Remove lower-priority details: maybe specific goal times (first-half injury, stoppage) unless crucial, but Messi's hat-trick in four days and 200th/202nd goals are key.
+<seed:cot_budget_reflect>I have used 512 tokens, and there are 0 tokens remaining for use.</seed:cot_budget_reflect>
+ Guardiola's 200th match, Barça's 500 goals/17 conceded under him, Valdes' record. Then other results: Arsenal out (0-0 Marseille), Apoel top (2-1 Porto), Zenit beat Shakhtar (Shakhtar bottom), Valencia's fast goal, others can be brief.
+
+Let me draft: "Barcelona beat Viktoria Plzen 4-0 to reach Champions League knockout stage; Messi scored a second hat-trick in four days (200th Barça, 202nd club goal). Fabregas added a header. Guardiola hit 200 matches, Barça scoring 500 goals under him. Other results: Arsenal failed to qualify (0-0 Marseille); Apoel Nicosia topped Group G (2-1 Porto); Zenit beat Shakhtar 1-0 (Shakhtar bottom); Valencia won 3-1 (Jonas’ 10s goal), Chelsea/Milan drew, Dortmund won."
+
+Check word count. Let's count: "Barcelona beat Viktoria Plzen 4-0 to reach Champions League knockout stage; Messi scored a second hat-trick in four days (200th Barça, 202nd club goal). Fabregas added a header. Guardiola hit 200 matches, Barça scoring 500 goals under him. Other results: Arsenal failed to qualify (0-0 Marseille); Apoel Nicosia topped Group G (2-1 Porto); Zenit beat Shakhtar 1-0 (Shakhtar bottom); Valencia won 3-1 (Jonas’ 10s goal), Chelsea/Milan drew, Dortmund won." Let's see: that's 73 words. Checks all key points: Barça win, knockout stage, Messi's hat-trick (4 days), 200th Barça/202nd club, Fabregas header, Guardiola 200 matches, Barça 500 goals under him, Arsenal failed (0-0 Marseille), Apoel top (2-1 Porto), Zenit 1-0 Shakhtar (bottom), Valencia 3-1 (Jonas 10s), Chelsea/Milan drew, Dortmund won.
+<seed:cot_budget_reflect>I have exhausted my token budget, and now I will start answering the question.</seed:cot_budget_reflect>
+
+FINAL_SUMMARY:
+Barcelona beat Viktoria Plzen 4-0 to reach Champions League knockout stage; Messi scored a second hat-trick in four days (200th Barça, 202nd club goal). Fabregas added a header. Guardiola hit 200 matches, Barça scoring 500 goals under him. Other results: Arsenal failed to qualify (0-0 Marseille); Apoel Nicosia topped Group G (2-1 Porto); Zenit beat Shakhtar 1-0 (Shakhtar bottom); Valencia won 3-1 (Jonas’ 10s goal), Chelsea/Milan drew, Dortmund won.
+
+
+DEMONSTRATION 3 — compress to approximately 75 words
+INPUT:
+Mitrice Richardson, missing since leaving a Malibu LA County sheriff’s station in Sept 2009 (arrested for unpaid meal), may still be alive in Las Vegas, per detectives. A new lead: a high-school classmate saw her at Rio Hotel/Casino in early June (she reacted shocked, but cameras unclear). Detectives interviewed 70+ witnesses; Chief McSweeney says reports keep them on track, Capt McClure notes it’s unverified but sent LV presence to alert the community. Now 25, a college honors grad with mental health issues, her mother Latice Sutton sues the department for wrongful death/negligence, citing ignored LV sightings, lack of psychiatric evaluations, and releasing her alone without money/phone/transport. Sheriff’s spokesman Whitmore defends: she wasn’t intoxicated, showed no mental issues, and turned down a jailer’s stay offer. Capt Smith urges her to come forward (no trouble); family says avoiding contact isn’t her character—McClure stresses needing to talk to her.
+
+STEP-BY-STEP REASONING:
+Got it, let's tackle this. First, I need to identify the most important facts from the source. The main subject is Mitrice Richardson, missing since Sept 2009 after leaving a Malibu sheriff's station (arrested for unpaid meal). Key points: new lead—high-school classmate saw her at Rio Hotel/Casino in early June (shocked reaction, unclear cameras). Detectives interviewed 70+ witnesses; sheriff's response (Chief McSweeney says on track, Capt McClure: unverified but sent LV presence). Her background: 25, college honors grad, mental health issues. Mother suing over wrongful death/negligence: ignored LV sightings, no psychiatric eval, released alone without money/phone/transport. Sheriff defends: not intoxicated, no shown mental issues, turned down jailer's stay. Capt Smith urges her to come forward; family says avoiding contact isn't her—McClure wants to talk.
+
+Now, need to condense to 71-79 words, no extra details. Start with who: Mitrice Richardson, missing since 2009 (left Malibu sheriff's station after unpaid meal arrest). New lead: classmate saw her at Rio Hotel/Casino June (shocked, unclear cameras); 70+ witnesses interviewed.
+<seed:cot_budget_reflect>I have used 517 tokens, and there are 15 tokens remaining for use.</seed:cot_budget_reflect>
+ Mother suing over negligence (ignored sightings, no psychiatric eval, released alone). Sheriff defends: no issues shown, turned down stay. Capt urges her to come forward—family disputes avoiding contact.
+
+Check word count. Let me draft:
+
+Mitrice Richardson, missing since Sept 2009 (left Malibu sheriff’s station after unpaid meal arrest), may live in Las Vegas; new lead: classmate saw her at Rio Hotel/Casino early June (shocked, unclear cameras). Detectives interviewed 70+ witnesses. Her mother sues over negligence (ignored sightings, no psychiatric eval, released alone). Sheriff defends: she showed no issues, turned down stay. Capt urges her to come forward—family says avoiding contact isn’t her.
+
+Count words: Let's see. "Mitrice Richardson, missing since Sept 2009 (left Malibu sheriff’s station after unpaid meal arrest), may live in Las Vegas; new lead: classmate saw her at Rio Hotel/Casino early June (shocked, unclear cameras). Detectives interviewed 70+ witnesses. Her mother sues over negligence (ignored sightings, no psychiatric eval, released alone). Sheriff defends: she showed no issues, turned down stay. Capt urges her to come forward—family says avoiding contact isn’t her." Let's count:
+
+1.Mitrice 2.Richardson, 3.missing 4.since 5.Sept 6.2009 7.(left 8.Malibu 9.sheriff’s 10.station 11.after 12.unpaid 13.meal 14.arrest), 15.may 16.live 17.in 18.Las 19.Vegas; 20.new 21.lead: 22.classmate 23.saw 24.her 25.at 26.Rio 27.Hotel/Casino 28.early 29.June 30.(shocked, 31.unclear 32.cameras). 33.Detectives 34.interviewed 35.70+ 36.witnesses. 37.Her 38.mother 39.sues 40.over 41.negligence 42.(ignored 43.sightings, 44.no 45.psychiatric 46.eval, 47.released 48.alone).
+<seed:cot_budget_reflect>I have exhausted my token budget, and now I will start answering the question.</seed:cot_budget_reflect>
+
+FINAL_SUMMARY:
+Mitrice Richardson, missing since Sept 2009 (left Malibu sheriff’s station after unpaid meal arrest), may live in Las Vegas; new lead: classmate saw her at Rio Hotel/Casino early June (shocked, unclear cameras). Detectives interviewed 70+ witnesses. Her mother sues over negligence (ignored sightings, no psychiatric eval, released alone). Sheriff defends: she showed no issues, turned down stay. Capt urges her to come forward—family says avoiding contact isn’t her.
+
+
+DEMONSTRATION 4 — compress to approximately 75 words
+INPUT:
+On Wednesday, Pakistani journalist Mosa Khankhel, a GEO TV correspondent based in Peshawar, was killed by attackers in Taliban-controlled Swat Valley while covering Pakistan’s peace deal with Taliban militants. He was traveling with Taliban leader Sufi Mohammed (negotiating the deal) when he went missing; his body was found shot three times, head targeted for beheading. The deal—Pakistan’s major concession—involved recognizing Taliban sharia in Malakand Division (including Swat) to halt terrorism (beheadings, kidnappings, etc.) in exchange for a 10-day cease-fire; Swat marked the Taliban’s deepest advance into Pakistan’s “settled areas.” Pakistan’s elected civilian government pursues diplomacy, but analysts warn past deals let militants regroup, with Bahria University’s Khadim Hussain accusing it of creating “two parallel states.” Critics blame former leader Musharraf’s 2006 cease-fire for strengthening militants, fueling doubts about the latest deal.
+
+STEP-BY-STEP REASONING:
+Got it, let's tackle this. First, I need to identify the most important facts from the source. The main event is Pakistani journalist Mosa Khankhel's killing—he was a GEO TV correspondent in Peshawar, killed by attackers in Taliban-controlled Swat Valley while covering a peace deal with Taliban. He was with Taliban leader Sufi Mohammed (negotiating the deal), went missing, body found shot three times, head targeted for beheading.
+
+Then the peace deal details: Pakistan's major concession—recognizing Taliban sharia in Malakand Division (including Swat) to halt terrorism (beheadings, kidnappings) in exchange for 10-day cease-fire. Swat was Taliban's deepest advance into Pakistan's "settled areas."
+
+Context: Pakistan's elected civilian govt pursues diplomacy, but analysts warn past deals let militants regroup; Bahria University's Khadim Hussain says "two parallel states." Critics blame Musharraf's 2006 cease-fire for strengthening militants, doubting the latest deal.
+<seed:cot_budget_reflect>I have used 512 tokens, and there are 0 tokens remaining for use.</seed:cot_budget_reflect>
+Now, need to condense to 71-79 words. Prioritize: Khankhel's killing (who, where, why—covering peace deal), deal terms (sharia in Malakand for cease-fire, Swat as deep advance), analyst/critic warnings (past deals, Musharraf's role).
+
+Let me draft: On Wednesday, Pakistani journalist Mosa Khankhel (GEO TV, Peshawar) was killed in Taliban-controlled Swat Valley while covering a peace deal—he was with Taliban leader Sufi Mohammed, found shot three times, head targeted. The deal: Pakistan recognized Taliban sharia in Malakand (including Swat) for a 10-day cease-fire (Swat was Taliban’s deepest "settled areas" advance). Analysts warn past deals (e.g., Musharraf’s 2006) let militants regroup; Khadim Hussain calls it "two parallel states," fueling doubt.
+
+Check word count. Let me count: "On Wednesday, Pakistani journalist Mosa Khankhel (GEO TV, Peshawar) was killed in Taliban-controlled Swat Valley while covering a peace deal—he was with Taliban leader Sufi Mohammed, found shot three times, head targeted. The deal: Pakistan recognized Taliban sharia in Malakand (including Swat) for a 10-day cease-fire (Swat was Taliban’s deepest 'settled areas' advance). Analysts warn past deals (e.g., Musharraf’s 2006) let militants regroup; Khadim Hussain calls it 'two parallel states,' fueling doubt." Let's see: That's 78 words. Checks all key points: Khankhel's killing (who, where, why, circumstances), deal terms (sharia, Malakand, cease-fire, Swat's significance), analyst warnings (past deals, Musharraf, two parallel states). Removed lower-priority details like "traveling with...when he went missing" (since "was with" covers that), "terrorism (beheadings, kidnappings, etc.)" (condensed to "terrorism"), "elected civilian government pursues diplomacy" (maybe not essential if focusing on analyst warnings). Wait, does "pursues diplomacy" matter? The source says "Pakistan’s elected civilian government pursues diplomacy, but analysts warn..."—maybe "but analysts warn" is enough, but "pursues diplomacy" is part of the context.
+<seed:cot_budget_reflect>I have exhausted my token budget, and now I will start answering the question.</seed:cot_budget_reflect>
+
+FINAL_SUMMARY:
+On Wednesday, Pakistani journalist Mosa Khankhel (GEO TV, Peshawar) was killed in Taliban-controlled Swat Valley while covering a peace deal—he was with Taliban leader Sufi Mohammed, found shot three times, head targeted. The deal: Pakistan recognized Taliban sharia in Malakand (including Swat) for a 10-day cease-fire (Swat was Taliban’s deepest "settled areas" advance). Analysts warn past deals (e.g., Musharraf’s 2006) let militants regroup; Khadim Hussain calls it "two parallel states," fueling doubt.
+
+
+DEMONSTRATION 5 — compress to approximately 75 words
+INPUT:
+The 800-mile Trans-Alaska Pipeline, carrying 650,000 barrels of oil daily from Prudhoe Bay to Valdez, faced scrutiny after a Memorial Day incident at Pump Station 9: routine test power failure (main/backup) left the unmanned station—due to Alyeska’s manpower cuts—spilling tens of thousands of barrels (5,000 leaked). Critics cite poor maintenance: Rep. Stupak noted "incident after incident"; Rep. Guttenberg (former Alyeska worker) highlighted relocating engineers/safety experts from Fairbanks to Anchorage (350 miles) hindering response, and an Alyeska source warned of deferred maintenance backlogs. BP, with 46.3% of Alyeska’s budget, is dominant; oil advisor Fineberg linked BP cost-cutting to Alyeska’s practices, as former CEO Kevin Hostler (BP exec) retired amid criticism. Alyeska’s Joynor denied BP influence, claiming industry-standard budgets, routine deferred maintenance, and personnel moves involved only office staff, but congressional/public concern over long-term reliability persists.
+
+STEP-BY-STEP REASONING:
+Got it, let's tackle this. First, I need to identify the most important facts from the source. The Trans-Alaska Pipeline is 800 miles, carries 650k barrels/day from Prudhoe Bay to Valdez. Key incident: Memorial Day at Pump Station 9—routine test power failure (main/backup) left unmanned station (due to manpower cuts) spilling 5k barrels. Critics: poor maintenance, Rep. Stupak's "incident after incident," Rep. Guttenberg (former Alyeska worker) said engineers/safety experts moved from Fairbanks to Anchorage (350 miles) hindered response, Alyeska source warned of deferred maintenance backlogs. BP has 46.3% of Alyeska's budget, dominant; Fineberg linked BP cost-cutting to Alyeska's practices, former CEO Kevin Hostler (BP exec) retired amid criticism. Alyeska's Joynor denied BP influence, said industry-standard budgets, routine deferred maintenance, personnel moves only office staff. Congressional/public concern over long-term reliability persists.
+<seed:cot_budget_reflect>I have used 513 tokens, and there are 9 tokens remaining for use.</seed:cot_budget_reflect>
+
+
+Now, need to condense to 55-61 words. Prioritize: pipeline basics, incident (cause: power failure, unmanned due to cuts, spill), critics' points (maintenance, staffing moves), BP's role (46.3% budget, linked to cost-cutting), Alyeska denial, ongoing concern.
+
+Let me start: The 800-mile Trans-Alaska Pipeline, carrying 650,000 barrels/day Prudhoe Bay-Valdez, faced scrutiny after Memorial Day Pump Station 9 spill (5k barrels) from main/backup power failure—station unmanned due to Alyeska manpower cuts. Critics cite poor maintenance, Rep. Guttenberg noting engineer relocations hindered response; BP (46.3% Alyeska budget) linked to cost-cutting. Alyeska denied BP influence, but congressional/public concern over reliability persists.
+
+Check word count. Let me count: "The 800-mile Trans-Alaska Pipeline, carrying 650,000 barrels/day Prudhoe Bay-Valdez, faced scrutiny after Memorial Day Pump Station 9 spill (5k barrels) from main/backup power failure—station unmanned due to Alyeska manpower cuts. Critics cite poor maintenance, Rep. Guttenberg noting engineer relocations hindered response; BP (46.3% Alyeska budget) linked to cost-cutting. Alyeska denied BP influence, but congressional/public concern over reliability persists." Let's count: 
+
+1.The 2.800-mile 3.Trans-Alaska 4.Pipeline, 5.carrying 6.650,000 7.barrels/day 8.Prudhoe 9.Bay-Valdez, 10.faced 11.scrutiny 12.after 13.Memorial 14.Day 15.Pump 16.Station 17.9 18.spill 19.(5k 20.barrels) 21.from 22.main/backup 23.power 24.failure—station 25.unmanned 26.due 27.to 28.Alyeska 29.manpower 30.cuts.
+<seed:cot_budget_reflect>I have exhausted my token budget, and now I will start answering the question.</seed:cot_budget_reflect>
+
+FINAL_SUMMARY:
+The 800-mile Trans-Alaska Pipeline, carrying 650,000 barrels/day from Prudhoe Bay to Valdez, faced scrutiny after a Memorial Day Pump Station 9 spill (5,000 barrels) from main/backup power failure—station unmanned due to Alyeska manpower cuts. Critics cite poor maintenance, Rep. Guttenberg noting engineer relocations hindered response; BP (46.3% Alyeska budget) linked to cost-cutting. Alyeska denied BP influence, but congressional/public concern over reliability persists.
+
+
+NEW INPUT:
+{{NEW_INPUT}}

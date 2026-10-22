@@ -1,0 +1,221 @@
+test_explicit_phase_wiring_without_models (__main__.ConstructionControlTest.test_explicit_phase_wiring_without_models) ... ok
+test_all_methods_recursive_full_mock (__main__.PipelineTest.test_all_methods_recursive_full_mock) ... ok
+test_budget_including_retries (__main__.PipelineTest.test_budget_including_retries) ... ok
+test_caps_before_generation (__main__.PipelineTest.test_caps_before_generation) ... ok
+test_default_mini_complete_pipeline (__main__.PipelineTest.test_default_mini_complete_pipeline) ... {
+  "phase": "demonstration_construction",
+  "training_articles": 130,
+  "validation_articles": 30,
+  "maximum_requests": 100000,
+  "temperature": 1.1,
+  "thinking_budget_instruction": 512
+}
+{
+  "mode": "full",
+  "articles": 1,
+  "methods": [
+    "lead_k",
+    "plain",
+    "zero_shot_cot",
+    "few_shot_cot",
+    "auto_cot",
+    "automate_cot"
+  ],
+  "stages": [
+    500,
+    300,
+    150,
+    75
+  ],
+  "maximum_requests": 510,
+  "minimum_requests": 501,
+  "models": {
+    "summary": {
+      "name": "thesis-seed:v1",
+      "digest": "7a66a2f466bf48fdafa7004a7975a7f5fac6e667a6de7d01751aacb98b3f387c"
+    },
+    "facts": {
+      "name": "thesis-gemma:v1",
+      "digest": "6316f0629137b426c9d9b853ffc4c8209589f30ee39aebede6285096c0ff47e7"
+    },
+    "qa": {
+      "name": "thesis-qwen38-qa:v1",
+      "digest": "d80421b9191aff0d4d8ea0911068452f11f3963e3e282c6b9d778932c4b268b3"
+    }
+  }
+}
+Saved candidate facts to /tmp/anhang_mock_303gjzmj/run/facts/candidate_facts.csv
+Saved canonical facts to /tmp/anhang_mock_303gjzmj/run/facts/canonical_facts.csv
+Saved summary Q/A answers to /tmp/anhang_mock_303gjzmj/run/qa/summary_question_answers.csv
+Gemeinsame Artikelstatistik: /tmp/anhang_mock_303gjzmj/run/analysis
+{
+  "mode": "mini",
+  "articles": 1,
+  "methods": [
+    "plain"
+  ],
+  "stages": [
+    500
+  ],
+  "maximum_requests": 30,
+  "minimum_requests": 22,
+  "models": {
+    "summary": {
+      "name": "thesis-seed:v1",
+      "digest": "7a66a2f466bf48fdafa7004a7975a7f5fac6e667a6de7d01751aacb98b3f387c"
+    },
+    "facts": {
+      "name": "thesis-gemma:v1",
+      "digest": "6316f0629137b426c9d9b853ffc4c8209589f30ee39aebede6285096c0ff47e7"
+    },
+    "qa": {
+      "name": "thesis-qwen38-qa:v1",
+      "digest": "d80421b9191aff0d4d8ea0911068452f11f3963e3e282c6b9d778932c4b268b3"
+    }
+  }
+}
+{
+  "mode": "mini",
+  "articles": 1,
+  "methods": [
+    "plain"
+  ],
+  "stages": [
+    500
+  ],
+  "maximum_requests": 31,
+  "minimum_requests": 22,
+  "models": {
+    "summary": {
+      "name": "thesis-seed:v1",
+      "digest": "7a66a2f466bf48fdafa7004a7975a7f5fac6e667a6de7d01751aacb98b3f387c"
+    },
+    "facts": {
+      "name": "thesis-gemma:v1",
+      "digest": "6316f0629137b426c9d9b853ffc4c8209589f30ee39aebede6285096c0ff47e7"
+    },
+    "qa": {
+      "name": "thesis-qwen38-qa:v1",
+      "digest": "d80421b9191aff0d4d8ea0911068452f11f3963e3e282c6b9d778932c4b268b3"
+    }
+  }
+}
+{
+  "mode": "mini",
+  "articles": 1,
+  "methods": [
+    "plain"
+  ],
+  "stages": [
+    500
+  ],
+  "maximum_requests": 30,
+  "minimum_requests": 22,
+  "models": {
+    "summary": {
+      "name": "thesis-seed:v1",
+      "digest": "7a66a2f466bf48fdafa7004a7975a7f5fac6e667a6de7d01751aacb98b3f387c"
+    },
+    "facts": {
+      "name": "thesis-gemma:v1",
+      "digest": "6316f0629137b426c9d9b853ffc4c8209589f30ee39aebede6285096c0ff47e7"
+    },
+    "qa": {
+      "name": "thesis-qwen38-qa:v1",
+      "digest": "d80421b9191aff0d4d8ea0911068452f11f3963e3e282c6b9d778932c4b268b3"
+    }
+  }
+}
+Saved candidate facts to /tmp/anhang_mock_haany_12/run/facts/candidate_facts.csv
+Saved canonical facts to /tmp/anhang_mock_haany_12/run/facts/canonical_facts.csv
+Saved summary Q/A answers to /tmp/anhang_mock_haany_12/run/qa/summary_question_answers.csv
+Gemeinsame Artikelstatistik: /tmp/anhang_mock_haany_12/run/analysis
+{
+  "mode": "mini",
+  "articles": 1,
+  "methods": [
+    "plain"
+  ],
+  "stages": [
+    500
+  ],
+  "maximum_requests": 30,
+  "minimum_requests": 22,
+  "models": {
+    "summary": {
+      "name": "thesis-seed:v1",
+      "digest": "7a66a2f466bf48fdafa7004a7975a7f5fac6e667a6de7d01751aacb98b3f387c"
+    },
+    "facts": {
+      "name": "thesis-gemma:v1",
+      "digest": "6316f0629137b426c9d9b853ffc4c8209589f30ee39aebede6285096c0ff47e7"
+    },
+    "qa": {
+      "name": "thesis-qwen38-qa:v1",
+      "digest": "d80421b9191aff0d4d8ea0911068452f11f3963e3e282c6b9d778932c4b268b3"
+    }
+  }
+}
+SKIP completed facts model=thesis-gemma:v1 article=1
+ok
+test_missing_runtime_and_wrong_digest_make_zero_requests (__main__.PipelineTest.test_missing_runtime_and_wrong_digest_make_zero_requests) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 1.064s
+
+OK
+Saved candidate facts to /tmp/anhang_mock_haany_12/run/facts/candidate_facts.csv
+Saved canonical facts to /tmp/anhang_mock_haany_12/run/facts/canonical_facts.csv
+Saved summary Q/A answers to /tmp/anhang_mock_haany_12/run/qa/summary_question_answers.csv
+{
+  "mode": "mini",
+  "articles": 1,
+  "methods": [
+    "plain"
+  ],
+  "stages": [
+    500
+  ],
+  "maximum_requests": 30,
+  "minimum_requests": 22,
+  "models": {
+    "summary": {
+      "name": "thesis-seed:v1",
+      "digest": "7a66a2f466bf48fdafa7004a7975a7f5fac6e667a6de7d01751aacb98b3f387c"
+    },
+    "facts": {
+      "name": "thesis-gemma:v1",
+      "digest": "6316f0629137b426c9d9b853ffc4c8209589f30ee39aebede6285096c0ff47e7"
+    },
+    "qa": {
+      "name": "thesis-qwen38-qa:v1",
+      "digest": "d80421b9191aff0d4d8ea0911068452f11f3963e3e282c6b9d778932c4b268b3"
+    }
+  }
+}
+{
+  "mode": "mini",
+  "articles": 1,
+  "methods": [
+    "plain"
+  ],
+  "stages": [
+    500
+  ],
+  "maximum_requests": 30,
+  "minimum_requests": 22,
+  "models": {
+    "summary": {
+      "name": "thesis-seed:v1",
+      "digest": "7a66a2f466bf48fdafa7004a7975a7f5fac6e667a6de7d01751aacb98b3f387c"
+    },
+    "facts": {
+      "name": "thesis-gemma:v1",
+      "digest": "6316f0629137b426c9d9b853ffc4c8209589f30ee39aebede6285096c0ff47e7"
+    },
+    "qa": {
+      "name": "thesis-qwen38-qa:v1",
+      "digest": "d80421b9191aff0d4d8ea0911068452f11f3963e3e282c6b9d778932c4b268b3"
+    }
+  }
+}

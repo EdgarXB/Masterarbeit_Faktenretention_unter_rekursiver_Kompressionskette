@@ -1,0 +1,49 @@
+{
+  "optimization_cache_audit": {
+    "unique_cached_generations": 5753,
+    "reproduced_combination_losses": 604,
+    "cache_keys_verified": true,
+    "optimization_rerun": false
+  },
+  "stages": [
+    {
+      "stage": 500,
+      "candidates": 100,
+      "positions": 5,
+      "combinations_per_update": 10,
+      "updates": 15,
+      "epochs": 5,
+      "final_utility": 0.019107235227905695
+    },
+    {
+      "stage": 300,
+      "candidates": 100,
+      "positions": 5,
+      "combinations_per_update": 10,
+      "updates": 15,
+      "epochs": 5,
+      "final_utility": 0.02213982454028729
+    },
+    {
+      "stage": 150,
+      "candidates": 100,
+      "positions": 5,
+      "combinations_per_update": 10,
+      "updates": 15,
+      "epochs": 5,
+      "final_utility": 0.00356718192627814
+    },
+    {
+      "stage": 75,
+      "candidates": 100,
+      "positions": 5,
+      "combinations_per_update": 10,
+      "updates": 15,
+      "epochs": 5,
+      "final_utility": 0.004115226337448541
+    }
+  ],
+  "final_fewshot_hashes_verified": true,
+  "llm_generation_calls": 0,
+  "optimization_rerun": false
+}

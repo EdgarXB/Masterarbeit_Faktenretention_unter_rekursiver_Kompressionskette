@@ -1,0 +1,226 @@
+Task: Learn the compression behavior from the five ordered demonstrations, then summarize the new input in approximately 300 words. Think step by step before the final answer.
+The accepted length interval is 285-315 words. Preserve the most important facts supported by the new input, do not invent facts, and end with a complete sentence.
+Output plain prose only after the exact label FINAL_SUMMARY:. Do not put text after it.
+
+DEMONSTRATION 1 — compress to approximately 300 words
+INPUT:
+In Coral Springs, Florida, authorities solved a 31-year-old disappearance in [current year] when they found the remains of Jeff Klee—missing since 1977—in a van submerged in the C-14 canal. The discovery occurred during a routine March police sweep for stolen vehicles; the van was in neutral, and DNA testing later confirmed the remains were Klee’s, though investigators could not determine how he died or whether he was killed. Despite this breakthrough, prosecutors announced no charges would be filed against David Cusanelli, whom authorities say admitted placing Klee’s body in the van three decades earlier.  
+
+The Broward County State Attorney’s Office cited the statute of limitations for possible manslaughter charges, which expired in 1980, as a primary reason for the lack of charges. For more serious offenses like first-degree murder—where no statute of limitations applies—prosecutors stated there was insufficient evidence of premeditation or that Klee’s death was caused by a criminal act.  
+
+Klee’s best friend, David Cusanelli, was the last person known to see him alive on June 21, 1977. In a July 28 statement to authorities this year, Cusanelli alleged he and Klee had argued over a former girlfriend, leading to Klee chasing him to the canal that night. Cusanelli claimed he turned around to find Klee fallen on the ground, with a split head and heavy bleeding. He told police he ran in fear, later panicked, and placed Klee’s body in his black Chevy van; his brother Carl helped push the van into the canal, according to a prosecution memorandum. Cusanelli, however, denied any involvement in Klee’s death, as did his attorney, Mitch Polay, who argued the statements were “taken out of context” and posed as hypotheticals to jog memory. “My clients have denied any involvement for 31 years,” Polay said, adding they had no role in pushing the van or Klee’s death. Carl Cusanelli admitted helping push the van but denied knowing Klee was inside.  
+
+Lead Detective David Weissman noted there was “definitely a confrontation” that night resulting in Klee’s death, while the prosecution memo mentioned Cusanelli conceded throwing a rock at Klee—though he claimed not to know how Klee fell. Cusanelli also told authorities he blocked the incident from his memory until recent details resurfaced.  
+
+For Klee’s family, the news was devastating. His sister Laurel Steele called Thursday’s announcement “a sad day” that “tests my family’s faith to its very core,” adding, “Victimized by the loss of Jeff so many years ago, we are victimized once again.” Their mother, Florence Klee, clutched a framed photo of her son but remained silent; their father died two years prior.  
+
+Coral Springs Police Chief Duncan Foster expressed frustration, stating, “Jeff Klee was a loved member of someone's family, and that has no time limits.” The case remains open, with authorities and the family urging the public to provide any evidence from that summer night in 1977. “Justice has been denied,” Steele said.
+
+STEP-BY-STEP REASONING:
+Got it, let's tackle this summary. First, I need to identify the key points from the source. The main event is solving a 31-year-old disappearance: Jeff Klee, missing since 1977, found in a submerged van in Coral Springs, Florida, in [current year]. 
+
+Next, how was he found? Routine police sweep for stolen vehicles in March, van in neutral, DNA confirmed remains. But they couldn't determine cause or if he was killed. 
+
+Then, the suspect: David Cusanelli, last seen with Klee. He admitted placing the body in the van, brother Carl helped push it. But prosecutors didn't file charges. Why? Statute of limitations for manslaughter expired in 1980; for first-degree murder (no SOL), insufficient evidence of premeditation or criminal cause of death.
+
+Cusanelli's story: Argument over ex-girlfriend, Klee chased him to canal, Cusanelli turned back, Klee had split head/bleeding, Cusanelli ran, later panicked, put body in van. But he denied involvement in death; attorney said statements were hypotheticals. Carl admitted pushing van but didn't know Klee was inside.
+<seed:cot_budget_reflect>I have used 513 tokens, and there are 0 tokens remaining for use.</seed:cot_budget_reflect>
+ Detectives said there was a confrontation causing death; Cusanelli conceded throwing a rock but didn't know how Klee fell.
+
+Family reaction: Devastating, Laurel Steele called it a "sad day," mother silent, father dead. Police chief frustrated, case open, public urged to provide evidence.
+
+Now, need to condense this to 285-315 words, keeping most important facts: 31-year disappearance solved, found in submerged van during sweep, DNA confirmed Klee. Cusanelli's role (admitted placing body, brother helped), but no charges due to SOL (manslaughter) and insufficient evidence for murder. Key details of his claim (argument, Klee chasing, Klee injured, Cusanelli's actions), his denials, attorney's stance. Family reaction, police frustration, case open.
+
+Avoid lower-priority details: specific dates like July 28, "blocked from memory" until details resurfaced, maybe the exact model of van (black Chevy) unless crucial—probably not. Focus on the who, what, when, why (no charges), and impact (family, police).
+
+Check length as I go. Let's draft:
+
+In [current year], Coral Springs, Florida, authorities solved a 31-year-old disappearance when they found the remains of Jeff Klee—missing since 1977—in a submerged van in the C-14 canal during a March routine stolen vehicle sweep. DNA confirmed the remains, but investigators couldn’t determine how Klee died or if he was killed. 
+
+David Cusanelli, Klee’s last known companion, admitted placing Klee’s body in the van; his brother Carl helped push it into the canal. However, prosecutors declined charges. The Broward County State Attorney’s Office cited the 1980 expiration of the manslaughter statute of limitations and insufficient evidence for first-degree murder (which has no SOL), lacking proof of premeditation or that Klee’s death resulted from a criminal act. 
+
+Cusanelli, last seen with Klee on June 21, 1977, told authorities they argued over a former girlfriend, leading Klee to chase him to the canal. He claimed finding Klee with a split head and heavy bleeding, fleeing in fear, then later panicking and moving the body. He denied involvement in Klee’s death, as did his attorney, who called statements "taken out of context" as hypotheticals. Carl admitted pushing the van but said he didn’t know Klee was inside. Detectives noted a "definite confrontation" caused Klee’s death, and Cusanelli conceded throwing a rock—though he claimed not knowing how Klee fell. 
+
+Klee’s family was devastated: sister Laurel Steele called the no-charge announcement "a sad day" testing their faith, while mother Florence clutched a photo, silent. Coral Springs Police Chief Duncan Foster expressed frustration, saying Klee’s family love "has no time limits." The case remains open, with authorities and the family urging public tips from summer 1977.
+<seed:cot_budget_reflect>I have exhausted my token budget, and now I will start answering the question.</seed:cot_budget_reflect>
+
+FINAL_SUMMARY:
+In [current year], Coral Springs, Florida, authorities solved a 31-year-old disappearance when they found the remains of Jeff Klee—missing since 1977—in a van submerged in the C-14 canal during a routine March police sweep for stolen vehicles. DNA testing confirmed the remains, but investigators could not determine how Klee died or whether he was killed.  
+
+David Cusanelli, Klee’s best friend and the last person known to see him alive on June 21, 1977, admitted placing Klee’s body in the van; his brother Carl helped push it into the canal. However, prosecutors announced no charges against Cusanelli. The Broward County State Attorney’s Office cited the 1980 expiration of the statute of limitations for possible manslaughter charges as a primary reason, and noted insufficient evidence for first-degree murder (which has no statute of limitations), lacking proof of premeditation or that Klee’s death resulted from a criminal act.  
+
+Cusanelli told authorities he and Klee argued over a former girlfriend, leading Klee to chase him to the canal. He claimed finding Klee with a split head and heavy bleeding, fleeing in fear, then later panicking and moving the body. He denied involvement in Klee’s death, as did his attorney, who argued statements were “taken out of context” as hypotheticals. Carl admitted pushing the van but said he did not know Klee was inside. Detectives noted a “definite confrontation” caused Klee’s death, and Cusanelli conceded throwing a rock—though he claimed not knowing how Klee fell.  
+
+Klee’s family called the outcome devastating: sister Laurel Steele described it as “a sad day” testing their faith, while mother Florence clutched a photo, silent. Coral Springs Police Chief Duncan Foster expressed frustration, emphasizing Klee’s family love “has no time limits.” The case remains open, with authorities and the family urging public tips from summer 1977.
+
+
+DEMONSTRATION 2 — compress to approximately 300 words
+INPUT:
+In Copiapo, Chile, the 33 miners trapped inside a mine since August 5 were first told Friday they could be stuck underground for up to four months, though rescue officials also revealed a "Plan B" to potentially speed their liberation. Andre Sougarret, the state mining company’s mines manager, and government representative Jimena Matos stated a third probe reached the miners the previous night, with that bore hole forming the basis of Plan B—though specifics were not disclosed. Drilling on the primary rescue shaft, initially estimated to take four months, is set to begin this weekend, meaning even under the best-case scenario, the miners face an extended underground stay posing significant practical and psychological challenges.  
+
+To address these hurdles, Chile has turned to NASA, which confirmed Friday it was asked to provide nutritional and behavioral health support. A four-person team, including two physicians and a psychologist, is planning to travel to Chile next week. Michael Duncan, NASA’s lead on the effort, noted the agency’s long history of dealing with isolated environments, arguing space and underground experiences are comparable: "It’s an opportunity to bring the space-flight experience back down to the ground."  
+
+The miners, 2,300 feet below the surface, have worked to maintain their spirits—and those of their loved ones—evident in a Thursday video message. The 25-minute high-definition footage, shot with a helmet-lit camera, showed their 50-square-meter (about 540-square-foot) living space: some were heavily bearded, all stripped to the waist, and a thermometer read 29.5 degrees Celsius (about 85 degrees Fahrenheit), cooler than officials had estimated. The area included a latrine in a 1-meter-high (3.3 feet), 40-meter-long (about 130 feet) shaft section, a crate with dominoes, two first-aid boxes on a wall, and stretchers. Miners expressed gratitude, occasional humor, and calmness; one joked, "Oh, you’re sleeping on a box-spring bed" to a colleague sprawled on rocks. Another miner’s emotion cut through the tone: "Thank you to everybody," he said, his voice cracking. "I send you a big hug in the name of our Lord." Others urged, "Get us out of here soon." Family members who viewed the private screening described their loved ones as thin but healthy and in good spirits, with many crying during the video.  
+
+Medically, Health Minister Jaime Manalich reported each miner has lost an average of 22 pounds (10 kilograms) since being trapped three weeks ago, with dehydration remaining a threat. Additionally, at least nine miners are too overweight to fit through the proposed rescue shaft, and three or four show signs of anxiety or depression. Officials have advised the miners on keeping their limited living space clean, with the main cabin used for sleeping, washing, and praying. Their sole lifeline to the outside world is an 8-centimeter (3.2 inches) diameter tube, through which food, water, clothing, video and radio equipment, and other supplies are sent.
+
+STEP-BY-STEP REASONING:
+Got it, let's tackle this summary. First, I need to identify the key points from the source. The main event is the 33 miners trapped in Copiapo, Chile since August 5. 
+
+First, the initial situation: they were told they might be stuck for up to four months, but there's a Plan B involving a third probe that reached them the night before. The primary rescue shaft drilling starts this weekend, best case still extended time underground with practical/psychological challenges.
+
+Then, Chile getting help from NASA: four-person team (two docs, psychologist) next week, using space isolation experience since space and underground are comparable.
+
+Next, the miners' situation: 2300 ft below, video message Thursday showed their 50 sq m space—bearded, stripped, temp 29.5C (cooler than estimated). Had latrine, dominoes, first aid, stretchers. They were grateful, some humor, one emotional. Families said they're thin but healthy, good spirits.
+<seed:cot_budget_reflect>I have used 515 tokens, and there are 57 tokens remaining for use.</seed:cot_budget_reflect>
+
+
+Medical details: avg 22 lbs weight loss, dehydration threat. 9 too overweight for rescue shaft, 3-4 with anxiety/depression. Advising cleanliness, main cabin for sleep/wash/pray. Lifeline: 8cm tube for supplies.
+
+Now, need to condense this to 293-323 words, no extra info, just key facts. Let's structure:
+
+1. Trapped miners (33, Copiapo, Chile, since Aug 5) – initial update: up to 4 months stuck, Plan B (third probe reached them night before, specifics unclear). Primary shaft drilling starts weekend, best case still extended time (challenges: practical/psychological).
+
+2. NASA involvement: asked for nutrition/behavioral support; 4-person team (2 docs, psychologist) next week. Duncan notes space isolation experience comparable.
+
+3. Miners' condition: 2300 ft down, Thursday video showed 50 sq m space (bearded, stripped, 29.5C cooler than estimated). Amenities: latrine, dominoes, first aid, stretchers. Attitude: grateful, humor, one emotional. Families: thin but healthy, good spirits.
+
+4. Medical: avg 22 lbs weight loss, dehydration risk. 9 too overweight for rescue shaft, 3-4 anxiety/depression. Advised cleanliness, main cabin uses. Lifeline: 8cm tube for supplies.
+
+Check word count as I go. Let's draft:
+
+In Copiapo, Chile, 33 miners trapped since August 5 were told Friday they could be underground for up to four months, though rescue officials mentioned a "Plan B"—based on a third probe that reached them the previous night—potentially speeding their liberation. Drilling on the primary rescue shaft, initially estimated to take four months, starts this weekend, leaving the miners facing extended time underground with significant practical and psychological challenges.  
+
+To address these, Chile sought NASA’s help; the agency confirmed Friday it will provide nutritional and behavioral health support via a four-person team (two physicians, a psychologist) traveling next week. NASA’s lead, Michael Duncan, noted the agency’s experience with isolated environments, drawing parallels between space and underground experiences: "It’s an opportunity to bring the space-flight experience back down to the ground."  
+
+The miners, 2,300 feet below, maintained spirits in a Thursday video: their 50-square-meter living space had bearded men, some stripped, a thermometer reading 29.5°C (cooler than official estimates). Amenities included a latrine, dominoes, first-aid boxes, and stretchers. They expressed gratitude, humor (one joked about a "box-spring bed" of rocks), and emotion—one miner’s voice cracked as he thanked loved ones. Families viewing the video described them as thin but healthy, in good spirits, many crying.  
+
+Medically, Health Minister Jaime Manalich reported average 22-pound (10 kg) weight loss since trapping three weeks ago, with dehydration a threat. At least nine miners are too overweight for the rescue shaft, and 3–4 show anxiety or depression. Officials advised keeping the space clean, with the main cabin used for sleeping, washing, and praying. Their sole lifeline is an 8-centimeter tube for supplies, food, water, and communication.
+<seed:cot_budget_reflect>I have exhausted my token budget, and now I will start answering the question.</seed:cot_budget_reflect>
+
+FINAL_SUMMARY:
+In Copiapo, Chile, 33 miners trapped since August 5 were told Friday they could be underground for up to four months, though rescue officials cited a "Plan B"—based on a third probe that reached them the previous night—potentially speeding their liberation. Drilling on the primary rescue shaft, initially estimated to take four months, starts this weekend, leaving the miners facing extended time underground with significant practical and psychological challenges.  
+
+To address these, Chile secured NASA’s support; the agency confirmed Friday it would provide nutritional and behavioral health support via a four-person team (two physicians, a psychologist) traveling next week. NASA’s lead, Michael Duncan, noted the agency’s experience with isolated environments, drawing parallels between space and underground experiences: "It’s an opportunity to bring the space-flight experience back down to the ground."  
+
+The miners, 2,300 feet below, maintained spirits in a Thursday video: their 50-square-meter living space had bearded men, some stripped, a thermometer reading 29.5°C (cooler than official estimates). Amenities included a latrine, dominoes, first-aid boxes, and stretchers. They expressed gratitude, humor (one joked about a "box-spring bed" of rocks), and emotion—one miner’s voice cracked as he thanked loved ones. Families viewing the video described them as thin but healthy, in good spirits, many crying.  
+
+Medically, Health Minister Jaime Manalich reported average 22-pound (10 kg) weight loss since trapping three weeks ago, with dehydration a threat. At least nine miners are too overweight for the rescue shaft, and 3–4 show anxiety or depression. Officials advised keeping the space clean, with the main cabin used for sleeping, washing, and praying. Their sole lifeline is an 8-centimeter tube for supplies, food, water, and communication.
+
+
+DEMONSTRATION 3 — compress to approximately 300 words
+INPUT:
+Authorities in Argentina's Tierra del Fuego province denied entry to two cruise liners seeking to dock at the southern port of Ushuaia on Monday, incidents linked to the longstanding political dispute over the Falkland Islands (referred to in Argentina as Las Malvinas). The government cited a provincial law passed last August that bars ships engaged in "work related to the exploration and exploitation of natural resources or military vessels" within the Malvinas Islands basin on Argentina's continental platform. Both ships were registered in Bermuda, a British territory.  
+
+The first liner, the Star Princess, a 289-meter (nearly 950-foot) Carnival Corp. vessel with a capacity of 2,600 passengers, had departed Rio de Janeiro, Brazil, on February 18 on a 14-night South America cruise. A Carnival spokeswoman, Julie Benson, stated the ship was denied entry because it had previously called at Stanley, the Falklands' capital. The alteration to the itinerary left passengers disappointed, and the company refunded the cost of shore excursions; the ship is now proceeding to its next port, Punta Arenas, Chile. Benson noted the Star Princess had docked in Ushuaia several times in recent years.  
+
+The second liner, P&O Cruises' Adonia—part of Carnival Corporation and on a South American tour from Southampton, England with an almost entirely British passenger contingent—received a similar refusal. CNN contributor Robin Oakley, aboard the Adonia as a lecturer, reported the ship was turned away Monday morning by the local mayor, who cited its visit to the Falklands two days prior. The decision to deny both ships was made following "express instructions" from Tierra del Fuego Gov. Fabiana Rios, according to the state-run Telam news agency; ship authorities were informed as they sailed through the Beagle Canal near Chile's Port Williams.  
+
+Last month, the Star Princess itself was denied entry to Stanley, the Falklands' port, after 74 of its 3,652 passengers and crew fell ill following a stop in Ushuaia; Falklands authorities attributed the denial to the health issue.  
+
+Ushuaia's tourism board president, Marcelo Lieti, disputed the link to the Malvinas dispute, telling Telam Monday's incident "had nothing to do with the Malvinas subject" and urging careful handling, as "tourist ships have nothing to do with the request for sovereignty."  
+
+In Buenos Aires, however, intellectuals criticized the government's approach. Journalist Jorge Latana argued the policy "is distancing us from the Malvinas instead of getting us nearer," noting public perceptions of the islands as uninhabited "magical thinking" that ignored their 3,000 mostly British-descended residents. Philosopher Santiago Kovadloff added that Argentina should respect the Falklanders' right to determine their own identity, calling the government's stance "half schizophrenic" for attacking Britain over the Malvinas while favoring English-owned businesses exploiting Argentina's natural resources.  
+
+The Falklands dispute dates to 1982, when Argentina invaded the islands, sparking a two-month undeclared war with Britain that Argentina lost; Argentina has continued to press its sovereignty claim ever since. The incidents with the cruise liners reflect the ongoing tensions, with differing views within Argentina on how best to pursue that claim.
+
+STEP-BY-STEP REASONING:
+Got it, let's tackle this summary. First, I need to identify the most important facts from the source. The main event is Argentina's Tierra del Fuego province denying entry to two cruise liners (Star Princess and Adonia) in Ushuaia, linked to the Falkland Islands dispute. 
+
+First, the context: Falkland Islands (Las Malvinas) dispute—Argentina claims sovereignty, 1982 war with UK. Then, the immediate incident: two Bermuda-registered cruise ships denied entry Monday. The reason given by Argentina: provincial law from last August barring ships related to Malvinas resource exploration/exploitation or military vessels. 
+
+Details on each ship: Star Princess (Carnival Corp.) had called at Stanley (Falklands capital) before; 2,600 passengers, from Rio, now going to Punta Arenas, refunds for excursions. Adonia (P&O, part of Carnival) had British passengers, visited Falklands two days prior, turned away by mayor per Gov. Rios' instructions via Telam. 
+
+Then, other points: Last month, Star Princess was denied Stanley entry due to health issue (74 passengers/crew sick after Ushuaia). Ushuaia tourism board president says it's not Malvinas-related, urges care. Buenos Aires intellectuals criticize: Jorge Latana says policy distances from Malvinas, ignores 3k British-descended residents; Santiago Kovadloff calls it "half schizophrenic"—attacks UK but favors English-owned businesses exploiting Argentina's resources.
+<seed:cot_budget_reflect>I have used 513 tokens, and there are 0 tokens remaining for use.</seed:cot_budget_reflect>
+
+FINAL_SUMMARY:
+On Monday, authorities in Argentina's Tierra del Fuego province denied entry to two cruise liners—Carnival Corp.'s Star Princess and P&O Cruises' Adonia—seeking to dock at Ushuaia, a southern port, incidents tied to the longstanding Falkland Islands (Las Malvinas) sovereignty dispute. The government cited a provincial law passed last August that bars ships engaged in "work related to the exploration and exploitation of natural resources or military vessels" within the Malvinas Islands basin on Argentina's continental platform; both ships were registered in Bermuda, a British territory.  
+
+The Star Princess, a 289-meter vessel with 2,600 passenger capacity, had departed Rio de Janeiro on a 14-night cruise and previously called at Stanley, the Falklands' capital. Passengers were disappointed, and Carnival refunded shore excursion costs; the ship proceeded to Punta Arenas, Chile. The Adonia, part of Carnival Corporation and on a South American tour from Southampton with mostly British passengers, was turned away Monday morning by the local mayor after a recent Falklands visit, per "express instructions" from Gov. Fabiana Rios, per state-run Telam.  
+
+Last month, the Star Princess was denied entry to Stanley after 74 of its 3,652 passengers/crew fell ill following a Ushuaia stop, Falklands authorities blaming health issues. Ushuaia's tourism board president, Marcelo Lieti, disputed a Malvinas link, saying "tourist ships have nothing to do with the request for sovereignty."  
+
+In Buenos Aires, intellectuals criticized the policy: Journalist Jorge Latana argued it "distances us from the Malvinas" by ignoring the islands' 3,000 mostly British-descended residents, while philosopher Santiago Kovadloff called it "half schizophrenic"—attacking Britain over Malvinas yet favoring English-owned businesses exploiting Argentina's resources. The dispute dates to 1982, when Argentina's invasion sparked a two-month war with Britain (lost by Argentina); the cruise ship incidents reflect ongoing tensions and divided Argentine views on pursuing sovereignty.
+
+
+DEMONSTRATION 4 — compress to approximately 300 words
+INPUT:
+Saana Nyassi, a 20-year-old midfielder for the Seattle Sounders soccer team, considers himself lucky: not only does he have a talent for soccer that has taken him from his native Gambia to the United States, but he also survived malaria, a disease he describes as "a killer" that left him with loss of appetite, constant vomiting, and a high fever. Before leaving Gambia, Nyassi contracted malaria, a fate that befalls nearly a million people annually—mostly young children and pregnant women in sub-Saharan Africa—according to the National Institutes of Health. While malaria was eradicated in the United States, it persists in Africa, Asia, and other developing regions, fueling efforts to combat it through prevention and treatment.  
+
+On Saturday, ahead of the Sounders’ game against the San Jose Earthquakes, Nyassi and his teammates will mark World Malaria Day by donating $20,000 to Nothing But Nets, a U.N. Foundation campaign that provides anti-malarial bed nets to impoverished areas worldwide. Each net, which costs about $10 to buy and deliver, prevents mosquitoes from biting sleeping individuals and transmitting the malaria parasite. The effort is part of a broader fight supported by organizations like the Bill and Melinda Gates Foundation, which has dedicated over $1 billion to malaria control. Dr. Regina Rabinovich, director of Infectious Diseases Development at the Gates Foundation and a past malaria survivor herself, notes the challenge is vast but emphasizes a multi-pronged approach: bed nets to avoid bites, insecticides to reduce mosquito populations, and treatment to prevent further spread. "It's the combination of prevention and treatment that's effective," she says, adding that a future vaccine will complement these tools.  
+
+A potential vaccine is being developed at the Seattle Biomedical Research Institute, where Dr. Stefan Kappe uses funds from the Gates Foundation to genetically engineer the malaria parasite. His work targets the liver stage of infection: the parasite multiplies in the liver before moving to the blood, where it causes symptoms. Kappe’s vaccine aims to block this transition, a strategy he calls "you-can-check-in-but-cannot-check-out"—training the immune system to recognize and eliminate the parasite before it reaches the blood. In mouse studies, the vaccine has proven 100% effective, and Kappe is now preparing for human trials. Success could break transmission: if the parasite can’t infect the liver, humans don’t become sick, and mosquitoes biting them can’t spread the disease to others.  
+
+For Nyassi, his own survival and rising soccer career have deepened his commitment to helping others. "I was born poor," he says. "But things are getting better for me. I have to look back at the other ones." Until a vaccine is widely available, efforts like bed nets and treatment will remain critical, but Nyassi and researchers like Kappe hope to one day end malaria’s toll—ensuring fewer people face the nightmare he once survived.
+
+STEP-BY-STEP REASONING:
+Got it, let's tackle this summary. First, I need to identify the key facts. The main subject is Saana Nyassi, a 20-year-old Seattle Sounders midfielder from Gambia. He survived malaria, which he calls a "killer," with symptoms like loss of appetite, vomiting, high fever. Malaria affects nearly a million annually, mostly kids and pregnant women in sub-Saharan Africa; eradicated in the US but persists elsewhere.
+
+Next, he and teammates are donating $20k to Nothing But Nets on World Malaria Day ahead of a game. Nothing But Nets provides bed nets ($10 each) to prevent mosquito bites. The Gates Foundation has given over $1 billion to malaria control. Dr. Regina Rabinovich from Gates says a multi-pronged approach—bed nets, insecticides, treatment—is key, plus a future vaccine.
+
+Then, Seattle Biomedical's Dr. Stefan Kappe is developing a vaccine with Gates funds. Targets liver stage (parasite multiplies there before blood symptoms). Mouse studies 100% effective, moving to human trials. Success could stop transmission.
+
+Nyassi's motivation: born poor, now better, wants to help others. Until vaccine, current efforts (nets, treatment) are critical; hope to end malaria's toll.
+<seed:cot_budget_reflect>I have used 517 tokens, and there are 5 tokens remaining for use.</seed:cot_budget_reflect>
+
+FINAL_SUMMARY:
+Saana Nyassi, a 20-year-old midfielder for the Seattle Sounders, credits his survival of malaria—a disease he describes as "a killer" that left him with loss of appetite, vomiting, and a high fever—with both luck and his talent, which took him from Gambia to the United States. Malaria, which befalls nearly a million people annually (mostly young children and pregnant women in sub-Saharan Africa) and persists in Africa, Asia, and developing regions, was eradicated in the U.S. On World Malaria Day ahead of the Sounders’ game against the San Jose Earthquakes, Nyassi and his teammates will donate $20,000 to Nothing But Nets, a U.N. Foundation campaign providing anti-malarial bed nets (costing $10 each to buy and deliver) to impoverished areas to prevent mosquito-transmitted malaria. This effort is part of broader global fights, including the Bill and Melinda Gates Foundation, which has dedicated over $1 billion to malaria control; Dr. Regina Rabinovich, the foundation’s Infectious Diseases Development director and a past malaria survivor, emphasizes a multi-pronged approach: bed nets, insecticides, treatment, and a future vaccine. At the Seattle Biomedical Research Institute, Dr. Stefan Kappe uses Gates Foundation funds to develop a vaccine targeting the liver stage of malaria infection (where the parasite multiplies before moving to the blood, causing symptoms); mouse studies show 100% effectiveness, and human trials are planned—success could end transmission by blocking the parasite’s move to the blood. Nyassi, who was born poor but now has a successful career, is motivated to help others: "I have to look back at the other ones." Until a vaccine is widespread, efforts like bed nets and treatment remain critical, but Nyassi and researchers hope to end malaria’s toll, ensuring fewer face the nightmare he survived.
+
+
+DEMONSTRATION 5 — compress to approximately 300 words
+INPUT:
+In 2002, Pam Koner, a 57-year-old single mother of two from Hastings-on-Hudson, New York, was profoundly moved by a New York Times photograph of an 8-year-old girl in Pembroke, Illinois, who was eating pasta and a boiled chicken bone from a torn mattress, a image that symbolized the deep poverty in her rural community. This experience inspired Koner to take action, leading her to declare, "We're going to do something as a family" to her daughters. Over the next seven years, her determination evolved into Family-to-Family, a nonprofit organization that connects more than 600 sponsor and recipient families across 13 communities nationwide.  
+
+The project began with Koner contacting an outreach worker in Pembroke, who identified food as the most critical need; she then enlisted neighbors and parents from her childcare business, who started sending monthly boxes of food and basic household items to the town’s neediest families. Koner notes that donors were eager to participate in "something so little as shopping, packing and sending a box," and through these monthly donations, the organization has provided nearly 800,000 meals to struggling families across the country. To protect privacy, sponsor and recipient communities are kept distant—for example, an Atlanta chapter helps Kentucky families, or Florida families assist Navajo families in New Mexico. Beyond material support, families exchange letters, photographs, and stories about cultural traditions and events, creating a "shared learning experience" where children gain firsthand insight into different lifestyles, such as Navajo families living in barren landscapes with no electricity or running water; Koner believes this fosters a broader understanding of the world.  
+
+The economic downturn prompted Family-to-Family to expand its outreach, including sponsoring Bedford-Stuyvesant, a predominantly working-class African-American community in Brooklyn, New York—the organization’s only urban site. Here, sponsor families use online tools like PayPal, and a local food pantry buys, boxes, and distributes the food directly. Koner was also surprised to find need in her own Hastings-on-Hudson community, which she describes as "middle-class to upper-middle-class." To address privacy concerns with nearby families (some children attended the same schools), donations for the 11 sponsored Hastings families are labeled with alphabet letters, ensuring sponsors have no identifiable information about recipients.  
+
+Despite economic challenges, Koner reports growing enthusiasm for sponsorship, with new chapters launched rather than participants dropping out. She attributes this to heightened awareness of tough times, noting that even struggling communities prioritize giving: "There are plenty of communities where families are struggling themselves, but will keep this as part of their budget." Koner emphasizes that "we’re all affected" by economic uncertainty, arguing that "we need to be there for each other and we need to share. We’re meant to be connected." Family-to-Family continues to connect sponsors and recipients nationally, blending material support with meaningful cultural exchange to combat hunger and foster community.
+
+STEP-BY-STEP REASONING:
+Got it, let's tackle this summary. First, I need to identify the key points from the source. Start with the origin: Pam Koner in 2002, moved by a NYT photo of a poor girl in Illinois, inspired her to start something with her family. Then, the evolution into Family-to-Family, a nonprofit connecting sponsor and recipient families across 13 communities nationwide over 7 years.
+
+Next, how it began: contacted an outreach worker in Pembroke, found food was the critical need, enlisted neighbors/childcare parents to send monthly food/household item boxes. Provided nearly 800k meals. Privacy: sponsor and recipient communities are distant (examples like Atlanta-Kentucky, Florida-Navajo NM). Beyond material support: letters, photos, stories, cultural exchange—kids learn about different lifestyles (Navajo with no electricity/water), fosters broader understanding.
+
+Then, expansion due to economic downturn: added Bedford-Stuyvesant (Brooklyn, only urban site)—sponsors use PayPal, local pantry buys/boxes/distributes. Also, found need in her own Hastings community (middle-to upper-middle-class); addressed privacy with alphabet labels for 11 families (kids in same schools).
+<seed:cot_budget_reflect>I have used 515 tokens, and there are 57 tokens remaining for use.</seed:cot_budget_reflect>
+
+
+Despite challenges, growing enthusiasm: new chapters, not dropouts. Reason: heightened awareness of tough times; even struggling communities give. Koner's belief: we're all affected, need to share/connect. Mission: blend material support and cultural exchange to combat hunger/foster community.
+
+Now, need to condense to 285-315 words, keep key facts, remove lower-priority details. Let's structure:
+
+1. Origin: Koner 2002, inspired by NYT photo of Illinois girl, decided family action → evolved into Family-to-Family (nonprofit) over 7 years, connects 600+ sponsor/recipient families across 13 US communities.
+
+2. Start: Contacted Pembroke outreach worker, identified food need; enlisted neighbors/childcare parents to send monthly food/household boxes. ~800k meals provided. Privacy: sponsor-recipient communities distant (examples).
+
+3. Beyond material: Letters, photos, stories, cultural exchange (e.g., Navajo kids learning about barren landscapes/no utilities); fosters understanding.
+
+4. Expansion: Economic downturn led to adding Bedford-Stuyvesant (Brooklyn, only urban)—uses PayPal, local pantry distributes. Also, Hastings (own community, middle-to upper-middle-class) with alphabet labels for privacy (11 families).
+
+5. Growth: Despite challenges, new chapters, not dropouts. Due to awareness of tough times; even struggling communities give. Koner: we're all affected, need to share/connect. Mission: material support + cultural exchange to combat hunger/foster community.
+
+Check word count. Let's draft:
+
+In 2002, Pam Koner, a 57-year-old single mother from Hastings-on-Hudson, New York, was inspired by a New York Times photograph of an 8-year-old Illinois girl eating from a torn mattress, symbolizing rural poverty. This led her to declare, "We're going to do something as a family," evolving over seven years into Family-to-Family, a nonprofit connecting over 600 sponsor and recipient families across 13 U.S. communities.  
+
+Starting with Pembroke, Illinois, Koner contacted an outreach worker who identified food as the critical need; she enlisted neighbors and childcare parents to send monthly boxes of food and household items. The organization has provided nearly 800,000 meals nationwide. To protect privacy, sponsor and recipient communities are distant—e.g., Atlanta chapters help Kentucky families, or Florida families assist Navajo communities in New Mexico. Beyond material support, families exchange letters, photos, and stories about cultural traditions (e.g., Navajo life without electricity or running water), creating a "shared learning experience" Koner believes fosters broader world understanding.  
+
+The economic downturn expanded outreach to Bedford-Stuyvesant (Brooklyn’s only urban site), where sponsors use PayPal and a local pantry distributes food. Koner also addressed unexpected need in her own middle-to upper-middle-class Hastings community, using alphabet-labeled donations for 11 families to protect privacy (some children attended the same schools).  
+
+Despite economic challenges, Family-to-Family has seen growing enthusiasm, with new chapters launching instead of participants dropping out. Koner attributes this to heightened awareness of tough times, noting even struggling communities prioritize giving: "We’re all affected" by uncertainty, she argues, "we need to be there for each other and share." The organization continues blending material support with cultural exchange to combat hunger and foster community.
+<seed:cot_budget_reflect>I have exhausted my token budget, and now I will start answering the question.</seed:cot_budget_reflect>
+
+FINAL_SUMMARY:
+In 2002, Pam Koner, a 57-year-old single mother from Hastings-on-Hudson, New York, was profoundly moved by a New York Times photograph of an 8-year-old Illinois girl eating from a torn mattress, symbolizing rural poverty. This inspired her to declare, "We're going to do something as a family," leading to the evolution of Family-to-Family over seven years: a nonprofit connecting over 600 sponsor and recipient families across 13 U.S. communities.  
+
+Starting with Pembroke, Illinois, Koner contacted an outreach worker who identified food as the critical need; she enlisted neighbors and childcare parents to send monthly boxes of food and household items, providing nearly 800,000 meals nationwide. To protect privacy, sponsor and recipient communities are kept distant—e.g., Atlanta chapters aid Kentucky families, or Florida families assist Navajo communities in New Mexico. Beyond material support, families exchange letters, photos, and stories about cultural traditions (e.g., Navajo life without electricity or running water), creating a "shared learning experience" Koner believes fosters broader world understanding.  
+
+The economic downturn expanded outreach to Bedford-Stuyvesant (Brooklyn’s only urban site), where sponsors use PayPal and a local pantry distributes food. Koner also addressed unexpected need in her own middle-to upper-middle-class Hastings community, using alphabet-labeled donations for 11 families to safeguard privacy (some children attended the same schools).  
+
+Despite challenges, Family-to-Family has seen growing enthusiasm, with new chapters launching instead of participants dropping out. Koner attributes this to heightened awareness of tough times, noting even struggling communities prioritize giving: "We’re all affected" by economic uncertainty, she argues, "we need to be there for each other and share." The organization continues blending material support with cultural exchange to combat hunger and foster community.
+
+
+NEW INPUT:
+{{NEW_INPUT}}

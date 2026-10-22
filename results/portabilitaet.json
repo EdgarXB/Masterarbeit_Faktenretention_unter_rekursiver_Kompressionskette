@@ -1,0 +1,49 @@
+{
+  "relocated_package": true,
+  "original_project_access_blocked": true,
+  "original_v1_and_v2_package_access_blocked": true,
+  "network_blocked": true,
+  "checks": [
+    {
+      "command": [
+        "01_prepare.py"
+      ],
+      "passed": true
+    },
+    {
+      "command": [
+        "02_demonstrations.py"
+      ],
+      "passed": true
+    },
+    {
+      "command": [
+        "03_generate.py"
+      ],
+      "passed": true
+    },
+    {
+      "command": [
+        "04_evaluate.py"
+      ],
+      "passed": true
+    },
+    {
+      "command": [
+        "05_analyze.py",
+        "--only",
+        "hauptexperiment_01_qa_faktenretention"
+      ],
+      "passed": true
+    },
+    {
+      "command": [
+        "05_analyze.py",
+        "--only",
+        "04_LLM_Scorervergleich"
+      ],
+      "passed": true
+    }
+  ],
+  "actual_generation_requests": 0
+}

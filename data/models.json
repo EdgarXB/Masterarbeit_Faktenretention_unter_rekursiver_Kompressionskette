@@ -1,0 +1,14 @@
+{
+  "summary": {
+    "name": "thesis-seed:v1",
+    "digest": "7a66a2f466bf48fdafa7004a7975a7f5fac6e667a6de7d01751aacb98b3f387c"
+  },
+  "facts": {
+    "name": "thesis-gemma:v1",
+    "digest": "6316f0629137b426c9d9b853ffc4c8209589f30ee39aebede6285096c0ff47e7"
+  },
+  "qa": {
+    "name": "thesis-qwen38-qa:v1",
+    "digest": "d80421b9191aff0d4d8ea0911068452f11f3963e3e282c6b9d778932c4b268b3"
+  }
+}

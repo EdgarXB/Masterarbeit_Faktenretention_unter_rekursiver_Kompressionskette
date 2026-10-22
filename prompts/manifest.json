@@ -1,0 +1,201 @@
+{
+  "created_at_utc": "2026-08-28T20:45:44Z",
+  "status": "final demonstration-only prompt export",
+  "new_input_placeholder": "{{NEW_INPUT}}",
+  "prompt_layer": "model-agnostic user/content prompt before the thesis-seed-specific seed_raw wrapper",
+  "methods": {
+    "auto_cot": {
+      "source_demonstration_bank": "auto_cot_selection/auto_cot_demonstrations.json",
+      "source_demonstration_bank_sha256": "7fb383b77088077fe816ab42077f28adb1ba9ce8c55561d173732c703304de75",
+      "stages": {
+        "500": {
+          "path": "final_prompts/auto_cot_500.txt",
+          "sha256": "72691048cb328f4995e1365a76aa61d3156193abecc87cb46c1af02f4870765b",
+          "prompt_word_count_without_new_input": 9021,
+          "ordered_demonstration_ids": [
+            "train:11239:500",
+            "train:17748:500",
+            "train:4963:500",
+            "train:7253:500",
+            "train:20941:500"
+          ],
+          "demonstration_count": 5
+        },
+        "300": {
+          "path": "final_prompts/auto_cot_300.txt",
+          "sha256": "19bb6492d572e356dbfc44a372f57f662f14980ed0b2e891535064a5b36a9de6",
+          "prompt_word_count_without_new_input": 6070,
+          "ordered_demonstration_ids": [
+            "train:23084:300",
+            "train:15317:300",
+            "train:13531:300",
+            "train:4963:300",
+            "train:10522:300"
+          ],
+          "demonstration_count": 5
+        },
+        "150": {
+          "path": "final_prompts/auto_cot_150.txt",
+          "sha256": "35ab245a0250bbe58b19bcee2a7178d0434b73bb3c39a000f1a15346c45d99a3",
+          "prompt_word_count_without_new_input": 3533,
+          "ordered_demonstration_ids": [
+            "train:4963:150",
+            "train:4270:150",
+            "train:20941:150",
+            "train:17748:150",
+            "train:10522:150"
+          ],
+          "demonstration_count": 5
+        },
+        "75": {
+          "path": "final_prompts/auto_cot_75.txt",
+          "sha256": "feffb516be0c099399a5275afe20aafb28e22004af6c56cfbd76c053828cb50a",
+          "prompt_word_count_without_new_input": 3328,
+          "ordered_demonstration_ids": [
+            "train:3679:75",
+            "train:20941:75",
+            "train:12772:75",
+            "train:4693:75",
+            "train:13700:75"
+          ],
+          "demonstration_count": 5
+        }
+      }
+    },
+    "automate_cot": {
+      "source_demonstration_bank": "automate_cot_selection/automate_cot_demonstrations.json",
+      "source_demonstration_bank_sha256": "16fd762b51a2a86d76ce42cc3191798fde21271ba57d4f8a778a7eb5a87a6f98",
+      "stages": {
+        "500": {
+          "path": "final_prompts/automate_cot_500.txt",
+          "sha256": "1ea9d18411decde16a7889670f4b3a8ec152b56a5c2261403b4d507c1d2afdc1",
+          "prompt_word_count_without_new_input": 10440,
+          "ordered_demonstration_ids": [
+            "train:9633:500",
+            "train:18023:500",
+            "train:8496:500",
+            "train:10522:500",
+            "train:14119:500"
+          ],
+          "demonstration_count": 5
+        },
+        "300": {
+          "path": "final_prompts/automate_cot_300.txt",
+          "sha256": "bfc1df5f389292ee283267569d256ab0ffaa395547278c0149539dd7c1d1ae71",
+          "prompt_word_count_without_new_input": 6626,
+          "ordered_demonstration_ids": [
+            "train:4219:300",
+            "train:13143:300",
+            "train:25017:300",
+            "train:3206:300",
+            "train:8034:300"
+          ],
+          "demonstration_count": 5
+        },
+        "150": {
+          "path": "final_prompts/automate_cot_150.txt",
+          "sha256": "b506203e3e1403cd89468a00219152e618997247d01b39f98a2a53b477ac7d38",
+          "prompt_word_count_without_new_input": 4122,
+          "ordered_demonstration_ids": [
+            "train:15004:150",
+            "train:10352:150",
+            "train:11138:150",
+            "train:25017:150",
+            "train:7856:150"
+          ],
+          "demonstration_count": 5
+        },
+        "75": {
+          "path": "final_prompts/automate_cot_75.txt",
+          "sha256": "31160ebf6d682f02a4cf9588898ace969592534083c26944aa3622c1894118cb",
+          "prompt_word_count_without_new_input": 3061,
+          "ordered_demonstration_ids": [
+            "train:23615:75",
+            "train:6726:75",
+            "train:11138:75",
+            "train:5601:75",
+            "train:3679:75"
+          ],
+          "demonstration_count": 5
+        }
+      }
+    },
+    "few_shot_cot": {
+      "source_demonstration_bank": "experiments/autocot_automatecot_100/few_shot_cot/five_shot_demonstrations.json",
+      "source_demonstration_bank_sha256": "459452cd6095ebf097d1ba1d16c49e99919265324a831c230c0646704fd5f6e8",
+      "source_prompt_manifest": "experiments/autocot_automatecot_100/few_shot_cot/manifest.json",
+      "source_prompt_manifest_sha256": "2ab63c521e18a22c695e020e86470f10d50622dc4db1b1b0448974fefb9bdbf0",
+      "stages": {
+        "500": {
+          "path": "experiments/autocot_automatecot_100/final_prompts/few_shot_cot_500.txt",
+          "sha256": "36c3a63cfeb9a52207f1e30c692632e7be7fef6603adf16dd891d65559b8ea3a",
+          "prompt_word_count_without_new_input": 7290,
+          "ordered_demonstration_ids": [
+            "user-five-shot:17748:500",
+            "user-five-shot:7253:500",
+            "user-five-shot:4963:500",
+            "user-five-shot:8496:500",
+            "user-five-shot:9633:500"
+          ],
+          "demonstration_count": 5,
+          "accepted_output_interval": [
+            475,
+            525
+          ]
+        },
+        "300": {
+          "path": "experiments/autocot_automatecot_100/final_prompts/few_shot_cot_300.txt",
+          "sha256": "614e67cc59ba446f87b75de4506d5fc5d1a28f22d48c0a13073c6466c7d02638",
+          "prompt_word_count_without_new_input": 4579,
+          "ordered_demonstration_ids": [
+            "user-five-shot:17748:300",
+            "user-five-shot:7253:300",
+            "user-five-shot:4963:300",
+            "user-five-shot:8496:300",
+            "user-five-shot:9633:300"
+          ],
+          "demonstration_count": 5,
+          "accepted_output_interval": [
+            285,
+            315
+          ]
+        },
+        "150": {
+          "path": "experiments/autocot_automatecot_100/final_prompts/few_shot_cot_150.txt",
+          "sha256": "06beed95631d65a3547e3b1f044bfc65b82ecb33089cb06ab5d5bcc5a5c2f33d",
+          "prompt_word_count_without_new_input": 2703,
+          "ordered_demonstration_ids": [
+            "user-five-shot:17748:150",
+            "user-five-shot:7253:150",
+            "user-five-shot:4963:150",
+            "user-five-shot:8496:150",
+            "user-five-shot:9633:150"
+          ],
+          "demonstration_count": 5,
+          "accepted_output_interval": [
+            142,
+            158
+          ]
+        },
+        "75": {
+          "path": "experiments/autocot_automatecot_100/final_prompts/few_shot_cot_75.txt",
+          "sha256": "2369bd54f19684767b077bf65d69362b662b9c27d0800435b74151aa362612a5",
+          "prompt_word_count_without_new_input": 1565,
+          "ordered_demonstration_ids": [
+            "user-five-shot:17748:75",
+            "user-five-shot:7253:75",
+            "user-five-shot:4963:75",
+            "user-five-shot:8496:75",
+            "user-five-shot:9633:75"
+          ],
+          "demonstration_count": 5,
+          "accepted_output_interval": [
+            71,
+            79
+          ]
+        }
+      }
+    }
+  },
+  "updated_at_utc": "2026-09-03T21:05:30Z"
+}

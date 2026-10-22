@@ -1,0 +1,12 @@
+{
+  "source": "frozen",
+  "n_articles": 100,
+  "summary_positions": 2400,
+  "qa_positions": 48000,
+  "bootstrap_draws": 10000,
+  "seed": 32,
+  "unit": "article",
+  "new_model_calls": 0,
+  "human_validation": "historical ratings only in frozen detailed analysis",
+  "regression_bootstrap": "historical detailed analysis in 05_analyze; not estimated from a mini test"
+}

@@ -1,0 +1,109 @@
+system
+{{- $thinking_budget := -1 }}{{ $interval := 512 }}{{ $use_json_tooldef := false }}
+{{- if .System }}
+{{ .System }}
+{{- else }}
+You are Doubao, a helpful AI assistant.
+{{- end }}
+{{- if .Tools -}}
+  You may call one or more functions to assist with the user query.
+{{- if $use_json_tooldef }}
+
+Tool List:
+You are authorized to use the following tools (described in JSON Schema format). Before performing any task, you must decide how to call them based on the descriptions and parameters of these tools.
+{{ .Tools | json }}
+{{ else }}
+{{ range .Tools }}
+
+Function
+def {{ .Function.Name }}(
+  {{- $comma := false }}
+  {{- range $name, $prop := .Function.Parameters.Properties }}
+    {{- if $comma }},{{ end }}{{ $comma = true }}
+    {{- $name }}: {{ $prop | toTypeScriptType }}
+  {{- end }}):
+    {{ `"""` }}
+    {{ .Function.Description }}
+
+    {{ if .Function.Parameters.Properties }}
+    Args:
+    {{- range $name, $prop := .Function.Parameters.Properties }}
+    -  {{ $name }} ({{ $prop | toTypeScriptType }}): {{ $prop.Description }}
+    {{- end }}
+    {{- end }}
+    {{ `"""` }}
+
+{{ end }}
+{{ end }}
+工具调用请遵循如下格式:
+<seed:tool_call>
+<function=example_function_name>
+<parameter=example_parameter_1>value_1</parameter>
+<parameter=example_parameter_2>This is the value for the second parameter
+that can span
+multiple lines</parameter>
+</function>
+</seed:tool_call>
+<seed:eos>
+{{ end }}
+
+{{- if .IsThinkSet }}
+  {{- if .Think }}
+    {{- $thinking_budget = 16384 }}
+    {{- $interval = 1024 }}
+  {{- else }}
+    {{- $thinking_budget = 0 }}
+  {{- end }}
+  {{- if eq .ThinkLevel "low" }}
+    {{- $thinking_budget = 0 }}
+  {{- else if eq .ThinkLevel "high" }}
+    {{- $thinking_budget = 16384 }}
+    {{- $interval = 1024 }}
+  {{- else if eq .ThinkLevel "medium" }}
+    {{- $thinking_budget = 2048 }}
+    {{- $interval = 512 }}
+  {{- end }}
+{{- end }}
+
+{{- if ne $thinking_budget -1 }}
+<seed:bos>system
+{{- if eq $thinking_budget 0 }}
+You are an intelligent assistant that can answer questions in one step without the need for reasoning and thinking, that is, your thinking budget is 0. Next, please skip the thinking process and directly start answering the user's questions.
+{{ else }}
+You are an intelligent assistant with reflective ability. In the process of thinking and reasoning, you need to strictly follow the thinking budget, which is {{ $thinking_budget }}. That is, you need to complete your thinking within {{ $thinking_budget }} tokens and start answering the user's questions. You will reflect on your thinking process every {{ $interval }} tokens, stating how many tokens have been used and how many are left.
+{{ end }}
+<seed:eos>
+{{ end }}
+
+{{- range $i, $_ := .Messages }}
+{{- $last := eq (len (slice $.Messages $i)) 1}}
+
+{{- if eq .Role "assistant" }}
+<seed:bos>{{ .Role }}
+{{- if .Thinking }}
+<seed:think>{{ .Thinking }}</seed:think>
+{{- end }}
+{{ .Content }}
+{{- if .ToolCalls }}
+<seed:tool_call>
+{{- range $i, $_ := .ToolCalls }}{"name": "{{ .Function.Name }}", "arguments": {{ .Function.Arguments }}{{ end -}}
+</seed:tool_call>
+{{- end }}{{/* .ToolCalls */}}
+<seed:eos>
+{{- end }}{{/* assistant */}}
+
+{{- if or (eq .Role "user") (eq .Role "tool") }}
+<seed:bos>{{ .Role }}
+{{ .Content }}
+<seed:eos>
+{{- end }}{{/* user */}}
+
+{{- if and $last (ne .Role "assistant") }}
+<seed:bos>assistant
+{{- if eq $thinking_budget 0 }}
+<seed:think><seed:cot_budget_reflect>The current thinking budget is 0, so I will directly start answering the question.</seed:cot_budget_reflect>
+</seed:think>
+### Answer:
+{{ end }}
+{{- end }}
+{{- end }}{{/* range */}}

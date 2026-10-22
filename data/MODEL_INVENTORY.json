@@ -1,0 +1,51 @@
+{
+  "included_evaluation_models": [
+    {
+      "cache_folder": "models--distilroberta-base",
+      "revisions": [
+        "fb53ab8802853c8e4fbdbcd0529f21fc6f459b2b"
+      ]
+    },
+    {
+      "cache_folder": "models--tals--albert-xlarge-vitaminc-mnli",
+      "revisions": [
+        "3082ba54344bd9ddada2be1c5e9b4131721d2a5d"
+      ]
+    },
+    {
+      "cache_folder": "models--sentence-transformers--all-MiniLM-L6-v2",
+      "revisions": [
+        "c9745ed1d9f207416be6d2e6f8de32d1f16199bf"
+      ]
+    }
+  ],
+  "excluded_ollama_weights": [
+    {
+      "model": "thesis-seed",
+      "mediaType": "application/vnd.ollama.image.model",
+      "digest": "sha256:2d9f3c32a61f2668e012708be7ec04e753e35e366f87b9e4bce89f4d073cfc16",
+      "size": 21762149536,
+      "from": "modelscope.cn/unsloth/Seed-OSS-36B-Instruct-GGUF:Q4_K_M"
+    },
+    {
+      "model": "thesis-gemma",
+      "mediaType": "application/vnd.ollama.image.model",
+      "digest": "sha256:280af6832eca23cb322c4dcc65edfea98a21b8f8ab07dc7553bd6f7e6e7a3313",
+      "size": 19868969920
+    },
+    {
+      "model": "thesis-qwen38-qa",
+      "mediaType": "application/vnd.ollama.image.model",
+      "digest": "sha256:31629f53165ab6a7dad8c9847dcfd1fdf55829dac1e6e748f4a68581b0033d34",
+      "size": 18973870432,
+      "from": "hf.co/ggml-org/Qwen3.8-27B-GGUF:Q4_K_M"
+    },
+    {
+      "model": "thesis-qwen38-qa",
+      "mediaType": "application/vnd.ollama.image.projector",
+      "digest": "sha256:2e968a6af97ce35d8971890b257b9b7edabf20ad91450501fa53162a19ee33eb",
+      "size": 629247008,
+      "from": "hf.co/ggml-org/Qwen3.8-27B-GGUF:Q4_K_M"
+    }
+  ]
+}
