@@ -5,10 +5,8 @@
 """Offline-Bestandsprüfung oder Vorbereitung einer ausdrücklich angegebenen CSV."""
 from pathlib import Path
 import sys
-sys.path.insert(0,str(Path(__file__).resolve().parent/'data/code'))
 import argparse
-from dataset_store import verify_data, extract_working_copy
-from research_pipeline import prepare_articles
+from faktenretention.frozen_data import verify_data, extract_working_copy
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
@@ -17,6 +15,7 @@ def main():
     parser.add_argument('--working-copy',type=Path)
     args=parser.parse_args()
     if args.articles:
+        from faktenretention.pipeline import prepare_articles
         if not args.output:parser.error('--articles benötigt --output')
         print(prepare_articles(args.articles,args.output))
     else:verify_data()

@@ -1,5 +1,5 @@
 {
-  "format_version": 2,
+  "format_version": 3,
   "created_at_utc": "2026-10-22T19:56:49.817403+00:00",
   "data_version": "aktuell_20260930",
   "default_mode": "offline",
@@ -14,33 +14,33 @@
   "empty_outputs": 2,
   "root_scripts": [
     {
-      "file": "01_prepare.py",
-      "physical_lines": 27,
-      "nonempty_noncomment_lines": 21
-    },
-    {
-      "file": "02_demonstrations.py",
-      "physical_lines": 169,
-      "nonempty_noncomment_lines": 147
+      "file": "05_analyze.py",
+      "physical_lines": 5,
+      "nonempty_noncomment_lines": 4
     },
     {
       "file": "03_generate.py",
-      "physical_lines": 47,
-      "nonempty_noncomment_lines": 41
+      "physical_lines": 49,
+      "nonempty_noncomment_lines": 43
     },
     {
       "file": "04_evaluate.py",
-      "physical_lines": 38,
-      "nonempty_noncomment_lines": 32
+      "physical_lines": 39,
+      "nonempty_noncomment_lines": 33
     },
     {
-      "file": "05_analyze.py",
-      "physical_lines": 150,
-      "nonempty_noncomment_lines": 140
+      "file": "01_prepare.py",
+      "physical_lines": 26,
+      "nonempty_noncomment_lines": 20
+    },
+    {
+      "file": "02_demonstrations.py",
+      "physical_lines": 5,
+      "nonempty_noncomment_lines": 4
     }
   ],
-  "total_executable_python_files": 42,
-  "total_python_physical_lines": 15016,
+  "total_executable_python_files": 43,
+  "total_python_physical_lines": 6398,
   "files": [
     {
       "file": ".gitattributes",
@@ -51,56 +51,65 @@
     {
       "file": ".gitignore",
       "bytes": 70,
-      "sha256": "e5fd0ddeda5dc71f2e47a8be110ccf82dee704d70677e0e26dc9f1497c86609f",
-      "immutable": true
+      "sha256": "67c31eafa5d871b5b7e76ba13ac1e7b821582d3da775deca880c1a49e77027ad",
+      "immutable": false,
+      "previous_sha256": "e5fd0ddeda5dc71f2e47a8be110ccf82dee704d70677e0e26dc9f1497c86609f"
     },
     {
       "file": "01_prepare.py",
       "bytes": 1250,
-      "sha256": "02cc5e2800df16e096733d761a7b18171b2684598e7d8cb6460f14e2ff088207",
-      "immutable": true
+      "sha256": "14db111177e561f4bd0ed393a106c28445913c833afcfe86a9a8d23c07e3763e",
+      "immutable": false,
+      "previous_sha256": "02cc5e2800df16e096733d761a7b18171b2684598e7d8cb6460f14e2ff088207"
     },
     {
       "file": "02_demonstrations.py",
       "bytes": 9122,
-      "sha256": "d9b7de91a6940baf13ed2ef0c91b728f065a0afd767e3955e0ceb3b1c3dd4d87",
-      "immutable": true
+      "sha256": "51e3332c20c59dc57f239087875e98b42ff960fd026aeb5f4f135c80b3ca3db8",
+      "immutable": false,
+      "previous_sha256": "d9b7de91a6940baf13ed2ef0c91b728f065a0afd767e3955e0ceb3b1c3dd4d87"
     },
     {
       "file": "03_generate.py",
       "bytes": 2627,
-      "sha256": "3bf6fb1b5c7c4194fc39e9de07d0d8fd0671190c02f85fc3edc418ac3473fcce",
-      "immutable": true
+      "sha256": "a40e62c313ce4385b685bc9813794caac088297a2424fd127eab3ceb84ec0185",
+      "immutable": false,
+      "previous_sha256": "3bf6fb1b5c7c4194fc39e9de07d0d8fd0671190c02f85fc3edc418ac3473fcce"
     },
     {
       "file": "04_evaluate.py",
       "bytes": 1823,
-      "sha256": "5b72739624fbbdabef52be0198f1a15b0aee87b2f494127c975f600486b0f81d",
-      "immutable": true
+      "sha256": "aba2cacf023fbf4b62c6511dc99ec365c614e51c2813e5743eb85263eef5cdc8",
+      "immutable": false,
+      "previous_sha256": "5b72739624fbbdabef52be0198f1a15b0aee87b2f494127c975f600486b0f81d"
     },
     {
       "file": "05_analyze.py",
       "bytes": 10989,
-      "sha256": "8743f9b4161f4c48b04e0a1026e7cbf2681caf21075b160980a090f331ad79bd",
-      "immutable": true
+      "sha256": "db1ddf969bf954598f7c7c712a5695ed72c6c63d39c8d8878511713d7bf2c7bc",
+      "immutable": false,
+      "previous_sha256": "8743f9b4161f4c48b04e0a1026e7cbf2681caf21075b160980a090f331ad79bd"
     },
     {
       "file": "README.md",
       "bytes": 19674,
-      "sha256": "c4d004c76e7e2adec0923bd645a0ddc7f78600e4dccf64cc837e0b1694806eea",
-      "immutable": true
+      "sha256": "bae663b91b7b5f4e883d35f2574b2a60bd8620056fb627af4dbe4ef9117f3949",
+      "immutable": false,
+      "previous_sha256": "c4d004c76e7e2adec0923bd645a0ddc7f78600e4dccf64cc837e0b1694806eea"
     },
     {
       "file": "RELEASE_CHECKLIST.md",
       "bytes": 3658,
-      "sha256": "7bcb82b970d36d30395b1559ce0e222ce5fa6fad97da99d2b47d3f3db4d3c6e0",
-      "immutable": true
+      "sha256": "5b52f283a43f2c4eb0560ad40891539df782b6a03e15a3ebf97ec77f544b4893",
+      "immutable": false,
+      "previous_sha256": "7bcb82b970d36d30395b1559ce0e222ce5fa6fad97da99d2b47d3f3db4d3c6e0"
     },
     {
       "file": "data/DATEN_UND_METHODIK.md",
       "bytes": 13340,
-      "sha256": "b95123327a32ec705d8cfad060e9b7a541d53097b85d3da4ade79f3a8f0bacd2",
-      "immutable": true
+      "sha256": "d35850ca5b1f8eaee9c694403cb62f71272cf39f05866561fbe161075d258bfc",
+      "immutable": false,
+      "previous_sha256": "b95123327a32ec705d8cfad060e9b7a541d53097b85d3da4ade79f3a8f0bacd2"
     },
     {
       "file": "data/MODELLBEZUG.md",
@@ -127,214 +136,249 @@
       "immutable": true
     },
     {
-      "file": "data/code/analysis__01_Lead_k_Qualitaetskontrolle.py",
+      "file": "archive/baseline_ad7eb1a/data/code/analysis__01_Lead_k_Qualitaetskontrolle.py",
       "bytes": 56536,
       "sha256": "b0be3a4dc9ee37b3ccda4fe73f86adfa2aec788d16dae5789a44d4c06e8fe29a",
-      "immutable": true
+      "immutable": true,
+      "historical_file": "data/code/analysis__01_Lead_k_Qualitaetskontrolle.py"
     },
     {
-      "file": "data/code/analysis__02_QA_Faktenretention_Sensitivitaet.py",
+      "file": "archive/baseline_ad7eb1a/data/code/analysis__02_QA_Faktenretention_Sensitivitaet.py",
       "bytes": 60773,
       "sha256": "d34a9a7b5e35b00460a55a0daf8edc759c01751ffe4e2e5e4093984f7ae9f403",
-      "immutable": true
+      "immutable": true,
+      "historical_file": "data/code/analysis__02_QA_Faktenretention_Sensitivitaet.py"
     },
     {
-      "file": "data/code/analysis__03_QA_Faktenretention_Laengenkontrolle.py",
+      "file": "archive/baseline_ad7eb1a/data/code/analysis__03_QA_Faktenretention_Laengenkontrolle.py",
       "bytes": 75769,
       "sha256": "638acd7d442a3f9456ed405990026a985443b0dfd4a44983cb0086220f29a700",
-      "immutable": true
+      "immutable": true,
+      "historical_file": "data/code/analysis__03_QA_Faktenretention_Laengenkontrolle.py"
     },
     {
-      "file": "data/code/analysis__04_LLM_Scorervergleich.py",
+      "file": "archive/baseline_ad7eb1a/data/code/analysis__04_LLM_Scorervergleich.py",
       "bytes": 24159,
       "sha256": "496dd8fc8e2e9338d746bf94add47971f1ea30076e3df85caa1c5d80cec60ab2",
-      "immutable": true
+      "immutable": true,
+      "historical_file": "data/code/analysis__04_LLM_Scorervergleich.py"
     },
     {
-      "file": "data/code/analysis__hauptexperiment_01_qa_faktenretention.py",
+      "file": "archive/baseline_ad7eb1a/data/code/analysis__hauptexperiment_01_qa_faktenretention.py",
       "bytes": 57209,
       "sha256": "73f7c2f8c6adf65beea54250b96a70ff084e4627eff2227f45edfcf8ee37a6fc",
-      "immutable": true
+      "immutable": true,
+      "historical_file": "data/code/analysis__hauptexperiment_01_qa_faktenretention.py"
     },
     {
-      "file": "data/code/analysis__hauptexperiment_02_laengeneinhaltung.py",
+      "file": "archive/baseline_ad7eb1a/data/code/analysis__hauptexperiment_02_laengeneinhaltung.py",
       "bytes": 58186,
       "sha256": "3e2c611f9144a8831a7516eb68f7c4eb2d119c3aeed6c3a7bfd665d43c480b5a",
-      "immutable": true
+      "immutable": true,
+      "historical_file": "data/code/analysis__hauptexperiment_02_laengeneinhaltung.py"
     },
     {
-      "file": "data/code/analysis__hauptexperiment_03_verlustmuster.py",
+      "file": "archive/baseline_ad7eb1a/data/code/analysis__hauptexperiment_03_verlustmuster.py",
       "bytes": 50284,
       "sha256": "a4b03ec7259cf215576124a6815ede190ecc5594a64bcee63395de2b74e40f78",
-      "immutable": true
+      "immutable": true,
+      "historical_file": "data/code/analysis__hauptexperiment_03_verlustmuster.py"
     },
     {
-      "file": "data/code/analysis__hauptexperiment_04_weitere_evaluationsmetriken.py",
+      "file": "archive/baseline_ad7eb1a/data/code/analysis__hauptexperiment_04_weitere_evaluationsmetriken.py",
       "bytes": 46089,
       "sha256": "4fa84eadd905a5d6e0a6cd699205779563f852dac5084f8189075706332e0809",
-      "immutable": true
+      "immutable": true,
+      "historical_file": "data/code/analysis__hauptexperiment_04_weitere_evaluationsmetriken.py"
     },
     {
-      "file": "data/code/analysis__hauptexperiment_05_alle_texttabellen.py",
+      "file": "archive/baseline_ad7eb1a/data/code/analysis__hauptexperiment_05_alle_texttabellen.py",
       "bytes": 50838,
       "sha256": "0c695643e0d867e2de48f3e276cafce2284cd33b6d4c04b6bd417243225f3c1d",
-      "immutable": true
+      "immutable": true,
+      "historical_file": "data/code/analysis__hauptexperiment_05_alle_texttabellen.py"
     },
     {
-      "file": "data/code/analysis__hauptexperiment_06_laengenmatched_vergleichsmatrizen.py",
+      "file": "archive/baseline_ad7eb1a/data/code/analysis__hauptexperiment_06_laengenmatched_vergleichsmatrizen.py",
       "bytes": 28145,
       "sha256": "d1ca66fb71dfbc7b12ff1cf3a6bbef3378540ccb4f12f4b714ba1adb45054e9e",
-      "immutable": true
+      "immutable": true,
+      "historical_file": "data/code/analysis__hauptexperiment_06_laengenmatched_vergleichsmatrizen.py"
     },
     {
-      "file": "data/code/analysis__human_validation_faktenrelevanz.py",
+      "file": "archive/baseline_ad7eb1a/data/code/analysis__human_validation_faktenrelevanz.py",
       "bytes": 19228,
       "sha256": "a348b55e54f0a048d21e2915036904c2e8a1db6ae260e93bd24bbc955ac76a1f",
-      "immutable": true
+      "immutable": true,
+      "historical_file": "data/code/analysis__human_validation_faktenrelevanz.py"
     },
     {
-      "file": "data/code/analysis__human_validation_qa_faktenretention.py",
+      "file": "archive/baseline_ad7eb1a/data/code/analysis__human_validation_qa_faktenretention.py",
       "bytes": 44002,
       "sha256": "4b0243ae632500149cc5a33b9098b8a76fd94d4913427f9069d939af9ee5b977",
-      "immutable": true
+      "immutable": true,
+      "historical_file": "data/code/analysis__human_validation_qa_faktenretention.py"
     },
     {
-      "file": "data/code/analysis_bootstrap_worker.py",
+      "file": "archive/baseline_ad7eb1a/data/code/analysis_bootstrap_worker.py",
       "bytes": 1558,
       "sha256": "f544319c4d80d2549693f2be35adb00b9e634c2664cc1de6a694335d790b916f",
-      "immutable": true
+      "immutable": true,
+      "historical_file": "data/code/analysis_bootstrap_worker.py"
     },
     {
-      "file": "data/code/analysis_statistics.py",
+      "file": "archive/baseline_ad7eb1a/data/code/analysis_statistics.py",
       "bytes": 2544,
       "sha256": "0b92457e1eb4b219abd880075542005e714654efe0b01ce7fbc2fadd3f1affd3",
-      "immutable": true
+      "immutable": true,
+      "historical_file": "data/code/analysis_statistics.py"
     },
     {
-      "file": "data/code/analyze_run.py",
+      "file": "archive/baseline_ad7eb1a/data/code/analyze_run.py",
       "bytes": 8889,
       "sha256": "6a3e83790c4608988bf4b851ca4e64c95150f92965f432f5f941949a7e354921",
-      "immutable": true
+      "immutable": true,
+      "historical_file": "data/code/analyze_run.py"
     },
     {
-      "file": "data/code/answer_summary_questions.py",
+      "file": "archive/baseline_ad7eb1a/data/code/answer_summary_questions.py",
       "bytes": 25757,
       "sha256": "3d5e4a9358c7b1072bf7e07a2455981f64f51e465a2368b16c532e8456cfe7ab",
-      "immutable": true
+      "immutable": true,
+      "historical_file": "data/code/answer_summary_questions.py"
     },
     {
-      "file": "data/code/build_shared_pool_fewshot_prompts.py",
+      "file": "archive/baseline_ad7eb1a/data/code/build_shared_pool_fewshot_prompts.py",
       "bytes": 11099,
       "sha256": "eaf21d7e6fed994839eacd0dce69d9015b70a2ad2bf9defd30c2e5a09b78f40b",
-      "immutable": true
+      "immutable": true,
+      "historical_file": "data/code/build_shared_pool_fewshot_prompts.py"
     },
     {
-      "file": "data/code/dataset_store.py",
+      "file": "archive/baseline_ad7eb1a/data/code/dataset_store.py",
       "bytes": 3968,
       "sha256": "8c94a49baa36bb0af4009481dbf628fb69c97241f9c64979367a14d12e492d4c",
-      "immutable": true
+      "immutable": true,
+      "historical_file": "data/code/dataset_store.py"
     },
     {
-      "file": "data/code/evaluate_autocot_automatecot_metrics.py",
+      "file": "archive/baseline_ad7eb1a/data/code/evaluate_autocot_automatecot_metrics.py",
       "bytes": 13866,
       "sha256": "877d664d8aa4bfb5f6517fc3c4453af63a3c4837b37b419cd990f8049c786f79",
-      "immutable": true
+      "immutable": true,
+      "historical_file": "data/code/evaluate_autocot_automatecot_metrics.py"
     },
     {
-      "file": "data/code/extract_atomic_facts.py",
+      "file": "archive/baseline_ad7eb1a/data/code/extract_atomic_facts.py",
       "bytes": 25613,
       "sha256": "b6653860b5f3878c2905665604fe4f5a9aade5eb507c64a8e43d89f8829d19a4",
-      "immutable": true
+      "immutable": true,
+      "historical_file": "data/code/extract_atomic_facts.py"
     },
     {
-      "file": "data/code/generate_cot_candidate_rollouts.py",
+      "file": "archive/baseline_ad7eb1a/data/code/generate_cot_candidate_rollouts.py",
       "bytes": 21820,
       "sha256": "9eed4c4dd8e2da6c2f1f6b64fd39e3fe8c75a4d4ad1a14cbebc0566d31759947",
-      "immutable": true
+      "immutable": true,
+      "historical_file": "data/code/generate_cot_candidate_rollouts.py"
     },
     {
-      "file": "data/code/input_checks.py",
+      "file": "archive/baseline_ad7eb1a/data/code/input_checks.py",
       "bytes": 2218,
       "sha256": "5c8883deb1042eadf876ee0b0552dc8b622a96c47b6b8a6ad729e781aca397e8",
-      "immutable": true
+      "immutable": true,
+      "historical_file": "data/code/input_checks.py"
     },
     {
-      "file": "data/code/iterative_summarize.py",
+      "file": "archive/baseline_ad7eb1a/data/code/iterative_summarize.py",
       "bytes": 35302,
       "sha256": "3a669ab474250c39f9e3b2daff1d2e3f20cd2b0561a20e117768b2698feefdb1",
-      "immutable": true
+      "immutable": true,
+      "historical_file": "data/code/iterative_summarize.py"
     },
     {
-      "file": "data/code/metric_resources.py",
+      "file": "archive/baseline_ad7eb1a/data/code/metric_resources.py",
       "bytes": 2324,
       "sha256": "62158221c9b57570be5cb7bb24d4a00def6c8490d22f8dc91a789e8cd7d8d3fd",
-      "immutable": true
+      "immutable": true,
+      "historical_file": "data/code/metric_resources.py"
     },
     {
-      "file": "data/code/offline_guard.py",
+      "file": "archive/baseline_ad7eb1a/data/code/offline_guard.py",
       "bytes": 1058,
       "sha256": "35c857f5a6ff257a1bf05842a7a2aaa41122c1b4661a580f649bd53f841afa7e",
-      "immutable": true
+      "immutable": true,
+      "historical_file": "data/code/offline_guard.py"
     },
     {
-      "file": "data/code/qa_scorer_snapshot.py",
+      "file": "archive/baseline_ad7eb1a/data/code/qa_scorer_snapshot.py",
       "bytes": 9528,
       "sha256": "190720ab8a6fcb161a01deb99f51d34fabf5a07445a2734e63010dc8b904d2af",
-      "immutable": true
+      "immutable": true,
+      "historical_file": "data/code/qa_scorer_snapshot.py"
     },
     {
-      "file": "data/code/request_budget.py",
+      "file": "archive/baseline_ad7eb1a/data/code/request_budget.py",
       "bytes": 4594,
       "sha256": "d6343e64ffcce3290bd643b66b81960254c5b94fa74cb486108309e5b7a9ecd2",
-      "immutable": true
+      "immutable": true,
+      "historical_file": "data/code/request_budget.py"
     },
     {
-      "file": "data/code/research_pipeline.py",
+      "file": "archive/baseline_ad7eb1a/data/code/research_pipeline.py",
       "bytes": 22581,
       "sha256": "7e67fb7cee4074a8ad6956870291fa404cdf4892785dc68419a04ce80b3d1490",
-      "immutable": true
+      "immutable": true,
+      "historical_file": "data/code/research_pipeline.py"
     },
     {
-      "file": "data/code/runtime_checks.py",
+      "file": "archive/baseline_ad7eb1a/data/code/runtime_checks.py",
       "bytes": 2202,
       "sha256": "1f4af02d7d321beb703ec6e022331a2bcab9eba72055b5d6e58e39d5c9bc8301",
-      "immutable": true
+      "immutable": true,
+      "historical_file": "data/code/runtime_checks.py"
     },
     {
-      "file": "data/code/score_and_prune_automatecot_candidates.py",
+      "file": "archive/baseline_ad7eb1a/data/code/score_and_prune_automatecot_candidates.py",
       "bytes": 10317,
       "sha256": "93a7f5663f8352c15b68c7616d28e70cd3a0664e12e6597075f1047890d3e1f1",
-      "immutable": true
+      "immutable": true,
+      "historical_file": "data/code/score_and_prune_automatecot_candidates.py"
     },
     {
-      "file": "data/code/score_model_selection_batch.py",
+      "file": "archive/baseline_ad7eb1a/data/code/score_model_selection_batch.py",
       "bytes": 37535,
       "sha256": "711ff1f45fba1d27cde9ff687d490b3014c0a46fb43c177eaa267a6ac2b39c96",
-      "immutable": true
+      "immutable": true,
+      "historical_file": "data/code/score_model_selection_batch.py"
     },
     {
-      "file": "data/code/select_autocot_demonstrations.py",
+      "file": "archive/baseline_ad7eb1a/data/code/select_autocot_demonstrations.py",
       "bytes": 8732,
       "sha256": "dbf45b24de3db5ecc7bc013d4860aca328cb66c515fb5502aaa85a7dc38f19c1",
-      "immutable": true
+      "immutable": true,
+      "historical_file": "data/code/select_autocot_demonstrations.py"
     },
     {
-      "file": "data/code/select_automatecot_demonstrations.py",
+      "file": "archive/baseline_ad7eb1a/data/code/select_automatecot_demonstrations.py",
       "bytes": 21753,
       "sha256": "5244afaff0616f53b991a164e35f7d4493f7393e49fcfc2968a47b3eaf4ca429",
-      "immutable": true
+      "immutable": true,
+      "historical_file": "data/code/select_automatecot_demonstrations.py"
     },
     {
-      "file": "data/code/summary_rules.py",
+      "file": "archive/baseline_ad7eb1a/data/code/summary_rules.py",
       "bytes": 6092,
       "sha256": "67bb777c48d60981ff02f63d98d06ca025786b906a89180280eed46516c59285",
-      "immutable": true
+      "immutable": true,
+      "historical_file": "data/code/summary_rules.py"
     },
     {
       "file": "data/code_provenance.json",
       "bytes": 1178692,
-      "sha256": "a1d698f13c44c86efe1e4154d3ba5dd62491db479251ae0a7915531098c387bd",
-      "immutable": true
+      "sha256": "28608beb94dd5d4398cd9a3ac48699e154f30568161271cce35696605d0b77b5",
+      "immutable": false,
+      "previous_sha256": "a1d698f13c44c86efe1e4154d3ba5dd62491db479251ae0a7915531098c387bd"
     },
     {
       "file": "data/eingefrorene_quellen.zip",
@@ -469,22 +513,25 @@
       "immutable": true
     },
     {
-      "file": "data/tests/test_audit.py",
+      "file": "archive/baseline_ad7eb1a/data/tests/test_audit.py",
       "bytes": 5721,
       "sha256": "4d209b865d19905c1d2cb43903fca47f7dfbb8a6ed25e43720ee5382912aa9fe",
-      "immutable": true
+      "immutable": true,
+      "historical_file": "data/tests/test_audit.py"
     },
     {
-      "file": "data/tests/test_frozen_statistics.py",
+      "file": "archive/baseline_ad7eb1a/data/tests/test_frozen_statistics.py",
       "bytes": 4007,
       "sha256": "251b40dd39dfba4726a19ac050ac7230bded4c27113eef5b8bc739da7e3ade3f",
-      "immutable": true
+      "immutable": true,
+      "historical_file": "data/tests/test_frozen_statistics.py"
     },
     {
-      "file": "data/tests/test_pipeline.py",
+      "file": "archive/baseline_ad7eb1a/data/tests/test_pipeline.py",
       "bytes": 10812,
       "sha256": "434ad456286a0a1b2e7f70f667f8a35f3d7c3340f96ad19a8bb5010efaaed41d",
-      "immutable": true
+      "immutable": true,
+      "historical_file": "data/tests/test_pipeline.py"
     },
     {
       "file": "data/zusammenfassungen.csv.gz",
@@ -537,8 +584,9 @@
     {
       "file": "prompts/README.md",
       "bytes": 903,
-      "sha256": "dbf9d1aeb98ccc0996079004d23080cb83671b76d0b7aafb2ecfe3203eb221c8",
-      "immutable": true
+      "sha256": "daf1077cd2acea816d83d5023eeb05cb713f1c0e398d2c78cfa236639f428382",
+      "immutable": false,
+      "previous_sha256": "dbf9d1aeb98ccc0996079004d23080cb83671b76d0b7aafb2ecfe3203eb221c8"
     },
     {
       "file": "prompts/auto_cot_150.txt",
@@ -881,10 +929,421 @@
       "bytes": 22356,
       "sha256": "ba5773e8a3fa9c764df8cad03bb44af8a60b027053f95adb068bbf9b438cd1c4",
       "immutable": false
+    },
+    {
+      "file": "src/faktenretention/protocol.py",
+      "sha256": "742c984d0962b70c71d866cf5306ce9ee503f2bc6693ef1722a765263bfc3f48",
+      "immutable": false
+    },
+    {
+      "file": "src/faktenretention/analysis_bootstrap_worker.py",
+      "sha256": "f544319c4d80d2549693f2be35adb00b9e634c2664cc1de6a694335d790b916f",
+      "immutable": false
+    },
+    {
+      "file": "src/faktenretention/metrics.py",
+      "sha256": "52e9304f6233fbbcaf9426b7faf8fb8733d88a9dc9baf6fb83ffcfcac8cccf15",
+      "immutable": false
+    },
+    {
+      "file": "src/faktenretention/request_budget.py",
+      "sha256": "c2ebe5fdcf3222829ebb9d0fd548281d39aa64963f7b1e13690cd54d3ca4ac91",
+      "immutable": false
+    },
+    {
+      "file": "src/faktenretention/notebook_runner.py",
+      "sha256": "bc905bcba7430a0817daecf8bb1b5e054cd503f5753856b0dd49aebba5f88f6b",
+      "immutable": false
+    },
+    {
+      "file": "src/faktenretention/offline_guard.py",
+      "sha256": "35c857f5a6ff257a1bf05842a7a2aaa41122c1b4661a580f649bd53f841afa7e",
+      "immutable": false
+    },
+    {
+      "file": "src/faktenretention/input_checks.py",
+      "sha256": "5c8883deb1042eadf876ee0b0552dc8b622a96c47b6b8a6ad729e781aca397e8",
+      "immutable": false
+    },
+    {
+      "file": "src/faktenretention/model_transport.py",
+      "sha256": "1257d5fc1e69380d712e2f7dff08facb96d10f8473957c5df30c973e0fec914c",
+      "immutable": false
+    },
+    {
+      "file": "src/faktenretention/notebook_context.py",
+      "sha256": "57b1679c5ed617b8104443b1ca970eca63da341c5554895917cddc7875a2cbab",
+      "immutable": false
+    },
+    {
+      "file": "src/faktenretention/frozen_data.py",
+      "sha256": "69753e2e74daefd24b53ea85e044442d16a72e1dbe247016c697e3e91e0e3244",
+      "immutable": false
+    },
+    {
+      "file": "src/faktenretention/metric_resources.py",
+      "sha256": "62158221c9b57570be5cb7bb24d4a00def6c8490d22f8dc91a789e8cd7d8d3fd",
+      "immutable": false
+    },
+    {
+      "file": "src/faktenretention/facts.py",
+      "sha256": "b8aea670133367b8d273a2b10b9f7842bee8187f2a31aa71aa635ebcc2111898",
+      "immutable": false
+    },
+    {
+      "file": "src/faktenretention/validation.py",
+      "sha256": "f0ac108a00aa423fbd33941a4dfbd69dd407eb7b1b3b830c990725194530b456",
+      "immutable": false
+    },
+    {
+      "file": "src/faktenretention/runtime_checks.py",
+      "sha256": "32cba2f37b4032f58c00aa467fff0a6628e4292d511f82497956f990af649435",
+      "immutable": false
+    },
+    {
+      "file": "src/faktenretention/io.py",
+      "sha256": "98e18dcda703d21ef7e6ddcfc9935ad4ce0b53dcf5cba10de4e915e1d7b16c5b",
+      "immutable": false
+    },
+    {
+      "file": "src/faktenretention/pipeline.py",
+      "sha256": "fa3e85688c13a5a5a9a89a6373c9a3ecba4fae2fe10f5e883c96bf0b933bd303",
+      "immutable": false
+    },
+    {
+      "file": "src/faktenretention/analysis_data.py",
+      "sha256": "6612069262af6784d60768aab5052460f9253e954b59b1259313009b41b04411",
+      "immutable": false
+    },
+    {
+      "file": "src/faktenretention/scoring.py",
+      "sha256": "190720ab8a6fcb161a01deb99f51d34fabf5a07445a2734e63010dc8b904d2af",
+      "immutable": false
+    },
+    {
+      "file": "src/faktenretention/statistics.py",
+      "sha256": "7630748f085fc99d3e6f0da276cc0d1b2c944cf163309b9cfd00ae6d52e421f7",
+      "immutable": false
+    },
+    {
+      "file": "src/faktenretention/text_rules.py",
+      "sha256": "67bb777c48d60981ff02f63d98d06ca025786b906a89180280eed46516c59285",
+      "immutable": false
+    },
+    {
+      "file": "src/faktenretention/paths.py",
+      "sha256": "9142551d0634e0c0594ebaa83bb0ff6eff0d41a50765f0b0eb74fcf7b2113c32",
+      "immutable": false
+    },
+    {
+      "file": "src/faktenretention/__init__.py",
+      "sha256": "f2b5b24e758e63d375022cf53c7f08d6d8eaa0270e8f9d3f34a290f48dba6cbe",
+      "immutable": false
+    },
+    {
+      "file": "src/faktenretention/qa.py",
+      "sha256": "1cf6357fa4fe6216e3cbd81487073e53a5fe2f669225f4f1b81140ba67aab0e7",
+      "immutable": false
+    },
+    {
+      "file": "src/faktenretention/metric_scoring.py",
+      "sha256": "383ffc28f872a3b9d305c8a12b941e879dbff11e0baa0f143aedb15d9c1272ef",
+      "immutable": false
+    },
+    {
+      "file": "src/faktenretention.egg-info/entry_points.txt",
+      "sha256": "88317f8bebf5f72ba2571bcffdc1617a0d3e35511d99875176d340b69edfeeb4",
+      "immutable": false
+    },
+    {
+      "file": "src/faktenretention.egg-info/PKG-INFO",
+      "sha256": "2a47cb2c57be342164cea2e69df3e88e815e453ce737581dd38b7c0fc34dfc77",
+      "immutable": false
+    },
+    {
+      "file": "src/faktenretention.egg-info/dependency_links.txt",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "immutable": false
+    },
+    {
+      "file": "src/faktenretention.egg-info/top_level.txt",
+      "sha256": "9b76ad244d189dbc8ad95bb4ae19b96f11d3728067ce7411d8b02180e43e45cd",
+      "immutable": false
+    },
+    {
+      "file": "src/faktenretention.egg-info/SOURCES.txt",
+      "sha256": "0a17a3b1cd1525c9ccb0568bd2d746bc7ad4351c37a3e0d799686e471e3f2fe1",
+      "immutable": false
+    },
+    {
+      "file": "src/faktenretention/demonstrations/generate_cot_candidate_rollouts.py",
+      "sha256": "3bdacee711f2773f293a70b89e2b4aebed284eafe72d726c4a15cbb027ad4190",
+      "immutable": false
+    },
+    {
+      "file": "src/faktenretention/demonstrations/audit.py",
+      "sha256": "7a09cffb00d02c7b4285071f3195687de64db71246299e79555189d2ac720159",
+      "immutable": false
+    },
+    {
+      "file": "src/faktenretention/demonstrations/select_automatecot_demonstrations.py",
+      "sha256": "c2157869a0adc4716f09cf6cf3fedc92a37a60e5a5e00047832b0162c842fb33",
+      "immutable": false
+    },
+    {
+      "file": "src/faktenretention/demonstrations/select_autocot_demonstrations.py",
+      "sha256": "8d6766eb5bd6d7c3d6e9d99fdaafa4e5c5048e1291885c0836eefcc3b8adc395",
+      "immutable": false
+    },
+    {
+      "file": "src/faktenretention/demonstrations/build_shared_pool_fewshot_prompts.py",
+      "sha256": "eaf21d7e6fed994839eacd0dce69d9015b70a2ad2bf9defd30c2e5a09b78f40b",
+      "immutable": false
+    },
+    {
+      "file": "src/faktenretention/demonstrations/score_and_prune_automatecot_candidates.py",
+      "sha256": "8286e3dc936ad46526dc996cc49c6b8e39be8274292ce0e7e99995e646a146df",
+      "immutable": false
+    },
+    {
+      "file": "src/faktenretention/demonstrations/__init__.py",
+      "sha256": "615f4e5a3d6da64bb65b24599f3fa6e710b965b7bbdd72cfe7df191309d384de",
+      "immutable": false
+    },
+    {
+      "file": "src/faktenretention/demonstrations/rules.py",
+      "sha256": "47569edfe763b66e79dea8cbacfce245d1f90aa6017238a09ff83979f205b390",
+      "immutable": false
+    },
+    {
+      "file": "notebooks/analyses.json",
+      "sha256": "f436809a788d2ff6078241442900a7ee7c7a0fbf13029afe5bb01cb0d6ba470b",
+      "immutable": false
+    },
+    {
+      "file": "notebooks/12_llm_scorervergleich.ipynb",
+      "sha256": "6642b174fd59fc7f27110465346d64e5172025714db7228baa396f264bb57070",
+      "immutable": false
+    },
+    {
+      "file": "notebooks/04_laenge_und_adjustierte_retention.ipynb",
+      "sha256": "439cc58ff9c2b36056e91f41d6094cf8aeba2b6c9dcc304f45cf93300e428f0e",
+      "immutable": false
+    },
+    {
+      "file": "notebooks/11_statistische_laengenkontrolle.ipynb",
+      "sha256": "04b1a277a96ae14079c703984812717368687453126b76a02d21a51d2c7aa061",
+      "immutable": false
+    },
+    {
+      "file": "notebooks/07_laengenmatched_matrizen.ipynb",
+      "sha256": "1245e0be58c3d5c1a164706cb48bc6d12f585f430aa12a82c582a669e66508fe",
+      "immutable": false
+    },
+    {
+      "file": "notebooks/08_tabellenexport.ipynb",
+      "sha256": "6a806050b775cc5ac079a91572fa7880bc923e3ffaae860227933340fa1a5a96",
+      "immutable": false
+    },
+    {
+      "file": "notebooks/05_verlustmuster.ipynb",
+      "sha256": "c79fcd262fd268df071c5e2d8e325045fc06020f03441f443b1283a280815a5b",
+      "immutable": false
+    },
+    {
+      "file": "notebooks/01_human_faktenrelevanz.ipynb",
+      "sha256": "b48ab8df943cb660dbf111441e0c72eab8ad193fbd318a281689b29c4a1dc647",
+      "immutable": false
+    },
+    {
+      "file": "notebooks/10_qa_sensitivitaet.ipynb",
+      "sha256": "89ade4b44d5266b7ec2476df1a43a9a625530ec00088b703500d3f27a17acb4e",
+      "immutable": false
+    },
+    {
+      "file": "notebooks/06_weitere_metriken.ipynb",
+      "sha256": "913a3f010f6d90b1381026ae236aa89f8f40dec87ec00102cc2e43fd9ff2ad79",
+      "immutable": false
+    },
+    {
+      "file": "notebooks/README.md",
+      "sha256": "9ab14b185beca57303552635a0253c01366cd84fd024571c46bdfbf2f244512f",
+      "immutable": false
+    },
+    {
+      "file": "notebooks/09_lead_k_kontrolle.ipynb",
+      "sha256": "6fe2cc308e87ebd36cda1c68b8337b980d40f24246ee6c573655aa94d783c34a",
+      "immutable": false
+    },
+    {
+      "file": "notebooks/03_qa_retention.ipynb",
+      "sha256": "a2f21d999a63e231518f5fa2d3ecdcbe201335744be1e602b97e8284915e6ca5",
+      "immutable": false
+    },
+    {
+      "file": "notebooks/02_human_qa_retention.ipynb",
+      "sha256": "3c801d90ccfe1e03949c016a2a115fe6f61dcaf69670f819b4923512d6f51b7e",
+      "immutable": false
+    },
+    {
+      "file": "notebooks/ergaenzungen/neue_laufdaten.ipynb",
+      "sha256": "41aded642c6871b0595b3fe8515e42397aac03e8ff286c2e8195fa796f2d4b92",
+      "immutable": false
+    },
+    {
+      "file": "docs/REFACTOR_PRUEFBERICHT.md",
+      "sha256": "eca7acede1b6c4429be4b614809404d9945079e06eed3ee12a8d50a72d801ce3",
+      "immutable": false
+    },
+    {
+      "file": "docs/architektur.md",
+      "sha256": "9d4580e6c91824250117799c0b6570f29764ce716385d4edfb4b8f932042434b",
+      "immutable": false
+    },
+    {
+      "file": "docs/experimente.md",
+      "sha256": "3b5fcbbcfee2c556d62898a5f36433b37b2d3e8ac19e9a5f8b446dc7c7a0436d",
+      "immutable": false
+    },
+    {
+      "file": "docs/experiment-resolution-full.txt",
+      "sha256": "c9fad9e8e8a0d46237c873bc845978d14758382a4f6bf58fc7d03900b5485b09",
+      "immutable": false
+    },
+    {
+      "file": "docs/umgebungen.md",
+      "sha256": "baef8d46e81275d2b10bc641d70dd465510234ee87183a9d63b42d555c582ece",
+      "immutable": false
+    },
+    {
+      "file": "docs/validation/tests.log",
+      "sha256": "96df356b3c2a297c4b449caad44843eb4b9c26ba249957c9b1d976a47490b999",
+      "immutable": false
+    },
+    {
+      "file": "docs/validation/matrix-display.json",
+      "sha256": "76395be24e751a1819027a9d23a0c01e4d096ef3158a306b5d02eae194af04a0",
+      "immutable": false
+    },
+    {
+      "file": "docs/validation/notebooks.json",
+      "sha256": "840cee48aa97dd513ceb58e2bb7a944f61948d96ae261cc93fe93685734c6db7",
+      "immutable": false
+    },
+    {
+      "file": "tests/test_00_notebooks.py",
+      "sha256": "6eb24fb8c268a64b9cb4f6be55323681c0e0b2a7adc5e391ede48288860264d2",
+      "immutable": false
+    },
+    {
+      "file": "tests/test_audit.py",
+      "sha256": "4f18f3e2bfc7547b903160bdd719171ed5535daba2a599f7bd5990c6725bf90d",
+      "immutable": false
+    },
+    {
+      "file": "tests/test_notebook_runner.py",
+      "sha256": "4005f5b42181cd8d2d1af89412947a9148a1dc3cc20cb148bfbd35428fdf0c59",
+      "immutable": false
+    },
+    {
+      "file": "tests/test_pipeline.py",
+      "sha256": "7e776a03140b5641ae3f81e8e9e085852bb55d510b130f1149863fb7e5bc70a9",
+      "immutable": false
+    },
+    {
+      "file": "tests/test_scientific_rules.py",
+      "sha256": "779ce417374102942630664f120ff3f468bc9ad6ad44d2d7156eaa2823b0a0a7",
+      "immutable": false
+    },
+    {
+      "file": "tests/test_frozen_statistics.py",
+      "sha256": "34036e6c1d61f122891b36a69309734c1ed8d01c3a35f10a014c17f17014c935",
+      "immutable": false
+    },
+    {
+      "file": ".github/workflows/offline-analysis.yml",
+      "sha256": "a390f756a0288d28929204495e5a8109cbb8be12588a4e9e35aef6f22a5f6391",
+      "immutable": false
+    },
+    {
+      "file": "archive/README.md",
+      "sha256": "f83d1005ff917e12f0b8e41b17fa3412264a963b4da18c0f913bbdf34f5bff0c",
+      "immutable": true
+    },
+    {
+      "file": "archive/baseline_ad7eb1a/manifest.json",
+      "sha256": "66794dbe9ec9007f340ad2ab012b8ab97521994561356cfa18382a0ae17c6ce1",
+      "immutable": true
+    },
+    {
+      "file": "archive/baseline_ad7eb1a/05_analyze.py",
+      "sha256": "8743f9b4161f4c48b04e0a1026e7cbf2681caf21075b160980a090f331ad79bd",
+      "immutable": true
+    },
+    {
+      "file": "archive/baseline_ad7eb1a/README.md",
+      "sha256": "c4d004c76e7e2adec0923bd645a0ddc7f78600e4dccf64cc837e0b1694806eea",
+      "immutable": true
+    },
+    {
+      "file": "archive/baseline_ad7eb1a/02_demonstrations.py",
+      "sha256": "d9b7de91a6940baf13ed2ef0c91b728f065a0afd767e3955e0ceb3b1c3dd4d87",
+      "immutable": true
+    },
+    {
+      "file": "archive/baseline_ad7eb1a/data/code_provenance.json",
+      "sha256": "a1d698f13c44c86efe1e4154d3ba5dd62491db479251ae0a7915531098c387bd",
+      "immutable": true
+    },
+    {
+      "file": "archive/baseline_ad7eb1a/data/DATEN_UND_METHODIK.md",
+      "sha256": "b95123327a32ec705d8cfad060e9b7a541d53097b85d3da4ade79f3a8f0bacd2",
+      "immutable": true
+    },
+    {
+      "file": "archive/baseline_ad7eb1a/prompts/README.md",
+      "sha256": "dbf9d1aeb98ccc0996079004d23080cb83671b76d0b7aafb2ecfe3203eb221c8",
+      "immutable": true
+    },
+    {
+      "file": "reference/README.md",
+      "sha256": "c1e02491fe92d9eecd889b3dc613e3bec0f2ce0d6bbb114f65ea1fbafe05deae",
+      "immutable": false
+    },
+    {
+      "file": "pyproject.toml",
+      "sha256": "53ee3bebcd13d5ce313528981e1f4c9994b045597cd1df1229163e2a1c3ad6b2",
+      "immutable": false
+    },
+    {
+      "file": "requirements-experiment.in",
+      "sha256": "2ef976e221e78b5fd9bbc452b31a6cb4f2069a9dfd5be716b7030b20f454ffa8",
+      "immutable": false
+    },
+    {
+      "file": "requirements-experiment-full.in",
+      "sha256": "cea229a3c0b84009d47a9ce03f5b5162d256240975084b2ed20a53764e36a419",
+      "immutable": false
+    },
+    {
+      "file": "requirements-experiment.lock.txt",
+      "sha256": "56b26defd5b41447a391e02df008c16bfa5192d5da4b0709eb2b2ff41aa3083f",
+      "immutable": false
+    },
+    {
+      "file": "data/refactor_paths.json",
+      "sha256": "8ea6158394e2f114c6015188fa7dd99d52dcbd749e96716bd1a9f67f90c3e9af",
+      "immutable": false
     }
   ],
   "audit_date": "2026-10-23",
   "supported_platform": "Linux x86_64; Linux in WSL2 vorgesehen, nicht separat getestet",
   "analysis_environment": "data/analysis_environment.json",
-  "frozen_checksums": "data/frozen_assets.sha256"
+  "frozen_checksums": "data/frozen_assets.sha256",
+  "refactor_date": "2026-10-26",
+  "active_analysis_notebooks": 12,
+  "refactor_baseline_commit": "ad7eb1a86039dbc44651e4e2cdb1dc358c3d0f14",
+  "historical_manifest": "archive/baseline_ad7eb1a/manifest.json",
+  "active_notebook_inventory": "notebooks/analyses.json",
+  "path_mapping": "data/refactor_paths.json"
 }

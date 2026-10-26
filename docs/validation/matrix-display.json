@@ -1,0 +1,2130 @@
+{
+  "passed": true,
+  "scope": "selection_with_dependencies",
+  "requested_analyses": [
+    "03_qa_retention",
+    "04_laenge_und_adjustierte_retention",
+    "07_laengenmatched_matrizen"
+  ],
+  "analyses": [
+    {
+      "id": "01_human_faktenrelevanz",
+      "status": "skipped",
+      "passed": false,
+      "reason": "not_selected"
+    },
+    {
+      "id": "02_human_qa_retention",
+      "status": "skipped",
+      "passed": false,
+      "reason": "not_selected"
+    },
+    {
+      "id": "03_qa_retention",
+      "status": "fully_executed",
+      "passed": true,
+      "reason": null,
+      "comparisons": [
+        {
+          "file": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/zusammensetzung_paarweiser_labeluebereinstimmung.csv",
+          "passed": true,
+          "row_count": 60,
+          "key_columns": [
+            "first",
+            "second"
+          ],
+          "checked_columns": [
+            "first",
+            "second",
+            "stage",
+            "n_both_retained",
+            "n_both_lost",
+            "n_both_reference_discordant",
+            "n_valid_pairs"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/tabelle_kontraste_formatiert.csv",
+          "passed": true,
+          "row_count": 4,
+          "key_columns": [
+            "contrast",
+            "500",
+            "300",
+            "150",
+            "75"
+          ],
+          "checked_columns": [
+            "contrast",
+            "500",
+            "300",
+            "150",
+            "75"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/qa_labelwechsel_einzelfaelle.csv",
+          "passed": true,
+          "row_count": 410,
+          "key_columns": [
+            "article_id",
+            "method",
+            "canonical_fact_id",
+            "transition",
+            "question_before",
+            "reference_answer_before",
+            "label_before",
+            "label_after",
+            "answer_before",
+            "answer_after",
+            "support_before",
+            "support_after",
+            "summary_before",
+            "summary_after"
+          ],
+          "checked_columns": [
+            "article_id",
+            "method",
+            "canonical_fact_id",
+            "transition",
+            "question_before",
+            "reference_answer_before",
+            "label_before",
+            "label_after",
+            "answer_before",
+            "answer_after",
+            "support_before",
+            "support_after",
+            "summary_before",
+            "summary_after"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/labeluebereinstimmung_6x6_75.csv",
+          "passed": true,
+          "row_count": 6,
+          "key_columns": [
+            "Unnamed: 0",
+            "Lead-k",
+            "Plain",
+            "Zero-Shot-CoT",
+            "Few-Shot-CoT",
+            "Auto-CoT",
+            "Automate-CoT"
+          ],
+          "checked_columns": [
+            "Unnamed: 0",
+            "Lead-k",
+            "Plain",
+            "Zero-Shot-CoT",
+            "Few-Shot-CoT",
+            "Auto-CoT",
+            "Automate-CoT"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/generation_status_und_rekursive_eingaben.csv",
+          "passed": true,
+          "row_count": 2400,
+          "key_columns": [
+            "article_id",
+            "method",
+            "stage_target_words",
+            "run_signature",
+            "input_reference",
+            "done_reason",
+            "sampling_seed"
+          ],
+          "checked_columns": [
+            "article_id",
+            "method",
+            "stage_target_words",
+            "complete",
+            "run_signature",
+            "input_reference",
+            "empty_input",
+            "chain_failure",
+            "empty_output",
+            "done_reason",
+            "attempts",
+            "selected_attempt",
+            "sampling_seed"
+          ],
+          "excluded_provenance_or_runtime_columns": [
+            "source_state_file",
+            "source_state_sha256",
+            "input_sha256",
+            "output_sha256",
+            "prompt_sha256"
+          ],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/provenienz.csv",
+          "passed": true,
+          "row_count": 7,
+          "key_columns": [
+            "model",
+            "version",
+            "status",
+            "missing_policy_timing",
+            "retry_seeds",
+            "complete"
+          ],
+          "checked_columns": [
+            "version",
+            "status",
+            "model",
+            "missing_policy_timing",
+            "retry_seeds",
+            "complete"
+          ],
+          "excluded_provenance_or_runtime_columns": [
+            "source"
+          ],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/gegenlaeufige_missingness_grenzen.csv",
+          "passed": true,
+          "row_count": 16,
+          "key_columns": [
+            "contrast",
+            "stage_target_words"
+          ],
+          "checked_columns": [
+            "contrast",
+            "stage_target_words",
+            "lower_missing_bound_pp",
+            "upper_missing_bound_pp",
+            "n_articles"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/sensitivitaet_mittelwerte.csv",
+          "passed": true,
+          "row_count": 120,
+          "key_columns": [
+            "method",
+            "stage_target_words",
+            "policy"
+          ],
+          "checked_columns": [
+            "method",
+            "stage_target_words",
+            "policy",
+            "n_articles",
+            "mean",
+            "ci_low",
+            "ci_high"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/retention_artikelebene.csv",
+          "passed": true,
+          "row_count": 2400,
+          "key_columns": [
+            "article_id",
+            "method",
+            "stage_target_words"
+          ],
+          "checked_columns": [
+            "article_id",
+            "method",
+            "stage_target_words",
+            "n_total",
+            "n_valid",
+            "n_missing",
+            "n_retained",
+            "n_lost",
+            "generation_chain_failure",
+            "n_synthetic_not_found",
+            "n_reference_discordant",
+            "retention_observed",
+            "retention_lower",
+            "retention_upper",
+            "fully_observed"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/stufenaenderungen_pp_95ci.csv",
+          "passed": true,
+          "row_count": 24,
+          "key_columns": [
+            "method",
+            "transition"
+          ],
+          "checked_columns": [
+            "method",
+            "transition",
+            "from_stage",
+            "to_stage",
+            "n_articles",
+            "mean",
+            "ci_low",
+            "ci_high",
+            "n_increase",
+            "n_equal",
+            "n_decrease"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/qa_labelwechsel_ueber_stufen.csv",
+          "passed": true,
+          "row_count": 18,
+          "key_columns": [
+            "method",
+            "transition"
+          ],
+          "checked_columns": [
+            "method",
+            "transition",
+            "n_fact_pairs",
+            "n_valid_fact_pairs",
+            "n_generation_affected_pairs",
+            "n_upward_label_changes",
+            "n_downward_label_changes",
+            "n_unique_article_facts_upward",
+            "n_articles_upward"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/versionsvergleich_mittelwerte.csv",
+          "passed": true,
+          "row_count": 48,
+          "key_columns": [
+            "method",
+            "stage_target_words",
+            "policy",
+            "version"
+          ],
+          "checked_columns": [
+            "method",
+            "stage_target_words",
+            "policy",
+            "n_articles",
+            "mean",
+            "ci_low",
+            "ci_high",
+            "version"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/labeluebereinstimmung_6x6_150.csv",
+          "passed": true,
+          "row_count": 6,
+          "key_columns": [
+            "Unnamed: 0",
+            "Lead-k",
+            "Plain",
+            "Zero-Shot-CoT",
+            "Few-Shot-CoT",
+            "Auto-CoT",
+            "Automate-CoT"
+          ],
+          "checked_columns": [
+            "Unnamed: 0",
+            "Lead-k",
+            "Plain",
+            "Zero-Shot-CoT",
+            "Few-Shot-CoT",
+            "Auto-CoT",
+            "Automate-CoT"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/retention_mittelwerte_95ci.csv",
+          "passed": true,
+          "row_count": 24,
+          "key_columns": [
+            "method",
+            "stage_target_words",
+            "policy"
+          ],
+          "checked_columns": [
+            "method",
+            "stage_target_words",
+            "policy",
+            "n_articles",
+            "mean",
+            "ci_low",
+            "ci_high",
+            "mean_percent",
+            "ci_low_percent",
+            "ci_high_percent"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/sensitivitaet_kontraste.csv",
+          "passed": true,
+          "row_count": 96,
+          "key_columns": [
+            "first",
+            "second",
+            "contrast",
+            "stage_target_words",
+            "policy"
+          ],
+          "checked_columns": [
+            "first",
+            "second",
+            "contrast",
+            "stage_target_words",
+            "policy",
+            "n_articles",
+            "mean",
+            "ci_low",
+            "ci_high",
+            "n_first_higher",
+            "n_tied",
+            "n_first_lower"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/paarweise_labeluebereinstimmung_und_nenner.csv",
+          "passed": true,
+          "row_count": 75,
+          "key_columns": [
+            "first",
+            "second",
+            "stage"
+          ],
+          "checked_columns": [
+            "first",
+            "second",
+            "stage",
+            "n_expected",
+            "n_valid_pairs",
+            "n_articles",
+            "n_excluded_union",
+            "n_technical_missing_either",
+            "n_generation_failure_either",
+            "n_both_failure_types",
+            "n_same_label",
+            "n_different_label",
+            "agreement_percent"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/labeluebereinstimmung_6x6_500.csv",
+          "passed": true,
+          "row_count": 6,
+          "key_columns": [
+            "Unnamed: 0",
+            "Lead-k",
+            "Plain",
+            "Zero-Shot-CoT",
+            "Few-Shot-CoT",
+            "Auto-CoT",
+            "Automate-CoT"
+          ],
+          "checked_columns": [
+            "Unnamed: 0",
+            "Lead-k",
+            "Plain",
+            "Zero-Shot-CoT",
+            "Few-Shot-CoT",
+            "Auto-CoT",
+            "Automate-CoT"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/paarweise_konfusionsmatrizen_3x3.csv",
+          "passed": true,
+          "row_count": 675,
+          "key_columns": [
+            "first",
+            "second",
+            "stage",
+            "row_label",
+            "column_label"
+          ],
+          "checked_columns": [
+            "first",
+            "second",
+            "stage",
+            "row_label",
+            "column_label",
+            "n",
+            "row_total",
+            "row_percent",
+            "n_valid_pairs"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/labeluebereinstimmung_6x6_300.csv",
+          "passed": true,
+          "row_count": 6,
+          "key_columns": [
+            "Unnamed: 0",
+            "Lead-k",
+            "Plain",
+            "Zero-Shot-CoT",
+            "Few-Shot-CoT",
+            "Auto-CoT",
+            "Automate-CoT"
+          ],
+          "checked_columns": [
+            "Unnamed: 0",
+            "Lead-k",
+            "Plain",
+            "Zero-Shot-CoT",
+            "Few-Shot-CoT",
+            "Auto-CoT",
+            "Automate-CoT"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/qa_labels_reproduziert.csv.gz",
+          "passed": true,
+          "row_count": 48000,
+          "key_columns": [
+            "article_id",
+            "method",
+            "stage_target_words",
+            "canonical_fact_id",
+            "dataset_index",
+            "question",
+            "reference_answer",
+            "answer",
+            "support",
+            "answer_status",
+            "error",
+            "label",
+            "answer_origin"
+          ],
+          "checked_columns": [
+            "article_id",
+            "method",
+            "stage_target_words",
+            "canonical_fact_id",
+            "dataset_index",
+            "question",
+            "reference_answer",
+            "answer",
+            "support",
+            "answer_status",
+            "error",
+            "label",
+            "analysis_eligible",
+            "technical_missing",
+            "grounded",
+            "answer_origin",
+            "empty_output",
+            "chain_failure"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/vier_gepaarte_kontraste_pp_95ci.csv",
+          "passed": true,
+          "row_count": 16,
+          "key_columns": [
+            "first",
+            "second",
+            "contrast",
+            "stage_target_words",
+            "policy"
+          ],
+          "checked_columns": [
+            "first",
+            "second",
+            "contrast",
+            "stage_target_words",
+            "policy",
+            "n_articles",
+            "mean",
+            "ci_low",
+            "ci_high",
+            "n_first_higher",
+            "n_tied",
+            "n_first_lower"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/paarweise_auditmatrizen_5x5.csv",
+          "passed": true,
+          "row_count": 1875,
+          "key_columns": [
+            "first",
+            "second",
+            "stage",
+            "row_label",
+            "column_label"
+          ],
+          "checked_columns": [
+            "first",
+            "second",
+            "stage",
+            "row_label",
+            "column_label",
+            "n",
+            "n_expected"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/versionsvergleich_kontraste.csv",
+          "passed": true,
+          "row_count": 32,
+          "key_columns": [
+            "first",
+            "second",
+            "contrast",
+            "stage_target_words",
+            "policy",
+            "version"
+          ],
+          "checked_columns": [
+            "first",
+            "second",
+            "contrast",
+            "stage_target_words",
+            "policy",
+            "n_articles",
+            "mean",
+            "ci_low",
+            "ci_high",
+            "n_first_higher",
+            "n_tied",
+            "n_first_lower",
+            "version"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/qa_status_methoden_stufen.csv",
+          "passed": true,
+          "row_count": 24,
+          "key_columns": [
+            "method",
+            "stage_target_words"
+          ],
+          "checked_columns": [
+            "method",
+            "stage_target_words",
+            "n_expected",
+            "n_valid",
+            "n_missing",
+            "n_synthetic_not_found",
+            "n_retained",
+            "n_lost",
+            "n_reference_discordant",
+            "missing_percent"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/labeluebereinstimmung_6x6_all_stages.csv",
+          "passed": true,
+          "row_count": 6,
+          "key_columns": [
+            "Unnamed: 0",
+            "Lead-k",
+            "Plain",
+            "Zero-Shot-CoT",
+            "Few-Shot-CoT",
+            "Auto-CoT",
+            "Automate-CoT"
+          ],
+          "checked_columns": [
+            "Unnamed: 0",
+            "Lead-k",
+            "Plain",
+            "Zero-Shot-CoT",
+            "Few-Shot-CoT",
+            "Auto-CoT",
+            "Automate-CoT"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/01_retentionsverlauf.png",
+          "passed": true,
+          "kind": "figure",
+          "status": "identical_pixels",
+          "reference_shape": [
+            1121,
+            1908,
+            4
+          ],
+          "new_shape": [
+            1121,
+            1908,
+            4
+          ],
+          "changed_pixel_fraction": 0.0,
+          "mean_absolute_channel_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/02_gepaarte_kontraste.png",
+          "passed": true,
+          "kind": "figure",
+          "status": "identical_pixels",
+          "reference_shape": [
+            1740,
+            2178,
+            4
+          ],
+          "new_shape": [
+            1740,
+            2178,
+            4
+          ],
+          "changed_pixel_fraction": 0.0,
+          "mean_absolute_channel_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/03_missingness_sensitivitaet.png",
+          "passed": true,
+          "kind": "figure",
+          "status": "identical_pixels",
+          "reference_shape": [
+            1601,
+            2398,
+            4
+          ],
+          "new_shape": [
+            1601,
+            2398,
+            4
+          ],
+          "changed_pixel_fraction": 0.0,
+          "mean_absolute_channel_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/04_artikelverteilungen.png",
+          "passed": true,
+          "kind": "figure",
+          "status": "identical_pixels",
+          "reference_shape": [
+            1955,
+            2398,
+            4
+          ],
+          "new_shape": [
+            1955,
+            2398,
+            4
+          ],
+          "changed_pixel_fraction": 0.0,
+          "mean_absolute_channel_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/05_versionsvergleich.png",
+          "passed": true,
+          "kind": "figure",
+          "status": "identical_pixels",
+          "reference_shape": [
+            960,
+            2178,
+            4
+          ],
+          "new_shape": [
+            960,
+            2178,
+            4
+          ],
+          "changed_pixel_fraction": 0.0,
+          "mean_absolute_channel_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/06_labeluebereinstimmung_6x6_stufen.png",
+          "passed": true,
+          "kind": "figure",
+          "status": "identical_pixels",
+          "reference_shape": [
+            2549,
+            2768,
+            4
+          ],
+          "new_shape": [
+            2549,
+            2768,
+            4
+          ],
+          "changed_pixel_fraction": 0.0,
+          "mean_absolute_channel_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/07_labeluebereinstimmung_6x6_gepoolt.png",
+          "passed": true,
+          "kind": "figure",
+          "status": "identical_pixels",
+          "reference_shape": [
+            1565,
+            1754,
+            4
+          ],
+          "new_shape": [
+            1565,
+            1754,
+            4
+          ],
+          "changed_pixel_fraction": 0.0,
+          "mean_absolute_channel_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/08_konfusionsmatrizen_150.png",
+          "passed": true,
+          "kind": "figure",
+          "status": "identical_pixels",
+          "reference_shape": [
+            2335,
+            3785,
+            4
+          ],
+          "new_shape": [
+            2335,
+            3785,
+            4
+          ],
+          "changed_pixel_fraction": 0.0,
+          "mean_absolute_channel_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/08_konfusionsmatrizen_300.png",
+          "passed": true,
+          "kind": "figure",
+          "status": "identical_pixels",
+          "reference_shape": [
+            2335,
+            3785,
+            4
+          ],
+          "new_shape": [
+            2335,
+            3785,
+            4
+          ],
+          "changed_pixel_fraction": 0.0,
+          "mean_absolute_channel_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/08_konfusionsmatrizen_500.png",
+          "passed": true,
+          "kind": "figure",
+          "status": "identical_pixels",
+          "reference_shape": [
+            2335,
+            3785,
+            4
+          ],
+          "new_shape": [
+            2335,
+            3785,
+            4
+          ],
+          "changed_pixel_fraction": 0.0,
+          "mean_absolute_channel_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/08_konfusionsmatrizen_75.png",
+          "passed": true,
+          "kind": "figure",
+          "status": "identical_pixels",
+          "reference_shape": [
+            2335,
+            3785,
+            4
+          ],
+          "new_shape": [
+            2335,
+            3785,
+            4
+          ],
+          "changed_pixel_fraction": 0.0,
+          "mean_absolute_channel_error": 0.0
+        }
+      ],
+      "reused_inputs": []
+    },
+    {
+      "id": "04_laenge_und_adjustierte_retention",
+      "status": "fully_executed",
+      "passed": true,
+      "reason": null,
+      "comparisons": [
+        {
+          "file": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/benachbarte_adjustierte_raenge_gepaarte_intervalle.csv",
+          "passed": true,
+          "row_count": 40,
+          "key_columns": [
+            "stage_target_words",
+            "first",
+            "second",
+            "scenario"
+          ],
+          "checked_columns": [
+            "scenario",
+            "stage_target_words",
+            "first",
+            "second",
+            "delta_R_adj_pp",
+            "ci_low_pp",
+            "ci_high_pp"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/retention_und_drei_rangfolgen_24_gruppen.csv",
+          "passed": true,
+          "row_count": 24,
+          "key_columns": [
+            "method",
+            "stage_target_words"
+          ],
+          "checked_columns": [
+            "method",
+            "stage_target_words",
+            "n_articles",
+            "n_missing_qa",
+            "R_obs_mean",
+            "R_obs_ci_low",
+            "R_obs_ci_high",
+            "R_zero_mean",
+            "R_zero_ci_low",
+            "R_zero_ci_high",
+            "R_adj_mean",
+            "R_adj_ci_low",
+            "R_adj_ci_high",
+            "qa_denominator_gap_mean",
+            "length_penalty_mean",
+            "rank_R_obs",
+            "rank_R_zero",
+            "rank_R_adj",
+            "rank_changed_H2",
+            "rank_changed_denominator",
+            "rank_changed_length"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/gepaarte_differenzen_main_100.csv",
+          "passed": true,
+          "row_count": 60,
+          "key_columns": [
+            "stage_target_words",
+            "first",
+            "second",
+            "scenario"
+          ],
+          "checked_columns": [
+            "scenario",
+            "stage_target_words",
+            "first",
+            "second",
+            "n_articles",
+            "delta_R_obs",
+            "delta_R_obs_ci_low",
+            "delta_R_obs_ci_high",
+            "order_R_obs",
+            "delta_R_zero",
+            "delta_R_zero_ci_low",
+            "delta_R_zero_ci_high",
+            "order_R_zero",
+            "delta_R_adj",
+            "delta_R_adj_ci_low",
+            "delta_R_adj_ci_high",
+            "order_R_adj",
+            "bootstrap_share_first_higher_R_adj",
+            "bootstrap_share_tied_R_adj",
+            "delta_D",
+            "delta_D_ci_low",
+            "delta_D_ci_high",
+            "order_changed_H2",
+            "order_changed_denominator",
+            "order_changed_length"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/sensitivitaet_vergleich_100_98.csv",
+          "passed": true,
+          "row_count": 24,
+          "key_columns": [
+            "method",
+            "stage_target_words"
+          ],
+          "checked_columns": [
+            "method",
+            "stage_target_words",
+            "n_under_100",
+            "n_within_100",
+            "n_over_100",
+            "D_mean_100",
+            "R_obs_mean_100",
+            "R_zero_mean_100",
+            "R_adj_mean_100",
+            "rank_R_obs_100",
+            "rank_R_zero_100",
+            "rank_R_adj_100",
+            "rank_changed_H2_100",
+            "n_under_98",
+            "n_within_98",
+            "n_over_98",
+            "D_mean_98",
+            "R_obs_mean_98",
+            "R_zero_mean_98",
+            "R_adj_mean_98",
+            "rank_R_obs_98",
+            "rank_R_zero_98",
+            "rank_R_adj_98",
+            "rank_changed_H2_98",
+            "delta_D_98_minus_100",
+            "delta_R_adj_pp_98_minus_100"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/bootstrap_ranghaeufigkeiten_sensitivitaet_98.csv",
+          "passed": true,
+          "row_count": 432,
+          "key_columns": [
+            "stage_target_words",
+            "metric",
+            "method",
+            "scenario"
+          ],
+          "checked_columns": [
+            "scenario",
+            "stage_target_words",
+            "metric",
+            "method",
+            "rank",
+            "bootstrap_frequency"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/pareto_punktschaetzer.csv",
+          "passed": true,
+          "row_count": 24,
+          "key_columns": [
+            "method",
+            "stage_target_words",
+            "dominated_by"
+          ],
+          "checked_columns": [
+            "method",
+            "stage_target_words",
+            "R_obs_mean",
+            "D_mean",
+            "dominated_point_estimate",
+            "dominated_by"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/quellen_sha256.csv",
+          "passed": true,
+          "row_count": 26,
+          "key_columns": [
+            "role"
+          ],
+          "checked_columns": [
+            "role"
+          ],
+          "excluded_provenance_or_runtime_columns": [
+            "file",
+            "sha256"
+          ],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/h2_kompakte_rangtabelle.csv",
+          "passed": true,
+          "row_count": 6,
+          "key_columns": [
+            "Verfahren",
+            "500 Wörter",
+            "300 Wörter",
+            "150 Wörter",
+            "75 Wörter"
+          ],
+          "checked_columns": [
+            "Verfahren",
+            "500 Wörter",
+            "300 Wörter",
+            "150 Wörter",
+            "75 Wörter"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/artikelwerte_laenge_retention.csv",
+          "passed": true,
+          "row_count": 2400,
+          "key_columns": [
+            "article_id",
+            "method",
+            "stage_target_words",
+            "collection_phase",
+            "window_status",
+            "done_reason"
+          ],
+          "checked_columns": [
+            "article_id",
+            "method",
+            "stage_target_words",
+            "collection_phase",
+            "W",
+            "U",
+            "O",
+            "under_words",
+            "over_words",
+            "violation_words",
+            "D",
+            "under_D",
+            "over_D",
+            "window_hit",
+            "stored_D_available",
+            "window_status",
+            "empty_output",
+            "empty_input",
+            "chain_failure",
+            "complete",
+            "complete_sentence",
+            "attempts",
+            "done_reason",
+            "n_total",
+            "V",
+            "K",
+            "n_missing",
+            "R_obs",
+            "R_zero",
+            "R_adj",
+            "qa_denominator_gap",
+            "length_penalty"
+          ],
+          "excluded_provenance_or_runtime_columns": [
+            "summary_sha256",
+            "source_state_file"
+          ],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/bootstrap_vollstaendige_rangfolgen_main_100.csv",
+          "passed": true,
+          "row_count": 12,
+          "key_columns": [
+            "stage_target_words",
+            "metric",
+            "scenario",
+            "method_order",
+            "observed_rank_vector",
+            "modal_rank_vector"
+          ],
+          "checked_columns": [
+            "scenario",
+            "stage_target_words",
+            "metric",
+            "method_order",
+            "observed_rank_vector",
+            "observed_order_frequency",
+            "modal_rank_vector",
+            "modal_order_frequency"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/A02_generierungsstatus_und_satzabschluss.csv",
+          "passed": true,
+          "row_count": 24,
+          "key_columns": [
+            "method",
+            "stage_target_words"
+          ],
+          "checked_columns": [
+            "method",
+            "stage_target_words",
+            "n_empty",
+            "n_empty_input",
+            "n_chain_failure",
+            "n_complete_sentences"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/vollstaendige_24_gruppen_main_100.csv",
+          "passed": true,
+          "row_count": 24,
+          "key_columns": [
+            "method",
+            "stage_target_words",
+            "scenario",
+            "R_obs_exact_mean",
+            "R_zero_exact_mean",
+            "R_adj_exact_mean",
+            "dominated_by"
+          ],
+          "checked_columns": [
+            "scenario",
+            "method",
+            "stage_target_words",
+            "n_articles",
+            "n_under",
+            "n_within",
+            "n_over",
+            "n_empty",
+            "n_empty_input",
+            "n_chain_failure",
+            "W_mean",
+            "W_median",
+            "W_p10",
+            "W_p90",
+            "W_min",
+            "W_max",
+            "D_median",
+            "D_p90",
+            "D_max",
+            "under_words_mean",
+            "over_words_mean",
+            "under_D_mean",
+            "over_D_mean",
+            "n_missing_qa",
+            "n_complete_sentences",
+            "share_under",
+            "share_within",
+            "share_over",
+            "D_mean",
+            "D_ci_low",
+            "D_ci_high",
+            "window_hit_mean",
+            "window_hit_ci_low",
+            "window_hit_ci_high",
+            "R_obs_mean",
+            "R_obs_ci_low",
+            "R_obs_ci_high",
+            "R_obs_exact_mean",
+            "R_zero_mean",
+            "R_zero_ci_low",
+            "R_zero_ci_high",
+            "R_zero_exact_mean",
+            "R_adj_mean",
+            "R_adj_ci_low",
+            "R_adj_ci_high",
+            "R_adj_exact_mean",
+            "qa_denominator_gap_mean",
+            "qa_denominator_gap_ci_low",
+            "qa_denominator_gap_ci_high",
+            "length_penalty_mean",
+            "length_penalty_ci_low",
+            "length_penalty_ci_high",
+            "rank_R_obs",
+            "rank_R_zero",
+            "rank_R_adj",
+            "rank_changed_H2",
+            "rank_changed_denominator",
+            "rank_changed_length",
+            "dominated_point_estimate",
+            "dominated_by"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/laengeneinhaltung_24_gruppen.csv",
+          "passed": true,
+          "row_count": 24,
+          "key_columns": [
+            "method",
+            "stage_target_words"
+          ],
+          "checked_columns": [
+            "method",
+            "stage_target_words",
+            "n_articles",
+            "n_under",
+            "n_within",
+            "n_over",
+            "share_under",
+            "share_within",
+            "share_over",
+            "W_mean",
+            "W_median",
+            "W_p10",
+            "W_p90",
+            "W_min",
+            "W_max",
+            "D_mean",
+            "D_ci_low",
+            "D_ci_high",
+            "D_median",
+            "D_p90",
+            "D_max",
+            "under_words_mean",
+            "over_words_mean",
+            "under_D_mean",
+            "over_D_mean",
+            "window_hit_ci_low",
+            "window_hit_ci_high",
+            "n_empty",
+            "n_empty_input",
+            "n_chain_failure"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/artikelwerte_sensitivitaet_98.csv",
+          "passed": true,
+          "row_count": 2352,
+          "key_columns": [
+            "article_id",
+            "method",
+            "stage_target_words",
+            "collection_phase",
+            "window_status",
+            "done_reason"
+          ],
+          "checked_columns": [
+            "article_id",
+            "method",
+            "stage_target_words",
+            "collection_phase",
+            "W",
+            "U",
+            "O",
+            "under_words",
+            "over_words",
+            "violation_words",
+            "D",
+            "under_D",
+            "over_D",
+            "window_hit",
+            "stored_D_available",
+            "window_status",
+            "empty_output",
+            "empty_input",
+            "chain_failure",
+            "complete",
+            "complete_sentence",
+            "attempts",
+            "done_reason",
+            "n_total",
+            "V",
+            "K",
+            "n_missing",
+            "R_obs",
+            "R_zero",
+            "R_adj",
+            "qa_denominator_gap",
+            "length_penalty"
+          ],
+          "excluded_provenance_or_runtime_columns": [
+            "summary_sha256",
+            "source_state_file"
+          ],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/vollstaendige_24_gruppen_sensitivitaet_98.csv",
+          "passed": true,
+          "row_count": 24,
+          "key_columns": [
+            "method",
+            "stage_target_words",
+            "scenario",
+            "R_obs_exact_mean",
+            "R_zero_exact_mean",
+            "R_adj_exact_mean",
+            "dominated_by"
+          ],
+          "checked_columns": [
+            "scenario",
+            "method",
+            "stage_target_words",
+            "n_articles",
+            "n_under",
+            "n_within",
+            "n_over",
+            "n_empty",
+            "n_empty_input",
+            "n_chain_failure",
+            "W_mean",
+            "W_median",
+            "W_p10",
+            "W_p90",
+            "W_min",
+            "W_max",
+            "D_median",
+            "D_p90",
+            "D_max",
+            "under_words_mean",
+            "over_words_mean",
+            "under_D_mean",
+            "over_D_mean",
+            "n_missing_qa",
+            "n_complete_sentences",
+            "share_under",
+            "share_within",
+            "share_over",
+            "D_mean",
+            "D_ci_low",
+            "D_ci_high",
+            "window_hit_mean",
+            "window_hit_ci_low",
+            "window_hit_ci_high",
+            "R_obs_mean",
+            "R_obs_ci_low",
+            "R_obs_ci_high",
+            "R_obs_exact_mean",
+            "R_zero_mean",
+            "R_zero_ci_low",
+            "R_zero_ci_high",
+            "R_zero_exact_mean",
+            "R_adj_mean",
+            "R_adj_ci_low",
+            "R_adj_ci_high",
+            "R_adj_exact_mean",
+            "qa_denominator_gap_mean",
+            "qa_denominator_gap_ci_low",
+            "qa_denominator_gap_ci_high",
+            "length_penalty_mean",
+            "length_penalty_ci_low",
+            "length_penalty_ci_high",
+            "rank_R_obs",
+            "rank_R_zero",
+            "rank_R_adj",
+            "rank_changed_H2",
+            "rank_changed_denominator",
+            "rank_changed_length",
+            "dominated_point_estimate",
+            "dominated_by"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/abgleich_kapitel_4_2.csv",
+          "passed": true,
+          "row_count": 3,
+          "key_columns": [
+            "new_column",
+            "chapter_4_2_column"
+          ],
+          "checked_columns": [
+            "new_column",
+            "chapter_4_2_column",
+            "max_absolute_difference",
+            "passed"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/gepaarte_differenzen_sensitivitaet_98.csv",
+          "passed": true,
+          "row_count": 60,
+          "key_columns": [
+            "stage_target_words",
+            "first",
+            "second",
+            "scenario"
+          ],
+          "checked_columns": [
+            "scenario",
+            "stage_target_words",
+            "first",
+            "second",
+            "n_articles",
+            "delta_R_obs",
+            "delta_R_obs_ci_low",
+            "delta_R_obs_ci_high",
+            "order_R_obs",
+            "delta_R_zero",
+            "delta_R_zero_ci_low",
+            "delta_R_zero_ci_high",
+            "order_R_zero",
+            "delta_R_adj",
+            "delta_R_adj_ci_low",
+            "delta_R_adj_ci_high",
+            "order_R_adj",
+            "bootstrap_share_first_higher_R_adj",
+            "bootstrap_share_tied_R_adj",
+            "delta_D",
+            "delta_D_ci_low",
+            "delta_D_ci_high",
+            "order_changed_H2",
+            "order_changed_denominator",
+            "order_changed_length"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/bootstrap_ranghaeufigkeiten_main_100.csv",
+          "passed": true,
+          "row_count": 432,
+          "key_columns": [
+            "stage_target_words",
+            "metric",
+            "method",
+            "scenario"
+          ],
+          "checked_columns": [
+            "scenario",
+            "stage_target_words",
+            "metric",
+            "method",
+            "rank",
+            "bootstrap_frequency"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/bootstrap_vollstaendige_rangfolgen_sensitivitaet_98.csv",
+          "passed": true,
+          "row_count": 12,
+          "key_columns": [
+            "stage_target_words",
+            "metric",
+            "scenario",
+            "method_order",
+            "observed_rank_vector",
+            "modal_rank_vector"
+          ],
+          "checked_columns": [
+            "scenario",
+            "stage_target_words",
+            "metric",
+            "method_order",
+            "observed_rank_vector",
+            "observed_order_frequency",
+            "modal_rank_vector",
+            "modal_order_frequency"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/integritaet_und_nenner.csv",
+          "passed": true,
+          "row_count": 6,
+          "key_columns": [
+            "Einheit"
+          ],
+          "checked_columns": [
+            "Einheit",
+            "Anzahl"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_laengen_grafiken/aktuell_20260930/01_wortfenster_einhaltung.png",
+          "passed": true,
+          "kind": "figure",
+          "status": "identical_pixels",
+          "reference_shape": [
+            1854,
+            2628,
+            4
+          ],
+          "new_shape": [
+            1854,
+            2628,
+            4
+          ],
+          "changed_pixel_fraction": 0.0,
+          "mean_absolute_channel_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_laengen_grafiken/aktuell_20260930/02_retention_und_laengenabweichung.png",
+          "passed": true,
+          "kind": "figure",
+          "status": "identical_pixels",
+          "reference_shape": [
+            2052,
+            2839,
+            4
+          ],
+          "new_shape": [
+            2052,
+            2839,
+            4
+          ],
+          "changed_pixel_fraction": 0.0,
+          "mean_absolute_channel_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_laengen_grafiken/aktuell_20260930/A01_wortlaengen_verteilungen.png",
+          "passed": true,
+          "kind": "figure",
+          "status": "identical_pixels",
+          "reference_shape": [
+            2054,
+            2618,
+            4
+          ],
+          "new_shape": [
+            2054,
+            2618,
+            4
+          ],
+          "changed_pixel_fraction": 0.0,
+          "mean_absolute_channel_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_laengen_grafiken/aktuell_20260930/V01_adjustierte_retention_punktdiagramm.png",
+          "passed": true,
+          "kind": "figure",
+          "status": "identical_pixels",
+          "reference_shape": [
+            1920,
+            2629,
+            4
+          ],
+          "new_shape": [
+            1920,
+            2629,
+            4
+          ],
+          "changed_pixel_fraction": 0.0,
+          "mean_absolute_channel_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_laengen_grafiken/aktuell_20260930/V02_retention_verbundene_punkte.png",
+          "passed": true,
+          "kind": "figure",
+          "status": "identical_pixels",
+          "reference_shape": [
+            2028,
+            2851,
+            4
+          ],
+          "new_shape": [
+            2028,
+            2851,
+            4
+          ],
+          "changed_pixel_fraction": 0.0,
+          "mean_absolute_channel_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_laengen_grafiken/aktuell_20260930/V03_adjustierte_retention_heatmap.png",
+          "passed": true,
+          "kind": "figure",
+          "status": "identical_pixels",
+          "reference_shape": [
+            1341,
+            1993,
+            4
+          ],
+          "new_shape": [
+            1341,
+            1993,
+            4
+          ],
+          "changed_pixel_fraction": 0.0,
+          "mean_absolute_channel_error": 0.0
+        }
+      ],
+      "reused_inputs": []
+    },
+    {
+      "id": "05_verlustmuster",
+      "status": "skipped",
+      "passed": false,
+      "reason": "not_selected"
+    },
+    {
+      "id": "06_weitere_metriken",
+      "status": "skipped",
+      "passed": false,
+      "reason": "not_selected"
+    },
+    {
+      "id": "07_laengenmatched_matrizen",
+      "status": "fully_executed",
+      "passed": true,
+      "reason": null,
+      "comparisons": [
+        {
+          "file": "project/02_Auswertung/hauptexperiment_laengenmatched_ergebnisse/aktuell_20260930/quellen_sha256.csv",
+          "passed": true,
+          "row_count": 6,
+          "key_columns": [
+            "Rolle"
+          ],
+          "checked_columns": [
+            "Rolle"
+          ],
+          "excluded_provenance_or_runtime_columns": [
+            "Datei",
+            "SHA256"
+          ],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_laengenmatched_ergebnisse/aktuell_20260930/beruecksichtigte_artikelpaare.csv",
+          "passed": true,
+          "row_count": 704,
+          "key_columns": [
+            "article_id",
+            "stage_target_words",
+            "row_method",
+            "column_method",
+            "exclusion_reason"
+          ],
+          "checked_columns": [
+            "article_id",
+            "W_row",
+            "R_row",
+            "n_valid_row",
+            "n_retained_row",
+            "W_column",
+            "R_column",
+            "n_valid_column",
+            "n_retained_column",
+            "mean_word_count",
+            "relative_word_difference",
+            "length_eligible",
+            "qa_available",
+            "included",
+            "delta_pp",
+            "stage_target_words",
+            "row_method",
+            "column_method",
+            "exclusion_reason"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_laengenmatched_ergebnisse/aktuell_20260930/paarbildung_audit_6000_artikelpaare.csv",
+          "passed": true,
+          "row_count": 6000,
+          "key_columns": [
+            "article_id",
+            "stage_target_words",
+            "row_method",
+            "column_method",
+            "exclusion_reason"
+          ],
+          "checked_columns": [
+            "article_id",
+            "W_row",
+            "R_row",
+            "n_valid_row",
+            "n_retained_row",
+            "W_column",
+            "R_column",
+            "n_valid_column",
+            "n_retained_column",
+            "mean_word_count",
+            "relative_word_difference",
+            "length_eligible",
+            "qa_available",
+            "included",
+            "delta_pp",
+            "stage_target_words",
+            "row_method",
+            "column_method",
+            "exclusion_reason"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_laengenmatched_ergebnisse/aktuell_20260930/intervalltabelle_150_woerter_formatiert.csv",
+          "passed": true,
+          "row_count": 15,
+          "key_columns": [
+            "Zeilenverfahren",
+            "Spaltenverfahren",
+            "ΔR (PP)",
+            "95-%-Perzentilintervall (PP)",
+            "Hinweis"
+          ],
+          "checked_columns": [
+            "Zeilenverfahren",
+            "Spaltenverfahren",
+            "ΔR (PP)",
+            "n",
+            "95-%-Perzentilintervall (PP)",
+            "Hinweis"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_laengenmatched_ergebnisse/aktuell_20260930/intervalltabelle_500_woerter_formatiert.csv",
+          "passed": true,
+          "row_count": 15,
+          "key_columns": [
+            "Zeilenverfahren",
+            "Spaltenverfahren",
+            "ΔR (PP)",
+            "95-%-Perzentilintervall (PP)",
+            "Hinweis"
+          ],
+          "checked_columns": [
+            "Zeilenverfahren",
+            "Spaltenverfahren",
+            "ΔR (PP)",
+            "n",
+            "95-%-Perzentilintervall (PP)",
+            "Hinweis"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_laengenmatched_ergebnisse/aktuell_20260930/artikelwerte_wortzahl_retention.csv",
+          "passed": true,
+          "row_count": 2400,
+          "key_columns": [
+            "article_id",
+            "method",
+            "stage_target_words"
+          ],
+          "checked_columns": [
+            "article_id",
+            "method",
+            "stage_target_words",
+            "W",
+            "n_valid",
+            "n_retained",
+            "R"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_laengenmatched_ergebnisse/aktuell_20260930/matrixzellen_120_gerichtete_vergleiche.csv",
+          "passed": true,
+          "row_count": 120,
+          "key_columns": [
+            "stage_target_words",
+            "row_method",
+            "column_method",
+            "mean_delta_pp",
+            "ci95_low_pp",
+            "ci95_high_pp"
+          ],
+          "checked_columns": [
+            "stage_target_words",
+            "row_method",
+            "column_method",
+            "mean_delta_pp",
+            "n",
+            "ci95_low_pp",
+            "ci95_high_pp",
+            "small_sample",
+            "n_length_eligible",
+            "n_qa_unavailable_after_length",
+            "n_zero_mean_words"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_laengenmatched_ergebnisse/aktuell_20260930/intervalltabelle_300_woerter_formatiert.csv",
+          "passed": true,
+          "row_count": 15,
+          "key_columns": [
+            "Zeilenverfahren",
+            "Spaltenverfahren",
+            "ΔR (PP)",
+            "95-%-Perzentilintervall (PP)",
+            "Hinweis"
+          ],
+          "checked_columns": [
+            "Zeilenverfahren",
+            "Spaltenverfahren",
+            "ΔR (PP)",
+            "n",
+            "95-%-Perzentilintervall (PP)",
+            "Hinweis"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_laengenmatched_ergebnisse/aktuell_20260930/intervalltabelle_75_woerter_formatiert.csv",
+          "passed": true,
+          "row_count": 15,
+          "key_columns": [
+            "Zeilenverfahren",
+            "Spaltenverfahren",
+            "ΔR (PP)",
+            "95-%-Perzentilintervall (PP)",
+            "Hinweis"
+          ],
+          "checked_columns": [
+            "Zeilenverfahren",
+            "Spaltenverfahren",
+            "ΔR (PP)",
+            "n",
+            "95-%-Perzentilintervall (PP)",
+            "Hinweis"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_laengenmatched_ergebnisse/aktuell_20260930/bootstrap_intervalle_60_eindeutige_vergleiche.csv",
+          "passed": true,
+          "row_count": 60,
+          "key_columns": [
+            "stage_target_words",
+            "row_method",
+            "column_method",
+            "mean_delta_pp",
+            "ci95_low_pp",
+            "ci95_high_pp"
+          ],
+          "checked_columns": [
+            "stage_target_words",
+            "row_method",
+            "column_method",
+            "mean_delta_pp",
+            "n",
+            "ci95_low_pp",
+            "ci95_high_pp",
+            "small_sample",
+            "n_length_eligible",
+            "n_qa_unavailable_after_length",
+            "n_zero_mean_words"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_laengenmatched_grafiken/aktuell_20260930/vergleichsmatrix_150_woerter.png",
+          "passed": true,
+          "kind": "figure",
+          "status": "identical_pixels",
+          "reference_shape": [
+            1890,
+            2196,
+            4
+          ],
+          "new_shape": [
+            1890,
+            2196,
+            4
+          ],
+          "changed_pixel_fraction": 0.0,
+          "mean_absolute_channel_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_laengenmatched_grafiken/aktuell_20260930/vergleichsmatrix_300_woerter.png",
+          "passed": true,
+          "kind": "figure",
+          "status": "identical_pixels",
+          "reference_shape": [
+            1890,
+            2196,
+            4
+          ],
+          "new_shape": [
+            1890,
+            2196,
+            4
+          ],
+          "changed_pixel_fraction": 0.0,
+          "mean_absolute_channel_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_laengenmatched_grafiken/aktuell_20260930/vergleichsmatrix_500_woerter.png",
+          "passed": true,
+          "kind": "figure",
+          "status": "identical_pixels",
+          "reference_shape": [
+            1890,
+            2196,
+            4
+          ],
+          "new_shape": [
+            1890,
+            2196,
+            4
+          ],
+          "changed_pixel_fraction": 0.0,
+          "mean_absolute_channel_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_laengenmatched_grafiken/aktuell_20260930/vergleichsmatrix_75_woerter.png",
+          "passed": true,
+          "kind": "figure",
+          "status": "identical_pixels",
+          "reference_shape": [
+            1890,
+            2196,
+            4
+          ],
+          "new_shape": [
+            1890,
+            2196,
+            4
+          ],
+          "changed_pixel_fraction": 0.0,
+          "mean_absolute_channel_error": 0.0
+        },
+        {
+          "file": "project/02_Auswertung/hauptexperiment_laengenmatched_grafiken/aktuell_20260930/vergleichsmatrizen_300_75_woerter.png",
+          "passed": true,
+          "kind": "figure",
+          "status": "identical_pixels",
+          "reference_shape": [
+            2090,
+            3740,
+            4
+          ],
+          "new_shape": [
+            2090,
+            3740,
+            4
+          ],
+          "changed_pixel_fraction": 0.0,
+          "mean_absolute_channel_error": 0.0
+        }
+      ],
+      "reused_inputs": []
+    },
+    {
+      "id": "08_tabellenexport",
+      "status": "skipped",
+      "passed": false,
+      "reason": "not_selected"
+    },
+    {
+      "id": "09_lead_k_kontrolle",
+      "status": "skipped",
+      "passed": false,
+      "reason": "not_selected"
+    },
+    {
+      "id": "10_qa_sensitivitaet",
+      "status": "skipped",
+      "passed": false,
+      "reason": "not_selected"
+    },
+    {
+      "id": "11_statistische_laengenkontrolle",
+      "status": "skipped",
+      "passed": false,
+      "reason": "not_selected"
+    },
+    {
+      "id": "12_llm_scorervergleich",
+      "status": "skipped",
+      "passed": false,
+      "reason": "not_selected"
+    }
+  ],
+  "numeric_tolerance": 1e-12,
+  "tables_checked": 55,
+  "figures_checked": 22,
+  "llm_generation_calls": 0,
+  "regression_bootstrap": "existing fingerprint-checked caches only"
+}

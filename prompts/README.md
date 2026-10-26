@@ -4,4 +4,4 @@
 
 Für die **aktuelle** Few-Shot-Bedingung gelten ausschließlich `final_few_shot_cot_*.txt` und `final_few_shot_cot_manifest.json`. Die ältere Few-Shot-Sektion des historischen `manifest.json` dokumentiert den ursprünglichen Freeze; ihre Texte liegen nur im Quellenarchiv und werden im Mini-Test nicht verwendet.
 
-Der finale Plain-Text lautet `summarize in {target_word_length}`, gefolgt von einer Leerzeile und dem jeweiligen Eingabetext. Die unveränderte direkte Zero-Shot-CoT-Vorlage und der Seed-Thinking-Wrapper stehen als kurze Funktionen in [`data/code/summary_rules.py`](../data/code/summary_rules.py). Die konkreten Modelleinstellungen, archivierten historischen Wrapper und Promptherkunft stehen im Quellenarchiv.
+Der finale Plain-Text lautet `summarize in {target_word_length}`, gefolgt von einer Leerzeile und dem jeweiligen Eingabetext. Die unveränderte direkte Zero-Shot-CoT-Vorlage und der Seed-Thinking-Wrapper stehen als kurze Funktionen in [`src/faktenretention/text_rules.py`](../src/faktenretention/text_rules.py). Die konkreten Modelleinstellungen, archivierten historischen Wrapper und Promptherkunft stehen im Quellenarchiv.

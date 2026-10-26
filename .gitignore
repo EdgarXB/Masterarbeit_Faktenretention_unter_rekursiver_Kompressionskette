@@ -4,3 +4,13 @@ __pycache__/
 .venv-*/
 .DS_Store
 results/statistik_*/
+
+.ipynb_checkpoints/
+*.egg-info/
+build/
+dist/
+results/runs/
+results/validation/
+.uv-cache/
+results/qa_neuberechnet/
+results/gemeinsame_auswertung/

@@ -1,0 +1,243 @@
+{
+  "baseline_commit": "ad7eb1a86039dbc44651e4e2cdb1dc358c3d0f14",
+  "paths": [
+    {
+      "old": "data/code/analysis_statistics.py",
+      "new": "src/faktenretention/statistics.py",
+      "archived": "archive/baseline_ad7eb1a/data/code/analysis_statistics.py",
+      "original_runtime_sha256": "0b92457e1eb4b219abd880075542005e714654efe0b01ce7fbc2fadd3f1affd3",
+      "note": "Historical byte-identical evidence; active implementation at new path"
+    },
+    {
+      "old": "data/code/research_pipeline.py",
+      "new": "src/faktenretention/pipeline.py",
+      "archived": "archive/baseline_ad7eb1a/data/code/research_pipeline.py",
+      "original_runtime_sha256": "7e67fb7cee4074a8ad6956870291fa404cdf4892785dc68419a04ce80b3d1490",
+      "note": "Historical byte-identical evidence; active implementation at new path"
+    },
+    {
+      "old": "data/code/extract_atomic_facts.py",
+      "new": "src/faktenretention/facts.py",
+      "archived": "archive/baseline_ad7eb1a/data/code/extract_atomic_facts.py",
+      "original_runtime_sha256": "b6653860b5f3878c2905665604fe4f5a9aade5eb507c64a8e43d89f8829d19a4",
+      "note": "Historical byte-identical evidence; active implementation at new path"
+    },
+    {
+      "old": "data/code/evaluate_autocot_automatecot_metrics.py",
+      "new": "src/faktenretention/metrics.py",
+      "archived": "archive/baseline_ad7eb1a/data/code/evaluate_autocot_automatecot_metrics.py",
+      "original_runtime_sha256": "877d664d8aa4bfb5f6517fc3c4453af63a3c4837b37b419cd990f8049c786f79",
+      "note": "Historical byte-identical evidence; active implementation at new path"
+    },
+    {
+      "old": "data/code/analysis_bootstrap_worker.py",
+      "new": "src/faktenretention/analysis_bootstrap_worker.py",
+      "archived": "archive/baseline_ad7eb1a/data/code/analysis_bootstrap_worker.py",
+      "original_runtime_sha256": "f544319c4d80d2549693f2be35adb00b9e634c2664cc1de6a694335d790b916f",
+      "note": "Historical byte-identical evidence; active implementation at new path"
+    },
+    {
+      "old": "data/code/analysis__hauptexperiment_05_alle_texttabellen.py",
+      "new": "notebooks/08_tabellenexport.ipynb",
+      "archived": "archive/baseline_ad7eb1a/data/code/analysis__hauptexperiment_05_alle_texttabellen.py",
+      "original_runtime_sha256": "0c695643e0d867e2de48f3e276cafce2284cd33b6d4c04b6bd417243225f3c1d",
+      "note": "Historical byte-identical evidence; active implementation at new path"
+    },
+    {
+      "old": "data/code/dataset_store.py",
+      "new": "src/faktenretention/frozen_data.py",
+      "archived": "archive/baseline_ad7eb1a/data/code/dataset_store.py",
+      "original_runtime_sha256": "8c94a49baa36bb0af4009481dbf628fb69c97241f9c64979367a14d12e492d4c",
+      "note": "Historical byte-identical evidence; active implementation at new path"
+    },
+    {
+      "old": "data/code/request_budget.py",
+      "new": "src/faktenretention/request_budget.py",
+      "archived": "archive/baseline_ad7eb1a/data/code/request_budget.py",
+      "original_runtime_sha256": "d6343e64ffcce3290bd643b66b81960254c5b94fa74cb486108309e5b7a9ecd2",
+      "note": "Historical byte-identical evidence; active implementation at new path"
+    },
+    {
+      "old": "data/code/iterative_summarize.py",
+      "new": "src/faktenretention/model_transport.py",
+      "archived": "archive/baseline_ad7eb1a/data/code/iterative_summarize.py",
+      "original_runtime_sha256": "3a669ab474250c39f9e3b2daff1d2e3f20cd2b0561a20e117768b2698feefdb1",
+      "note": "Only still-needed functions extracted; obsolete pilot CLI archived"
+    },
+    {
+      "old": "data/code/analysis__human_validation_faktenrelevanz.py",
+      "new": "notebooks/01_human_faktenrelevanz.ipynb",
+      "archived": "archive/baseline_ad7eb1a/data/code/analysis__human_validation_faktenrelevanz.py",
+      "original_runtime_sha256": "a348b55e54f0a048d21e2915036904c2e8a1db6ae260e93bd24bbc955ac76a1f",
+      "note": "Historical byte-identical evidence; active implementation at new path"
+    },
+    {
+      "old": "data/code/generate_cot_candidate_rollouts.py",
+      "new": "src/faktenretention/demonstrations/generate_cot_candidate_rollouts.py",
+      "archived": "archive/baseline_ad7eb1a/data/code/generate_cot_candidate_rollouts.py",
+      "original_runtime_sha256": "9eed4c4dd8e2da6c2f1f6b64fd39e3fe8c75a4d4ad1a14cbebc0566d31759947",
+      "note": "Historical byte-identical evidence; active implementation at new path"
+    },
+    {
+      "old": "data/code/answer_summary_questions.py",
+      "new": "src/faktenretention/qa.py",
+      "archived": "archive/baseline_ad7eb1a/data/code/answer_summary_questions.py",
+      "original_runtime_sha256": "3d5e4a9358c7b1072bf7e07a2455981f64f51e465a2368b16c532e8456cfe7ab",
+      "note": "Historical byte-identical evidence; active implementation at new path"
+    },
+    {
+      "old": "data/code/offline_guard.py",
+      "new": "src/faktenretention/offline_guard.py",
+      "archived": "archive/baseline_ad7eb1a/data/code/offline_guard.py",
+      "original_runtime_sha256": "35c857f5a6ff257a1bf05842a7a2aaa41122c1b4661a580f649bd53f841afa7e",
+      "note": "Historical byte-identical evidence; active implementation at new path"
+    },
+    {
+      "old": "data/code/analysis__hauptexperiment_06_laengenmatched_vergleichsmatrizen.py",
+      "new": "notebooks/07_laengenmatched_matrizen.ipynb",
+      "archived": "archive/baseline_ad7eb1a/data/code/analysis__hauptexperiment_06_laengenmatched_vergleichsmatrizen.py",
+      "original_runtime_sha256": "d1ca66fb71dfbc7b12ff1cf3a6bbef3378540ccb4f12f4b714ba1adb45054e9e",
+      "note": "Historical byte-identical evidence; active implementation at new path"
+    },
+    {
+      "old": "data/code/analysis__hauptexperiment_03_verlustmuster.py",
+      "new": "notebooks/05_verlustmuster.ipynb",
+      "archived": "archive/baseline_ad7eb1a/data/code/analysis__hauptexperiment_03_verlustmuster.py",
+      "original_runtime_sha256": "a4b03ec7259cf215576124a6815ede190ecc5594a64bcee63395de2b74e40f78",
+      "note": "Historical byte-identical evidence; active implementation at new path"
+    },
+    {
+      "old": "data/code/analysis__hauptexperiment_01_qa_faktenretention.py",
+      "new": "notebooks/03_qa_retention.ipynb",
+      "archived": "archive/baseline_ad7eb1a/data/code/analysis__hauptexperiment_01_qa_faktenretention.py",
+      "original_runtime_sha256": "73f7c2f8c6adf65beea54250b96a70ff084e4627eff2227f45edfcf8ee37a6fc",
+      "note": "Historical byte-identical evidence; active implementation at new path"
+    },
+    {
+      "old": "data/code/input_checks.py",
+      "new": "src/faktenretention/input_checks.py",
+      "archived": "archive/baseline_ad7eb1a/data/code/input_checks.py",
+      "original_runtime_sha256": "5c8883deb1042eadf876ee0b0552dc8b622a96c47b6b8a6ad729e781aca397e8",
+      "note": "Historical byte-identical evidence; active implementation at new path"
+    },
+    {
+      "old": "data/code/analysis__hauptexperiment_04_weitere_evaluationsmetriken.py",
+      "new": "notebooks/06_weitere_metriken.ipynb",
+      "archived": "archive/baseline_ad7eb1a/data/code/analysis__hauptexperiment_04_weitere_evaluationsmetriken.py",
+      "original_runtime_sha256": "4fa84eadd905a5d6e0a6cd699205779563f852dac5084f8189075706332e0809",
+      "note": "Historical byte-identical evidence; active implementation at new path"
+    },
+    {
+      "old": "data/code/analysis__human_validation_qa_faktenretention.py",
+      "new": "notebooks/02_human_qa_retention.ipynb",
+      "archived": "archive/baseline_ad7eb1a/data/code/analysis__human_validation_qa_faktenretention.py",
+      "original_runtime_sha256": "4b0243ae632500149cc5a33b9098b8a76fd94d4913427f9069d939af9ee5b977",
+      "note": "Historical byte-identical evidence; active implementation at new path"
+    },
+    {
+      "old": "data/code/summary_rules.py",
+      "new": "src/faktenretention/text_rules.py",
+      "archived": "archive/baseline_ad7eb1a/data/code/summary_rules.py",
+      "original_runtime_sha256": "67bb777c48d60981ff02f63d98d06ca025786b906a89180280eed46516c59285",
+      "note": "Historical byte-identical evidence; active implementation at new path"
+    },
+    {
+      "old": "data/code/score_model_selection_batch.py",
+      "new": "src/faktenretention/metric_scoring.py",
+      "archived": "archive/baseline_ad7eb1a/data/code/score_model_selection_batch.py",
+      "original_runtime_sha256": "711ff1f45fba1d27cde9ff687d490b3014c0a46fb43c177eaa267a6ac2b39c96",
+      "note": "Historical byte-identical evidence; active implementation at new path"
+    },
+    {
+      "old": "data/code/select_automatecot_demonstrations.py",
+      "new": "src/faktenretention/demonstrations/select_automatecot_demonstrations.py",
+      "archived": "archive/baseline_ad7eb1a/data/code/select_automatecot_demonstrations.py",
+      "original_runtime_sha256": "5244afaff0616f53b991a164e35f7d4493f7393e49fcfc2968a47b3eaf4ca429",
+      "note": "Historical byte-identical evidence; active implementation at new path"
+    },
+    {
+      "old": "data/code/metric_resources.py",
+      "new": "src/faktenretention/metric_resources.py",
+      "archived": "archive/baseline_ad7eb1a/data/code/metric_resources.py",
+      "original_runtime_sha256": "62158221c9b57570be5cb7bb24d4a00def6c8490d22f8dc91a789e8cd7d8d3fd",
+      "note": "Historical byte-identical evidence; active implementation at new path"
+    },
+    {
+      "old": "data/code/select_autocot_demonstrations.py",
+      "new": "src/faktenretention/demonstrations/select_autocot_demonstrations.py",
+      "archived": "archive/baseline_ad7eb1a/data/code/select_autocot_demonstrations.py",
+      "original_runtime_sha256": "dbf45b24de3db5ecc7bc013d4860aca328cb66c515fb5502aaa85a7dc38f19c1",
+      "note": "Historical byte-identical evidence; active implementation at new path"
+    },
+    {
+      "old": "data/code/build_shared_pool_fewshot_prompts.py",
+      "new": "src/faktenretention/demonstrations/build_shared_pool_fewshot_prompts.py",
+      "archived": "archive/baseline_ad7eb1a/data/code/build_shared_pool_fewshot_prompts.py",
+      "original_runtime_sha256": "eaf21d7e6fed994839eacd0dce69d9015b70a2ad2bf9defd30c2e5a09b78f40b",
+      "note": "Historical byte-identical evidence; active implementation at new path"
+    },
+    {
+      "old": "data/code/runtime_checks.py",
+      "new": "src/faktenretention/runtime_checks.py",
+      "archived": "archive/baseline_ad7eb1a/data/code/runtime_checks.py",
+      "original_runtime_sha256": "1f4af02d7d321beb703ec6e022331a2bcab9eba72055b5d6e58e39d5c9bc8301",
+      "note": "Historical byte-identical evidence; active implementation at new path"
+    },
+    {
+      "old": "data/code/analysis__03_QA_Faktenretention_Laengenkontrolle.py",
+      "new": "notebooks/11_statistische_laengenkontrolle.ipynb",
+      "archived": "archive/baseline_ad7eb1a/data/code/analysis__03_QA_Faktenretention_Laengenkontrolle.py",
+      "original_runtime_sha256": "638acd7d442a3f9456ed405990026a985443b0dfd4a44983cb0086220f29a700",
+      "note": "Historical byte-identical evidence; active implementation at new path"
+    },
+    {
+      "old": "data/code/analysis__02_QA_Faktenretention_Sensitivitaet.py",
+      "new": "notebooks/10_qa_sensitivitaet.ipynb",
+      "archived": "archive/baseline_ad7eb1a/data/code/analysis__02_QA_Faktenretention_Sensitivitaet.py",
+      "original_runtime_sha256": "d34a9a7b5e35b00460a55a0daf8edc759c01751ffe4e2e5e4093984f7ae9f403",
+      "note": "Historical byte-identical evidence; active implementation at new path"
+    },
+    {
+      "old": "data/code/analysis__04_LLM_Scorervergleich.py",
+      "new": "notebooks/12_llm_scorervergleich.ipynb",
+      "archived": "archive/baseline_ad7eb1a/data/code/analysis__04_LLM_Scorervergleich.py",
+      "original_runtime_sha256": "496dd8fc8e2e9338d746bf94add47971f1ea30076e3df85caa1c5d80cec60ab2",
+      "note": "Historical byte-identical evidence; active implementation at new path"
+    },
+    {
+      "old": "data/code/score_and_prune_automatecot_candidates.py",
+      "new": "src/faktenretention/demonstrations/score_and_prune_automatecot_candidates.py",
+      "archived": "archive/baseline_ad7eb1a/data/code/score_and_prune_automatecot_candidates.py",
+      "original_runtime_sha256": "93a7f5663f8352c15b68c7616d28e70cd3a0664e12e6597075f1047890d3e1f1",
+      "note": "Historical byte-identical evidence; active implementation at new path"
+    },
+    {
+      "old": "data/code/analyze_run.py",
+      "new": "src/faktenretention/analysis_data.py",
+      "archived": "archive/baseline_ad7eb1a/data/code/analyze_run.py",
+      "original_runtime_sha256": "6a3e83790c4608988bf4b851ca4e64c95150f92965f432f5f941949a7e354921",
+      "note": "Historical byte-identical evidence; active implementation at new path"
+    },
+    {
+      "old": "data/code/qa_scorer_snapshot.py",
+      "new": "src/faktenretention/scoring.py",
+      "archived": "archive/baseline_ad7eb1a/data/code/qa_scorer_snapshot.py",
+      "original_runtime_sha256": "190720ab8a6fcb161a01deb99f51d34fabf5a07445a2734e63010dc8b904d2af",
+      "note": "Historical byte-identical evidence; active implementation at new path"
+    },
+    {
+      "old": "data/code/analysis__01_Lead_k_Qualitaetskontrolle.py",
+      "new": "notebooks/09_lead_k_kontrolle.ipynb",
+      "archived": "archive/baseline_ad7eb1a/data/code/analysis__01_Lead_k_Qualitaetskontrolle.py",
+      "original_runtime_sha256": "b0be3a4dc9ee37b3ccda4fe73f86adfa2aec788d16dae5789a44d4c06e8fe29a",
+      "note": "Historical byte-identical evidence; active implementation at new path"
+    },
+    {
+      "old": "data/code/analysis__hauptexperiment_02_laengeneinhaltung.py",
+      "new": "notebooks/04_laenge_und_adjustierte_retention.ipynb",
+      "archived": "archive/baseline_ad7eb1a/data/code/analysis__hauptexperiment_02_laengeneinhaltung.py",
+      "original_runtime_sha256": "3e2c611f9144a8831a7516eb68f7c4eb2d119c3aeed6c3a7bfd665d43c480b5a",
+      "note": "Historical byte-identical evidence; active implementation at new path"
+    }
+  ]
+}

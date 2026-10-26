@@ -5,9 +5,11 @@
 """Explizite Mini- oder Vollausführung. Ohne Aktivierungsflag nur Offline-Datenprüfung."""
 from pathlib import Path
 import sys
-sys.path.insert(0,str(Path(__file__).resolve().parent/'data/code'))
 import argparse
-from research_pipeline import *
+from faktenretention.pipeline import (
+    METHODS, prepare_articles, start_run, load_resources,
+    generate_facts, generate_summaries, generate_qa, compute_metrics,
+)
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
@@ -28,7 +30,7 @@ def main():
     parser.add_argument('--host',default='127.0.0.1:11435')
     a=parser.parse_args()
     if not(a.test or a.full_experiment):
-        from dataset_store import verify_data
+        from faktenretention.frozen_data import verify_data
         verify_data();return
     if not a.run:parser.error('--run ist erforderlich')
     if a.full_experiment and a.max_requests is None:parser.error('Vollausführung benötigt ein ausdrückliches --max-requests Budget')
@@ -41,7 +43,7 @@ def main():
     if not a.summary_only:generate_qa(a.run,config)
     compute_metrics(a.run,config)
     if not a.defer_analysis:
-        from analyze_run import analyze_run
+        from faktenretention.analysis_data import analyze_run
         analyze_run(a.run)
 
 if __name__=='__main__':main()

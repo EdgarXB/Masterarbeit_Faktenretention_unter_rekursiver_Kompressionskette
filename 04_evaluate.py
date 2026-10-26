@@ -5,11 +5,10 @@
 """Originaler QA-Scorer; neue Modellantworten nur mit --generate-qa --execute."""
 from pathlib import Path
 import sys
-sys.path.insert(0,str(Path(__file__).resolve().parent/'data/code'))
 import argparse
 import json
-from research_pipeline import generate_qa,compute_metrics,read_csv,write_csv,PACKAGE
-from request_budget import activate
+from faktenretention.io import read_csv, write_csv
+from faktenretention.paths import PROJECT_ROOT as PACKAGE
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
@@ -19,15 +18,17 @@ def main():
     p.add_argument('--execute',action='store_true')
     a=p.parse_args()
     if a.generate_qa or a.model_metrics:
+        from faktenretention.pipeline import generate_qa, compute_metrics
+        from faktenretention.request_budget import activate
         if not(a.run and a.execute):p.error('Modellphasen benötigen --run und --execute')
         config=json.loads((a.run/'execution.json').read_text())
         activate(a.run,config)
         if a.generate_qa:generate_qa(a.run,config)
         if a.model_metrics:compute_metrics(a.run,config,semantic=True)
     else:
-        from offline_guard import install
+        from faktenretention.offline_guard import install
         install()
-        from analyze_run import label_answer
+        from faktenretention.analysis_data import label_answer
         source=a.run/'data/answers.csv' if a.run else PACKAGE/'data/qa_antworten.csv.gz'
         output=a.run/'evaluation' if a.run else PACKAGE/'results/qa_neuberechnet'
         rows=read_csv(source)
