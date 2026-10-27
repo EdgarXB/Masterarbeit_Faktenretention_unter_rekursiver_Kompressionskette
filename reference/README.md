@@ -8,7 +8,7 @@ Quellenzuordnungen erhalten bleiben:
 - [`data/referenznotebooks.zip`](../data/referenznotebooks.zip)
 - [`data/quelleninventar.json`](../data/quelleninventar.json)
 
-Der Runner entpackt Referenzen getrennt unter `LAUF/reference/`; neue Tabellen und
-Grafiken entstehen unter `LAUF/workspace/`. Referenzartefakte werden nie als neu
+Der Runner liest die Referenz-ZIPs direkt; neue Tabellen und Grafiken entstehen
+unter `LAUF/tables/` und `LAUF/figures/`. Referenzartefakte werden nie als neu
 berechnete Ausgaben ausgegeben. Ihre erwarteten neuen Gegenstücke und ausdrücklich
 wiederverwendete Eingaben stehen im [Notebook-Inventar](../notebooks/analyses.json).

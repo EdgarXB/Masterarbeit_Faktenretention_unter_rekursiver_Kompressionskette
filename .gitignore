@@ -14,3 +14,5 @@ results/validation/
 .uv-cache/
 results/qa_neuberechnet/
 results/gemeinsame_auswertung/
+data/prepared/
+results/notebooks/

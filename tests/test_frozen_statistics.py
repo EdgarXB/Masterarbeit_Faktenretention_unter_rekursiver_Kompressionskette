@@ -5,6 +5,7 @@ import io
 import sys
 import tempfile
 import unittest
+from faktenretention.frozen_data import baseline_bytes
 import zipfile
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -17,7 +18,7 @@ class FrozenStatisticsTest(unittest.TestCase):
     def test_frozen_hashes(self):
         for line in (ROOT/'data/frozen_assets.sha256').read_text().splitlines():
             digest,name=line.split('  ',1)
-            self.assertEqual(hashlib.sha256((ROOT/name if (ROOT/name).is_file() else ROOT/'archive/baseline_ad7eb1a'/name).read_bytes()).hexdigest(),digest,name)
+            self.assertEqual(hashlib.sha256((ROOT/name).read_bytes() if (ROOT/name).is_file() else baseline_bytes(name)).hexdigest(),digest,name)
 
     def test_qa_labels_means_intervals_and_paired_contrasts(self):
         from faktenretention.offline_guard import install

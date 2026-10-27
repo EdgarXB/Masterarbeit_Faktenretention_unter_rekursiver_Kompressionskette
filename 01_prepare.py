@@ -4,23 +4,18 @@
 # LLM-Aufrufe: keine. Beispiel: python 01_prepare.py
 """Offline-Bestandsprüfung oder Vorbereitung einer ausdrücklich angegebenen CSV."""
 from pathlib import Path
-import sys
 import argparse
-from faktenretention.frozen_data import verify_data, extract_working_copy
+from faktenretention.frozen_data import verify_data
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--articles',type=Path)
     parser.add_argument('--output',type=Path)
-    parser.add_argument('--working-copy',type=Path)
     args=parser.parse_args()
     if args.articles:
         from faktenretention.pipeline import prepare_articles
         if not args.output:parser.error('--articles benötigt --output')
         print(prepare_articles(args.articles,args.output))
     else:verify_data()
-    if args.working_copy:
-        if args.working_copy.exists() and any(args.working_copy.iterdir()):parser.error('Arbeitskopie muss leer sein.')
-        extract_working_copy(args.working_copy.resolve())
 
 if __name__=='__main__':main()

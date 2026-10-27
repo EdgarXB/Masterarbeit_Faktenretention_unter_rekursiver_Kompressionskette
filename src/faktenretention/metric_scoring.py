@@ -1,3 +1,4 @@
+from faktenretention.io import read_csv, write_csv
 from faktenretention.scoring import (token_f1, parse_number_tokens, retention_token_f1, normalize_textual_quantities, parse_longest_number, normalize, retained, quantity_token, canonicalize_for_retention, fraction_token, normalize_symbolic_quantities, NUMBER_WORDS, NUMBER_SCALES, FRACTION_DENOMINATORS)
 #!/usr/bin/env python3
 import argparse
@@ -29,47 +30,6 @@ def rouge_scores(reference: str, candidate: str) -> Tuple[float, float, float]:
         float(scores["rouge2"].fmeasure),
         float(scores["rougeL"].fmeasure),
     )
-
-
-def read_csv(path: Path) -> List[Dict[str, str]]:
-    if not path.exists():
-        return []
-    with path.open("r", encoding="utf-8", newline="") as f:
-        return list(csv.DictReader(f))
-
-
-def write_csv(path: Path, rows: List[Dict[str, str]], fieldnames: List[str]) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w", encoding="utf-8", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
-        writer.writeheader()
-        writer.writerows(rows)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 def avg(values: Iterable[float]) -> float:
@@ -176,7 +136,7 @@ def score_summaries(
     summac_granularity: str,
     summac_device: str,
 ) -> Tuple[List[Dict[str, str]], List[Dict[str, str]]]:
-    articles = {row["article_id"]: row for row in read_csv(articles_path)}
+    articles = {row["article_id"]: row for row in read_csv(articles_path, missing_ok=True)}
     detailed: List[Dict[str, str]] = []
     groups: Dict[Tuple[str, str, str, str], List[Dict[str, float]]] = defaultdict(list)
     bert_candidates: List[str] = []
@@ -187,7 +147,7 @@ def score_summaries(
     summac_detail_indices: List[int] = []
 
     for summary_file in summary_files:
-        for row in read_csv(summary_file):
+        for row in read_csv(summary_file, missing_ok=True):
             article_id = row.get("article_id", "")
             reference = (articles.get(article_id, {}).get("article") or "").strip()
             if not reference:
@@ -348,7 +308,7 @@ def score_summaries(
 
 
 def score_facts(fact_summary_path: Path, output_dir: Path) -> List[Dict[str, str]]:
-    rows = read_csv(fact_summary_path)
+    rows = read_csv(fact_summary_path, missing_ok=True)
     groups: Dict[str, List[Dict[str, str]]] = defaultdict(list)
     for row in rows:
         groups[row.get("model_name", "")].append(row)
@@ -386,7 +346,7 @@ def score_facts(fact_summary_path: Path, output_dir: Path) -> List[Dict[str, str
 
 
 def score_qa(answers_path: Path, output_dir: Path) -> Tuple[List[Dict[str, str]], List[Dict[str, str]]]:
-    rows = read_csv(answers_path)
+    rows = read_csv(answers_path, missing_ok=True)
     detailed: List[Dict[str, str]] = []
     groups: Dict[Tuple[str, str, str, str, str], List[Dict[str, float]]] = defaultdict(list)
     entity_groups: Dict[Tuple[str, str, str, str, str], List[Dict[str, float]]] = defaultdict(list)

@@ -1,1849 +1,597 @@
 {
-  "schema_version": 1,
   "analyses": [
     {
       "id": "01_human_faktenrelevanz",
       "legacy": "human_validation_faktenrelevanz",
-      "notebook": "notebooks/01_human_faktenrelevanz.ipynb",
       "dependencies": [],
-      "base": "project/02_Auswertung",
+      "table_reference_prefix": "human_validation_grafiken__",
       "expected": [
-        {
-          "path": "project/02_Auswertung/human_validation_grafiken/kennzahlen_je_artikel.csv",
-          "reference": "human_validation_grafiken__kennzahlen_je_artikel.csv"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_grafiken/kennzahlen.csv",
-          "reference": "human_validation_grafiken__kennzahlen.csv"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_grafiken/teilnehmer_ki_uebereinstimmung.csv",
-          "reference": "human_validation_grafiken__teilnehmer_ki_uebereinstimmung.csv"
-        }
+        "kennzahlen_je_artikel.csv",
+        "kennzahlen.csv",
+        "teilnehmer_ki_uebereinstimmung.csv"
       ],
+      "figure_reference_prefix": "human_validation_grafiken__",
       "figures": [
-        {
-          "path": "project/02_Auswertung/human_validation_grafiken/01_relevanz_selektion.png",
-          "reference": "human_validation_grafiken__01_relevanz_selektion.png"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_grafiken/02_auswahl_je_artikel.png",
-          "reference": "human_validation_grafiken__02_auswahl_je_artikel.png"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_grafiken/03_modell_mensch_konfusion.png",
-          "reference": "human_validation_grafiken__03_modell_mensch_konfusion.png"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_grafiken/04_teilnehmer_reliabilitaet.png",
-          "reference": "human_validation_grafiken__04_teilnehmer_reliabilitaet.png"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_grafiken/05_relevanz_nach_modellrang.png",
-          "reference": "human_validation_grafiken__05_relevanz_nach_modellrang.png"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_grafiken/06_teilnehmer_ki_uebereinstimmung.png",
-          "reference": "human_validation_grafiken__06_teilnehmer_ki_uebereinstimmung.png"
-        }
+        "01_relevanz_selektion.png",
+        "02_auswahl_je_artikel.png",
+        "03_modell_mensch_konfusion.png",
+        "04_teilnehmer_reliabilitaet.png",
+        "05_relevanz_nach_modellrang.png",
+        "06_teilnehmer_ki_uebereinstimmung.png"
       ],
       "reused": [],
-      "reference_notebook_sha256": "8502ded7095f3a8443f60498f25738083f763495b2664eee0915847a61300e7b",
-      "additional_exports": [
-        "project/02_Auswertung/human_validation_grafiken/01_relevanz_selektion.pdf",
-        "project/02_Auswertung/human_validation_grafiken/02_auswahl_je_artikel.pdf",
-        "project/02_Auswertung/human_validation_grafiken/03_modell_mensch_konfusion.pdf",
-        "project/02_Auswertung/human_validation_grafiken/04_teilnehmer_reliabilitaet.pdf",
-        "project/02_Auswertung/human_validation_grafiken/05_relevanz_nach_modellrang.pdf",
-        "project/02_Auswertung/human_validation_grafiken/06_teilnehmer_ki_uebereinstimmung.pdf"
+      "figure_formats": [
+        "pdf"
       ]
     },
     {
       "id": "02_human_qa_retention",
       "legacy": "human_validation_qa_faktenretention",
-      "notebook": "notebooks/02_human_qa_retention.ipynb",
       "dependencies": [],
-      "base": "project/02_Auswertung",
+      "table_reference_prefix": "human_validation_qa_grafiken__",
       "expected": [
-        {
-          "path": "project/02_Auswertung/human_validation_qa_grafiken/spaeterer_antworterabgleich.csv",
-          "reference": "human_validation_qa_grafiken__spaeterer_antworterabgleich.csv"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_qa_grafiken/datenqualitaetspruefung.csv",
-          "reference": "human_validation_qa_grafiken__datenqualitaetspruefung.csv"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_qa_grafiken/qualitative_fallbeispiele.csv",
-          "reference": "human_validation_qa_grafiken__qualitative_fallbeispiele.csv"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_qa_grafiken/konsens_sensitivitaet.csv",
-          "reference": "human_validation_qa_grafiken__konsens_sensitivitaet.csv"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_qa_grafiken/leave_one_out_stabilitaet.csv",
-          "reference": "human_validation_qa_grafiken__leave_one_out_stabilitaet.csv"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_qa_grafiken/reviewer_vollstaendigkeit.csv",
-          "reference": "human_validation_qa_grafiken__reviewer_vollstaendigkeit.csv"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_qa_grafiken/klassenmetriken.csv",
-          "reference": "human_validation_qa_grafiken__klassenmetriken.csv"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_qa_grafiken/subgruppen.csv",
-          "reference": "human_validation_qa_grafiken__subgruppen.csv"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_qa_grafiken/fragenqualitaet.csv",
-          "reference": "human_validation_qa_grafiken__fragenqualitaet.csv"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_qa_grafiken/fragenqualitaet_konsens.csv",
-          "reference": "human_validation_qa_grafiken__fragenqualitaet_konsens.csv"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_qa_grafiken/vollstaendige_fallauswertung.csv",
-          "reference": "human_validation_qa_grafiken__vollstaendige_fallauswertung.csv"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_qa_grafiken/gesamtbenchmark_kontext.csv",
-          "reference": "human_validation_qa_grafiken__gesamtbenchmark_kontext.csv"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_qa_grafiken/alle_umklassifikationen.csv",
-          "reference": "human_validation_qa_grafiken__alle_umklassifikationen.csv"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_qa_grafiken/rekonstruierte_einzelurteile.csv",
-          "reference": "human_validation_qa_grafiken__rekonstruierte_einzelurteile.csv"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_qa_grafiken/reliabilitaet.csv",
-          "reference": "human_validation_qa_grafiken__reliabilitaet.csv"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_qa_grafiken/scorer_kalibrierung.csv",
-          "reference": "human_validation_qa_grafiken__scorer_kalibrierung.csv"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_qa_grafiken/urspruenglicher_scorer_kennzahlen.csv",
-          "reference": "human_validation_qa_grafiken__urspruenglicher_scorer_kennzahlen.csv"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_qa_grafiken/stichprobenzusammensetzung.csv",
-          "reference": "human_validation_qa_grafiken__stichprobenzusammensetzung.csv"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_qa_grafiken/konfusion_calibrated.csv",
-          "reference": "human_validation_qa_grafiken__konfusion_calibrated.csv"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_qa_grafiken/gewichtung_sensitivitaet.csv",
-          "reference": "human_validation_qa_grafiken__gewichtung_sensitivitaet.csv"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_qa_grafiken/konsens_je_fall.csv",
-          "reference": "human_validation_qa_grafiken__konsens_je_fall.csv"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_qa_grafiken/prompt_scorer_vergleich.csv",
-          "reference": "human_validation_qa_grafiken__prompt_scorer_vergleich.csv"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_qa_grafiken/reviewer_paarvergleich.csv",
-          "reference": "human_validation_qa_grafiken__reviewer_paarvergleich.csv"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_qa_grafiken/gesamtbenchmark_archivierte_intervalle.csv",
-          "reference": "human_validation_qa_grafiken__gesamtbenchmark_archivierte_intervalle.csv"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_qa_grafiken/reviewer_modell_und_fremdkonsens.csv",
-          "reference": "human_validation_qa_grafiken__reviewer_modell_und_fremdkonsens.csv"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_qa_grafiken/qa_fallmatrix_alle_reviewer.csv",
-          "reference": "human_validation_qa_grafiken__qa_fallmatrix_alle_reviewer.csv"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_qa_grafiken/konfusion_model_label.csv",
-          "reference": "human_validation_qa_grafiken__konfusion_model_label.csv"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_qa_grafiken/finale_pipeline_abgrenzung.csv",
-          "reference": "human_validation_qa_grafiken__finale_pipeline_abgrenzung.csv"
-        }
+        "spaeterer_antworterabgleich.csv",
+        "datenqualitaetspruefung.csv",
+        "qualitative_fallbeispiele.csv",
+        "konsens_sensitivitaet.csv",
+        "leave_one_out_stabilitaet.csv",
+        "reviewer_vollstaendigkeit.csv",
+        "klassenmetriken.csv",
+        "subgruppen.csv",
+        "fragenqualitaet.csv",
+        "fragenqualitaet_konsens.csv",
+        "vollstaendige_fallauswertung.csv",
+        "gesamtbenchmark_kontext.csv",
+        "alle_umklassifikationen.csv",
+        "rekonstruierte_einzelurteile.csv",
+        "reliabilitaet.csv",
+        "scorer_kalibrierung.csv",
+        "urspruenglicher_scorer_kennzahlen.csv",
+        "stichprobenzusammensetzung.csv",
+        "konfusion_calibrated.csv",
+        "gewichtung_sensitivitaet.csv",
+        "konsens_je_fall.csv",
+        "prompt_scorer_vergleich.csv",
+        "reviewer_paarvergleich.csv",
+        "gesamtbenchmark_archivierte_intervalle.csv",
+        "reviewer_modell_und_fremdkonsens.csv",
+        "qa_fallmatrix_alle_reviewer.csv",
+        "konfusion_model_label.csv",
+        "finale_pipeline_abgrenzung.csv"
       ],
+      "figure_reference_prefix": "human_validation_qa_grafiken__",
       "figures": [
-        {
-          "path": "project/02_Auswertung/human_validation_qa_grafiken/01_beteiligung_und_missingness.png",
-          "reference": "human_validation_qa_grafiken__01_beteiligung_und_missingness.png"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_qa_grafiken/02_fragenqualitaet.png",
-          "reference": "human_validation_qa_grafiken__02_fragenqualitaet.png"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_qa_grafiken/03_reviewer_kappa.png",
-          "reference": "human_validation_qa_grafiken__03_reviewer_kappa.png"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_qa_grafiken/04_kalibrierung.png",
-          "reference": "human_validation_qa_grafiken__04_kalibrierung.png"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_qa_grafiken/05_konfusion_vor_nach.png",
-          "reference": "human_validation_qa_grafiken__05_konfusion_vor_nach.png"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_qa_grafiken/06_subgruppen.png",
-          "reference": "human_validation_qa_grafiken__06_subgruppen.png"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_qa_grafiken/07_leave_one_out.png",
-          "reference": "human_validation_qa_grafiken__07_leave_one_out.png"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_qa_grafiken/08_spaeterer_antworterabgleich.png",
-          "reference": "human_validation_qa_grafiken__08_spaeterer_antworterabgleich.png"
-        },
-        {
-          "path": "project/02_Auswertung/human_validation_qa_grafiken/09_reviewer_modell_uebereinstimmung.png",
-          "reference": "human_validation_qa_grafiken__09_reviewer_modell_uebereinstimmung.png"
-        }
+        "01_beteiligung_und_missingness.png",
+        "02_fragenqualitaet.png",
+        "03_reviewer_kappa.png",
+        "04_kalibrierung.png",
+        "05_konfusion_vor_nach.png",
+        "06_subgruppen.png",
+        "07_leave_one_out.png",
+        "08_spaeterer_antworterabgleich.png",
+        "09_reviewer_modell_uebereinstimmung.png"
       ],
       "reused": [],
-      "reference_notebook_sha256": "aa2da50bcc01693736a4f1b04aef7313cf75fc7dab1a10d32370d3c72ee9589d",
-      "additional_exports": [
-        "project/02_Auswertung/human_validation_qa_grafiken/01_beteiligung_und_missingness.pdf",
-        "project/02_Auswertung/human_validation_qa_grafiken/02_fragenqualitaet.pdf",
-        "project/02_Auswertung/human_validation_qa_grafiken/03_reviewer_kappa.pdf",
-        "project/02_Auswertung/human_validation_qa_grafiken/04_kalibrierung.pdf",
-        "project/02_Auswertung/human_validation_qa_grafiken/05_konfusion_vor_nach.pdf",
-        "project/02_Auswertung/human_validation_qa_grafiken/06_subgruppen.pdf",
-        "project/02_Auswertung/human_validation_qa_grafiken/07_leave_one_out.pdf",
-        "project/02_Auswertung/human_validation_qa_grafiken/08_spaeterer_antworterabgleich.pdf",
-        "project/02_Auswertung/human_validation_qa_grafiken/09_reviewer_modell_uebereinstimmung.pdf"
+      "figure_formats": [
+        "pdf"
       ]
     },
     {
       "id": "03_qa_retention",
       "legacy": "hauptexperiment_01_qa_faktenretention",
-      "notebook": "notebooks/03_qa_retention.ipynb",
       "dependencies": [],
-      "base": "project/02_Auswertung",
+      "table_reference_prefix": "qa__",
       "expected": [
-        {
-          "path": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/Kapitel_4_2_QA_Faktenretention.md",
-          "reference": "qa__Kapitel_4_2_QA_Faktenretention.md"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/zusammensetzung_paarweiser_labeluebereinstimmung.csv",
-          "reference": "qa__zusammensetzung_paarweiser_labeluebereinstimmung.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/tabelle_kontraste_formatiert.csv",
-          "reference": "qa__tabelle_kontraste_formatiert.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/qa_labelwechsel_einzelfaelle.csv",
-          "reference": "qa__qa_labelwechsel_einzelfaelle.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/labeluebereinstimmung_6x6_75.csv",
-          "reference": "qa__labeluebereinstimmung_6x6_75.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/generation_status_und_rekursive_eingaben.csv",
-          "reference": "qa__generation_status_und_rekursive_eingaben.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/provenienz.csv",
-          "reference": "qa__provenienz.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/gegenlaeufige_missingness_grenzen.csv",
-          "reference": "qa__gegenlaeufige_missingness_grenzen.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/sensitivitaet_mittelwerte.csv",
-          "reference": "qa__sensitivitaet_mittelwerte.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/retention_artikelebene.csv",
-          "reference": "qa__retention_artikelebene.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/stufenaenderungen_pp_95ci.csv",
-          "reference": "qa__stufenaenderungen_pp_95ci.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/qa_labelwechsel_ueber_stufen.csv",
-          "reference": "qa__qa_labelwechsel_ueber_stufen.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/versionsvergleich_mittelwerte.csv",
-          "reference": "qa__versionsvergleich_mittelwerte.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/labeluebereinstimmung_6x6_150.csv",
-          "reference": "qa__labeluebereinstimmung_6x6_150.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/retention_mittelwerte_95ci.csv",
-          "reference": "qa__retention_mittelwerte_95ci.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/sensitivitaet_kontraste.csv",
-          "reference": "qa__sensitivitaet_kontraste.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/paarweise_labeluebereinstimmung_und_nenner.csv",
-          "reference": "qa__paarweise_labeluebereinstimmung_und_nenner.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/labeluebereinstimmung_6x6_500.csv",
-          "reference": "qa__labeluebereinstimmung_6x6_500.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/paarweise_konfusionsmatrizen_3x3.csv",
-          "reference": "qa__paarweise_konfusionsmatrizen_3x3.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/labeluebereinstimmung_6x6_300.csv",
-          "reference": "qa__labeluebereinstimmung_6x6_300.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/qa_labels_reproduziert.csv.gz",
-          "reference": "qa__qa_labels_reproduziert.csv.gz"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/vier_gepaarte_kontraste_pp_95ci.csv",
-          "reference": "qa__vier_gepaarte_kontraste_pp_95ci.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/paarweise_auditmatrizen_5x5.csv",
-          "reference": "qa__paarweise_auditmatrizen_5x5.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/versionsvergleich_kontraste.csv",
-          "reference": "qa__versionsvergleich_kontraste.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/qa_status_methoden_stufen.csv",
-          "reference": "qa__qa_status_methoden_stufen.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/execution_manifest.json",
-          "reference": "qa__execution_manifest.json"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_qa_ergebnisse/aktuell_20260930/labeluebereinstimmung_6x6_all_stages.csv",
-          "reference": "qa__labeluebereinstimmung_6x6_all_stages.csv"
-        }
+        "Kapitel_4_2_QA_Faktenretention.md",
+        "zusammensetzung_paarweiser_labeluebereinstimmung.csv",
+        "tabelle_kontraste_formatiert.csv",
+        "qa_labelwechsel_einzelfaelle.csv",
+        "labeluebereinstimmung_6x6_75.csv",
+        "generation_status_und_rekursive_eingaben.csv",
+        "provenienz.csv",
+        "gegenlaeufige_missingness_grenzen.csv",
+        "sensitivitaet_mittelwerte.csv",
+        "retention_artikelebene.csv",
+        "stufenaenderungen_pp_95ci.csv",
+        "qa_labelwechsel_ueber_stufen.csv",
+        "versionsvergleich_mittelwerte.csv",
+        "labeluebereinstimmung_6x6_150.csv",
+        "retention_mittelwerte_95ci.csv",
+        "sensitivitaet_kontraste.csv",
+        "paarweise_labeluebereinstimmung_und_nenner.csv",
+        "labeluebereinstimmung_6x6_500.csv",
+        "paarweise_konfusionsmatrizen_3x3.csv",
+        "labeluebereinstimmung_6x6_300.csv",
+        "qa_labels_reproduziert.csv.gz",
+        "vier_gepaarte_kontraste_pp_95ci.csv",
+        "paarweise_auditmatrizen_5x5.csv",
+        "versionsvergleich_kontraste.csv",
+        "qa_status_methoden_stufen.csv",
+        "execution_manifest.json",
+        "labeluebereinstimmung_6x6_all_stages.csv"
       ],
+      "figure_reference_prefix": "qa__",
       "figures": [
-        {
-          "path": "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/01_retentionsverlauf.png",
-          "reference": "qa__01_retentionsverlauf.png"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/02_gepaarte_kontraste.png",
-          "reference": "qa__02_gepaarte_kontraste.png"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/03_missingness_sensitivitaet.png",
-          "reference": "qa__03_missingness_sensitivitaet.png"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/04_artikelverteilungen.png",
-          "reference": "qa__04_artikelverteilungen.png"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/05_versionsvergleich.png",
-          "reference": "qa__05_versionsvergleich.png"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/06_labeluebereinstimmung_6x6_stufen.png",
-          "reference": "qa__06_labeluebereinstimmung_6x6_stufen.png"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/07_labeluebereinstimmung_6x6_gepoolt.png",
-          "reference": "qa__07_labeluebereinstimmung_6x6_gepoolt.png"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/08_konfusionsmatrizen_150.png",
-          "reference": "qa__08_konfusionsmatrizen_150.png"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/08_konfusionsmatrizen_300.png",
-          "reference": "qa__08_konfusionsmatrizen_300.png"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/08_konfusionsmatrizen_500.png",
-          "reference": "qa__08_konfusionsmatrizen_500.png"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/08_konfusionsmatrizen_75.png",
-          "reference": "qa__08_konfusionsmatrizen_75.png"
-        }
+        "01_retentionsverlauf.png",
+        "02_gepaarte_kontraste.png",
+        "03_missingness_sensitivitaet.png",
+        "04_artikelverteilungen.png",
+        "05_versionsvergleich.png",
+        "06_labeluebereinstimmung_6x6_stufen.png",
+        "07_labeluebereinstimmung_6x6_gepoolt.png",
+        "08_konfusionsmatrizen_150.png",
+        "08_konfusionsmatrizen_300.png",
+        "08_konfusionsmatrizen_500.png",
+        "08_konfusionsmatrizen_75.png"
       ],
       "reused": [],
-      "reference_notebook_sha256": "347b49b1ea373b9bf9a9411a90bb270f2ed6fb1ed54ea5b00506abab246b33f8",
-      "additional_exports": [
-        "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/01_retentionsverlauf.pdf",
-        "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/01_retentionsverlauf.svg",
-        "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/02_gepaarte_kontraste.pdf",
-        "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/02_gepaarte_kontraste.svg",
-        "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/03_missingness_sensitivitaet.pdf",
-        "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/03_missingness_sensitivitaet.svg",
-        "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/04_artikelverteilungen.pdf",
-        "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/04_artikelverteilungen.svg",
-        "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/05_versionsvergleich.pdf",
-        "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/05_versionsvergleich.svg",
-        "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/06_labeluebereinstimmung_6x6_stufen.pdf",
-        "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/06_labeluebereinstimmung_6x6_stufen.svg",
-        "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/07_labeluebereinstimmung_6x6_gepoolt.pdf",
-        "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/07_labeluebereinstimmung_6x6_gepoolt.svg",
-        "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/08_konfusionsmatrizen_150.pdf",
-        "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/08_konfusionsmatrizen_150.svg",
-        "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/08_konfusionsmatrizen_300.pdf",
-        "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/08_konfusionsmatrizen_300.svg",
-        "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/08_konfusionsmatrizen_500.pdf",
-        "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/08_konfusionsmatrizen_500.svg",
-        "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/08_konfusionsmatrizen_75.pdf",
-        "project/02_Auswertung/hauptexperiment_qa_grafiken/aktuell_20260930/08_konfusionsmatrizen_75.svg"
+      "figure_formats": [
+        "pdf",
+        "svg"
       ]
     },
     {
       "id": "04_laenge_und_adjustierte_retention",
       "legacy": "hauptexperiment_02_laengeneinhaltung",
-      "notebook": "notebooks/04_laenge_und_adjustierte_retention.ipynb",
       "dependencies": [
         "03_qa_retention"
       ],
-      "base": "project/02_Auswertung",
+      "table_reference_prefix": "laenge__",
       "expected": [
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/benachbarte_adjustierte_raenge_gepaarte_intervalle.csv",
-          "reference": "laenge__benachbarte_adjustierte_raenge_gepaarte_intervalle.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/retention_und_drei_rangfolgen_24_gruppen.csv",
-          "reference": "laenge__retention_und_drei_rangfolgen_24_gruppen.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/gepaarte_differenzen_main_100.csv",
-          "reference": "laenge__gepaarte_differenzen_main_100.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/sensitivitaet_vergleich_100_98.csv",
-          "reference": "laenge__sensitivitaet_vergleich_100_98.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/bootstrap_ranghaeufigkeiten_sensitivitaet_98.csv",
-          "reference": "laenge__bootstrap_ranghaeufigkeiten_sensitivitaet_98.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/pareto_punktschaetzer.csv",
-          "reference": "laenge__pareto_punktschaetzer.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/quellen_sha256.csv",
-          "reference": "laenge__quellen_sha256.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/h2_kompakte_rangtabelle.csv",
-          "reference": "laenge__h2_kompakte_rangtabelle.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/Kapitel_4_3_Laengeneinhaltung.md",
-          "reference": "laenge__Kapitel_4_3_Laengeneinhaltung.md"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/artikelwerte_laenge_retention.csv",
-          "reference": "laenge__artikelwerte_laenge_retention.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/bootstrap_vollstaendige_rangfolgen_main_100.csv",
-          "reference": "laenge__bootstrap_vollstaendige_rangfolgen_main_100.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/A02_generierungsstatus_und_satzabschluss.csv",
-          "reference": "laenge__A02_generierungsstatus_und_satzabschluss.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/vollstaendige_24_gruppen_main_100.csv",
-          "reference": "laenge__vollstaendige_24_gruppen_main_100.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/laengeneinhaltung_24_gruppen.csv",
-          "reference": "laenge__laengeneinhaltung_24_gruppen.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/artikelwerte_sensitivitaet_98.csv",
-          "reference": "laenge__artikelwerte_sensitivitaet_98.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/vollstaendige_24_gruppen_sensitivitaet_98.csv",
-          "reference": "laenge__vollstaendige_24_gruppen_sensitivitaet_98.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/abgleich_kapitel_4_2.csv",
-          "reference": "laenge__abgleich_kapitel_4_2.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/gepaarte_differenzen_sensitivitaet_98.csv",
-          "reference": "laenge__gepaarte_differenzen_sensitivitaet_98.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/bootstrap_ranghaeufigkeiten_main_100.csv",
-          "reference": "laenge__bootstrap_ranghaeufigkeiten_main_100.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/bootstrap_vollstaendige_rangfolgen_sensitivitaet_98.csv",
-          "reference": "laenge__bootstrap_vollstaendige_rangfolgen_sensitivitaet_98.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/execution_manifest.json",
-          "reference": "laenge__execution_manifest.json"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengen_ergebnisse/aktuell_20260930/integritaet_und_nenner.csv",
-          "reference": "laenge__integritaet_und_nenner.csv"
-        }
+        "benachbarte_adjustierte_raenge_gepaarte_intervalle.csv",
+        "retention_und_drei_rangfolgen_24_gruppen.csv",
+        "gepaarte_differenzen_main_100.csv",
+        "sensitivitaet_vergleich_100_98.csv",
+        "bootstrap_ranghaeufigkeiten_sensitivitaet_98.csv",
+        "pareto_punktschaetzer.csv",
+        "quellen_sha256.csv",
+        "h2_kompakte_rangtabelle.csv",
+        "Kapitel_4_3_Laengeneinhaltung.md",
+        "artikelwerte_laenge_retention.csv",
+        "bootstrap_vollstaendige_rangfolgen_main_100.csv",
+        "A02_generierungsstatus_und_satzabschluss.csv",
+        "vollstaendige_24_gruppen_main_100.csv",
+        "laengeneinhaltung_24_gruppen.csv",
+        "artikelwerte_sensitivitaet_98.csv",
+        "vollstaendige_24_gruppen_sensitivitaet_98.csv",
+        "abgleich_kapitel_4_2.csv",
+        "gepaarte_differenzen_sensitivitaet_98.csv",
+        "bootstrap_ranghaeufigkeiten_main_100.csv",
+        "bootstrap_vollstaendige_rangfolgen_sensitivitaet_98.csv",
+        "execution_manifest.json",
+        "integritaet_und_nenner.csv"
       ],
+      "figure_reference_prefix": "laenge__",
       "figures": [
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengen_grafiken/aktuell_20260930/01_wortfenster_einhaltung.png",
-          "reference": "laenge__01_wortfenster_einhaltung.png"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengen_grafiken/aktuell_20260930/02_retention_und_laengenabweichung.png",
-          "reference": "laenge__02_retention_und_laengenabweichung.png"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengen_grafiken/aktuell_20260930/A01_wortlaengen_verteilungen.png",
-          "reference": "laenge__A01_wortlaengen_verteilungen.png"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengen_grafiken/aktuell_20260930/V01_adjustierte_retention_punktdiagramm.png",
-          "reference": "laenge__V01_adjustierte_retention_punktdiagramm.png"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengen_grafiken/aktuell_20260930/V02_retention_verbundene_punkte.png",
-          "reference": "laenge__V02_retention_verbundene_punkte.png"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengen_grafiken/aktuell_20260930/V03_adjustierte_retention_heatmap.png",
-          "reference": "laenge__V03_adjustierte_retention_heatmap.png"
-        }
+        "01_wortfenster_einhaltung.png",
+        "02_retention_und_laengenabweichung.png",
+        "A01_wortlaengen_verteilungen.png",
+        "V01_adjustierte_retention_punktdiagramm.png",
+        "V02_retention_verbundene_punkte.png",
+        "V03_adjustierte_retention_heatmap.png"
       ],
       "reused": [],
-      "reference_notebook_sha256": "866bdcb3846c75b7d9a07848cafc888d665407da87c9ac2797caa30bf2c85e06",
-      "additional_exports": [
-        "project/02_Auswertung/hauptexperiment_laengen_grafiken/aktuell_20260930/01_wortfenster_einhaltung.pdf",
-        "project/02_Auswertung/hauptexperiment_laengen_grafiken/aktuell_20260930/01_wortfenster_einhaltung.svg",
-        "project/02_Auswertung/hauptexperiment_laengen_grafiken/aktuell_20260930/02_retention_und_laengenabweichung.pdf",
-        "project/02_Auswertung/hauptexperiment_laengen_grafiken/aktuell_20260930/02_retention_und_laengenabweichung.svg",
-        "project/02_Auswertung/hauptexperiment_laengen_grafiken/aktuell_20260930/A01_wortlaengen_verteilungen.pdf",
-        "project/02_Auswertung/hauptexperiment_laengen_grafiken/aktuell_20260930/A01_wortlaengen_verteilungen.svg",
-        "project/02_Auswertung/hauptexperiment_laengen_grafiken/aktuell_20260930/V01_adjustierte_retention_punktdiagramm.pdf",
-        "project/02_Auswertung/hauptexperiment_laengen_grafiken/aktuell_20260930/V01_adjustierte_retention_punktdiagramm.svg",
-        "project/02_Auswertung/hauptexperiment_laengen_grafiken/aktuell_20260930/V02_retention_verbundene_punkte.pdf",
-        "project/02_Auswertung/hauptexperiment_laengen_grafiken/aktuell_20260930/V02_retention_verbundene_punkte.svg",
-        "project/02_Auswertung/hauptexperiment_laengen_grafiken/aktuell_20260930/V03_adjustierte_retention_heatmap.pdf",
-        "project/02_Auswertung/hauptexperiment_laengen_grafiken/aktuell_20260930/V03_adjustierte_retention_heatmap.svg"
+      "figure_formats": [
+        "pdf",
+        "svg"
       ]
     },
     {
       "id": "05_verlustmuster",
       "legacy": "hauptexperiment_03_verlustmuster",
-      "notebook": "notebooks/05_verlustmuster.ipynb",
       "dependencies": [
         "03_qa_retention"
       ],
-      "base": "project/02_Auswertung",
+      "table_reference_prefix": "verlust__",
       "expected": [
-        {
-          "path": "project/02_Auswertung/hauptexperiment_verlust_ergebnisse/aktuell_20260930/faktenlaufbahnen.csv",
-          "reference": "verlust__faktenlaufbahnen.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_verlust_ergebnisse/aktuell_20260930/entitaetstypen_fakten_und_artikel.csv",
-          "reference": "verlust__entitaetstypen_fakten_und_artikel.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_verlust_ergebnisse/aktuell_20260930/qa_positionen.csv.gz",
-          "reference": "verlust__qa_positionen.csv.gz"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_verlust_ergebnisse/aktuell_20260930/quellen_sha256.csv",
-          "reference": "verlust__quellen_sha256.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_verlust_ergebnisse/aktuell_20260930/retention_entitaetstyp_methoden_stufen_95ci.csv",
-          "reference": "verlust__retention_entitaetstyp_methoden_stufen_95ci.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_verlust_ergebnisse/aktuell_20260930/rueckkehr_beispiele_mit_texten_und_belegen.csv",
-          "reference": "verlust__rueckkehr_beispiele_mit_texten_und_belegen.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_verlust_ergebnisse/aktuell_20260930/Kapitel_4_4_Verlustmuster.md",
-          "reference": "verlust__Kapitel_4_4_Verlustmuster.md"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_verlust_ergebnisse/aktuell_20260930/erste_nicht_retained_stufe_95ci.csv",
-          "reference": "verlust__erste_nicht_retained_stufe_95ci.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_verlust_ergebnisse/aktuell_20260930/laufbahnen_ueberblick.csv",
-          "reference": "verlust__laufbahnen_ueberblick.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_verlust_ergebnisse/aktuell_20260930/labelwechsel_einzelfaelle.csv",
-          "reference": "verlust__labelwechsel_einzelfaelle.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_verlust_ergebnisse/aktuell_20260930/lead_k_praefixpruefung.csv",
-          "reference": "verlust__lead_k_praefixpruefung.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_verlust_ergebnisse/aktuell_20260930/sensitivitaet_ohne_generierungsfehler_erste_stufe.csv",
-          "reference": "verlust__sensitivitaet_ohne_generierungsfehler_erste_stufe.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_verlust_ergebnisse/aktuell_20260930/verlust_entitaetstyp_uebergaenge_95ci.csv",
-          "reference": "verlust__verlust_entitaetstyp_uebergaenge_95ci.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_verlust_ergebnisse/aktuell_20260930/labeluebergaenge_nenner_95ci.csv",
-          "reference": "verlust__labeluebergaenge_nenner_95ci.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_verlust_ergebnisse/aktuell_20260930/erste_stufe_quelllabel_getrennt.csv",
-          "reference": "verlust__erste_stufe_quelllabel_getrennt.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_verlust_ergebnisse/aktuell_20260930/qa_status_getrennte_labels.csv",
-          "reference": "verlust__qa_status_getrennte_labels.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_verlust_ergebnisse/aktuell_20260930/sensitivitaet_ohne_generierungsfehler_entitaetstypen.csv",
-          "reference": "verlust__sensitivitaet_ohne_generierungsfehler_entitaetstypen.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_verlust_ergebnisse/aktuell_20260930/generierungsfehler_positionen.csv",
-          "reference": "verlust__generierungsfehler_positionen.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_verlust_ergebnisse/aktuell_20260930/labeluebergaenge_4x4_absolut.csv",
-          "reference": "verlust__labeluebergaenge_4x4_absolut.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_verlust_ergebnisse/aktuell_20260930/execution_manifest.json",
-          "reference": "verlust__execution_manifest.json"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_verlust_ergebnisse/aktuell_20260930/persistenz_nach_erster_stufe_95ci.csv",
-          "reference": "verlust__persistenz_nach_erster_stufe_95ci.csv"
-        }
+        "faktenlaufbahnen.csv",
+        "entitaetstypen_fakten_und_artikel.csv",
+        "qa_positionen.csv.gz",
+        "quellen_sha256.csv",
+        "retention_entitaetstyp_methoden_stufen_95ci.csv",
+        "rueckkehr_beispiele_mit_texten_und_belegen.csv",
+        "Kapitel_4_4_Verlustmuster.md",
+        "erste_nicht_retained_stufe_95ci.csv",
+        "laufbahnen_ueberblick.csv",
+        "labelwechsel_einzelfaelle.csv",
+        "lead_k_praefixpruefung.csv",
+        "sensitivitaet_ohne_generierungsfehler_erste_stufe.csv",
+        "verlust_entitaetstyp_uebergaenge_95ci.csv",
+        "labeluebergaenge_nenner_95ci.csv",
+        "erste_stufe_quelllabel_getrennt.csv",
+        "qa_status_getrennte_labels.csv",
+        "sensitivitaet_ohne_generierungsfehler_entitaetstypen.csv",
+        "generierungsfehler_positionen.csv",
+        "labeluebergaenge_4x4_absolut.csv",
+        "execution_manifest.json",
+        "persistenz_nach_erster_stufe_95ci.csv"
       ],
+      "figure_reference_prefix": "verlust__",
       "figures": [
-        {
-          "path": "project/02_Auswertung/hauptexperiment_verlust_grafiken/aktuell_20260930/01_erste_nicht_retained_stufe.png",
-          "reference": "verlust__01_erste_nicht_retained_stufe.png"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_verlust_grafiken/aktuell_20260930/02_retention_nach_entitaetstyp.png",
-          "reference": "verlust__02_retention_nach_entitaetstyp.png"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_verlust_grafiken/aktuell_20260930/03_verlustrisiko_nach_typ_und_stufe.png",
-          "reference": "verlust__03_verlustrisiko_nach_typ_und_stufe.png"
-        }
+        "01_erste_nicht_retained_stufe.png",
+        "02_retention_nach_entitaetstyp.png",
+        "03_verlustrisiko_nach_typ_und_stufe.png"
       ],
       "reused": [],
-      "reference_notebook_sha256": "d084a7d42a64bcf8274ca9c62fefd0be6fd74e16cf23cb9a032ef3a33d4f33c8",
-      "additional_exports": [
-        "project/02_Auswertung/hauptexperiment_verlust_grafiken/aktuell_20260930/01_erste_nicht_retained_stufe.pdf",
-        "project/02_Auswertung/hauptexperiment_verlust_grafiken/aktuell_20260930/01_erste_nicht_retained_stufe.svg",
-        "project/02_Auswertung/hauptexperiment_verlust_grafiken/aktuell_20260930/02_retention_nach_entitaetstyp.pdf",
-        "project/02_Auswertung/hauptexperiment_verlust_grafiken/aktuell_20260930/02_retention_nach_entitaetstyp.svg",
-        "project/02_Auswertung/hauptexperiment_verlust_grafiken/aktuell_20260930/03_verlustrisiko_nach_typ_und_stufe.pdf",
-        "project/02_Auswertung/hauptexperiment_verlust_grafiken/aktuell_20260930/03_verlustrisiko_nach_typ_und_stufe.svg"
+      "figure_formats": [
+        "pdf",
+        "svg"
       ]
     },
     {
       "id": "06_weitere_metriken",
       "legacy": "hauptexperiment_04_weitere_evaluationsmetriken",
-      "notebook": "notebooks/06_weitere_metriken.ipynb",
       "dependencies": [
         "03_qa_retention",
-        "04_laenge_und_adjustierte_retention"
+        "04_laenge_und_adjustierte_retention",
+        "05_verlustmuster"
       ],
-      "base": "project/02_Auswertung",
+      "table_reference_prefix": "metriken__",
       "expected": [
-        {
-          "path": "project/02_Auswertung/hauptexperiment_metriken_ergebnisse/aktuell_20260930/sensitivitaet_98_alle_gepaarten_vergleiche.csv",
-          "reference": "metriken__sensitivitaet_98_alle_gepaarten_vergleiche.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_metriken_ergebnisse/aktuell_20260930/haupttext_tabelle_metrikwidersprueche.csv",
-          "reference": "metriken__haupttext_tabelle_metrikwidersprueche.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_metriken_ergebnisse/aktuell_20260930/ausgewaehlte_widersprueche_explorativ.csv",
-          "reference": "metriken__ausgewaehlte_widersprueche_explorativ.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_metriken_ergebnisse/aktuell_20260930/mittelwerte_24_gruppen_breit.csv",
-          "reference": "metriken__mittelwerte_24_gruppen_breit.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_metriken_ergebnisse/aktuell_20260930/sensitivitaet_98_gruppenmittel_95ci.csv",
-          "reference": "metriken__sensitivitaet_98_gruppenmittel_95ci.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_metriken_ergebnisse/aktuell_20260930/quellen_sha256.csv",
-          "reference": "metriken__quellen_sha256.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_metriken_ergebnisse/aktuell_20260930/referenzlaengen.csv",
-          "reference": "metriken__referenzlaengen.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_metriken_ergebnisse/aktuell_20260930/alle_360_gepaarten_metrikvergleiche.csv",
-          "reference": "metriken__alle_360_gepaarten_metrikvergleiche.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_metriken_ergebnisse/aktuell_20260930/kendall_tau_b_mittelwerte_95ci.csv",
-          "reference": "metriken__kendall_tau_b_mittelwerte_95ci.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_metriken_ergebnisse/aktuell_20260930/mittelwerte_24_gruppen_alle_metriken_95ci.csv",
-          "reference": "metriken__mittelwerte_24_gruppen_alle_metriken_95ci.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_metriken_ergebnisse/aktuell_20260930/sensitivitaet_98_summac_referenzwechsel_95ci.csv",
-          "reference": "metriken__sensitivitaet_98_summac_referenzwechsel_95ci.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_metriken_ergebnisse/aktuell_20260930/abbildung_4_5_2_punktwerte.csv",
-          "reference": "metriken__abbildung_4_5_2_punktwerte.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_metriken_ergebnisse/aktuell_20260930/kendall_tau_b_artikelebene_1600.csv",
-          "reference": "metriken__kendall_tau_b_artikelebene_1600.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_metriken_ergebnisse/aktuell_20260930/alle_240_hauptvergleiche.csv",
-          "reference": "metriken__alle_240_hauptvergleiche.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_metriken_ergebnisse/aktuell_20260930/abbildung_4_5_1_punktwerte.csv",
-          "reference": "metriken__abbildung_4_5_1_punktwerte.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_metriken_ergebnisse/aktuell_20260930/summac_referenzwechsel_gepaart_24_gruppen.csv",
-          "reference": "metriken__summac_referenzwechsel_gepaart_24_gruppen.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_metriken_ergebnisse/aktuell_20260930/abgleich_archivierte_384_gruppenwerte.csv",
-          "reference": "metriken__abgleich_archivierte_384_gruppenwerte.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_metriken_ergebnisse/aktuell_20260930/artikelwerte_metriken_2400.csv",
-          "reference": "metriken__artikelwerte_metriken_2400.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_metriken_ergebnisse/aktuell_20260930/belegpruefung_referenzen_zahlen_4_faelle.csv",
-          "reference": "metriken__belegpruefung_referenzen_zahlen_4_faelle.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_metriken_ergebnisse/aktuell_20260930/robustheit_kendall_100_98.csv",
-          "reference": "metriken__robustheit_kendall_100_98.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_metriken_ergebnisse/aktuell_20260930/sensitivitaet_98_methodenraenge.csv",
-          "reference": "metriken__sensitivitaet_98_methodenraenge.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_metriken_ergebnisse/aktuell_20260930/Kapitel_4_5_Ergebnisfassung.md",
-          "reference": "metriken__Kapitel_4_5_Ergebnisfassung.md"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_metriken_ergebnisse/aktuell_20260930/sensitivitaet_98_kendall_95ci.csv",
-          "reference": "metriken__sensitivitaet_98_kendall_95ci.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_metriken_ergebnisse/aktuell_20260930/export_manifest.csv",
-          "reference": "metriken__export_manifest.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_metriken_ergebnisse/aktuell_20260930/methodenraenge_und_abstaende.csv",
-          "reference": "metriken__methodenraenge_und_abstaende.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_metriken_ergebnisse/aktuell_20260930/robustheit_ausgewaehlte_beispiele_98.csv",
-          "reference": "metriken__robustheit_ausgewaehlte_beispiele_98.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_metriken_ergebnisse/aktuell_20260930/wertebereiche_und_fehlwerte.csv",
-          "reference": "metriken__wertebereiche_und_fehlwerte.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_metriken_ergebnisse/aktuell_20260930/sensitivitaet_98_kendall_artikelebene.csv",
-          "reference": "metriken__sensitivitaet_98_kendall_artikelebene.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_metriken_ergebnisse/aktuell_20260930/diagnostik_24_gruppen_qa_zahlen_laenge.csv",
-          "reference": "metriken__diagnostik_24_gruppen_qa_zahlen_laenge.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_metriken_ergebnisse/aktuell_20260930/alle_metrikwidersprueche.csv",
-          "reference": "metriken__alle_metrikwidersprueche.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_metriken_ergebnisse/aktuell_20260930/artikelwerte_roh_mit_referenzen.csv",
-          "reference": "metriken__artikelwerte_roh_mit_referenzen.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_metriken_ergebnisse/aktuell_20260930/execution_manifest.json",
-          "reference": "metriken__execution_manifest.json"
-        }
+        "sensitivitaet_98_alle_gepaarten_vergleiche.csv",
+        "haupttext_tabelle_metrikwidersprueche.csv",
+        "ausgewaehlte_widersprueche_explorativ.csv",
+        "mittelwerte_24_gruppen_breit.csv",
+        "sensitivitaet_98_gruppenmittel_95ci.csv",
+        "quellen_sha256.csv",
+        "referenzlaengen.csv",
+        "alle_360_gepaarten_metrikvergleiche.csv",
+        "kendall_tau_b_mittelwerte_95ci.csv",
+        "mittelwerte_24_gruppen_alle_metriken_95ci.csv",
+        "sensitivitaet_98_summac_referenzwechsel_95ci.csv",
+        "abbildung_4_5_2_punktwerte.csv",
+        "kendall_tau_b_artikelebene_1600.csv",
+        "alle_240_hauptvergleiche.csv",
+        "abbildung_4_5_1_punktwerte.csv",
+        "summac_referenzwechsel_gepaart_24_gruppen.csv",
+        "abgleich_archivierte_384_gruppenwerte.csv",
+        "artikelwerte_metriken_2400.csv",
+        "belegpruefung_referenzen_zahlen_4_faelle.csv",
+        "robustheit_kendall_100_98.csv",
+        "sensitivitaet_98_methodenraenge.csv",
+        "Kapitel_4_5_Ergebnisfassung.md",
+        "sensitivitaet_98_kendall_95ci.csv",
+        "export_manifest.csv",
+        "methodenraenge_und_abstaende.csv",
+        "robustheit_ausgewaehlte_beispiele_98.csv",
+        "wertebereiche_und_fehlwerte.csv",
+        "sensitivitaet_98_kendall_artikelebene.csv",
+        "diagnostik_24_gruppen_qa_zahlen_laenge.csv",
+        "alle_metrikwidersprueche.csv",
+        "artikelwerte_roh_mit_referenzen.csv",
+        "execution_manifest.json"
       ],
+      "figure_reference_prefix": "metriken__",
       "figures": [
-        {
-          "path": "project/02_Auswertung/hauptexperiment_metriken_grafiken/aktuell_20260930/abbildung_4_5_1_methodenordnung_qa.png",
-          "reference": "metriken__abbildung_4_5_1_methodenordnung_qa.png"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_metriken_grafiken/aktuell_20260930/abbildung_4_5_2_summac_referenzwechsel.png",
-          "reference": "metriken__abbildung_4_5_2_summac_referenzwechsel.png"
-        }
+        "abbildung_4_5_1_methodenordnung_qa.png",
+        "abbildung_4_5_2_summac_referenzwechsel.png"
       ],
+      "input_reference_prefix": "metriken__",
       "reused": [
-        {
-          "path": "project/02_Auswertung/hauptexperiment_metriken_ergebnisse/aktuell_20260930/rouge_nachberechnung_2400.csv",
-          "reference": "metriken__rouge_nachberechnung_2400.csv",
-          "reason": "Historical stored input; no recomputation claimed"
-        }
+        "rouge_nachberechnung_2400.csv"
       ],
-      "reference_notebook_sha256": "fd84e6511a731ff9a242d5666cb18affcbcb5954db3f50beb79246bf8dd055a8",
-      "additional_exports": [
-        "project/02_Auswertung/hauptexperiment_metriken_grafiken/aktuell_20260930/abbildung_4_5_1_methodenordnung_qa.pdf",
-        "project/02_Auswertung/hauptexperiment_metriken_grafiken/aktuell_20260930/abbildung_4_5_1_methodenordnung_qa.svg",
-        "project/02_Auswertung/hauptexperiment_metriken_grafiken/aktuell_20260930/abbildung_4_5_2_summac_referenzwechsel.pdf",
-        "project/02_Auswertung/hauptexperiment_metriken_grafiken/aktuell_20260930/abbildung_4_5_2_summac_referenzwechsel.svg"
+      "figure_formats": [
+        "pdf",
+        "svg"
       ]
     },
     {
       "id": "07_laengenmatched_matrizen",
       "legacy": "hauptexperiment_06_laengenmatched_vergleichsmatrizen",
-      "notebook": "notebooks/07_laengenmatched_matrizen.ipynb",
       "dependencies": [
         "03_qa_retention",
         "04_laenge_und_adjustierte_retention"
       ],
-      "base": "project/02_Auswertung",
+      "table_reference_prefix": "matched__",
       "expected": [
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengenmatched_ergebnisse/aktuell_20260930/intervalltabellen.md",
-          "reference": "matched__intervalltabellen.md"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengenmatched_ergebnisse/aktuell_20260930/quellen_sha256.csv",
-          "reference": "matched__quellen_sha256.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengenmatched_ergebnisse/aktuell_20260930/beruecksichtigte_artikelpaare.csv",
-          "reference": "matched__beruecksichtigte_artikelpaare.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengenmatched_ergebnisse/aktuell_20260930/paarbildung_audit_6000_artikelpaare.csv",
-          "reference": "matched__paarbildung_audit_6000_artikelpaare.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengenmatched_ergebnisse/aktuell_20260930/intervalltabelle_150_woerter_formatiert.csv",
-          "reference": "matched__intervalltabelle_150_woerter_formatiert.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengenmatched_ergebnisse/aktuell_20260930/intervalltabelle_500_woerter_formatiert.csv",
-          "reference": "matched__intervalltabelle_500_woerter_formatiert.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengenmatched_ergebnisse/aktuell_20260930/artikelwerte_wortzahl_retention.csv",
-          "reference": "matched__artikelwerte_wortzahl_retention.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengenmatched_ergebnisse/aktuell_20260930/matrixzellen_120_gerichtete_vergleiche.csv",
-          "reference": "matched__matrixzellen_120_gerichtete_vergleiche.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengenmatched_ergebnisse/aktuell_20260930/intervalltabelle_300_woerter_formatiert.csv",
-          "reference": "matched__intervalltabelle_300_woerter_formatiert.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengenmatched_ergebnisse/aktuell_20260930/intervalltabelle_75_woerter_formatiert.csv",
-          "reference": "matched__intervalltabelle_75_woerter_formatiert.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengenmatched_ergebnisse/aktuell_20260930/bootstrap_intervalle_60_eindeutige_vergleiche.csv",
-          "reference": "matched__bootstrap_intervalle_60_eindeutige_vergleiche.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengenmatched_ergebnisse/aktuell_20260930/execution_manifest.json",
-          "reference": "matched__execution_manifest.json"
-        }
+        "intervalltabellen.md",
+        "quellen_sha256.csv",
+        "beruecksichtigte_artikelpaare.csv",
+        "paarbildung_audit_6000_artikelpaare.csv",
+        "intervalltabelle_150_woerter_formatiert.csv",
+        "intervalltabelle_500_woerter_formatiert.csv",
+        "artikelwerte_wortzahl_retention.csv",
+        "matrixzellen_120_gerichtete_vergleiche.csv",
+        "intervalltabelle_300_woerter_formatiert.csv",
+        "intervalltabelle_75_woerter_formatiert.csv",
+        "bootstrap_intervalle_60_eindeutige_vergleiche.csv",
+        "execution_manifest.json"
       ],
+      "figure_reference_prefix": "matched__",
       "figures": [
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengenmatched_grafiken/aktuell_20260930/vergleichsmatrix_150_woerter.png",
-          "reference": "matched__vergleichsmatrix_150_woerter.png"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengenmatched_grafiken/aktuell_20260930/vergleichsmatrix_300_woerter.png",
-          "reference": "matched__vergleichsmatrix_300_woerter.png"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengenmatched_grafiken/aktuell_20260930/vergleichsmatrix_500_woerter.png",
-          "reference": "matched__vergleichsmatrix_500_woerter.png"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengenmatched_grafiken/aktuell_20260930/vergleichsmatrix_75_woerter.png",
-          "reference": "matched__vergleichsmatrix_75_woerter.png"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_laengenmatched_grafiken/aktuell_20260930/vergleichsmatrizen_300_75_woerter.png",
-          "reference": "matched__vergleichsmatrizen_300_75_woerter.png"
-        }
+        "vergleichsmatrix_150_woerter.png",
+        "vergleichsmatrix_300_woerter.png",
+        "vergleichsmatrix_500_woerter.png",
+        "vergleichsmatrix_75_woerter.png",
+        "vergleichsmatrizen_300_75_woerter.png"
       ],
       "reused": [],
-      "reference_notebook_sha256": "b9f9fa468599c3cd97c800a2a7b6212cc01169b2798a470dbbe48a9a3384abf0",
-      "additional_exports": [
-        "project/02_Auswertung/hauptexperiment_laengenmatched_grafiken/aktuell_20260930/vergleichsmatrix_150_woerter.pdf",
-        "project/02_Auswertung/hauptexperiment_laengenmatched_grafiken/aktuell_20260930/vergleichsmatrix_300_woerter.pdf",
-        "project/02_Auswertung/hauptexperiment_laengenmatched_grafiken/aktuell_20260930/vergleichsmatrix_500_woerter.pdf",
-        "project/02_Auswertung/hauptexperiment_laengenmatched_grafiken/aktuell_20260930/vergleichsmatrix_75_woerter.pdf",
-        "project/02_Auswertung/hauptexperiment_laengenmatched_grafiken/aktuell_20260930/vergleichsmatrizen_300_75_woerter.pdf",
-        "project/02_Auswertung/hauptexperiment_laengenmatched_grafiken/aktuell_20260930/vergleichsmatrizen_300_75_woerter.svg"
+      "figure_formats": [
+        "pdf",
+        "svg"
       ]
     },
     {
       "id": "08_tabellenexport",
       "legacy": "hauptexperiment_05_alle_texttabellen",
-      "notebook": "notebooks/08_tabellenexport.ipynb",
       "dependencies": [
-        "01_human_faktenrelevanz",
-        "02_human_qa_retention",
         "03_qa_retention",
         "04_laenge_und_adjustierte_retention",
         "05_verlustmuster",
         "06_weitere_metriken"
       ],
-      "base": "project/02_Auswertung",
+      "table_reference_prefix": "texttabellen__",
       "expected": [
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/07_retention_typ_automate_cot.csv",
-          "reference": "texttabellen__07_retention_typ_automate_cot.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/faktenlaufbahnen.csv",
-          "reference": "texttabellen__faktenlaufbahnen.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/07c_abbildung14_verlustanteile.csv",
-          "reference": "texttabellen__07c_abbildung14_verlustanteile.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/artikelwerte_laenge_qa.csv",
-          "reference": "texttabellen__artikelwerte_laenge_qa.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/02b_wortfenster_satzende.csv",
-          "reference": "texttabellen__02b_wortfenster_satzende.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/10_konfusion_original.csv",
-          "reference": "texttabellen__10_konfusion_original.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/08_highlight_rouge2_f1.csv",
-          "reference": "texttabellen__08_highlight_rouge2_f1.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/quellen_sha256.csv",
-          "reference": "texttabellen__quellen_sha256.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/09_spearman_highlight_rouge2_f1.csv",
-          "reference": "texttabellen__09_spearman_highlight_rouge2_f1.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/artikelwerte_sechs_metriken.csv",
-          "reference": "texttabellen__artikelwerte_sechs_metriken.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/02a_wortzahlen.csv",
-          "reference": "texttabellen__02a_wortzahlen.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/01_qa_nenner_retention.csv",
-          "reference": "texttabellen__01_qa_nenner_retention.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/qa_labels.csv.gz",
-          "reference": "texttabellen__qa_labels.csv.gz"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/04_kontraste_R_obs.csv",
-          "reference": "texttabellen__04_kontraste_R_obs.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/08_highlight_rougeL_f1.csv",
-          "reference": "texttabellen__08_highlight_rougeL_f1.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/08_source_summac.csv",
-          "reference": "texttabellen__08_source_summac.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/07_retention_typ_plain.csv",
-          "reference": "texttabellen__07_retention_typ_plain.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/06b_persistenz_rueckkehr.csv",
-          "reference": "texttabellen__06b_persistenz_rueckkehr.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/08_highlight_bertscore_f1.csv",
-          "reference": "texttabellen__08_highlight_bertscore_f1.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/07_retention_typ_auto_cot.csv",
-          "reference": "texttabellen__07_retention_typ_auto_cot.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/09_spearman_highlight_bertscore_f1.csv",
-          "reference": "texttabellen__09_spearman_highlight_bertscore_f1.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/11_rechenpruefungen.csv",
-          "reference": "texttabellen__11_rechenpruefungen.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/kalibrierung_fallebene.csv",
-          "reference": "texttabellen__kalibrierung_fallebene.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/03c_rangwechsel_gesamt.csv",
-          "reference": "texttabellen__03c_rangwechsel_gesamt.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/07_retention_typ_zero_shot_cot.csv",
-          "reference": "texttabellen__07_retention_typ_zero_shot_cot.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/09_spearman_highlight_rougeL_f1.csv",
-          "reference": "texttabellen__09_spearman_highlight_rougeL_f1.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/04_kontraste_R_20.csv",
-          "reference": "texttabellen__04_kontraste_R_20.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/08_stage_input_summac.csv",
-          "reference": "texttabellen__08_stage_input_summac.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/04_kontraste_R_adj.csv",
-          "reference": "texttabellen__04_kontraste_R_adj.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/10_konfusion_final.csv",
-          "reference": "texttabellen__10_konfusion_final.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/06a_erste_nicht_retained_stufe.csv",
-          "reference": "texttabellen__06a_erste_nicht_retained_stufe.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/10_kalibrierungsbasis.csv",
-          "reference": "texttabellen__10_kalibrierungsbasis.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/09_spearman_highlight_rouge1_f1.csv",
-          "reference": "texttabellen__09_spearman_highlight_rouge1_f1.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/alle_zehn_auswertungen.txt",
-          "reference": "texttabellen__alle_zehn_auswertungen.txt"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/07_retention_typ_lead_k.csv",
-          "reference": "texttabellen__07_retention_typ_lead_k.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/07a_entitaetstypen_umfang.csv",
-          "reference": "texttabellen__07a_entitaetstypen_umfang.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/08_highlight_rouge1_f1.csv",
-          "reference": "texttabellen__08_highlight_rouge1_f1.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/04_spitzenvergleich_adjustiert.csv",
-          "reference": "texttabellen__04_spitzenvergleich_adjustiert.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/12_quellenindex.csv",
-          "reference": "texttabellen__12_quellenindex.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/07_retention_typ_few_shot_cot.csv",
-          "reference": "texttabellen__07_retention_typ_few_shot_cot.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/03a_adjustierung_rangfolgen.csv",
-          "reference": "texttabellen__03a_adjustierung_rangfolgen.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/10_recall.csv",
-          "reference": "texttabellen__10_recall.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/03b_rangwechsel_stufen.csv",
-          "reference": "texttabellen__03b_rangwechsel_stufen.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/09_spearman_source_summac.csv",
-          "reference": "texttabellen__09_spearman_source_summac.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/execution_manifest.json",
-          "reference": "texttabellen__execution_manifest.json"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/05_qa_labels.csv",
-          "reference": "texttabellen__05_qa_labels.csv"
-        },
-        {
-          "path": "project/02_Auswertung/hauptexperiment_texttabellen_ergebnisse/aktuell_20260930/09_spearman_stage_input_summac.csv",
-          "reference": "texttabellen__09_spearman_stage_input_summac.csv"
-        }
+        "07_retention_typ_automate_cot.csv",
+        "faktenlaufbahnen.csv",
+        "07c_abbildung14_verlustanteile.csv",
+        "artikelwerte_laenge_qa.csv",
+        "02b_wortfenster_satzende.csv",
+        "10_konfusion_original.csv",
+        "08_highlight_rouge2_f1.csv",
+        "quellen_sha256.csv",
+        "09_spearman_highlight_rouge2_f1.csv",
+        "artikelwerte_sechs_metriken.csv",
+        "02a_wortzahlen.csv",
+        "01_qa_nenner_retention.csv",
+        "qa_labels.csv.gz",
+        "04_kontraste_R_obs.csv",
+        "08_highlight_rougeL_f1.csv",
+        "08_source_summac.csv",
+        "07_retention_typ_plain.csv",
+        "06b_persistenz_rueckkehr.csv",
+        "08_highlight_bertscore_f1.csv",
+        "07_retention_typ_auto_cot.csv",
+        "09_spearman_highlight_bertscore_f1.csv",
+        "11_rechenpruefungen.csv",
+        "kalibrierung_fallebene.csv",
+        "03c_rangwechsel_gesamt.csv",
+        "07_retention_typ_zero_shot_cot.csv",
+        "09_spearman_highlight_rougeL_f1.csv",
+        "04_kontraste_R_20.csv",
+        "08_stage_input_summac.csv",
+        "04_kontraste_R_adj.csv",
+        "10_konfusion_final.csv",
+        "06a_erste_nicht_retained_stufe.csv",
+        "10_kalibrierungsbasis.csv",
+        "09_spearman_highlight_rouge1_f1.csv",
+        "alle_zehn_auswertungen.txt",
+        "07_retention_typ_lead_k.csv",
+        "07a_entitaetstypen_umfang.csv",
+        "08_highlight_rouge1_f1.csv",
+        "04_spitzenvergleich_adjustiert.csv",
+        "12_quellenindex.csv",
+        "07_retention_typ_few_shot_cot.csv",
+        "03a_adjustierung_rangfolgen.csv",
+        "10_recall.csv",
+        "03b_rangwechsel_stufen.csv",
+        "09_spearman_source_summac.csv",
+        "execution_manifest.json",
+        "05_qa_labels.csv",
+        "09_spearman_stage_input_summac.csv"
       ],
       "figures": [],
       "reused": [],
-      "reference_notebook_sha256": "96dfb3d88f6e892a34b5b662c753305e5f993aaf834f87525d4e6b39dd3551f0",
-      "additional_exports": []
+      "figure_formats": []
     },
     {
       "id": "09_lead_k_kontrolle",
       "legacy": "01_Lead_k_Qualitaetskontrolle",
-      "notebook": "notebooks/09_lead_k_kontrolle.ipynb",
-      "dependencies": [
-        "03_qa_retention",
-        "04_laenge_und_adjustierte_retention"
-      ],
-      "base": "supplement",
+      "dependencies": [],
+      "table_reference_prefix": "01_lead_k__",
       "expected": [
-        {
-          "path": "supplement/ergebnisse/01_lead_k/ambiguous_pruefhinweise_KEINE_bestaetigten_fehler.csv",
-          "reference": "01_lead_k__ambiguous_pruefhinweise_KEINE_bestaetigten_fehler.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/01_lead_k/labelverlauf_muster.csv",
-          "reference": "01_lead_k__labelverlauf_muster.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/01_lead_k/textnachweis_sensitivitaeten_keine_globale_recall_schaetzung.csv",
-          "reference": "01_lead_k__textnachweis_sensitivitaeten_keine_globale_recall_schaetzung.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/01_lead_k/Wissenschaftlich_relevante_Ergebnisse_Kapitel_4_1.md",
-          "reference": "01_lead_k__Wissenschaftlich_relevante_Ergebnisse_Kapitel_4_1.md"
-        },
-        {
-          "path": "supplement/ergebnisse/01_lead_k/belegpruefung_2000_ausgangsfakten.csv",
-          "reference": "01_lead_k__belegpruefung_2000_ausgangsfakten.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/01_lead_k/quellen_sha256.csv",
-          "reference": "01_lead_k__quellen_sha256.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/01_lead_k/ausfuehrungsprotokoll.json",
-          "reference": "01_lead_k__ausfuehrungsprotokoll.json"
-        },
-        {
-          "path": "supplement/ergebnisse/01_lead_k/positivtest_alle_8000_positionen.csv",
-          "reference": "01_lead_k__positivtest_alle_8000_positionen.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/01_lead_k/problematische_fakten_alle_stufen.csv",
-          "reference": "01_lead_k__problematische_fakten_alle_stufen.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/01_lead_k/positive_detection_rate_mit_nennern.csv",
-          "reference": "01_lead_k__positive_detection_rate_mit_nennern.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/01_lead_k/datenverfuegbarkeit.csv",
-          "reference": "01_lead_k__datenverfuegbarkeit.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/01_lead_k/eingabeabdeckung.csv",
-          "reference": "01_lead_k__eingabeabdeckung.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/01_lead_k/positivtest_kategorien_je_stufe.csv",
-          "reference": "01_lead_k__positivtest_kategorien_je_stufe.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/01_lead_k/alle_faktenverlaeufe.csv",
-          "reference": "01_lead_k__alle_faktenverlaeufe.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/01_lead_k/monotonie_artikelbootstrap_10000_seed32.csv",
-          "reference": "01_lead_k__monotonie_artikelbootstrap_10000_seed32.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/01_lead_k/fehlerquellen_strict_positive.csv",
-          "reference": "01_lead_k__fehlerquellen_strict_positive.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/01_lead_k/monotonie_alle_stufenpaare.csv",
-          "reference": "01_lead_k__monotonie_alle_stufenpaare.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/01_lead_k/strict_positive_alle_faelle.csv",
-          "reference": "01_lead_k__strict_positive_alle_faelle.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/01_lead_k/manuelle_kontrollstichprobe_UNBEWERTET.csv",
-          "reference": "01_lead_k__manuelle_kontrollstichprobe_UNBEWERTET.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/01_lead_k/unveraenderte_qa_labels_anzahlen.csv",
-          "reference": "01_lead_k__unveraenderte_qa_labels_anzahlen.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/01_lead_k/positivtest_selektionstrichter.csv",
-          "reference": "01_lead_k__positivtest_selektionstrichter.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/01_lead_k/grafik_labeluebergaenge_zeilenanteile.csv",
-          "reference": "01_lead_k__grafik_labeluebergaenge_zeilenanteile.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/01_lead_k/monotonie_beteiligte_labelkombinationen.csv",
-          "reference": "01_lead_k__monotonie_beteiligte_labelkombinationen.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/01_lead_k/lead_k_praefixpruefung.csv",
-          "reference": "01_lead_k__lead_k_praefixpruefung.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/01_lead_k/wichtigste_ergebnisse.csv",
-          "reference": "01_lead_k__wichtigste_ergebnisse.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/01_lead_k/pdr_artikelbootstrap_10000_seed32.csv",
-          "reference": "01_lead_k__pdr_artikelbootstrap_10000_seed32.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/01_lead_k/widerspruechliche_stufenpaare.csv",
-          "reference": "01_lead_k__widerspruechliche_stufenpaare.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/01_lead_k/monotonie_artikelverteilung.csv",
-          "reference": "01_lead_k__monotonie_artikelverteilung.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/01_lead_k/zusatzfaelle_gegenueber_historischer_definition.csv",
-          "reference": "01_lead_k__zusatzfaelle_gegenueber_historischer_definition.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/01_lead_k/abgleich_21_definitionen.csv",
-          "reference": "01_lead_k__abgleich_21_definitionen.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/01_lead_k/monotonie_benachbarte_uebergaenge.csv",
-          "reference": "01_lead_k__monotonie_benachbarte_uebergaenge.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/01_lead_k/strict_positive_nicht_retained_diagnostik.csv",
-          "reference": "01_lead_k__strict_positive_nicht_retained_diagnostik.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/01_lead_k/bis_20_strenge_faelle_zur_manuellen_pruefung.csv",
-          "reference": "01_lead_k__bis_20_strenge_faelle_zur_manuellen_pruefung.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/01_lead_k/auswertbare_faktenverlaeufe.csv",
-          "reference": "01_lead_k__auswertbare_faktenverlaeufe.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/01_lead_k/monotonie_verteilung_alle_artikel.csv",
-          "reference": "01_lead_k__monotonie_verteilung_alle_artikel.csv"
-        }
+        "ambiguous_pruefhinweise_KEINE_bestaetigten_fehler.csv",
+        "labelverlauf_muster.csv",
+        "textnachweis_sensitivitaeten_keine_globale_recall_schaetzung.csv",
+        "Wissenschaftlich_relevante_Ergebnisse_Kapitel_4_1.md",
+        "belegpruefung_2000_ausgangsfakten.csv",
+        "quellen_sha256.csv",
+        "ausfuehrungsprotokoll.json",
+        "positivtest_alle_8000_positionen.csv",
+        "problematische_fakten_alle_stufen.csv",
+        "positive_detection_rate_mit_nennern.csv",
+        "datenverfuegbarkeit.csv",
+        "eingabeabdeckung.csv",
+        "positivtest_kategorien_je_stufe.csv",
+        "alle_faktenverlaeufe.csv",
+        "monotonie_artikelbootstrap_10000_seed32.csv",
+        "fehlerquellen_strict_positive.csv",
+        "monotonie_alle_stufenpaare.csv",
+        "strict_positive_alle_faelle.csv",
+        "manuelle_kontrollstichprobe_UNBEWERTET.csv",
+        "unveraenderte_qa_labels_anzahlen.csv",
+        "positivtest_selektionstrichter.csv",
+        "grafik_labeluebergaenge_zeilenanteile.csv",
+        "monotonie_beteiligte_labelkombinationen.csv",
+        "lead_k_praefixpruefung.csv",
+        "wichtigste_ergebnisse.csv",
+        "pdr_artikelbootstrap_10000_seed32.csv",
+        "widerspruechliche_stufenpaare.csv",
+        "monotonie_artikelverteilung.csv",
+        "zusatzfaelle_gegenueber_historischer_definition.csv",
+        "abgleich_21_definitionen.csv",
+        "monotonie_benachbarte_uebergaenge.csv",
+        "strict_positive_nicht_retained_diagnostik.csv",
+        "bis_20_strenge_faelle_zur_manuellen_pruefung.csv",
+        "auswertbare_faktenverlaeufe.csv",
+        "monotonie_verteilung_alle_artikel.csv"
       ],
+      "figure_reference_prefix": "abbildungen__",
       "figures": [
-        {
-          "path": "supplement/ergebnisse/01_lead_k/abbildungen/A_labelverlaeufe_und_artikelverteilung.png",
-          "reference": "abbildungen__A_labelverlaeufe_und_artikelverteilung.png"
-        },
-        {
-          "path": "supplement/ergebnisse/01_lead_k/abbildungen/B_positive_detection_rate_und_fallzahlen.png",
-          "reference": "abbildungen__B_positive_detection_rate_und_fallzahlen.png"
-        },
-        {
-          "path": "supplement/ergebnisse/01_lead_k/abbildungen/C_labeluebergaenge_je_kuerzungsstufe.png",
-          "reference": "abbildungen__C_labeluebergaenge_je_kuerzungsstufe.png"
-        },
-        {
-          "path": "supplement/ergebnisse/01_lead_k/abbildungen/D_selektion_und_abdeckung_des_positivtests.png",
-          "reference": "abbildungen__D_selektion_und_abdeckung_des_positivtests.png"
-        }
+        "A_labelverlaeufe_und_artikelverteilung.png",
+        "B_positive_detection_rate_und_fallzahlen.png",
+        "C_labeluebergaenge_je_kuerzungsstufe.png",
+        "D_selektion_und_abdeckung_des_positivtests.png"
       ],
       "reused": [],
-      "reference_notebook_sha256": "56cfacbfbed2fde102fc69d11ceec9606c6464ea341191c4d3f00d9787e7219f",
-      "additional_exports": [
-        "supplement/ergebnisse/01_lead_k/abbildungen/A_labelverlaeufe_und_artikelverteilung.pdf",
-        "supplement/ergebnisse/01_lead_k/abbildungen/A_labelverlaeufe_und_artikelverteilung.svg",
-        "supplement/ergebnisse/01_lead_k/abbildungen/B_positive_detection_rate_und_fallzahlen.pdf",
-        "supplement/ergebnisse/01_lead_k/abbildungen/B_positive_detection_rate_und_fallzahlen.svg",
-        "supplement/ergebnisse/01_lead_k/abbildungen/C_labeluebergaenge_je_kuerzungsstufe.pdf",
-        "supplement/ergebnisse/01_lead_k/abbildungen/C_labeluebergaenge_je_kuerzungsstufe.svg",
-        "supplement/ergebnisse/01_lead_k/abbildungen/D_selektion_und_abdeckung_des_positivtests.pdf",
-        "supplement/ergebnisse/01_lead_k/abbildungen/D_selektion_und_abdeckung_des_positivtests.svg"
+      "figure_formats": [
+        "pdf",
+        "svg"
       ]
     },
     {
       "id": "10_qa_sensitivitaet",
       "legacy": "02_QA_Faktenretention_Sensitivitaet",
-      "notebook": "notebooks/10_qa_sensitivitaet.ipynb",
       "dependencies": [
         "03_qa_retention",
         "04_laenge_und_adjustierte_retention"
       ],
-      "base": "supplement",
+      "table_reference_prefix": "02_sensitivitaet__",
       "expected": [
-        {
-          "path": "supplement/ergebnisse/02_sensitivitaet/reproduktion_laengenadjustiert.csv",
-          "reference": "02_sensitivitaet__reproduktion_laengenadjustiert.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/02_sensitivitaet/quellen_sha256.csv",
-          "reference": "02_sensitivitaet__quellen_sha256.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/02_sensitivitaet/A_konkrete_hypothetische_aenderungsplaene.csv",
-          "reference": "02_sensitivitaet__A_konkrete_hypothetische_aenderungsplaene.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/02_sensitivitaet/ausfuehrungsprotokoll.json",
-          "reference": "02_sensitivitaet__ausfuehrungsprotokoll.json"
-        },
-        {
-          "path": "supplement/ergebnisse/02_sensitivitaet/A_minimale_adversariale_aenderungen.csv",
-          "reference": "02_sensitivitaet__A_minimale_adversariale_aenderungen.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/02_sensitivitaet/C_laengenadjustierung_rangaenderungen.csv",
-          "reference": "02_sensitivitaet__C_laengenadjustierung_rangaenderungen.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/02_sensitivitaet/eingabeabdeckung.csv",
-          "reference": "02_sensitivitaet__eingabeabdeckung.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/02_sensitivitaet/original_retention_mittelwerte_95ci.csv",
-          "reference": "02_sensitivitaet__original_retention_mittelwerte_95ci.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/02_sensitivitaet/Ergebniszusammenfassung_Masterarbeit_max250_Woerter.md",
-          "reference": "02_sensitivitaet__Ergebniszusammenfassung_Masterarbeit_max250_Woerter.md"
-        },
-        {
-          "path": "supplement/ergebnisse/02_sensitivitaet/B_abgleich_analytische_erwartungen.csv",
-          "reference": "02_sensitivitaet__B_abgleich_analytische_erwartungen.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/02_sensitivitaet/C_laengenadjustierung_alle_15_paarordnungen.csv",
-          "reference": "02_sensitivitaet__C_laengenadjustierung_alle_15_paarordnungen.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/02_sensitivitaet/zusammenfassung_szenariofamilien_getrennt.csv",
-          "reference": "02_sensitivitaet__zusammenfassung_szenariofamilien_getrennt.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/02_sensitivitaet/C_ranghaeufigkeiten_alle_szenarien.csv",
-          "reference": "02_sensitivitaet__C_ranghaeufigkeiten_alle_szenarien.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/02_sensitivitaet/grafik_szenarienvergleich_vorzeichenumkehr.csv",
-          "reference": "02_sensitivitaet__grafik_szenarienvergleich_vorzeichenumkehr.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/02_sensitivitaet/original_vier_kontraste_pp_95ci.csv",
-          "reference": "02_sensitivitaet__original_vier_kontraste_pp_95ci.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/02_sensitivitaet/D_permissive_gepaarte_differenzen.csv",
-          "reference": "02_sensitivitaet__D_permissive_gepaarte_differenzen.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/02_sensitivitaet/haupttext_kompakttabelle_4_befunde.csv",
-          "reference": "02_sensitivitaet__haupttext_kompakttabelle_4_befunde.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/02_sensitivitaet/D_permissive_mittelwerte_und_raenge.csv",
-          "reference": "02_sensitivitaet__D_permissive_mittelwerte_und_raenge.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/02_sensitivitaet/B_szenariodefinitionen_und_seeds.csv",
-          "reference": "02_sensitivitaet__B_szenariodefinitionen_und_seeds.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/02_sensitivitaet/B_simulierte_kontraste_und_vorzeichenwechsel.csv",
-          "reference": "02_sensitivitaet__B_simulierte_kontraste_und_vorzeichenwechsel.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/02_sensitivitaet/reproduktion_originalmittelwerte_und_kontraste.csv",
-          "reference": "02_sensitivitaet__reproduktion_originalmittelwerte_und_kontraste.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/02_sensitivitaet/original_mittelwerte_und_rangfolgen.csv",
-          "reference": "02_sensitivitaet__original_mittelwerte_und_rangfolgen.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/02_sensitivitaet/A_wirkung_erster_10_20_50_100_aenderungen.csv",
-          "reference": "02_sensitivitaet__A_wirkung_erster_10_20_50_100_aenderungen.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/02_sensitivitaet/B_simulierte_retention_mittelwerte.csv",
-          "reference": "02_sensitivitaet__B_simulierte_retention_mittelwerte.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/02_sensitivitaet/haupttext_robustheit_16_vergleiche.csv",
-          "reference": "02_sensitivitaet__haupttext_robustheit_16_vergleiche.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/02_sensitivitaet/B_tatsaechlich_simulierte_aenderungszahlen.csv",
-          "reference": "02_sensitivitaet__B_tatsaechlich_simulierte_aenderungszahlen.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/02_sensitivitaet/C_originalfuehrung_und_gesamtrangfolge.csv",
-          "reference": "02_sensitivitaet__C_originalfuehrung_und_gesamtrangfolge.csv"
-        }
+        "reproduktion_laengenadjustiert.csv",
+        "quellen_sha256.csv",
+        "A_konkrete_hypothetische_aenderungsplaene.csv",
+        "ausfuehrungsprotokoll.json",
+        "A_minimale_adversariale_aenderungen.csv",
+        "C_laengenadjustierung_rangaenderungen.csv",
+        "eingabeabdeckung.csv",
+        "original_retention_mittelwerte_95ci.csv",
+        "Ergebniszusammenfassung_Masterarbeit_max250_Woerter.md",
+        "B_abgleich_analytische_erwartungen.csv",
+        "C_laengenadjustierung_alle_15_paarordnungen.csv",
+        "zusammenfassung_szenariofamilien_getrennt.csv",
+        "C_ranghaeufigkeiten_alle_szenarien.csv",
+        "grafik_szenarienvergleich_vorzeichenumkehr.csv",
+        "original_vier_kontraste_pp_95ci.csv",
+        "D_permissive_gepaarte_differenzen.csv",
+        "haupttext_kompakttabelle_4_befunde.csv",
+        "D_permissive_mittelwerte_und_raenge.csv",
+        "B_szenariodefinitionen_und_seeds.csv",
+        "B_simulierte_kontraste_und_vorzeichenwechsel.csv",
+        "reproduktion_originalmittelwerte_und_kontraste.csv",
+        "original_mittelwerte_und_rangfolgen.csv",
+        "A_wirkung_erster_10_20_50_100_aenderungen.csv",
+        "B_simulierte_retention_mittelwerte.csv",
+        "haupttext_robustheit_16_vergleiche.csv",
+        "B_tatsaechlich_simulierte_aenderungszahlen.csv",
+        "C_originalfuehrung_und_gesamtrangfolge.csv"
       ],
+      "figure_reference_prefix": "abbildungen__",
       "figures": [
-        {
-          "path": "supplement/ergebnisse/02_sensitivitaet/abbildungen/01_originaldifferenzen_und_minimale_aenderungen.png",
-          "reference": "abbildungen__01_originaldifferenzen_und_minimale_aenderungen.png"
-        },
-        {
-          "path": "supplement/ergebnisse/02_sensitivitaet/abbildungen/02_symmetrische_szenarien_methodendifferenzen.png",
-          "reference": "abbildungen__02_symmetrische_szenarien_methodendifferenzen.png"
-        },
-        {
-          "path": "supplement/ergebnisse/02_sensitivitaet/abbildungen/03a_rangrobustheit_qa_retention.png",
-          "reference": "abbildungen__03a_rangrobustheit_qa_retention.png"
-        },
-        {
-          "path": "supplement/ergebnisse/02_sensitivitaet/abbildungen/03b_rangrobustheit_laengenadjustiert.png",
-          "reference": "abbildungen__03b_rangrobustheit_laengenadjustiert.png"
-        },
-        {
-          "path": "supplement/ergebnisse/02_sensitivitaet/abbildungen/04_szenarienvergleich_vorzeichenumkehr.png",
-          "reference": "abbildungen__04_szenarienvergleich_vorzeichenumkehr.png"
-        },
-        {
-          "path": "supplement/ergebnisse/02_sensitivitaet/abbildungen/05_permissive_referenzregel_methodenvergleich.png",
-          "reference": "abbildungen__05_permissive_referenzregel_methodenvergleich.png"
-        }
+        "01_originaldifferenzen_und_minimale_aenderungen.png",
+        "02_symmetrische_szenarien_methodendifferenzen.png",
+        "03a_rangrobustheit_qa_retention.png",
+        "03b_rangrobustheit_laengenadjustiert.png",
+        "04_szenarienvergleich_vorzeichenumkehr.png",
+        "05_permissive_referenzregel_methodenvergleich.png"
       ],
       "reused": [],
-      "reference_notebook_sha256": "08d66e68ffb9dc4eccc7aa44dfda7fb72efbffc4a66def33c163290041feca6e",
-      "additional_exports": [
-        "supplement/ergebnisse/02_sensitivitaet/abbildungen/01_originaldifferenzen_und_minimale_aenderungen.pdf",
-        "supplement/ergebnisse/02_sensitivitaet/abbildungen/01_originaldifferenzen_und_minimale_aenderungen.svg",
-        "supplement/ergebnisse/02_sensitivitaet/abbildungen/02_symmetrische_szenarien_methodendifferenzen.pdf",
-        "supplement/ergebnisse/02_sensitivitaet/abbildungen/02_symmetrische_szenarien_methodendifferenzen.svg",
-        "supplement/ergebnisse/02_sensitivitaet/abbildungen/03a_rangrobustheit_qa_retention.pdf",
-        "supplement/ergebnisse/02_sensitivitaet/abbildungen/03a_rangrobustheit_qa_retention.svg",
-        "supplement/ergebnisse/02_sensitivitaet/abbildungen/03b_rangrobustheit_laengenadjustiert.pdf",
-        "supplement/ergebnisse/02_sensitivitaet/abbildungen/03b_rangrobustheit_laengenadjustiert.svg",
-        "supplement/ergebnisse/02_sensitivitaet/abbildungen/04_szenarienvergleich_vorzeichenumkehr.pdf",
-        "supplement/ergebnisse/02_sensitivitaet/abbildungen/04_szenarienvergleich_vorzeichenumkehr.svg",
-        "supplement/ergebnisse/02_sensitivitaet/abbildungen/05_permissive_referenzregel_methodenvergleich.pdf",
-        "supplement/ergebnisse/02_sensitivitaet/abbildungen/05_permissive_referenzregel_methodenvergleich.svg"
+      "figure_formats": [
+        "pdf",
+        "svg"
       ]
     },
     {
       "id": "11_statistische_laengenkontrolle",
       "legacy": "03_QA_Faktenretention_Laengenkontrolle",
-      "notebook": "notebooks/11_statistische_laengenkontrolle.ipynb",
       "dependencies": [
         "03_qa_retention",
-        "04_laenge_und_adjustierte_retention"
+        "04_laenge_und_adjustierte_retention",
+        "07_laengenmatched_matrizen"
       ],
-      "base": "supplement",
+      "table_reference_prefix": "03_laengenkontrolle__",
       "expected": [
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/reproduktion_laengenadjustiert.csv",
-          "reference": "03_laengenkontrolle__reproduktion_laengenadjustiert.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/C_residuen_und_hebelwerte_linear.csv",
-          "reference": "03_laengenkontrolle__C_residuen_und_hebelwerte_linear.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/haupttabelle_16_originale_und_laengenkontrollierte_kontraste.csv",
-          "reference": "03_laengenkontrolle__haupttabelle_16_originale_und_laengenkontrollierte_kontraste.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/quellen_sha256.csv",
-          "reference": "03_laengenkontrolle__quellen_sha256.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/E_linear_gegen_spline_prim_support.csv",
-          "reference": "03_laengenkontrolle__E_linear_gegen_spline_prim_support.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/grafik_retention_nach_wortzahlklassen.csv",
-          "reference": "03_laengenkontrolle__grafik_retention_nach_wortzahlklassen.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/F_gemeinsamer_fuenfmethoden_support.csv",
-          "reference": "03_laengenkontrolle__F_gemeinsamer_fuenfmethoden_support.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/B_ueberlappung_60_paare_drei_definitionen.csv",
-          "reference": "03_laengenkontrolle__B_ueberlappung_60_paare_drei_definitionen.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/ausfuehrungsprotokoll.json",
-          "reference": "03_laengenkontrolle__ausfuehrungsprotokoll.json"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/E_sensitivitaet_16_kontraste_modelle_und_support.csv",
-          "reference": "03_laengenkontrolle__E_sensitivitaet_16_kontraste_modelle_und_support.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/F_auto_cot_75_gegen_alle_generativen_verfahren.csv",
-          "reference": "03_laengenkontrolle__F_auto_cot_75_gegen_alle_generativen_verfahren.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/grafik_histogramme_wortzahlen.csv",
-          "reference": "03_laengenkontrolle__grafik_histogramme_wortzahlen.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/abbildung_1_kurvenwerte_und_unterstuetzung.csv",
-          "reference": "03_laengenkontrolle__abbildung_1_kurvenwerte_und_unterstuetzung.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/eingabeabdeckung.csv",
-          "reference": "03_laengenkontrolle__eingabeabdeckung.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/C_modelldiagnostik.csv",
-          "reference": "03_laengenkontrolle__C_modelldiagnostik.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/original_retention_mittelwerte_95ci.csv",
-          "reference": "03_laengenkontrolle__original_retention_mittelwerte_95ci.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/B_ueberlappung_16_hauptkontraste.csv",
-          "reference": "03_laengenkontrolle__B_ueberlappung_16_hauptkontraste.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/reproduktion_24_wortzahlmittelwerte.csv",
-          "reference": "03_laengenkontrolle__reproduktion_24_wortzahlmittelwerte.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/E_reproduzierte_direkte_5prozent_paarungen.csv",
-          "reference": "03_laengenkontrolle__E_reproduzierte_direkte_5prozent_paarungen.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/C_residuen_und_hebelwerte_spline.csv",
-          "reference": "03_laengenkontrolle__C_residuen_und_hebelwerte_spline.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/F_antworten_auf_zentrale_methodenfragen.csv",
-          "reference": "03_laengenkontrolle__F_antworten_auf_zentrale_methodenfragen.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/original_vier_kontraste_pp_95ci.csv",
-          "reference": "03_laengenkontrolle__original_vier_kontraste_pp_95ci.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/F_auto_cot_75_support_und_modellsensitivitaet.csv",
-          "reference": "03_laengenkontrolle__F_auto_cot_75_support_und_modellsensitivitaet.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/D_alle_gestuetzten_kontraste_95ci.csv",
-          "reference": "03_laengenkontrolle__D_alle_gestuetzten_kontraste_95ci.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/F_originale_heuristische_und_zulaessige_modellraenge.csv",
-          "reference": "03_laengenkontrolle__F_originale_heuristische_und_zulaessige_modellraenge.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/A_tatsaechliche_kompression_24_gruppen.csv",
-          "reference": "03_laengenkontrolle__A_tatsaechliche_kompression_24_gruppen.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/bootstrap_numerische_hinweise_linear.csv",
-          "reference": "03_laengenkontrolle__bootstrap_numerische_hinweise_linear.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/bootstrap_anpassungsdiagnostik.csv",
-          "reference": "03_laengenkontrolle__bootstrap_anpassungsdiagnostik.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/Wissenschaftliche_Zusammenfassung_max300_Woerter.md",
-          "reference": "03_laengenkontrolle__Wissenschaftliche_Zusammenfassung_max300_Woerter.md"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/C_regressionskoeffizienten_clusterrobuste_se.csv",
-          "reference": "03_laengenkontrolle__C_regressionskoeffizienten_clusterrobuste_se.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/bootstrap_numerische_hinweise_spline.csv",
-          "reference": "03_laengenkontrolle__bootstrap_numerische_hinweise_spline.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/A_alle_2400_kompressions_und_retention_werte.csv",
-          "reference": "03_laengenkontrolle__A_alle_2400_kompressions_und_retention_werte.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/grafik_wortzahlabhaengige_kontraste_95ci.csv",
-          "reference": "03_laengenkontrolle__grafik_wortzahlabhaengige_kontraste_95ci.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/reproduktion_originalmittelwerte_und_kontraste.csv",
-          "reference": "03_laengenkontrolle__reproduktion_originalmittelwerte_und_kontraste.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/original_mittelwerte_und_rangfolgen.csv",
-          "reference": "03_laengenkontrolle__original_mittelwerte_und_rangfolgen.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/D_gestuetzte_standardisierte_punktschaetzer.csv",
-          "reference": "03_laengenkontrolle__D_gestuetzte_standardisierte_punktschaetzer.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/haupttext_kompakttabelle_4x4.csv",
-          "reference": "03_laengenkontrolle__haupttext_kompakttabelle_4x4.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/B_wortzahlverteilungen_24_gruppen.csv",
-          "reference": "03_laengenkontrolle__B_wortzahlverteilungen_24_gruppen.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/E_modell_gegen_direkte_5prozent_paarung_16_kontraste.csv",
-          "reference": "03_laengenkontrolle__E_modell_gegen_direkte_5prozent_paarung_16_kontraste.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/bootstrap_haufigkeitsgewichte_unabhaengig_validiert.csv",
-          "reference": "03_laengenkontrolle__bootstrap_haufigkeitsgewichte_unabhaengig_validiert.csv"
-        }
+        "reproduktion_laengenadjustiert.csv",
+        "C_residuen_und_hebelwerte_linear.csv",
+        "haupttabelle_16_originale_und_laengenkontrollierte_kontraste.csv",
+        "quellen_sha256.csv",
+        "E_linear_gegen_spline_prim_support.csv",
+        "grafik_retention_nach_wortzahlklassen.csv",
+        "F_gemeinsamer_fuenfmethoden_support.csv",
+        "B_ueberlappung_60_paare_drei_definitionen.csv",
+        "ausfuehrungsprotokoll.json",
+        "E_sensitivitaet_16_kontraste_modelle_und_support.csv",
+        "F_auto_cot_75_gegen_alle_generativen_verfahren.csv",
+        "grafik_histogramme_wortzahlen.csv",
+        "abbildung_1_kurvenwerte_und_unterstuetzung.csv",
+        "eingabeabdeckung.csv",
+        "C_modelldiagnostik.csv",
+        "original_retention_mittelwerte_95ci.csv",
+        "B_ueberlappung_16_hauptkontraste.csv",
+        "reproduktion_24_wortzahlmittelwerte.csv",
+        "E_reproduzierte_direkte_5prozent_paarungen.csv",
+        "C_residuen_und_hebelwerte_spline.csv",
+        "F_antworten_auf_zentrale_methodenfragen.csv",
+        "original_vier_kontraste_pp_95ci.csv",
+        "F_auto_cot_75_support_und_modellsensitivitaet.csv",
+        "D_alle_gestuetzten_kontraste_95ci.csv",
+        "F_originale_heuristische_und_zulaessige_modellraenge.csv",
+        "A_tatsaechliche_kompression_24_gruppen.csv",
+        "bootstrap_numerische_hinweise_linear.csv",
+        "bootstrap_anpassungsdiagnostik.csv",
+        "Wissenschaftliche_Zusammenfassung_max300_Woerter.md",
+        "C_regressionskoeffizienten_clusterrobuste_se.csv",
+        "bootstrap_numerische_hinweise_spline.csv",
+        "A_alle_2400_kompressions_und_retention_werte.csv",
+        "grafik_wortzahlabhaengige_kontraste_95ci.csv",
+        "reproduktion_originalmittelwerte_und_kontraste.csv",
+        "original_mittelwerte_und_rangfolgen.csv",
+        "D_gestuetzte_standardisierte_punktschaetzer.csv",
+        "haupttext_kompakttabelle_4x4.csv",
+        "B_wortzahlverteilungen_24_gruppen.csv",
+        "E_modell_gegen_direkte_5prozent_paarung_16_kontraste.csv",
+        "bootstrap_haufigkeitsgewichte_unabhaengig_validiert.csv"
       ],
+      "figure_reference_prefix": "abbildungen__",
       "figures": [
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/abbildungen/01_faktenretention_und_tatsaechliche_wortlaenge.png",
-          "reference": "abbildungen__01_faktenretention_und_tatsaechliche_wortlaenge.png"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/abbildungen/02_originale_und_laengenkontrollierte_kontraste.png",
-          "reference": "abbildungen__02_originale_und_laengenkontrollierte_kontraste.png"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/abbildungen/03_histogramme_tatsaechlicher_wortzahlen.png",
-          "reference": "abbildungen__03_histogramme_tatsaechlicher_wortzahlen.png"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/abbildungen/04_beobachtete_retention_nach_wortzahlklasse.png",
-          "reference": "abbildungen__04_beobachtete_retention_nach_wortzahlklasse.png"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/abbildungen/051_wortzahlabhaengiger_kontrast_zero_shot_cot_vs_plain.png",
-          "reference": "abbildungen__051_wortzahlabhaengiger_kontrast_zero_shot_cot_vs_plain.png"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/abbildungen/052_wortzahlabhaengiger_kontrast_few_shot_cot_vs_plain.png",
-          "reference": "abbildungen__052_wortzahlabhaengiger_kontrast_few_shot_cot_vs_plain.png"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/abbildungen/053_wortzahlabhaengiger_kontrast_auto_cot_vs_few_shot_cot.png",
-          "reference": "abbildungen__053_wortzahlabhaengiger_kontrast_auto_cot_vs_few_shot_cot.png"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/abbildungen/054_wortzahlabhaengiger_kontrast_automate_cot_vs_auto_cot.png",
-          "reference": "abbildungen__054_wortzahlabhaengiger_kontrast_automate_cot_vs_auto_cot.png"
-        }
+        "01_faktenretention_und_tatsaechliche_wortlaenge.png",
+        "02_originale_und_laengenkontrollierte_kontraste.png",
+        "03_histogramme_tatsaechlicher_wortzahlen.png",
+        "04_beobachtete_retention_nach_wortzahlklasse.png",
+        "051_wortzahlabhaengiger_kontrast_zero_shot_cot_vs_plain.png",
+        "052_wortzahlabhaengiger_kontrast_few_shot_cot_vs_plain.png",
+        "053_wortzahlabhaengiger_kontrast_auto_cot_vs_few_shot_cot.png",
+        "054_wortzahlabhaengiger_kontrast_automate_cot_vs_auto_cot.png"
       ],
+      "input_reference_prefix": "03_laengenkontrolle__",
       "reused": [
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/bootstrap_10000_linear.npz",
-          "reference": "03_laengenkontrolle__bootstrap_10000_linear.npz",
-          "reason": "Fingerprint-checked regression cache"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/bootstrap_10000_spline.npz",
-          "reference": "03_laengenkontrolle__bootstrap_10000_spline.npz",
-          "reason": "Fingerprint-checked regression cache"
-        },
-        {
-          "path": "supplement/ergebnisse/03_laengenkontrolle/qa_length_bootstrap_worker.py",
-          "reference": "03_laengenkontrolle__qa_length_bootstrap_worker.py",
-          "reason": "Historical stored input; no recomputation claimed"
-        }
+        "bootstrap_10000_linear.npz",
+        "bootstrap_10000_spline.npz",
+        "qa_length_bootstrap_worker.py"
       ],
-      "reference_notebook_sha256": "86e57dab8b6c9ee508d1204083e99539fe285a6a6835ef45fc5703056a280ad3",
-      "additional_exports": [
-        "supplement/ergebnisse/03_laengenkontrolle/abbildungen/01_faktenretention_und_tatsaechliche_wortlaenge.pdf",
-        "supplement/ergebnisse/03_laengenkontrolle/abbildungen/01_faktenretention_und_tatsaechliche_wortlaenge.svg",
-        "supplement/ergebnisse/03_laengenkontrolle/abbildungen/02_originale_und_laengenkontrollierte_kontraste.pdf",
-        "supplement/ergebnisse/03_laengenkontrolle/abbildungen/02_originale_und_laengenkontrollierte_kontraste.svg",
-        "supplement/ergebnisse/03_laengenkontrolle/abbildungen/03_histogramme_tatsaechlicher_wortzahlen.pdf",
-        "supplement/ergebnisse/03_laengenkontrolle/abbildungen/03_histogramme_tatsaechlicher_wortzahlen.svg",
-        "supplement/ergebnisse/03_laengenkontrolle/abbildungen/04_beobachtete_retention_nach_wortzahlklasse.pdf",
-        "supplement/ergebnisse/03_laengenkontrolle/abbildungen/04_beobachtete_retention_nach_wortzahlklasse.svg",
-        "supplement/ergebnisse/03_laengenkontrolle/abbildungen/051_wortzahlabhaengiger_kontrast_zero_shot_cot_vs_plain.pdf",
-        "supplement/ergebnisse/03_laengenkontrolle/abbildungen/051_wortzahlabhaengiger_kontrast_zero_shot_cot_vs_plain.svg",
-        "supplement/ergebnisse/03_laengenkontrolle/abbildungen/052_wortzahlabhaengiger_kontrast_few_shot_cot_vs_plain.pdf",
-        "supplement/ergebnisse/03_laengenkontrolle/abbildungen/052_wortzahlabhaengiger_kontrast_few_shot_cot_vs_plain.svg",
-        "supplement/ergebnisse/03_laengenkontrolle/abbildungen/053_wortzahlabhaengiger_kontrast_auto_cot_vs_few_shot_cot.pdf",
-        "supplement/ergebnisse/03_laengenkontrolle/abbildungen/053_wortzahlabhaengiger_kontrast_auto_cot_vs_few_shot_cot.svg",
-        "supplement/ergebnisse/03_laengenkontrolle/abbildungen/054_wortzahlabhaengiger_kontrast_automate_cot_vs_auto_cot.pdf",
-        "supplement/ergebnisse/03_laengenkontrolle/abbildungen/054_wortzahlabhaengiger_kontrast_automate_cot_vs_auto_cot.svg"
+      "figure_formats": [
+        "pdf",
+        "svg"
       ]
     },
     {
       "id": "12_llm_scorervergleich",
       "legacy": "04_LLM_Scorervergleich",
-      "notebook": "notebooks/12_llm_scorervergleich.ipynb",
       "dependencies": [],
-      "base": "supplement",
+      "table_reference_prefix": "04_llm_scorervergleich__",
       "expected": [
-        {
-          "path": "supplement/ergebnisse/04_llm_scorervergleich/abweichende_faelle_mit_texten.csv",
-          "reference": "04_llm_scorervergleich__abweichende_faelle_mit_texten.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/04_llm_scorervergleich/grafik_klassenmetriken_mit_intervallen.csv",
-          "reference": "04_llm_scorervergleich__grafik_klassenmetriken_mit_intervallen.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/04_llm_scorervergleich/scorervergleich_mit_intervallen.csv",
-          "reference": "04_llm_scorervergleich__scorervergleich_mit_intervallen.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/04_llm_scorervergleich/calibrated_disagreements.csv",
-          "reference": "04_llm_scorervergleich__calibrated_disagreements.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/04_llm_scorervergleich/konsens_sensitivitaet.csv",
-          "reference": "04_llm_scorervergleich__konsens_sensitivitaet.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/04_llm_scorervergleich/excluded_special_or_tie.csv",
-          "reference": "04_llm_scorervergleich__excluded_special_or_tie.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/04_llm_scorervergleich/konsens_alle_200.csv",
-          "reference": "04_llm_scorervergleich__konsens_alle_200.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/04_llm_scorervergleich/grafik_konfusionsmatrizen_beide_scorer.csv",
-          "reference": "04_llm_scorervergleich__grafik_konfusionsmatrizen_beide_scorer.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/04_llm_scorervergleich/individual_scorer_comparisons.csv",
-          "reference": "04_llm_scorervergleich__individual_scorer_comparisons.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/04_llm_scorervergleich/by_method_stage.csv",
-          "reference": "04_llm_scorervergleich__by_method_stage.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/04_llm_scorervergleich/class_distributions.csv",
-          "reference": "04_llm_scorervergleich__class_distributions.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/04_llm_scorervergleich/all_200_cases_llm_consensus.csv",
-          "reference": "04_llm_scorervergleich__all_200_cases_llm_consensus.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/04_llm_scorervergleich/all_600_llm_judgments.csv",
-          "reference": "04_llm_scorervergleich__all_600_llm_judgments.csv"
-        },
-        {
-          "path": "supplement/ergebnisse/04_llm_scorervergleich/ausgeschlossen_sonderfall_oder_gleichstand.csv",
-          "reference": "04_llm_scorervergleich__ausgeschlossen_sonderfall_oder_gleichstand.csv"
-        }
+        "abweichende_faelle_mit_texten.csv",
+        "grafik_klassenmetriken_mit_intervallen.csv",
+        "scorervergleich_mit_intervallen.csv",
+        "calibrated_disagreements.csv",
+        "konsens_sensitivitaet.csv",
+        "excluded_special_or_tie.csv",
+        "konsens_alle_200.csv",
+        "grafik_konfusionsmatrizen_beide_scorer.csv",
+        "individual_scorer_comparisons.csv",
+        "by_method_stage.csv",
+        "class_distributions.csv",
+        "all_200_cases_llm_consensus.csv",
+        "all_600_llm_judgments.csv",
+        "ausgeschlossen_sonderfall_oder_gleichstand.csv"
       ],
+      "figure_reference_prefix": "04_llm_scorervergleich__",
       "figures": [
-        {
-          "path": "supplement/ergebnisse/04_llm_scorervergleich/01_llm_klassenverteilung.png",
-          "reference": "04_llm_scorervergleich__01_llm_klassenverteilung.png"
-        },
-        {
-          "path": "supplement/ergebnisse/04_llm_scorervergleich/02_accuracy_artikelbootstrap.png",
-          "reference": "04_llm_scorervergleich__02_accuracy_artikelbootstrap.png"
-        },
-        {
-          "path": "supplement/ergebnisse/04_llm_scorervergleich/03_konfusionsmatrix.png",
-          "reference": "04_llm_scorervergleich__03_konfusionsmatrix.png"
-        },
-        {
-          "path": "supplement/ergebnisse/04_llm_scorervergleich/04_konfusionsmatrizen_beide_scorer.png",
-          "reference": "04_llm_scorervergleich__04_konfusionsmatrizen_beide_scorer.png"
-        },
-        {
-          "path": "supplement/ergebnisse/04_llm_scorervergleich/05_precision_recall_beide_scorer.png",
-          "reference": "04_llm_scorervergleich__05_precision_recall_beide_scorer.png"
-        }
+        "01_llm_klassenverteilung.png",
+        "02_accuracy_artikelbootstrap.png",
+        "03_konfusionsmatrix.png",
+        "04_konfusionsmatrizen_beide_scorer.png",
+        "05_precision_recall_beide_scorer.png"
       ],
+      "input_reference_prefix": "04_llm_scorervergleich__",
       "reused": [
-        {
-          "path": "supplement/ergebnisse/04_llm_scorervergleich/llm_analysis_manifest.json",
-          "reference": "04_llm_scorervergleich__llm_analysis_manifest.json",
-          "reason": "Historical stored input; no recomputation claimed"
-        },
-        {
-          "path": "supplement/ergebnisse/04_llm_scorervergleich/llm_results.json",
-          "reference": "04_llm_scorervergleich__llm_results.json",
-          "reason": "Historical stored input; no recomputation claimed"
-        },
-        {
-          "path": "supplement/ergebnisse/04_llm_scorervergleich/notebook_ergebnisse.json",
-          "reference": "04_llm_scorervergleich__notebook_ergebnisse.json",
-          "reason": "Historical stored input; no recomputation claimed"
-        },
-        {
-          "path": "supplement/ergebnisse/04_llm_scorervergleich/input_metadata_audit.json",
-          "reference": "04_llm_scorervergleich__input_metadata_audit.json",
-          "reason": "Historical stored input; no recomputation claimed"
-        },
-        {
-          "path": "supplement/ergebnisse/04_llm_scorervergleich/README_AUSWERTUNG.md",
-          "reference": "04_llm_scorervergleich__README_AUSWERTUNG.md",
-          "reason": "Historical explanatory README; not generated by the scorer-comparison notebook."
-        }
+        "llm_analysis_manifest.json",
+        "llm_results.json",
+        "notebook_ergebnisse.json",
+        "input_metadata_audit.json",
+        "README_AUSWERTUNG.md"
       ],
-      "reference_notebook_sha256": "8f664b39be39c4dd05a0a26d420f0cb0673d29d3e3de9800e15c24d1cb6feca3",
-      "additional_exports": []
+      "figure_formats": []
     }
   ]
 }

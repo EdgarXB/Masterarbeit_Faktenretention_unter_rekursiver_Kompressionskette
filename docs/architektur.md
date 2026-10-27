@@ -25,20 +25,40 @@ und Auswahlregeln sind unverändert.
 
 Die zwölf `analysis__*.py`-Kopien wurden nach dem erfolgreichen Vergleich aller
 historischen Tabellen und PNGs aus dem aktiven Pfad entfernt. Auch die früheren
-Aktivmodule und Tests sind bytegetreu unter `archive/baseline_ad7eb1a/` gesichert.
+Aktivmodule und Tests sind bytegetreu unter `archive/baseline_ad7eb1a.zip` gesichert.
 Das bestehende Quellenarchiv und die zwölf Referenznotebooks bleiben unverändert.
-Die vollständige Pfadzuordnung steht in `data/refactor_paths.json`.
+Die vollständige Pfadzuordnung steht in `data/code_provenance.json`.
 
 Originalprüfsummen werden nicht auf geänderte Inhalte umgeschrieben:
 `data/frozen_assets.sha256` bleibt unverändert. Die wenigen dort genannten früheren
 Codepfade werden über die dokumentierte Archivzuordnung geprüft. Der ursprüngliche
 Paketmanifeststand und die Quellenherkunft bleiben im Archiv erhalten. Das aktive
-`manifest.json` inventarisiert die neue Struktur; `data/code_provenance.json` enthält
-zusätzlich die vorherigen Hashes und den Refaktorierungsdiff.
+`manifest.json` inventarisiert die aktuelle Struktur. Eine einzige kompakte
+Zuordnung in `data/code_provenance.json` verbindet aktive Dateien mit den
+Baseline-Mitgliedern und erhält die ursprünglichen Herkunftsdateien und Hashes.
+Originale Portabilitätsdiffs liegen verlustfrei im Baseline-ZIP; Refaktorierungsdiffs
+bleiben in der Git-Historie. Die redundante `refactor_paths.json` und mehrfach
+vollständig gespeicherte Patchkopien entfallen.
 
 # Ergebnisprüfung
 
-Der Runner entpackt Eingaben getrennt von Referenzen. Erwartete neu erzeugte Ausgaben
+Die einmalige Vorbereitung übersetzt historische Pfade zentral in
+`frozen_data.prepared_path`: Eingaben (`qa`, `metrics`, `human_qa`, `llm`),
+Herkunftsbelege (`sources`), Vorgängertabellen (`tables`) und wiederverwendete
+Eingaben (`caches`). Originalbytes und Originalprüfsummen bleiben erhalten; nur
+abgeleitete Ausführungsmanifeste erhalten übersetzte Herkunftspfade und zugehörige
+Hashes. Diese Metadatenänderung berührt keine Messwerte.
+
+Die Notebooks haben eine sichtbare Parameterzelle mit `DATA_DIR`, `OUTPUT_DIR` und
+`TABLES`. `notebook_context.py` richtet ausschließlich Offline-Ausführung und
+Inlinegrafiken ein. Es gibt keinen Kontextzustand, keine Workspace-Datei und keine
+Umgebungsvariable für historische Notebookpfade. Das kompakte `analyses.json`
+enthält statische erwartete Dateinamen, Referenzpräfixe und Abhängigkeiten; allgemeine
+Pfadkonventionen werden einmal daraus aufgebaut, nicht für jede Datei wiederholt.
+
+Für interaktives Run All werden historische Vorgängertabellen einmal vorbereitet.
+Der Runner lässt sie ausdrücklich weg und verwendet stattdessen seine eigenen,
+bereits geprüften Vorgängerausgaben. Referenzen liest er direkt aus den ZIPs. Erwartete neu erzeugte Ausgaben
 werden nie vorab aus Referenzen in ihre Zielpfade kopiert. Nur explizit aufgeführte
 Caches und historische Eingaben werden wiederverwendet und im Bericht ausgewiesen.
 Die 290 CSV-Prüfobjekte umfassen 289 statistische Tabellen und ein Artefaktinventar;
@@ -57,7 +77,7 @@ jetzt mitgeprüft. Beim Artefaktinventar ist ausschließlich das bekannte Weglas
 von vier großen Bootstrap-Zwischenarrays zulässig.
 
 Alle 65 PNGs der zwölf Analysen werden pixelweise mit den archivierten Referenzen
-verglichen. Zusätzlich werden die 101 zugehörigen PDF-/SVG-Exporte auf Vollständigkeit geprüft. Abweichungen werden ausdrücklich als erforderliche visuelle Prüfung
+verglichen. Zusätzlich werden die 105 zugehörigen PDF-/SVG-Exporte auf Vollständigkeit geprüft. Abweichungen werden ausdrücklich als erforderliche visuelle Prüfung
 ausgewiesen und gelten nicht automatisch als Layoutänderung. Fünf weitere
 Referenz-PNGs zeigen die Demonstrationspipeline und werden unverändert als
 historische Eingaben aufbewahrt, nicht als Notebook-Neuberechnung ausgegeben.
@@ -65,5 +85,5 @@ historische Eingaben aufbewahrt, nicht als Notebook-Neuberechnung ausgegeben.
 Fehlende Ausgaben, leere Vergleichslisten und nicht bestandene Vergleiche verhindern
 Erfolg. Der Bericht unterscheidet vollständig ausgeführt, teilweise ausgeführt,
 übersprungen und fehlgeschlagen; Abhängigkeiten einer fehlgeschlagenen Analyse
-werden übersprungen. Jeder Aufruf hat ein eigenes Laufverzeichnis und einen eigenen
+werden übersprungen. Jeder Runner-Aufruf hat ein eigenes Laufverzeichnis und einen eigenen
 Prüfbericht. Dateizeitstempel sind kein Ausführungsnachweis.

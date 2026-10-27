@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+
 import argparse
 import csv
 import json
@@ -16,6 +17,7 @@ from typing import Any
 import numpy as np
 from rouge_score import rouge_scorer
 
+from faktenretention.io import read_csv, write_csv
 from faktenretention.protocol import STAGES as TARGETS
 from faktenretention.text_rules import bounds_for_target, count_words
 from faktenretention.metric_scoring import compute_bertscore_f1, compute_summac_scores
@@ -54,18 +56,6 @@ PRIMARY_CONTRASTS = (
 
 def now_utc() -> str:
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
-
-
-def read_csv(path: Path) -> list[dict[str, str]]:
-    with path.open(encoding="utf-8", newline="") as handle:
-        return list(csv.DictReader(handle))
-
-
-def write_csv(path: Path, rows: list[dict[str, Any]], fields: list[str]) -> None:
-    with path.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fields)
-        writer.writeheader()
-        writer.writerows(rows)
 
 
 def numeric_tokens(text: str) -> set[str]:

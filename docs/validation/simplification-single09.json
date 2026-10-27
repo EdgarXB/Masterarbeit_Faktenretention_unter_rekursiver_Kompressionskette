@@ -1,0 +1,1064 @@
+{
+  "passed": true,
+  "scope": "selection_with_dependencies",
+  "requested_analyses": [
+    "09_lead_k_kontrolle"
+  ],
+  "analyses": [
+    {
+      "id": "01_human_faktenrelevanz",
+      "status": "skipped",
+      "passed": false,
+      "reason": "not_selected"
+    },
+    {
+      "id": "02_human_qa_retention",
+      "status": "skipped",
+      "passed": false,
+      "reason": "not_selected"
+    },
+    {
+      "id": "03_qa_retention",
+      "status": "skipped",
+      "passed": false,
+      "reason": "not_selected"
+    },
+    {
+      "id": "04_laenge_und_adjustierte_retention",
+      "status": "skipped",
+      "passed": false,
+      "reason": "not_selected"
+    },
+    {
+      "id": "05_verlustmuster",
+      "status": "skipped",
+      "passed": false,
+      "reason": "not_selected"
+    },
+    {
+      "id": "06_weitere_metriken",
+      "status": "skipped",
+      "passed": false,
+      "reason": "not_selected"
+    },
+    {
+      "id": "07_laengenmatched_matrizen",
+      "status": "skipped",
+      "passed": false,
+      "reason": "not_selected"
+    },
+    {
+      "id": "08_tabellenexport",
+      "status": "skipped",
+      "passed": false,
+      "reason": "not_selected"
+    },
+    {
+      "id": "09_lead_k_kontrolle",
+      "status": "fully_executed",
+      "passed": true,
+      "reason": null,
+      "comparisons": [
+        {
+          "file": "tables/09_lead_k_kontrolle/ambiguous_pruefhinweise_KEINE_bestaetigten_fehler.csv",
+          "passed": true,
+          "row_count": 6,
+          "key_columns": [
+            "article_id",
+            "canonical_fact_id",
+            "stage_target_words",
+            "positive_category",
+            "question",
+            "reference_answer",
+            "fact",
+            "source_evidence",
+            "label",
+            "answer",
+            "support",
+            "error",
+            "token_f1",
+            "cause_diagnostic",
+            "cause_evidence"
+          ],
+          "checked_columns": [
+            "article_id",
+            "canonical_fact_id",
+            "stage_target_words",
+            "positive_category",
+            "question",
+            "reference_answer",
+            "fact",
+            "source_evidence",
+            "label",
+            "answer",
+            "support",
+            "error",
+            "token_f1",
+            "f1_raw_diagnostic",
+            "f1_canonical_diagnostic",
+            "support_grounded_diagnostic",
+            "qa_support_in_summary_lexical",
+            "cause_diagnostic",
+            "cause_evidence"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "tables/09_lead_k_kontrolle/labelverlauf_muster.csv",
+          "passed": true,
+          "row_count": 49,
+          "key_columns": [
+            "500",
+            "300",
+            "150",
+            "75"
+          ],
+          "checked_columns": [
+            "500",
+            "300",
+            "150",
+            "75",
+            "n",
+            "violation"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "tables/09_lead_k_kontrolle/textnachweis_sensitivitaeten_keine_globale_recall_schaetzung.csv",
+          "passed": true,
+          "row_count": 15,
+          "key_columns": [
+            "Gruppe",
+            "Stufe",
+            "technical_missing_percent_valid"
+          ],
+          "checked_columns": [
+            "Gruppe",
+            "Stufe",
+            "n_positive",
+            "n_valid",
+            "n_articles",
+            "n_distinct_facts",
+            "n_retained",
+            "n_lost",
+            "n_reference_discordant",
+            "n_technical_missing",
+            "retained_Anteil_valid_percent",
+            "retained_Anteil_all_percent",
+            "retained_percent_all",
+            "retained_percent_valid",
+            "lost_percent_all",
+            "lost_percent_valid",
+            "reference_discordant_percent_all",
+            "reference_discordant_percent_valid",
+            "technical_missing_percent_all",
+            "technical_missing_percent_valid"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "tables/09_lead_k_kontrolle/belegpruefung_2000_ausgangsfakten.csv",
+          "passed": true,
+          "row_count": 2000,
+          "key_columns": [
+            "article_id",
+            "canonical_fact_id",
+            "unmatched_question_tokens"
+          ],
+          "checked_columns": [
+            "article_id",
+            "canonical_fact_id",
+            "evidence_original_count",
+            "evidence_original_raw_count",
+            "fact_in_evidence",
+            "reference_in_fact",
+            "reference_evidence_count",
+            "risk_tokens_preserved",
+            "no_fact_anaphora",
+            "question_anchors_covered",
+            "unmatched_question_tokens",
+            "n_question_context_anchors"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "tables/09_lead_k_kontrolle/quellen_sha256.csv",
+          "passed": true,
+          "row_count": 16,
+          "key_columns": [
+            "Ursprung"
+          ],
+          "checked_columns": [
+            "Ursprung",
+            "Manifestabgleich"
+          ],
+          "excluded_provenance_or_runtime_columns": [
+            "Datei",
+            "sha256"
+          ],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "tables/09_lead_k_kontrolle/positivtest_alle_8000_positionen.csv",
+          "passed": true,
+          "row_count": 8000,
+          "key_columns": [
+            "article_id",
+            "canonical_fact_id",
+            "stage_target_words",
+            "question",
+            "reference_answer",
+            "fact",
+            "source_evidence",
+            "label",
+            "answer",
+            "support",
+            "error",
+            "positive_category",
+            "unmatched_question_tokens"
+          ],
+          "checked_columns": [
+            "article_id",
+            "canonical_fact_id",
+            "stage_target_words",
+            "question",
+            "reference_answer",
+            "fact",
+            "source_evidence",
+            "label",
+            "answer",
+            "support",
+            "error",
+            "positive_category",
+            "evidence_original_count",
+            "evidence_original_raw_count",
+            "evidence_lead_count",
+            "fact_in_evidence",
+            "reference_in_fact",
+            "reference_evidence_count",
+            "risk_tokens_preserved",
+            "no_fact_anaphora",
+            "question_anchors_covered",
+            "unmatched_question_tokens",
+            "n_question_context_anchors"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "tables/09_lead_k_kontrolle/problematische_fakten_alle_stufen.csv",
+          "passed": true,
+          "row_count": 88,
+          "key_columns": [
+            "article_id",
+            "canonical_fact_id",
+            "stage_target_words",
+            "question",
+            "reference_answer",
+            "fact",
+            "source_evidence",
+            "label",
+            "answer",
+            "support",
+            "error"
+          ],
+          "checked_columns": [
+            "article_id",
+            "canonical_fact_id",
+            "stage_target_words",
+            "question",
+            "reference_answer",
+            "fact",
+            "source_evidence",
+            "label",
+            "answer",
+            "support",
+            "error"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "tables/09_lead_k_kontrolle/positive_detection_rate_mit_nennern.csv",
+          "passed": true,
+          "row_count": 5,
+          "key_columns": [
+            "Gruppe",
+            "Stufe",
+            "technical_missing_percent_valid"
+          ],
+          "checked_columns": [
+            "Gruppe",
+            "Stufe",
+            "n_positive",
+            "n_valid",
+            "n_articles",
+            "n_distinct_facts",
+            "n_retained",
+            "n_lost",
+            "n_reference_discordant",
+            "n_technical_missing",
+            "PDR_percent",
+            "PDR_all_percent",
+            "retained_percent_all",
+            "retained_percent_valid",
+            "lost_percent_all",
+            "lost_percent_valid",
+            "reference_discordant_percent_all",
+            "reference_discordant_percent_valid",
+            "technical_missing_percent_all",
+            "technical_missing_percent_valid"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "tables/09_lead_k_kontrolle/datenverfuegbarkeit.csv",
+          "passed": true,
+          "row_count": 7,
+          "key_columns": [
+            "Information",
+            "Verfügbarkeit / Grenze"
+          ],
+          "checked_columns": [
+            "Information",
+            "Verfügbarkeit / Grenze"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "tables/09_lead_k_kontrolle/eingabeabdeckung.csv",
+          "passed": true,
+          "row_count": 4,
+          "key_columns": [
+            "Einheit"
+          ],
+          "checked_columns": [
+            "Einheit",
+            "Soll",
+            "Ist"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "tables/09_lead_k_kontrolle/positivtest_kategorien_je_stufe.csv",
+          "passed": true,
+          "row_count": 4,
+          "key_columns": [
+            "stage_target_words"
+          ],
+          "checked_columns": [
+            "stage_target_words",
+            "strict_positive",
+            "ambiguous",
+            "not_verified",
+            "Gesamt"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "tables/09_lead_k_kontrolle/alle_faktenverlaeufe.csv",
+          "passed": true,
+          "row_count": 2000,
+          "key_columns": [
+            "article_id",
+            "canonical_fact_id",
+            "500",
+            "300",
+            "150",
+            "75"
+          ],
+          "checked_columns": [
+            "article_id",
+            "canonical_fact_id",
+            "500",
+            "300",
+            "150",
+            "75",
+            "n_valid",
+            "complete",
+            "eligible_adjacent",
+            "violation_adjacent",
+            "eligible_all_pairs",
+            "violation_all_pairs"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "tables/09_lead_k_kontrolle/monotonie_artikelbootstrap_10000_seed32.csv",
+          "passed": true,
+          "row_count": 1,
+          "key_columns": [
+            "Kennzahl"
+          ],
+          "checked_columns": [
+            "Kennzahl",
+            "n_numerator",
+            "n_denominator",
+            "n_articles_denominator",
+            "estimate_percent",
+            "ci_low_percent",
+            "ci_high_percent",
+            "bootstrap_zero_denominator",
+            "small_article_group",
+            "empirical_degenerate"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "tables/09_lead_k_kontrolle/fehlerquellen_strict_positive.csv",
+          "passed": true,
+          "row_count": 5,
+          "key_columns": [
+            "Fehlerquelle",
+            "Prozent",
+            "Einordnung"
+          ],
+          "checked_columns": [
+            "Fehlerquelle",
+            "n",
+            "Nenner_nicht_retained_strict",
+            "Prozent",
+            "Einordnung"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "tables/09_lead_k_kontrolle/monotonie_alle_stufenpaare.csv",
+          "passed": true,
+          "row_count": 6,
+          "key_columns": [
+            "transition"
+          ],
+          "checked_columns": [
+            "before",
+            "after",
+            "transition",
+            "n_eligible",
+            "n_violations",
+            "violation_percent"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "tables/09_lead_k_kontrolle/strict_positive_alle_faelle.csv",
+          "passed": true,
+          "row_count": 25,
+          "key_columns": [
+            "article_id",
+            "canonical_fact_id",
+            "stage_target_words",
+            "question",
+            "reference_answer",
+            "fact",
+            "source_evidence",
+            "label",
+            "answer",
+            "support",
+            "error",
+            "positive_category",
+            "unmatched_question_tokens"
+          ],
+          "checked_columns": [
+            "article_id",
+            "canonical_fact_id",
+            "stage_target_words",
+            "question",
+            "reference_answer",
+            "fact",
+            "source_evidence",
+            "label",
+            "answer",
+            "support",
+            "error",
+            "positive_category",
+            "evidence_original_count",
+            "evidence_original_raw_count",
+            "evidence_lead_count",
+            "fact_in_evidence",
+            "reference_in_fact",
+            "reference_evidence_count",
+            "risk_tokens_preserved",
+            "no_fact_anaphora",
+            "question_anchors_covered",
+            "unmatched_question_tokens",
+            "n_question_context_anchors"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "tables/09_lead_k_kontrolle/manuelle_kontrollstichprobe_UNBEWERTET.csv",
+          "passed": true,
+          "row_count": 20,
+          "key_columns": [
+            "article_id",
+            "canonical_fact_id",
+            "stage_target_words",
+            "positive_category",
+            "question",
+            "reference_answer",
+            "fact",
+            "source_evidence",
+            "summary",
+            "human_evidence_valid",
+            "human_question_answerable",
+            "human_reference_correct",
+            "human_notes",
+            "reviewer_id"
+          ],
+          "checked_columns": [
+            "article_id",
+            "canonical_fact_id",
+            "stage_target_words",
+            "positive_category",
+            "question",
+            "reference_answer",
+            "fact",
+            "source_evidence",
+            "summary",
+            "human_evidence_valid",
+            "human_question_answerable",
+            "human_reference_correct",
+            "human_notes",
+            "reviewer_id"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "tables/09_lead_k_kontrolle/unveraenderte_qa_labels_anzahlen.csv",
+          "passed": true,
+          "row_count": 4,
+          "key_columns": [
+            "stage_target_words"
+          ],
+          "checked_columns": [
+            "stage_target_words",
+            "lost",
+            "reference_discordant",
+            "retained",
+            "technical_missing"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "tables/09_lead_k_kontrolle/positivtest_selektionstrichter.csv",
+          "passed": true,
+          "row_count": 4,
+          "key_columns": [
+            "Prüfung"
+          ],
+          "checked_columns": [
+            "Prüfung",
+            "n_positionen",
+            "n_fakten",
+            "n_artikel"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "tables/09_lead_k_kontrolle/grafik_labeluebergaenge_zeilenanteile.csv",
+          "passed": true,
+          "row_count": 48,
+          "key_columns": [
+            "label_before",
+            "label_after"
+          ],
+          "checked_columns": [
+            "before",
+            "after",
+            "label_before",
+            "label_after",
+            "n",
+            "denominator",
+            "row_percent"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "tables/09_lead_k_kontrolle/monotonie_beteiligte_labelkombinationen.csv",
+          "passed": true,
+          "row_count": 6,
+          "key_columns": [
+            "transition",
+            "label_before",
+            "label_after"
+          ],
+          "checked_columns": [
+            "transition",
+            "label_before",
+            "label_after",
+            "n"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "tables/09_lead_k_kontrolle/lead_k_praefixpruefung.csv",
+          "passed": true,
+          "row_count": 400,
+          "key_columns": [
+            "article_id",
+            "stage_target_words"
+          ],
+          "checked_columns": [
+            "article_id",
+            "stage_target_words",
+            "n_words",
+            "equals_original_rule",
+            "nested_in_previous",
+            "nonempty"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "tables/09_lead_k_kontrolle/wichtigste_ergebnisse.csv",
+          "passed": true,
+          "row_count": 9,
+          "key_columns": [
+            "Befund",
+            "Zähler / Nenner bzw. Anzahl",
+            "Einordnung"
+          ],
+          "checked_columns": [
+            "Befund",
+            "Zähler / Nenner bzw. Anzahl",
+            "Einordnung"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "tables/09_lead_k_kontrolle/pdr_artikelbootstrap_10000_seed32.csv",
+          "passed": true,
+          "row_count": 10,
+          "key_columns": [
+            "Kennzahl",
+            "Stufe",
+            "Nennerregel"
+          ],
+          "checked_columns": [
+            "Kennzahl",
+            "Stufe",
+            "Nennerregel",
+            "n_numerator",
+            "n_denominator",
+            "n_articles_denominator",
+            "estimate_percent",
+            "ci_low_percent",
+            "ci_high_percent",
+            "bootstrap_zero_denominator",
+            "small_article_group",
+            "empirical_degenerate"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "tables/09_lead_k_kontrolle/widerspruechliche_stufenpaare.csv",
+          "passed": true,
+          "row_count": 40,
+          "key_columns": [
+            "article_id",
+            "canonical_fact_id",
+            "label_before",
+            "answer_before",
+            "support_before",
+            "question_before",
+            "reference_answer_before",
+            "source_evidence_before",
+            "label_after",
+            "answer_after",
+            "support_after",
+            "question_after",
+            "reference_answer_after",
+            "source_evidence_after",
+            "transition"
+          ],
+          "checked_columns": [
+            "article_id",
+            "canonical_fact_id",
+            "stage_target_words_before",
+            "label_before",
+            "answer_before",
+            "support_before",
+            "question_before",
+            "reference_answer_before",
+            "source_evidence_before",
+            "stage_target_words_after",
+            "label_after",
+            "answer_after",
+            "support_after",
+            "question_after",
+            "reference_answer_after",
+            "source_evidence_after",
+            "before",
+            "after",
+            "transition",
+            "adjacent",
+            "eligible",
+            "violation"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "tables/09_lead_k_kontrolle/monotonie_artikelverteilung.csv",
+          "passed": true,
+          "row_count": 3,
+          "key_columns": [],
+          "checked_columns": [
+            "n_betroffene_fakten",
+            "n_artikel"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "tables/09_lead_k_kontrolle/zusatzfaelle_gegenueber_historischer_definition.csv",
+          "passed": true,
+          "row_count": 1,
+          "key_columns": [
+            "article_id",
+            "canonical_fact_id",
+            "500",
+            "300",
+            "150",
+            "75"
+          ],
+          "checked_columns": [
+            "article_id",
+            "canonical_fact_id",
+            "500",
+            "300",
+            "150",
+            "75",
+            "n_valid",
+            "complete",
+            "eligible_adjacent",
+            "violation_adjacent",
+            "eligible_all_pairs",
+            "violation_all_pairs",
+            "observed_return_any",
+            "first_nonretained_known",
+            "historical_counted_return"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "tables/09_lead_k_kontrolle/abgleich_21_definitionen.csv",
+          "passed": true,
+          "row_count": 4,
+          "key_columns": [
+            "Definition"
+          ],
+          "checked_columns": [
+            "Definition",
+            "n_verlaeufe",
+            "n_geeignet",
+            "Prozent"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "tables/09_lead_k_kontrolle/monotonie_benachbarte_uebergaenge.csv",
+          "passed": true,
+          "row_count": 3,
+          "key_columns": [
+            "transition"
+          ],
+          "checked_columns": [
+            "before",
+            "after",
+            "transition",
+            "n_expected",
+            "n_eligible",
+            "n_violations",
+            "n_excluded_technical",
+            "violation_percent",
+            "n_articles_affected"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "tables/09_lead_k_kontrolle/strict_positive_nicht_retained_diagnostik.csv",
+          "passed": true,
+          "row_count": 0,
+          "key_columns": [
+            "article_id",
+            "canonical_fact_id",
+            "stage_target_words",
+            "positive_category",
+            "question",
+            "reference_answer",
+            "fact",
+            "source_evidence",
+            "label",
+            "answer",
+            "support",
+            "error",
+            "token_f1",
+            "f1_raw_diagnostic",
+            "f1_canonical_diagnostic",
+            "support_grounded_diagnostic",
+            "qa_support_in_summary_lexical",
+            "cause_diagnostic",
+            "cause_evidence"
+          ],
+          "checked_columns": [
+            "article_id",
+            "canonical_fact_id",
+            "stage_target_words",
+            "positive_category",
+            "question",
+            "reference_answer",
+            "fact",
+            "source_evidence",
+            "label",
+            "answer",
+            "support",
+            "error",
+            "token_f1",
+            "f1_raw_diagnostic",
+            "f1_canonical_diagnostic",
+            "support_grounded_diagnostic",
+            "qa_support_in_summary_lexical",
+            "cause_diagnostic",
+            "cause_evidence"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "tables/09_lead_k_kontrolle/bis_20_strenge_faelle_zur_manuellen_pruefung.csv",
+          "passed": true,
+          "row_count": 0,
+          "key_columns": [
+            "article_id",
+            "canonical_fact_id",
+            "stage_target_words",
+            "positive_category",
+            "question",
+            "reference_answer",
+            "fact",
+            "source_evidence",
+            "label",
+            "answer",
+            "support",
+            "error",
+            "token_f1",
+            "f1_raw_diagnostic",
+            "f1_canonical_diagnostic",
+            "support_grounded_diagnostic",
+            "qa_support_in_summary_lexical",
+            "cause_diagnostic",
+            "cause_evidence"
+          ],
+          "checked_columns": [
+            "article_id",
+            "canonical_fact_id",
+            "stage_target_words",
+            "positive_category",
+            "question",
+            "reference_answer",
+            "fact",
+            "source_evidence",
+            "label",
+            "answer",
+            "support",
+            "error",
+            "token_f1",
+            "f1_raw_diagnostic",
+            "f1_canonical_diagnostic",
+            "support_grounded_diagnostic",
+            "qa_support_in_summary_lexical",
+            "cause_diagnostic",
+            "cause_evidence"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "tables/09_lead_k_kontrolle/auswertbare_faktenverlaeufe.csv",
+          "passed": true,
+          "row_count": 5,
+          "key_columns": [
+            "Gruppe"
+          ],
+          "checked_columns": [
+            "Gruppe",
+            "n",
+            "Nenner",
+            "Prozent"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "tables/09_lead_k_kontrolle/monotonie_verteilung_alle_artikel.csv",
+          "passed": true,
+          "row_count": 100,
+          "key_columns": [
+            "article_id"
+          ],
+          "checked_columns": [
+            "article_id",
+            "n_paths_adjacent",
+            "n_paths_all_pairs",
+            "n_adjacent_violations"
+          ],
+          "excluded_provenance_or_runtime_columns": [],
+          "differences": [],
+          "max_absolute_error": 0.0
+        },
+        {
+          "file": "figures/09_lead_k_kontrolle/A_labelverlaeufe_und_artikelverteilung.png",
+          "passed": true,
+          "kind": "figure",
+          "status": "identical_pixels",
+          "reference_shape": [
+            1123,
+            2423,
+            4
+          ],
+          "new_shape": [
+            1123,
+            2423,
+            4
+          ],
+          "changed_pixel_fraction": 0.0,
+          "mean_absolute_channel_error": 0.0
+        },
+        {
+          "file": "figures/09_lead_k_kontrolle/B_positive_detection_rate_und_fallzahlen.png",
+          "passed": true,
+          "kind": "figure",
+          "status": "identical_pixels",
+          "reference_shape": [
+            983,
+            2423,
+            4
+          ],
+          "new_shape": [
+            983,
+            2423,
+            4
+          ],
+          "changed_pixel_fraction": 0.0,
+          "mean_absolute_channel_error": 0.0
+        },
+        {
+          "file": "figures/09_lead_k_kontrolle/C_labeluebergaenge_je_kuerzungsstufe.png",
+          "passed": true,
+          "kind": "figure",
+          "status": "identical_pixels",
+          "reference_shape": [
+            1054,
+            3016,
+            4
+          ],
+          "new_shape": [
+            1054,
+            3016,
+            4
+          ],
+          "changed_pixel_fraction": 0.0,
+          "mean_absolute_channel_error": 0.0
+        },
+        {
+          "file": "figures/09_lead_k_kontrolle/D_selektion_und_abdeckung_des_positivtests.png",
+          "passed": true,
+          "kind": "figure",
+          "status": "identical_pixels",
+          "reference_shape": [
+            1185,
+            2823,
+            4
+          ],
+          "new_shape": [
+            1185,
+            2823,
+            4
+          ],
+          "changed_pixel_fraction": 0.0,
+          "mean_absolute_channel_error": 0.0
+        }
+      ],
+      "reused_inputs": []
+    },
+    {
+      "id": "10_qa_sensitivitaet",
+      "status": "skipped",
+      "passed": false,
+      "reason": "not_selected"
+    },
+    {
+      "id": "11_statistische_laengenkontrolle",
+      "status": "skipped",
+      "passed": false,
+      "reason": "not_selected"
+    },
+    {
+      "id": "12_llm_scorervergleich",
+      "status": "skipped",
+      "passed": false,
+      "reason": "not_selected"
+    }
+  ],
+  "numeric_tolerance": 1e-12,
+  "tables_checked": 33,
+  "figures_checked": 4,
+  "llm_generation_calls": 0,
+  "regression_bootstrap": "existing fingerprint-checked caches only"
+}

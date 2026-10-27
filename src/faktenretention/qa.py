@@ -9,6 +9,7 @@ import time
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
+from faktenretention.io import read_csv, append_csv, append_jsonl
 from faktenretention.protocol import STAGES as TARGETS
 from faktenretention.model_transport import ollama_generate
 
@@ -71,27 +72,6 @@ def parse_model_args(values: List[str]) -> List[Dict[str, str]]:
             run_id = slugify(model_name)
         models.append({"run_id": slugify(run_id), "model_name": model_name.strip()})
     return models
-
-
-def read_csv(path: Path) -> List[Dict[str, str]]:
-    with path.open("r", encoding="utf-8", newline="") as f:
-        return list(csv.DictReader(f))
-
-
-def append_csv(path: Path, row: Dict[str, str], fieldnames: List[str]) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    exists = path.exists()
-    with path.open("a", encoding="utf-8", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
-        if not exists:
-            writer.writeheader()
-        writer.writerow(row)
-
-
-def append_jsonl(path: Path, record: Dict[str, Any]) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("a", encoding="utf-8") as f:
-        f.write(json.dumps(record, ensure_ascii=True) + "\n")
 
 
 def compact_json_text(text: str) -> str:

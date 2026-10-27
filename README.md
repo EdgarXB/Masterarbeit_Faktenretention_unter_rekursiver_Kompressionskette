@@ -6,7 +6,7 @@ Die zwölf aktiven Analysen stehen offen in [`notebooks/`](notebooks/README.md);
 wiederverwendbare Regeln im installierbaren Paket [`src/faktenretention/`](src/faktenretention/).
 `data/` und `prompts/` enthalten eingefrorene Eingaben, `results/` und `figures/`
 die historischen Referenzen, `archive/` die früheren Quellen. Neue Ausgaben gehören
-jeweils in ein eigenes `results/runs/VERZEICHNIS`.
+in `results/notebooks/` (direktes Run All) oder ein eigenes `results/runs/VERZEICHNIS`.
 
 ## Analyseumgebung einrichten
 
@@ -27,37 +27,49 @@ den Repositorypfad; bei einer separaten Wheel-Installation muss
 `FAKTENRETENTION_PROJECT` explizit auf das Repository zeigen. Es gibt keine
 manuellen `sys.path`-Erweiterungen. Analyse- und Modellumgebung bleiben getrennt.
 
-## Alle oder einzelne Notebooks ausführen
+## Ein Notebook direkt starten
+
+Nach der Installation einmal die Archivdaten vorbereiten:
+
+```bash
+.venv-analysis/bin/python 05_analyze.py --prepare
+```
+
+Danach ein Notebook unter `notebooks/` öffnen, die Analyseumgebung als Kernel wählen
+und **Run All** ausführen. Die erste Codezelle zeigt die Eingaben und die neuen
+Ausgabeordner. Standard: `data/prepared/` für Eingaben und historische
+Vorgängertabellen, `results/notebooks/tables/` und `results/notebooks/figures/`
+für neue Ergebnisse. `DATA_DIR`, `OUTPUT_DIR` und bei Bedarf `TABLES` lassen sich
+in der Zelle ändern. Es sind keine Umgebungsvariablen oder Konfigurationsdateien
+und kein vorheriger Runner-Lauf erforderlich.
+
+Ein vorhandenes Jupyter-Frontend oder VS Code ist zusätzlich zum Kernel nötig.
+[Notebook-Anleitung mit eigenen Verzeichnissen](notebooks/README.md).
+
+## Gesamtlauf und geprüfte Einzelläufe
 
 ```bash
 .venv-analysis/bin/python 05_analyze.py --output results/runs/komplett
-.venv-analysis/bin/python 05_analyze.py --only 03_qa_retention --output results/runs/qa
+.venv-analysis/bin/python 05_analyze.py --only 11_statistische_laengenkontrolle --output results/runs/laengenkontrolle
 .venv-analysis/bin/python 05_analyze.py --list
 ```
 
-Jeder Aufruf verlangt ein neues oder leeres Ausgabeverzeichnis und startet jedes
-Notebook mit einem frischen Kernel. Einzellauf-Abhängigkeiten werden automatisch
-berücksichtigt. Alte `--only`-Namen bleiben kompatibel. Weitere Beispiele und
-interaktive Ausführung: [`notebooks/README.md`](notebooks/README.md).
+Der Runner berechnet alle benötigten Vorgänger in frischen Kerneln selbst und prüft
+sie gegen unveränderte Referenzen. Ein Lauf verlangt ein neues oder leeres
+Verzeichnis: Eingaben unter `LAUF/inputs`, neue Tabellen und Grafiken unter
+`LAUF/tables` und `LAUF/figures`, ausgeführte Notebooks unter `LAUF/notebooks` und
+der Prüfbericht unter `LAUF/validation.json`. Notebook 11 nimmt 03, 04 und 07 mit;
+Notebook 06 nimmt 03, 04 und 05 mit. Alte `--only`-Namen bleiben kompatibel.
+
+Die vollständige Prüfung umfasst 289 statistische Tabellen, ein Artefaktinventar,
+65 pixelgenau verglichene PNGs sowie die Vollständigkeit von 105 PDF-/SVG-Exporten.
+[Referenztabellen](results/originaltabellen.zip) und
+[Referenzabbildungen](figures/originalabbildungen.zip) bleiben getrennt und unverändert.
+Fünf weitere historische Demonstrationsgrafiken bleiben Referenzartefakte.
+
 Keine Modellaufrufe, GPU-Nutzung oder Gewichtdownloads. BLAS/OpenMP nutzen einen
-Thread; die 20.000 historischen Regression-Bootstrap-Anpassungen werden aus den
+Thread. Die 20.000 historischen Regression-Bootstrap-Anpassungen werden aus
 vorhandenen fingerprintgeprüften Caches gelesen und niemals automatisch neu erzeugt.
-
-## Tabellen, Grafiken und Prüfberichte
-
-Ausgeführte Notebooks einschließlich eingebetteter Grafiken: `LAUF/notebooks/`.
-Tabellen und Grafikexporte: die im jeweiligen Notebook bezeichneten Ordner unter
-`LAUF/workspace/`. Referenzen: getrennt unter `LAUF/reference/`. Bericht:
-`LAUF/validation.json`, einschließlich fehlender, übersprungener und wiederverwendeter
-Ausgaben. Der vollständige historische Lauf prüft 289 statistische Tabellen, ein
-Artefaktinventar und 65 PNGs. Die fünf weiteren historischen Demonstrationsgrafiken
-bleiben Referenzartefakte.
-
-Die wichtigsten bestehenden Ansichten bleiben direkt zugänglich:
-[QA-Retention](results/qa_retention_mittelwerte_95ci.csv),
-[Retentionsverlauf](figures/qa_retentionsverlauf.png),
-[längenadjustierte Retention](figures/laengenadjustierte_retention.png) und
-[Tabellenregister](results/tabellenregister.csv).
 
 ## Optionale neue Experimente
 

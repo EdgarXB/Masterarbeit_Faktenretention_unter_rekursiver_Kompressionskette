@@ -2,12 +2,11 @@
 from datetime import datetime, timezone
 from pathlib import Path
 import argparse
-import hashlib
 import json
 import os
 import sys
-import uuid
 import zipfile
+import re
 from faktenretention.paths import PROJECT_ROOT
 from faktenretention.io import safe_output
 from faktenretention.runtime_checks import check_analysis_environment
@@ -15,6 +14,16 @@ from faktenretention.validation import compare_png, compare_table, require_compa
 
 def load_analyses(project=PROJECT_ROOT):
     specs=json.loads((project/'notebooks/analyses.json').read_text())['analyses']
+    for spec in specs:
+        key = spec['id']
+        spec['notebook'] = f'notebooks/{key}.ipynb'
+        for kind, folder, prefix in [('expected', 'tables', 'table_reference_prefix'),
+                                     ('figures', 'figures', 'figure_reference_prefix'),
+                                     ('reused', 'caches', 'input_reference_prefix')]:
+            spec[kind] = [dict(path=f'{folder}/{key}/{name}', reference=spec[prefix]+name)
+                          for name in spec[kind]]
+        spec['additional_exports'] = [str(Path(item['path']).with_suffix('.'+ext))
+            for item in spec['figures'] for ext in spec['figure_formats']]
     ids=[s['id'] for s in specs]
     if not ids or len(ids)!=len(set(ids)):raise ValueError('Leeres oder mehrdeutiges Analyseinventar.')
     for spec in specs:
@@ -25,7 +34,7 @@ def load_analyses(project=PROJECT_ROOT):
 
 def selected_analyses(specs,only=None):
     if only is None:return specs
-    by_id={s['id']:s for s in specs};aliases={s['legacy']:s['id'] for s in specs}
+    by_id={s['id']:s for s in specs};aliases={s.get('legacy',s['id']):s['id'] for s in specs}
     only=aliases.get(only,only)
     if only not in by_id:raise ValueError('Unbekannte Analyse: '+only)
     selected=set()
@@ -36,44 +45,29 @@ def selected_analyses(specs,only=None):
     visit(only)
     return [s for s in specs if s['id'] in selected]
 
-def prepare_workspace(output,specs,project=PROJECT_ROOT):
-    from faktenretention.frozen_data import source_bytes
+def prepare_run(output):
+    from faktenretention.frozen_data import prepare_notebook_data
     output=safe_output(output)
-    if output.exists() and any(output.iterdir()):raise ValueError('Ausgabeverzeichnis muss neu oder leer sein: '+str(output))
-    output.mkdir(parents=True,exist_ok=True);work=output/'workspace';work.mkdir()
-    inventory=json.loads((project/'data/quelleninventar.json').read_text())
-    reused={e['path'] for s in specs for e in s['reused']}
-    with zipfile.ZipFile(project/'data/eingefrorene_quellen.zip') as sources, \
-         zipfile.ZipFile(project/'results/originaltabellen.zip') as tables, \
-         zipfile.ZipFile(project/'data/referenznotebooks.zip') as notebooks, \
-         zipfile.ZipFile(project/'figures/originalabbildungen.zip') as figures:
-        for entry in inventory['files']:
-            name=entry['archive_path']
-            if 'reference_member' in entry and name not in reused:continue
-            target=work/name;target.parent.mkdir(parents=True,exist_ok=True)
-            content=source_bytes(entry,sources,tables,notebooks)
-            if hashlib.sha256(content).hexdigest()!=entry['sha256']:raise ValueError('Veränderte Quelle: '+name)
-            target.write_bytes(content)
-        for archive,kind in [(tables,'tables'),(figures,'figures')]:
-            folder=output/'reference'/kind;folder.mkdir(parents=True)
-            for entry in archive.infolist():
-                if '/' in entry.filename or entry.is_dir():raise ValueError('Unerwarteter Referenzpfad: '+entry.filename)
-                (folder/entry.filename).write_bytes(archive.read(entry))
-    (work/'supplement').mkdir(exist_ok=True)
-    (work/'workspace.json').write_text(json.dumps({'project':str(project),'reused_inputs':sorted(reused)},indent=2))
-    return work
+    if output.exists() and any(output.iterdir()):
+        raise ValueError('Ausgabeverzeichnis muss neu oder leer sein: '+str(output))
+    output.mkdir(parents=True,exist_ok=True)
+    prepare_notebook_data(output/'inputs', include_tables=False)
+    return output
 
-def verify_outputs(spec,work,output):
+def verify_outputs(spec,work):
     comparisons=[];missing=[]
-    for item in spec['expected']:
-        path=work/item['path']
-        if not path.is_file():missing.append(item['path']);continue
-        if path.name.endswith(('.csv','.csv.gz')):
-            comparisons.append(compare_table(path,(output/'reference/tables'/item['reference']).read_bytes(),item['path']))
-    for item in spec['figures']:
-        path=work/item['path']
-        if not path.is_file():missing.append(item['path']);continue
-        comparisons.append(compare_png(path,(output/'reference/figures'/item['reference']).read_bytes(),item['path']))
+    with zipfile.ZipFile(PROJECT_ROOT/'results/originaltabellen.zip') as tables, \
+         zipfile.ZipFile(PROJECT_ROOT/'figures/originalabbildungen.zip') as figures:
+        for item in spec['expected']:
+            path=work/item['path']
+            if not path.is_file():missing.append(item['path']);continue
+            if path.name.endswith(('.csv','.csv.gz')):
+                reference=tables.read(item['reference'])
+                comparisons.append(compare_table(path,reference,item['path']))
+        for item in spec['figures']:
+            path=work/item['path']
+            if not path.is_file():missing.append(item['path']);continue
+            comparisons.append(compare_png(path,figures.read(item['reference']),item['path']))
     for name in spec.get('additional_exports',[]):
         if not (work/name).is_file():missing.append(name)
     if missing:raise FileNotFoundError('Erwartete Ausgaben fehlen: '+', '.join(missing))
@@ -86,8 +80,13 @@ def execute_notebook(spec,work,output,*,timeout=1200):
     for cell in notebook.cells:
         if cell.cell_type=='code':cell.outputs=[];cell.execution_count=None
     destination=output/'notebooks'/Path(spec['notebook']).name;destination.parent.mkdir(exist_ok=True)
+    for cell in notebook.cells:
+        if cell.cell_type=='code' and 'parameters' in cell.metadata.get('tags',[]):
+            for name, value in [('DATA_DIR',work/'inputs'),('OUTPUT_DIR',output),('TABLES',work/'tables')]:
+                cell.source=re.sub(r'^'+name+r' = .+$', name+' = Path('+repr(str(value))+')', cell.source, flags=re.M)
     env=os.environ.copy()
-    env.update(FAKTENRETENTION_PROJECT=str(PROJECT_ROOT),FAKTENRETENTION_WORK=str(work),
+    env.pop('FAKTENRETENTION_WORK',None)
+    env.update(
         OPENBLAS_NUM_THREADS='1',OMP_NUM_THREADS='1',MKL_NUM_THREADS='1',NUMEXPR_NUM_THREADS='1',
         CUDA_VISIBLE_DEVICES='',HF_HUB_OFFLINE='1',TRANSFORMERS_OFFLINE='1',
         PYTHONDONTWRITEBYTECODE='1',PYTHONHASHSEED='32',MPLCONFIGDIR=str(output/'matplotlib'))
@@ -99,7 +98,7 @@ def execute_notebook(spec,work,output,*,timeout=1200):
     return destination
 
 def run_analyses(specs,selected,output,*,execute=execute_notebook,timeout=1200):
-    output=Path(output).resolve();work=prepare_workspace(output,specs)
+    output=Path(output).resolve();work=prepare_run(output)
     chosen={s['id'] for s in selected};records=[];by_id={}
     for spec in specs:
         record={'id':spec['id'],'status':'skipped','passed':False,'reason':'not_selected'}
@@ -111,7 +110,7 @@ def run_analyses(specs,selected,output,*,execute=execute_notebook,timeout=1200):
             for item in spec['expected']+spec['figures']:
                 if (work/item['path']).exists():raise ValueError('Neue Ausgabe existiert vor Ausführung: '+item['path'])
             execute(spec,work,output,timeout=timeout)
-            record['comparisons']=verify_outputs(spec,work,output)
+            record['comparisons']=verify_outputs(spec,work)
             record['passed']=require_comparisons(record['comparisons'])
             record.update(status='fully_executed',reason=None,reused_inputs=spec['reused'])
         except Exception as error:
@@ -147,9 +146,10 @@ def main(argv=None):
     parser.add_argument('--only',help='Analyse-ID oder historischer Name; Abhängigkeiten inklusive')
     parser.add_argument('--output','--work',dest='output',type=Path,help='Neues Laufverzeichnis')
     parser.add_argument('--run',type=Path,help='Neue Experimentdaten im Ergänzungsnotebook auswerten')
-    parser.add_argument('--prepare',action='store_true');parser.add_argument('--list',action='store_true')
+    parser.add_argument('--prepare',action='store_true',help='Einmalige Datenvorbereitung für direktes Run All')
+    parser.add_argument('--data-dir',type=Path,help='Eigener Ordner für --prepare (Standard: data/prepared)')
+    parser.add_argument('--list',action='store_true')
     parser.add_argument('--check-environment',action='store_true');parser.add_argument('--timeout',type=int,default=1200)
-    parser.add_argument('--workers',type=int,choices=[1],default=1,help='Kompatibilität: Offline-Notebooks laufen seriell mit einem Worker')
     args=parser.parse_args(argv);specs=load_analyses()
     if args.list:
         for spec in specs:print(spec['id']+'  '+spec['notebook'])
@@ -157,10 +157,12 @@ def main(argv=None):
     selected=selected_analyses(specs,args.only)
     status=check_analysis_environment(strict_cache=not args.run and any(s['id']=='11_statistische_laengenkontrolle' for s in selected))
     if args.check_environment:print(json.dumps(status,ensure_ascii=False,indent=2));return
-    run_id=datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')+'-'+uuid.uuid4().hex[:8]
+    run_id=datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S.%fZ')
     output=args.output or PROJECT_ROOT/'results/runs'/run_id
     if args.run:return execute_new_run(args.run,output,args.timeout)
-    if args.prepare:print(prepare_workspace(output.resolve(),specs));return
+    if args.prepare:
+        from faktenretention.frozen_data import prepare_notebook_data
+        print(prepare_notebook_data(args.data_dir or args.output));return
     report=run_analyses(specs,selected,output,timeout=args.timeout)
     print(str(output.resolve()/'validation.json'))
     if not report['passed']:raise SystemExit('Unvollständiger Lauf oder Abweichungen; validation.json prüfen.')
