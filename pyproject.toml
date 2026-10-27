@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "faktenretention"
+version = "0.1.0"
+description = "Reproducible analysis of recursive compression and fact retention"
+requires-python = ">=3.11"
+
+[project.scripts]
+faktenretention-analyze = "faktenretention.notebook_runner:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

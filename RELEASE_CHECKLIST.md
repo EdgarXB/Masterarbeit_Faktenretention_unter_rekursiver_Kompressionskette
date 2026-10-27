@@ -8,9 +8,9 @@ Es wurde durch diese Überarbeitung **kein Release und kein Release-Tag erstellt
 2. `git status --short` muss vor und nach den reinen Tests leer sein. Ausführen:
 
    ```bash
-   .venv/bin/python 05_analyze.py --check-environment
-   .venv/bin/python -m unittest discover -s data/tests -p 'test_*.py'
-   sha256sum --check data/frozen_assets.sha256
+   .venv-analysis/bin/python 05_analyze.py --check-environment
+   .venv-analysis/bin/python -m unittest discover -s tests -p 'test_*.py'
+   .venv-analysis/bin/python -m faktenretention.frozen_data --checksums
    ```
 
    `01_prepare.py` prüft zusätzlich alle 6.288 logischen Originalquellen gegen deren dokumentierte SHA-256-Werte. Es schreibt einen Prüfbericht; bei dessen Aufnahme in den Release muss er vor dem finalen Commit geprüft werden. Keine LLM-Tests, Demonstrationskonstruktion oder Regression-Bootstrap-Neuberechnung ausführen.
@@ -29,7 +29,7 @@ git archive --format=zip --prefix=Masterarbeit_Digitaler_Anhang/ v1.0.0 > ../Mas
 sha256sum ../Masterarbeit_Digitaler_Anhang-v1.0.0.zip > ../Masterarbeit_Digitaler_Anhang-v1.0.0.zip.sha256
 ```
 
-Die ZIP enthält ausschließlich den getaggten Git-Bestand. Zusätzlich die tatsächlich verwendete `.venv/bin/python --version`, `requirements-analysis.lock.txt`, `data/analysis_environment.json`, die Commit-SHA und den Audit-Prüfbericht in den Release-Notizen nennen. `manifest.json` und `data/frozen_assets.sha256` liegen bereits in der ZIP. Die externe ZIP-Prüfsumme liegt bewusst außerhalb der ZIP, um eine Selbstreferenz zu vermeiden.
+Die ZIP enthält ausschließlich den getaggten Git-Bestand. Zusätzlich die tatsächlich verwendete `.venv-analysis/bin/python --version`, `requirements-analysis.lock.txt`, `data/analysis_environment.json`, die Commit-SHA und den Audit-Prüfbericht in den Release-Notizen nennen. `manifest.json` und `data/frozen_assets.sha256` liegen bereits in der ZIP. Die externe ZIP-Prüfsumme liegt bewusst außerhalb der ZIP, um eine Selbstreferenz zu vermeiden.
 
 ## Release ausschließlich manuell veröffentlichen
 
