@@ -1,0 +1,62 @@
+review_id,question_quality,human_answer_label,overall_notes
+HV001,good,retained,
+HV002,good,lost,
+HV003,good,retained,
+HV004,good,retained,
+HV005,good,lost,
+HV006,good,retained,
+HV007,good,lost,
+HV008,good,retained,
+HV009,good,lost,
+HV010,good,retained,
+HV011,good,unsupported,"model support rationale does find the correct spot, but doesn't understand the implication that it has to be the same province where they have been seized"
+HV012,good,lost,
+HV013,good,lost,
+HV014,good,lost,
+HV015,good,lost,
+HV016,good,lost,
+HV017,good,lost,
+HV018,good,retained,
+HV019,good,lost,
+HV020,good,lost,
+HV021,good,lost,
+HV022,good,lost,
+HV023,good,lost,"summary text only states the suspension, not that it is indefinitely."
+HV024,good,lost,
+HV025,good,lost,"generated answer is correct but the summary never states that it was in a rural congressional district in Nebraska, only a congressional district"
+HV026,good,retained,
+HV027,good,lost,
+HV028,good,lost,"generated answer is correct but the summary never states that it was in a rural congressional district in Nebraska, only a congressional district"
+HV029,good,retained,
+HV030,good,lost,
+HV031,good,lost,
+HV032,good,retained,
+HV033,good,retained,
+HV034,good,retained,
+HV035,good,retained,
+HV036,good,retained,
+HV037,good,unsupported,"model support rationale finds the correct sentence, but doesn't correctly comprehend it."
+HV038,good,unclear,"reference answer is not clearly stated in the summary word by word, but generated answer could have been answered correctly (solar-powered = solar power)"
+HV039,good,retained,
+HV040,good,retained,
+HV041,good,retained,
+HV042,good,unclear,"Both answers could be seen as correct: reference answer is more concrete as to what the generated answer means.
+Information is lost in the summary though too as it is never mentioned that this was a brutal counter-insurgency campaign"
+HV043,good,lost,
+HV044,good,lost,"source context has the information of an estimate for the answer, summary has only total number listed"
+HV045,good,unclear,both reference answer and generated answer could be correct.
+HV046,good,retained,
+HV047,good,unsupported,
+HV048,good,retained,
+HV049,partial,unclear,Both answers could be seen as correct: reference answer is more concrete as to what the generated answer means.
+HV050,good,unclear,Both answers could be seen as correct: reference answer is more concrete as to what the generated answer means.
+HV051,good,lost,
+HV052,good,retained,
+HV053,good,lost,
+HV054,good,lost,
+HV055,good,lost,
+HV056,good,lost,
+HV057,good,lost,
+HV058,good,lost,
+HV059,good,unsupported,summary text states the role with some side notes she played in implying some of the plot of Brødre
+HV060,good,retained,

@@ -1,30 +1,18 @@
 # Zweck: Finale Demonstrationen und historische Automate-CoT-Protokolle prüfen.
-# Eingaben: eingefrorenes Quellenarchiv und finale Prompts.
-# Ausgaben: results/demonstrationen_pruefung.json.
+# Eingaben: ausgewählte Demonstrationsdaten und finale Prompts.
+# Ausgaben: Prüfergebnis auf stdout.
 # LLM-Aufrufe: keine; keine Kandidatenerzeugung oder Optimierung.
 # Beispiel: python 02_demonstrations.py
 from pathlib import Path
-import sys
-
-from pathlib import Path
 import hashlib
 import math
+import random
 import re
-from typing import Any
-from faktenretention.text_rules import count_words
-from faktenretention.demonstrations.rules import (
-    sha256_text, cache_key, stage_input_valid, MODEL_DIGEST, SEED,
-    TEMPERATURE, TOP_P, REPEAT_PENALTY, NUM_PREDICT,
-)
+from faktenretention.demonstrations.rules import cache_key, stage_input_valid
 import json
 import zipfile
 
-from faktenretention.paths import PROJECT_ROOT as ROOT
-
-
-
-
-
+from faktenretention.io import PROJECT_ROOT as ROOT
 
 
 def audit_cached_optimization(archive, base, report):
@@ -61,10 +49,11 @@ def audit_cached_optimization(archive, base, report):
 
 
 def audit():
-    with zipfile.ZipFile(ROOT / 'data/eingefrorene_quellen.zip') as archive:
-        base = 'project/03_Experiment/experiments/autocot_automatecot_100/'
+    with zipfile.ZipFile(ROOT / 'data/demonstrationen.zip') as archive:
+        base = ''
         report = json.loads(archive.read(base + 'automate_cot_selection/automate_cot_selection_report.json'))
         pruning = json.loads(archive.read(base + 'automate_cot_pruning/automate_cot_pruning_report.json'))
+        pool_sources = json.loads(archive.read(base + 'automate_cot_pruning/automate_cot_pruned_pools.json'))
         checks = []
         assert report['policy']['sample_size'] == 5
         assert report['policy']['pge_avg_samples'] == 10
@@ -96,16 +85,24 @@ def audit():
         optimization = audit_cached_optimization(archive, base, report)
     # Die aktuellen Few-Shot-Prompts ersetzen die historischen Prompts von Anfang September.
     manifest = json.loads((ROOT / 'prompts/final_few_shot_cot_manifest.json').read_text())
+    from faktenretention.demonstrations.build_shared_pool_fewshot_prompts import common_eligibility_reasons, build_prompt
+    rng = random.Random(32)
+    # Finale Few-Shot-Auswahl aus demselben konservativen gemeinsamen Pool rekonstruieren.
     for target, entry in manifest['prompts'].items():
         prompt = ROOT / 'prompts' / ('final_' + Path(entry['path']).name)
         assert hashlib.sha256(prompt.read_bytes()).hexdigest() == entry['sha256']
         assert prompt.read_text().count('{{NEW_INPUT}}') == 1
-    result = dict(optimization_cache_audit=optimization, stages=checks, final_fewshot_hashes_verified=True, llm_generation_calls=0,
+        eligible = sorted([row for row in pool_sources[str(target)]
+                           if not common_eligibility_reasons(row, int(target))], key=lambda row: str(row['candidate_id']))
+        selected = rng.sample(eligible, 5)
+        stage = manifest['stages'][str(target)]
+        assert len(eligible) == stage['common_eligible_pool_size']
+        assert [row['candidate_id'] for row in selected] == stage['ordered_selected_candidate_ids']
+        assert build_prompt(int(target), selected) == prompt.read_text()
+    result = dict(optimization_cache_audit=optimization, stages=checks, final_fewshot_hashes_verified=True, final_fewshot_selection_reproduced=True, llm_generation_calls=0,
                   optimization_rerun=False)
-    (ROOT / 'results/demonstrationen_pruefung.json').write_text(json.dumps(result, indent=2))
+    print(json.dumps(result,indent=2))
     print('Finale Few-Shot-Prompts und vier historische Optimierungsprotokolle geprüft.')
-
-
 
 
 def main():

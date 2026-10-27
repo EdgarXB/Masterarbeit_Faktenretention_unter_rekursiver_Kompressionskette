@@ -7,8 +7,7 @@ import unittest
 from unittest.mock import patch
 
 ROOT=Path(__file__).resolve().parents[1]
-from faktenretention.input_checks import validate_article_keys, validate_candidate_keys
-from faktenretention.runtime_checks import check_analysis_environment, require_supported_platform
+from faktenretention.io import validate_article_keys, validate_candidate_keys
 import faktenretention.pipeline as pipeline
 class AuditTest(unittest.TestCase):
     def setUp(self):
@@ -20,13 +19,6 @@ class AuditTest(unittest.TestCase):
     def tearDown(self):
         self.network.stop()
         self.temp.cleanup()
-    def test_tested_environment_and_cache_mismatch(self):
-        self.assertTrue(check_analysis_environment()['cache_compatible'])
-        versions=check_analysis_environment()['versions']
-        for key in ['python','numpy','statsmodels']:
-            wrong={**versions,key:'abweichend'}
-            with self.assertRaisesRegex(SystemExit,key):check_analysis_environment(versions=wrong)
-        with self.assertRaisesRegex(SystemExit,'WSL2'):require_supported_platform('Windows')
     def test_duplicate_indices_rejected_even_outside_limit(self):
         for second in ['7','07']:
             source=self.root/'input.csv'

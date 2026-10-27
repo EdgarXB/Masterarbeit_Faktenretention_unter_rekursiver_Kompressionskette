@@ -130,7 +130,7 @@ def main() -> int:
     args = parse_args()
     args.output_dir.mkdir(parents=True, exist_ok=True)
     candidates = load_jsonl(args.candidates)
-    from faktenretention.input_checks import validate_candidate_keys
+    from faktenretention.io import validate_candidate_keys
     validate_candidate_keys(candidates)
     rouge = rouge_scorer.RougeScorer(["rouge1", "rouge2", "rougeL"], use_stemmer=True)
     scorer = build_summac(args.summac_model, args.summac_granularity, args.summac_device)

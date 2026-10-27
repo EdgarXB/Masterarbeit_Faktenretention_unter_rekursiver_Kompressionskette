@@ -1,0 +1,4 @@
+dimension,value,count,denominator,proportion
+source_supported,Yes,837,840,0.9964285714285714
+source_supported,No,3,840,0.0035714285714285713
+atomicity,Atomic,840,840,1.0

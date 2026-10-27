@@ -1,0 +1,5 @@
+stage_target_words,n_supported,estimable,lower,upper,reason
+500,0,False,327.85,279.74999999999994,kein gemeinsamer Bereich mit positiver Breite; weniger als 20 Beobachtungen je Verfahren im Bereich; weniger als 20 lokal gestützte gepaarte Artikel
+300,0,False,243.7,239.84999999999997,kein gemeinsamer Bereich mit positiver Breite; weniger als 20 Beobachtungen je Verfahren im Bereich; weniger als 20 lokal gestützte gepaarte Artikel
+150,6,False,160.0,222.29999999999998,weniger als 20 lokal gestützte gepaarte Artikel
+75,0,False,88.95,105.0,weniger als 20 lokal gestützte gepaarte Artikel

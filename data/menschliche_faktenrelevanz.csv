@@ -1,0 +1,169 @@
+﻿artikel_id,bewertung_teilnehmer_1,bewertung_teilnehmer_2,bewertung_teilnehmer_3,bewertung_teilnehmer_4,bewertung_teilnehmer_5,median,bewertung_modell,in_top_20_laut_modell,rang_laut_modell,entitaetstyp,fakt_id,fakt
+cnndm-train-137777,2,2,2,1,2,2,2,True,1,LOCATION,cnndm-train-137777_F_f2b84d7df53f,"Research claims traces of an ancient, hidden continent lie beneath the waters of the Indian Ocean."
+cnndm-train-137777,2,0,2,1,1,1,2,True,2,OTHER,cnndm-train-137777_F_056813148d7c,The hidden continent fragment is known as Mauritia.
+cnndm-train-137777,1,2,2,1,2,2,2,True,3,EVENT,cnndm-train-137777_F_c07e468b91f4,An international team of researchers deduced the existence of the lost continent through a study of grains of sand from the beaches of Mauritius.
+cnndm-train-137777,2,0,2,1,2,2,2,True,4,LOCATION,cnndm-train-137777_F_6333be550487,Mauritia was once a strip of land tucked between India and Madagascar.
+cnndm-train-137777,2,0,2,2,1,2,1,True,5,EVENT,cnndm-train-137777_F_3587232d8ea1,Mauritia detached while Madagascar and India drifted apart.
+cnndm-train-137777,1,2,2,1,2,2,1,True,6,OBJECT,cnndm-train-137777_F_37c848cd03d3,Analysis of the sand grains showed they contained minerals that were much older than the eruption.
+cnndm-train-137777,2,1,2,1,1,1,1,True,7,OBJECT,cnndm-train-137777_F_56ece0d7c28e,Mauritia had lain concealed beneath huge masses of lava.
+cnndm-train-137777,1,1,2,1,2,1,1,True,8,ORG,cnndm-train-137777_F_ad61dbb5bd7d,A study in Nature Geoscience suggests micro-continents hidden beneath oceans occur more frequently than previously thought.
+cnndm-train-137777,2,1,2,0,1,1,1,True,9,DATE_TIME,cnndm-train-137777_F_a3eb2e09bc5d,Mauritia detached about 60 million years ago.
+cnndm-train-137777,1,1,2,1,2,1,1,True,10,DATE_TIME,cnndm-train-137777_F_7108af640301,"The sand grains from Mauritius contain semi-precious zircons aged between 660 and 1,970 million years."
+cnndm-train-137777,1,0,1,1,2,1,1,True,11,OBJECT,cnndm-train-137777_F_867f0ac36ac6,Continental fragments were previously not recognised because they were covered by volcanic rocks of the Reunion plume.
+cnndm-train-137777,1,1,1,1,2,1,1,True,12,EVENT,cnndm-train-137777_F_4f4d411cc343,"Continent fragments continued to wander over the Reunion plume, which explains how they were covered by volcanic rock."
+cnndm-train-137777,1,1,1,1,2,1,1,True,13,EVENT,cnndm-train-137777_F_efd2f79702a8,Zircons were carried by lava as it pushed through subjacent continental crust.
+cnndm-train-137777,1,1,1,0,2,1,1,True,14,OBJECT,cnndm-train-137777_F_5bcf25e6de36,Zircons extracted from beach sands are typically found in a continental crust.
+cnndm-train-137777,1,1,1,0,2,1,1,True,15,OTHER,cnndm-train-137777_F_edad1d9c5c90,The dating method was supplemented by a recalculation of plate tectonics.
+cnndm-train-137777,2,1,1,1,2,1,0,True,16,DATE_TIME,cnndm-train-137777_F_b231ab2a93e7,The sand grains studied were dated back to a volcanic eruption about nine million years ago.
+cnndm-train-137777,1,1,1,1,2,1,0,True,17,OTHER,cnndm-train-137777_F_3b0453cb860d,The break-up of continents is often associated with mantle plumes.
+cnndm-train-137777,1,0,1,1,2,1,0,True,18,OBJECT,cnndm-train-137777_F_415b7c52cdfc,Mantle plumes are giant bubbles of hot rock that rise from deep within the planet.
+cnndm-train-137777,0,1,0,1,1,1,0,True,19,DATE_TIME,cnndm-train-137777_F_07446e7b149d,Eastern Gondwana broke apart about 170 million years ago.
+cnndm-train-137777,0,1,1,1,1,1,0,True,20,LOCATION,cnndm-train-137777_F_c835327a2a38,"Eastern Gondwana fragmented into Madagascar, India, Australia and Antarctica."
+cnndm-train-137777,1,2,1,2,2,2,0,False,21,LOCATION,cnndm-train-137777_F_46a7d97be4ef,Plumes beneath Mauritius and Reunion appear to have played a role in the emergence of the Indian Ocean.
+cnndm-train-137777,1,1,1,1,1,1,0,False,22,LOCATION,cnndm-train-137777_F_30203e36c534,The Seychelles are a well-known example of a continental fragment.
+cnndm-train-137777,0,1,0,1,1,1,0,False,23,LOCATION,cnndm-train-137777_F_286bc1070ff1,HMS Enterprise discovered a 250 metre-deep canyon in the Red Sea.
+cnndm-train-137777,0,0,0,0,0,0,0,False,24,OBJECT,cnndm-train-137777_F_74240e3baa8e,HMS Enterprise is a Royal Navy survey ship.
+cnndm-train-137777,0,0,0,0,1,0,0,False,25,DATE_TIME,cnndm-train-137777_F_163929b8b52b,The Red Sea canyon discovery occurred during a nine-month mission east of Suez.
+cnndm-train-137777,0,0,0,0,0,0,0,False,26,LOCATION,cnndm-train-137777_F_c9d20d531030,The 3D images of the canyon were created after the ship left the Egyptian port of Safaga.
+cnndm-train-137777,0,0,0,0,0,0,0,False,27,OBJECT,cnndm-train-137777_F_c61990341e84,HMS Enterprise used a multibeam echo sounder to create the images.
+cnndm-train-137777,0,0,0,0,0,0,0,False,28,PERSON,cnndm-train-137777_F_d1ac6e7ddf1b,Commander Derek Rae is the commanding officer of HMS Enterprise.
+cnndm-train-137777,0,0,0,1,1,0,0,False,29,EVENT,cnndm-train-137777_F_bfefffd8dd10,The Red Sea canyon features could be the result of ancient rivers scouring rock strata before the sea flooded.
+cnndm-train-137777,1,0,1,0,0,0,0,False,30,LOCATION,cnndm-train-137777_F_e80059cdeb7e,"Geoscientists from Norway, South Africa, Britain and Germany published research on further fragments."
+cnndm-train-137777,0,0,2,0,0,0,0,False,31,PERSON,cnndm-train-137777_F_95e0170f595d,Dr Bernhard Steinberger is with the GFZ German Research Centre for Geosciences.
+cnndm-train-137777,0,0,0,0,0,0,0,False,32,PERSON,cnndm-train-137777_F_bb26cb9ffd47,Dr Pavel Doubrovine is from Oslo University.
+cnndm-train-137777,0,0,1,0,0,0,0,False,33,EVENT,cnndm-train-137777_F_a3577a6f8653,Dr Steinberger and Dr Doubrovine calculated the hotspot trail.
+cnndm-train-137777,0,0,1,0,0,0,0,False,34,PERSON,cnndm-train-137777_F_70393edb20f6,"Professor Trond Torsvik is from the University of Oslo, Norway."
+cnndm-train-070473,2,2,2,2,0,2,2,True,1,EVENT,cnndm-train-070473_F_7beba0166a8e,A Turkish airliner crashed in the Netherlands.
+cnndm-train-070473,2,1,2,2,1,2,2,True,2,NUMBER,cnndm-train-070473_F_915b57277ccc,At least nine people were killed in the Amsterdam crash.
+cnndm-train-070473,1,0,2,0,2,1,2,True,3,OTHER,cnndm-train-070473_F_b8ec2b0e0c45,"Daly stated that many accidents are now survivable, citing the New York and Amsterdam crashes."
+cnndm-train-070473,2,1,2,2,1,2,1,True,4,NUMBER,cnndm-train-070473_F_61a2328c9c42,Fifty people were injured in the Amsterdam crash.
+cnndm-train-070473,1,1,2,1,1,1,1,True,5,NUMBER,cnndm-train-070473_F_de85bef30c88,Twenty-five of the injured people in the Amsterdam crash were seriously injured.
+cnndm-train-070473,0,2,1,1,2,1,1,True,6,EVENT,cnndm-train-070473_F_0ce965f4f23f,"In many previous crashes, fatalities were caused by fire."
+cnndm-train-070473,1,1,2,0,2,1,1,True,7,EVENT,cnndm-train-070473_F_cef431835bc0,Daly noted there was no widespread fire in the Amsterdam crash.
+cnndm-train-070473,0,1,1,1,2,1,1,True,8,OBJECT,cnndm-train-070473_F_3a89ae0fff45,The aircraft in the New York and Amsterdam crashes did not have their fuselages scattered over a large area.
+cnndm-train-070473,1,0,2,1,1,1,1,True,9,LOCATION,cnndm-train-070473_F_2f4b8c4150e0,The plane was attempting to land at Amsterdam Airport Schiphol when it crashed.
+cnndm-train-070473,2,2,2,1,1,2,1,True,10,OBJECT,cnndm-train-070473_F_617e20e99b0d,The aircraft involved in the Netherlands crash was a Boeing 737-800.
+cnndm-train-070473,0,2,2,1,2,2,1,True,11,DATE_TIME,cnndm-train-070473_F_03fbc34243d1,"New laws in the 1980s, especially in the US, improved aircraft building materials to reduce burning."
+cnndm-train-070473,0,1,2,1,2,1,1,True,12,OBJECT,cnndm-train-070473_F_c03dff9ec8c8,Richard Quest stated that the seats and belts saved passengers in the Amsterdam crash.
+cnndm-train-070473,0,1,2,1,2,1,1,True,13,OBJECT,cnndm-train-070473_F_53108b12f618,Butterworth-Hayes described the Boeing 737 as an extraordinarily robust aircraft.
+cnndm-train-070473,1,0,1,2,1,1,1,True,14,NUMBER,cnndm-train-070473_F_4e5532f4ad6a,The plane was carrying 127 passengers.
+cnndm-train-070473,1,0,1,0,0,0,1,True,15,NUMBER,cnndm-train-070473_F_fea60a8d85f9,The plane was carrying seven crew members.
+cnndm-train-070473,0,1,1,0,2,1,1,True,16,LOCATION,cnndm-train-070473_F_563e7a7b05cc,Most of the injured passengers were seated toward the back of the plane.
+cnndm-train-070473,1,1,1,1,2,1,1,True,17,OBJECT,cnndm-train-070473_F_c6b765b814fa,The back of the plane sustained the most damage.
+cnndm-train-070473,1,1,0,2,0,1,0,True,18,LOCATION,cnndm-train-070473_F_5510fca6e827,"The crashed plane originated from Istanbul, Turkey."
+cnndm-train-070473,1,2,1,2,2,2,0,True,19,NUMBER,cnndm-train-070473_F_cc035b05829b,The plane was broken into three pieces after the crash.
+cnndm-train-070473,1,1,0,0,2,1,0,True,20,DATE_TIME,cnndm-train-070473_F_1e7e2a5e3b84,The Turkish Airlines Boeing 737-800 that crashed was built in 2003.
+cnndm-train-070473,1,1,1,0,2,1,0,False,21,DATE_TIME,cnndm-train-070473_F_85b586bdebb6,The crashed aircraft was inspected last year.
+cnndm-train-070473,0,0,0,0,0,0,0,False,22,PERSON,cnndm-train-070473_F_f9e84b42bdc6,Kieran Daly is associated with the online aviation news service Air Transport Intelligence.
+cnndm-train-070473,0,0,0,0,0,0,0,False,23,PERSON,cnndm-train-070473_F_8f8434a681f6,Philip Butterworth-Hayes is the editor of Air Traffic Management Insight.
+cnndm-train-070473,0,0,1,0,1,0,0,False,24,NUMBER,cnndm-train-070473_F_7cfbc20023b6,Schiphol Airport in Amsterdam has five runways.
+cnndm-train-070473,0,0,0,0,0,0,0,False,25,ORG,cnndm-train-070473_F_3093dd58d68f,Daly describes Turkish Airlines as the national carrier.
+cnndm-train-070473,1,1,0,1,0,1,0,False,26,DATE_TIME,cnndm-train-070473_F_5181679a357b,The last accident for Turkish Airlines was a small commuter jet in 2003.
+cnndm-train-070473,1,1,0,0,0,0,0,False,27,LOCATION,cnndm-train-070473_F_591d2fedf03c,The 2003 Turkish Airlines crash occurred at a remote airfield in eastern Turkey.
+cnndm-train-070473,0,0,0,1,1,0,0,False,28,EVENT,cnndm-train-070473_F_b7e34f67ec4c,An EasyJet flight collided with a lamppost at Schiphol Airport in December 2003.
+cnndm-train-070473,0,0,0,0,0,0,0,False,29,NUMBER,cnndm-train-070473_F_c6d122d29770,The EasyJet flight in December 2003 was carrying 103 passengers.
+cnndm-train-070473,0,1,1,1,1,1,0,False,30,NUMBER,cnndm-train-070473_F_ce9ce0b0d075,No one was killed in the December 2003 EasyJet accident.
+cnndm-train-070473,0,1,1,0,2,1,0,False,31,NUMBER,cnndm-train-070473_F_df13142caa3d,Schiphol accidents in 1998 and 1997 resulted in no fatalities.
+cnndm-train-070473,1,1,1,1,1,1,0,False,32,DATE_TIME,cnndm-train-070473_F_f5418cdc92bd,The last fatal incident at Schiphol Airport happened in April 1994.
+cnndm-train-070473,0,1,0,0,1,0,0,False,33,ORG,cnndm-train-070473_F_50edee8917c3,A KLM aircraft crashed in April 1994 while trying to return to Schiphol.
+cnndm-train-070473,1,0,0,0,1,0,0,False,34,NUMBER,cnndm-train-070473_F_822d3d3eed56,Three of the 24 passengers and crew were killed in the April 1994 KLM crash.
+cnndm-train-141898,2,1,2,2,2,2,2,True,1,EVENT,cnndm-train-141898_F_3148ee198bb5,Nick Clegg was the subject of a formal complaint regarding a food and drinks bill.
+cnndm-train-141898,1,2,2,1,2,2,2,True,2,EVENT,cnndm-train-141898_F_a8bb85b96020,A compromise was reached where Nick Clegg paid most of the bill.
+cnndm-train-141898,1,2,2,1,2,2,2,True,3,ORG,cnndm-train-141898_F_e273d527445c,Part of the bill was paid from the publicly funded Cabinet Office coffers.
+cnndm-train-141898,1,2,2,2,0,2,2,True,4,PERSON,cnndm-train-141898_F_6f116055253a,Nick Clegg is the Deputy Prime Minister.
+cnndm-train-141898,0,1,0,0,0,0,1,True,5,PERSON,cnndm-train-141898_F_16303b7470a8,Nick Clegg shares Chevening with Foreign Secretary William Hague.
+cnndm-train-141898,1,0,1,0,0,0,1,True,6,PERSON,cnndm-train-141898_F_063c3d7e41a0,Edward Barham is the vice-chairman of the Chevening Trust.
+cnndm-train-141898,1,2,1,0,1,1,1,True,7,NUMBER,cnndm-train-141898_F_8a2c610e3330,"Nick Clegg earns £134,000 a year."
+cnndm-train-141898,1,2,1,0,1,1,1,True,8,NUMBER,cnndm-train-141898_F_1f972b7cf8c5,"Miriam Gonzalez Durantez is said to be paid up to £500,000."
+cnndm-train-141898,1,2,2,1,2,2,1,True,9,NUMBER,cnndm-train-141898_F_e5b98a622481,The outstanding food and drinks bill amounted to several thousand pounds.
+cnndm-train-141898,1,2,2,2,2,2,1,True,10,OTHER,cnndm-train-141898_F_3a9e9f890773,Ministers must pay for food and drink when using Chevening privately with family and friends.
+cnndm-train-141898,2,2,2,1,2,2,1,True,11,EVENT,cnndm-train-141898_F_8fa6205f8fb8,Edward Barham sent two protest letters to Andrew Lansley.
+cnndm-train-141898,1,1,2,2,2,2,1,True,12,PERSON,cnndm-train-141898_F_daef7fa88844,Nick Clegg denied any wrongdoing regarding the bills.
+cnndm-train-141898,1,0,0,0,0,0,1,True,13,LOCATION,cnndm-train-141898_F_c5907924e331,Chevening is a palatial mansion located in Kent.
+cnndm-train-141898,1,0,0,0,1,0,1,True,14,OTHER,cnndm-train-141898_F_b17b296f56d2,Andrew Lansley holds the capacity of Lord Privy Seal.
+cnndm-train-141898,1,1,1,0,1,1,1,True,15,OTHER,cnndm-train-141898_F_e2da392baba0,The Lord Privy Seal is responsible for overseeing Chevening and other grace-and-favour ministerial homes.
+cnndm-train-141898,1,2,2,1,2,2,1,True,16,OTHER,cnndm-train-141898_F_495490da8a19,Ministers can use Chevening for free when on official business.
+cnndm-train-141898,0,1,1,1,2,1,1,True,17,PERSON,cnndm-train-141898_F_fc7e67f28c5b,Andrew Bridgen stated that it took a complaint to get Nick Clegg to settle his bar bill.
+cnndm-train-141898,0,1,0,0,0,0,0,True,18,PERSON,cnndm-train-141898_F_04f820db3b9c,Nick Clegg's wife is named Miriam Gonzalez Durantez.
+cnndm-train-141898,0,1,0,0,0,0,0,True,19,ORG,cnndm-train-141898_F_93df2a19b04b,Miriam Gonzalez Durantez is a partner at US law firm Dechert.
+cnndm-train-141898,0,0,0,0,0,0,0,True,20,PERSON,cnndm-train-141898_F_250a81e9323f,Edward Barham is a prominent Kent landowner.
+cnndm-train-141898,1,1,2,1,2,1,0,False,21,NUMBER,cnndm-train-141898_F_e2c692d8edab,The precise amounts paid by the taxpayer and Nick Clegg are not known.
+cnndm-train-141898,1,1,2,1,2,1,0,False,22,ORG,cnndm-train-141898_F_72b7bc38426c,A Cabinet Office spokesman stated that the Deputy Prime Minister continues to pay for private events at Chevening.
+cnndm-train-141898,0,1,1,1,2,1,0,False,23,PERSON,cnndm-train-141898_F_a6bc2e5c76e4,Edward Barham told The Mail on Sunday that there are no outstanding bills at Chevening.
+cnndm-train-141898,0,1,0,0,1,0,0,False,24,EVENT,cnndm-train-141898_F_c409ba3e7cc7,Nick Clegg invited four Lib Dem party funders to dine at Chevening last year.
+cnndm-train-141898,0,0,0,0,1,0,0,False,25,PERSON,cnndm-train-141898_F_b4453f16ea77,James Palumbo was one of the four Lib Dem party funders invited to dine at Chevening last year.
+cnndm-train-141898,0,0,0,0,0,0,0,False,26,PERSON,cnndm-train-141898_F_3131c0c2fdde,James Palumbo is the founder of the Ministry of Sound nightclub in London.
+cnndm-train-141898,0,0,0,0,1,0,0,False,27,PERSON,cnndm-train-141898_F_41d06f572d2f,James Palumbo has been tipped for a Lib Dem peerage.
+cnndm-train-141898,1,1,1,0,0,1,0,False,28,PERSON,cnndm-train-141898_F_516ed09d3a47,Andrew Lansley is a Tory Cabinet Minister.
+cnndm-train-141898,0,0,0,0,0,0,0,False,29,PERSON,cnndm-train-141898_F_5bf4d47e6193,Andrew Bridgen is a Tory MP.
+cnndm-train-141898,1,0,1,0,1,1,0,False,30,ORG,cnndm-train-141898_F_5e8199132f5c,The Chevening Trust runs the house.
+cnndm-train-141898,0,0,0,0,0,0,0,False,31,LOCATION,cnndm-train-141898_F_ff1c168f629d,Chevening is located near Sevenoaks.
+cnndm-train-141898,0,0,0,0,0,0,0,False,32,DATE_TIME,cnndm-train-141898_F_f58c94af8a59,Chevening was built in the 17th Century.
+cnndm-train-141898,0,0,0,0,0,0,0,False,33,NUMBER,cnndm-train-141898_F_462ff265f4c9,Chevening has 115 rooms.
+cnndm-train-141898,0,1,0,1,2,1,0,False,34,ORG,cnndm-train-141898_F_8f3ba30771da,The Cabinet Office declined to state how many times the Cleggs used Chevening in the past three years.
+cnndm-train-196250,2,1,2,1,2,2,2,True,1,EVENT,cnndm-train-196250_F_5d6d3c41877e,A study claims leprosy is probably the oldest infectious disease in humans.
+cnndm-train-196250,2,1,2,1,2,2,2,True,2,DATE_TIME,cnndm-train-196250_F_94e4829dd03c,Two leprosy-causing bacteria share a last common bacterial ancestor from around 10 million years ago.
+cnndm-train-196250,1,2,2,1,2,2,2,True,3,DATE_TIME,cnndm-train-196250_F_c86ceba3c1ba,"Human beings likely carried leprosy bacteria when departing Africa around 100,000 years ago."
+cnndm-train-196250,1,1,1,1,0,1,1,True,4,NUMBER,cnndm-train-196250_F_b358bae9e65b,Hundreds of thousands of new cases of leprosy occur globally every year.
+cnndm-train-196250,2,1,1,2,0,1,1,True,5,OBJECT,cnndm-train-196250_F_5a90438909bb,Leprosy attacks the skin and nerves of a sufferer.
+cnndm-train-196250,2,1,2,0,2,2,1,True,6,PERSON,cnndm-train-196250_F_332b885f6601,Ancient humans and hominids suffered from leprosy.
+cnndm-train-196250,1,1,2,1,2,1,1,True,7,DATE_TIME,cnndm-train-196250_F_8147d4cd0ccc,The ancestor of leprosy bacteria transitioned from free-living to strictly parasitic approximately 20 million years ago.
+cnndm-train-196250,2,2,1,2,0,2,1,True,8,OBJECT,cnndm-train-196250_F_8c8ab50d5087,"Leprosy causes severe, disfiguring skin sores and nerve damage in the arms and legs."
+cnndm-train-196250,1,1,1,2,0,1,1,True,9,EVENT,cnndm-train-196250_F_5211663a59db,Untreated leprosy can lead to disabilities and death.
+cnndm-train-196250,1,1,1,2,0,1,1,True,10,EVENT,cnndm-train-196250_F_ddd91788ac31,Leprosy is not highly contagious.
+cnndm-train-196250,1,1,1,2,1,1,1,True,11,EVENT,cnndm-train-196250_F_b2efb5172767,"Leprosy is caught through close contact with nose and mouth droplets from someone with untreated, severe leprosy."
+cnndm-train-196250,1,2,1,2,1,1,1,True,12,NUMBER,cnndm-train-196250_F_c5710e2c7370,"The World Health Organisation states more than 200,000 people worldwide are infected with leprosy."
+cnndm-train-196250,1,2,0,1,1,1,1,True,13,LOCATION,cnndm-train-196250_F_3bc046d09226,"Most leprosy infections occur in Africa, Asia and Latin America."
+cnndm-train-196250,1,1,2,0,2,1,1,True,14,NUMBER,cnndm-train-196250_F_259f66e733df,Over 400 strains of Mycobacterium leprae have virtually identical genomes.
+cnndm-train-196250,2,1,2,1,2,2,1,True,15,OBJECT,cnndm-train-196250_F_f2e1264ab76f,Leprosy bacteria are extraordinarily stable within their human hosts.
+cnndm-train-196250,1,1,2,0,2,1,1,True,16,DATE_TIME,cnndm-train-196250_F_966b2be3af7a,Gene inactivation in leprosy bacteria began approximately 20 million years ago.
+cnndm-train-196250,1,1,2,1,2,1,1,True,17,OBJECT,cnndm-train-196250_F_c9585006cbb7,The leprosy parasite evades host immunity by mutating or removing harmful molecules.
+cnndm-train-196250,1,1,1,1,1,1,1,True,18,EVENT,cnndm-train-196250_F_9bd5ccf845ce,Professors Han and Silva conclude that leprosy is a natural consequence of long parasitism.
+cnndm-train-196250,1,1,2,1,2,1,1,True,19,EVENT,cnndm-train-196250_F_814a393885ec,The hypothesis that leprosy existed for millions of years provides insights into disease pathogenesis.
+cnndm-train-196250,0,1,2,2,0,1,1,True,20,EVENT,cnndm-train-196250_F_0b89149e8a1f,Professor Han and Francisco Silva state that leprosy is a strict human disease.
+cnndm-train-196250,1,2,2,1,2,2,0,False,21,PERSON,cnndm-train-196250_F_d716e89e7b46,Pathologist Xiang-Yang Han discovered a new leprosy bacteria in 2008.
+cnndm-train-196250,0,1,2,0,1,1,0,False,22,OBJECT,cnndm-train-196250_F_ec1c7266145c,Xiang-Yang Han analysed 20 genes of Mycobacterium lepromatosis and Mycobacterium leprae.
+cnndm-train-196250,0,0,1,0,0,0,0,False,23,ORG,cnndm-train-196250_F_717888cce2a9,The study on leprosy bacteria was published in the journal PLOS Neglected Tropical Diseases.
+cnndm-train-196250,1,0,2,0,2,1,0,False,24,EVENT,cnndm-train-196250_F_61b0f0e918fc,The common bacteria ancestor of leprosy underwent a massive reductive evolution.
+cnndm-train-196250,1,0,1,1,1,1,0,False,25,NUMBER,cnndm-train-196250_F_1e96da13c8d2,Reductive evolution resulted in the inactivation of approximately 40 per cent of the ancestor's genes.
+cnndm-train-196250,0,0,0,0,0,0,0,False,26,ORG,cnndm-train-196250_F_89ede5eaa59c,Francisco Silva is associated with the University of Valencia’s Evolutionary Genetics Unit.
+cnndm-train-196250,0,2,1,1,2,1,0,False,27,LOCATION,cnndm-train-196250_F_67ec1a8e5edc,Outbreaks of leprosy have affected people on every continent.
+cnndm-train-196250,0,1,1,0,1,1,0,False,28,LOCATION,cnndm-train-196250_F_ef232f372787,"The oldest civilisations of China, Egypt and India feared leprosy was incurable and contagious."
+cnndm-train-196250,1,1,1,1,2,1,0,False,29,OBJECT,cnndm-train-196250_F_a62baddb1a56,"Leprosy bacteria cannot live outside the human body, except for wild armadillos."
+cnndm-train-196250,1,0,0,0,1,0,0,False,30,PERSON,cnndm-train-196250_F_605e424a47e0,Wild armadillos are thought to have been infected by American explorers a few hundred years ago.
+cnndm-train-196250,1,0,1,0,1,1,0,False,31,OTHER,cnndm-train-196250_F_6aa7bda36467,Leprosy features in several biblical stories.
+cnndm-train-196250,0,0,0,0,0,0,0,False,32,PERSON,cnndm-train-196250_F_d78d52f59d1a,James Tissot created a painting featuring leprosy.
+cnndm-train-196250,0,0,1,0,0,0,0,False,33,EVENT,cnndm-train-196250_F_728b062d8f11,The discovery of Mycobacterium lepromatosis was incidental.
+cnndm-train-196250,0,0,0,0,0,0,0,False,34,LOCATION,cnndm-train-196250_F_984d0b059f17,A scientist at the University of Texas MD Anderson Cancer Centre is located in Houston.
+cnndm-train-055917,0,2,2,2,2,2,2,True,1,EVENT,cnndm-train-055917_F_9c7185329150,House Republicans are creating a scaled-down bill to address the southern border crisis.
+cnndm-train-055917,1,2,2,2,2,2,2,True,2,OTHER,cnndm-train-055917_F_3e341e4bcd7b,The House Republicans' bill includes an immigration policy change opposed by most Democrats.
+cnndm-train-055917,1,2,2,2,2,2,2,True,3,EVENT,cnndm-train-055917_F_86887c5a269a,"The chief policy aim is to alter a 2008 law to make it easier to deport children from Guatemala, Honduras, and El Salvador."
+cnndm-train-055917,1,2,2,1,2,2,2,True,4,ORG,cnndm-train-055917_F_0fd588a1eff7,Senate Democrats are pushing for a larger spending bill without policy changes.
+cnndm-train-055917,2,2,2,1,2,2,1,True,5,NUMBER,cnndm-train-055917_F_1090891c3a75,The House Republicans' bill would provide less than $1 billion.
+cnndm-train-055917,1,2,2,1,1,1,1,True,6,DATE_TIME,cnndm-train-055917_F_998419d8c572,House members are concerned about leaving for their August recess without a solution for migrant youth.
+cnndm-train-055917,1,2,2,2,1,2,1,True,7,PERSON,cnndm-train-055917_F_49dbdba53e1b,Migrant youth from Central America are overwhelming immigration services.
+cnndm-train-055917,1,2,2,1,1,1,1,True,8,ORG,cnndm-train-055917_F_80a88dbd2e5d,Dick Durbin stated that the majority of Democrats think immigration policy changes in the border bill are a mistake.
+cnndm-train-055917,0,1,0,0,1,0,1,True,9,DATE_TIME,cnndm-train-055917_F_9387d88ea3ef,Dianne Feinstein does not think changes can happen by the end of next week.
+cnndm-train-055917,0,1,1,1,2,1,1,True,10,DATE_TIME,cnndm-train-055917_F_616b40abba0f,Devin Nunes stated there was broad consensus to vote on the measure next week.
+cnndm-train-055917,1,1,2,1,2,1,1,True,11,NUMBER,cnndm-train-055917_F_07a902c100a5,"Under the proposed change, those facing threats of sexual abuse or violence would receive a hearing within seven days."
+cnndm-train-055917,1,1,2,0,1,1,1,True,12,EVENT,cnndm-train-055917_F_a84e091e5422,The House GOP bill calls for sending National Guard troops to the border.
+cnndm-train-055917,0,1,2,0,2,1,1,True,13,EVENT,cnndm-train-055917_F_4caedd01d496,The House GOP bill allows Border Patrol agents to enter federal lands.
+cnndm-train-055917,1,2,1,2,2,2,1,True,14,NUMBER,cnndm-train-055917_F_9878dc393d0b,Senate Democrats introduced a plan on Tuesday that was more than $1 billion larger than the House GOP leaders' discussed package.
+cnndm-train-055917,2,1,1,1,2,1,1,True,15,ORG,cnndm-train-055917_F_df065fd081fd,The Obama administration is open to making some tweaks to the law.
+cnndm-train-055917,1,2,2,1,1,1,1,True,16,OTHER,cnndm-train-055917_F_3c846b491ff1,"Currently, children from these countries can stay in the US until they receive a hearing."
+cnndm-train-055917,1,1,1,1,2,1,1,True,17,OTHER,cnndm-train-055917_F_73955fdee972,Mick Mulvaney supports offsetting new spending by drawing funds from other programs.
+cnndm-train-055917,0,0,1,0,0,0,0,True,18,ORG,cnndm-train-055917_F_c1eac9953a6e,Kay Granger headed a border working group appointed by John Boehner.
+cnndm-train-055917,0,1,1,0,0,0,0,True,19,PERSON,cnndm-train-055917_F_46e99d936ff7,Dianne Feinstein is the point person for the White House on finding a way to make changes to the law.
+cnndm-train-055917,0,1,1,0,0,0,0,True,20,PERSON,cnndm-train-055917_F_ffa36bd5ce13,Dianne Feinstein was the original author of the 2008 law.
+cnndm-train-055917,0,0,1,0,0,0,0,False,21,PERSON,cnndm-train-055917_F_e76a6e77b797,John Boehner is the House Speaker.
+cnndm-train-055917,1,1,1,0,2,1,0,False,22,NUMBER,cnndm-train-055917_F_949c2a0c5916,The vote threshold needed for passage in the House is 218 votes.
+cnndm-train-055917,0,0,0,0,0,0,0,False,23,PERSON,cnndm-train-055917_F_254db11a1fad,Barack Obama is the President.
+cnndm-train-055917,0,0,0,0,0,0,0,False,24,PERSON,cnndm-train-055917_F_50dbba5ba784,John Carter is a GOP Representative from Texas.
+cnndm-train-055917,0,1,1,0,1,1,0,False,25,LOCATION,cnndm-train-055917_F_9173a5b142d9,John Carter stated that the situation is very bad in Texas.
+cnndm-train-055917,0,0,0,0,0,0,0,False,26,PERSON,cnndm-train-055917_F_16a86c05129c,Kay Granger is a Representative from Texas.
+cnndm-train-055917,0,0,1,0,0,0,0,False,27,PERSON,cnndm-train-055917_F_22e0c755bc3a,Mario Diaz Balart is a Florida Representative and member of the GOP working group.
+cnndm-train-055917,0,0,0,0,1,0,0,False,28,LOCATION,cnndm-train-055917_F_8101d576ef30,Mario Diaz Balart recently traveled to Central America.
+cnndm-train-055917,0,0,0,0,0,0,0,False,29,PERSON,cnndm-train-055917_F_3d3c34e70ba1,Devin Nunes is a California Republican.
+cnndm-train-055917,0,0,0,0,0,0,0,False,30,PERSON,cnndm-train-055917_F_a4d760613570,Mick Mulvaney is a South Carolina Representative.
+cnndm-train-055917,0,0,0,0,0,0,0,False,31,PERSON,cnndm-train-055917_F_bcec6beb03bb,Adam Kinzinger is an Illinois Republican.
+cnndm-train-055917,0,0,0,0,0,0,0,False,32,PERSON,cnndm-train-055917_F_f0908f1bbae6,Dianne Feinstein is a Democrat from California.

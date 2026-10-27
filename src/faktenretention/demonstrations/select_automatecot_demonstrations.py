@@ -323,7 +323,7 @@ def main() -> int:
     checkpoint_dir.mkdir(exist_ok=True)
     pools = json.loads(args.pools.read_text(encoding="utf-8"))
     validation_all = load_jsonl(args.validation_candidates)
-    from faktenretention.input_checks import validate_candidate_keys
+    from faktenretention.io import validate_candidate_keys
     for pool in pools.values():
         validate_candidate_keys(pool)
     validate_candidate_keys(validation_all)

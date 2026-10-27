@@ -1,0 +1,10 @@
+{
+  "base_results_sha256": "c50464778d4d7e2b2b94cb64c24e47fb2c25e4bae1f9c06de5ff64edc1f58ba8",
+  "new_collection_manifest_sha256": "43433ea381f81588ccea861f7261e16ef61ba559243e0d7abaa806fa784e8c31",
+  "rerun_only_sha256": "3745611471aa92968fe7d017dfc1c3190ded9a53207857bd4e4a9742dde45cc6",
+  "merged_results_sha256": "e31767fbebe29b8d347e15b89a708e42f5d2b6bc92fd2be1727b4818abd360bd",
+  "retained_historical_rows": 400,
+  "replaced_plain_rows": 100,
+  "replaced_few_shot_rows": 100,
+  "historical_plain_or_few_shot_rows_in_new_table": 0
+}

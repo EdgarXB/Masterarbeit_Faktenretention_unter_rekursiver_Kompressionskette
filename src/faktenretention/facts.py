@@ -85,7 +85,7 @@ def slugify(value: str) -> str:
 def load_articles(path: Path, limit: Optional[int]) -> List[Dict[str, str]]:
     with path.open("r", encoding="utf-8", newline="") as f:
         rows = list(csv.DictReader(f))
-    from faktenretention.input_checks import validate_article_keys
+    from faktenretention.io import validate_article_keys
     validate_article_keys(rows)
     return rows[:limit] if limit else rows
 

@@ -1,0 +1,2 @@
+model,n_rows,n_parameters,design_rank,n_article_clusters,converged,iterations,max_abs_coefficient,design_condition,covariance_rank,min_covariance_eigenvalue,max_abs_score,pearson_ratio,deviance,fit_seconds,warning_text,stable
+linear,2000,123,123,100,True,5,1.9973020664166505,111.21271641844952,23,-1.11911715506345e-15,1.6315560014135144e-11,0.6510700037151779,1270.3842877312018,0.04755258798832074,,True

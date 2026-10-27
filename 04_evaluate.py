@@ -4,11 +4,10 @@
 # LLM-Aufrufe: nur --generate-qa --execute. Beispiel: python 04_evaluate.py
 """Originaler QA-Scorer; neue Modellantworten nur mit --generate-qa --execute."""
 from pathlib import Path
-import sys
 import argparse
 import json
 from faktenretention.io import read_csv, write_csv
-from faktenretention.paths import PROJECT_ROOT as PACKAGE
+from faktenretention.io import PROJECT_ROOT as PACKAGE
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
@@ -28,7 +27,12 @@ def main():
     else:
         from faktenretention.offline_guard import install
         install()
-        from faktenretention.analysis_data import label_answer
+        from faktenretention.scoring import retained
+        def label_answer(row):
+            if str(row.get('error','')):return 'technical_missing'
+            if retained(str(row['reference_answer']),str(row['answer'])):return 'retained'
+            if str(row['answer']).upper()=='NOT_FOUND':return 'lost'
+            return 'reference_discordant'
         source=a.run/'data/answers.csv' if a.run else PACKAGE/'data/qa_antworten.csv.gz'
         output=a.run/'evaluation' if a.run else PACKAGE/'results/qa_neuberechnet'
         rows=read_csv(source)

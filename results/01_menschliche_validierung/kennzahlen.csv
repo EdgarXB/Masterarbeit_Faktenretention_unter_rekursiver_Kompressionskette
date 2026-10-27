@@ -1,0 +1,12 @@
+,Wert
+Fakten,168.0
+Artikel,5.0
+Einzelurteile,840.0
+Precision@20 (gepoolt),0.88
+Core-Recall@20 (gepoolt),0.9428571428571428
+Core-Recall@20 (Artikelmittel),0.9380952380952381
+"nDCG@20 (linear, Artikelmittel)",0.9141470128923304
+Modell–Mensch: exakte Übereinstimmung,0.6666666666666666
+Modell–Mensch: linear gewichtetes Kappa,0.5420439844760672
+Ordinales Krippendorff-Alpha,0.4588667038117027
+Vollständig übereinstimmende Fakten,28.0

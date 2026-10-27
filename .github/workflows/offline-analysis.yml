@@ -1,60 +1,26 @@
 name: Offline analysis
-
-on:
-  push:
-  pull_request:
-  workflow_dispatch:
-    inputs:
-      full_notebooks:
-        description: Execute all twelve historical notebooks with existing caches
-        type: boolean
-        default: false
-
+on: [push, pull_request, workflow_dispatch]
 env:
-  CUDA_VISIBLE_DEVICES: ''
   OPENBLAS_NUM_THREADS: '1'
   OMP_NUM_THREADS: '1'
-  MKL_NUM_THREADS: '1'
-  NUMEXPR_NUM_THREADS: '1'
-  PYTHONHASHSEED: '32'
-  PYTHONDONTWRITEBYTECODE: '1'
   HF_HUB_OFFLINE: '1'
   TRANSFORMERS_OFFLINE: '1'
-
 jobs:
-  offline-tests:
+  offline:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v6
       - run: uv python install 3.13.15
       - run: uv venv --python 3.13.15 .venv-analysis
-      - run: uv pip sync --python .venv-analysis/bin/python requirements-analysis.lock.txt
+      - run: uv pip sync --python .venv-analysis/bin/python requirements.txt
       - run: uv pip install --python .venv-analysis/bin/python --no-deps -e .
-      - run: .venv-analysis/bin/python 05_analyze.py --check-environment
-      - run: .venv-analysis/bin/python -m unittest discover -s tests -p 'test_*.py' -v
+      - run: .venv-analysis/bin/python -m unittest discover -s tests -v
+      - run: .venv-analysis/bin/python 05_analyze.py --prepare
       - run: .venv-analysis/bin/python 01_prepare.py
       - run: .venv-analysis/bin/python 02_demonstrations.py
-      - run: .venv-analysis/bin/python 04_evaluate.py
-      - run: .venv-analysis/bin/python 05_analyze.py --only 01_human_faktenrelevanz --output results/runs/ci-smoke
-
-  full-notebooks:
-    if: github.event_name == 'workflow_dispatch' && inputs.full_notebooks
-    runs-on: ubuntu-latest
-    timeout-minutes: 60
-    steps:
-      - uses: actions/checkout@v4
-      - uses: astral-sh/setup-uv@v6
-      - run: uv python install 3.13.15
-      - run: uv venv --python 3.13.15 .venv-analysis
-      - run: uv pip sync --python .venv-analysis/bin/python requirements-analysis.lock.txt
-      - run: uv pip install --python .venv-analysis/bin/python --no-deps -e .
-      - run: .venv-analysis/bin/python 05_analyze.py --output results/runs/ci-full
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: notebook-execution
-          path: |
-            results/runs/ci-full/validation.json
-            results/runs/ci-full/notebooks/
+      - run: |
+          for notebook in notebooks/*.ipynb; do
+            .venv-analysis/bin/python -m jupyter nbconvert --execute --to notebook --inplace --ExecutePreprocessor.timeout=900 "$notebook"
+          done

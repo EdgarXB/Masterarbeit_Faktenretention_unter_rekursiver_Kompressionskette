@@ -1,0 +1,17 @@
+first,second,stage_target_words,lower,upper,n,estimable,status
+zero_shot_cot,plain,500,274.8,279.74999999999994,0,False,weniger als 20 Beobachtungen je Verfahren im Bereich; weniger als 20 lokal gestützte gepaarte Artikel
+zero_shot_cot,plain,300,218.9,239.84999999999997,0,False,weniger als 20 Beobachtungen je Verfahren im Bereich; weniger als 20 lokal gestützte gepaarte Artikel
+zero_shot_cot,plain,150,148.85,222.29999999999998,33,True,gestützter explorativer Vergleich
+zero_shot_cot,plain,75,63.0,105.0,38,True,gestützter explorativer Vergleich
+few_shot_cot,plain,500,236.65,279.74999999999994,2,False,weniger als 20 Beobachtungen je Verfahren im Bereich; weniger als 20 lokal gestützte gepaarte Artikel
+few_shot_cot,plain,300,217.65,239.84999999999997,1,False,weniger als 20 Beobachtungen je Verfahren im Bereich; weniger als 20 lokal gestützte gepaarte Artikel
+few_shot_cot,plain,150,140.9,222.29999999999998,47,True,gestützter explorativer Vergleich
+few_shot_cot,plain,75,78.0,131.1,63,True,gestützter explorativer Vergleich
+auto_cot,few_shot_cot,500,264.9,370.05,48,True,gestützter explorativer Vergleich
+auto_cot,few_shot_cot,300,227.55,330.1,58,True,gestützter explorativer Vergleich
+auto_cot,few_shot_cot,150,160.0,246.05,52,True,gestützter explorativer Vergleich
+auto_cot,few_shot_cot,75,88.95,131.1,64,True,gestützter explorativer Vergleich
+automate_cot,auto_cot,500,327.85,441.1,44,True,gestützter explorativer Vergleich
+automate_cot,auto_cot,300,243.7,383.0,75,True,gestützter explorativer Vergleich
+automate_cot,auto_cot,150,160.0,275.29999999999995,69,True,gestützter explorativer Vergleich
+automate_cot,auto_cot,75,88.95,158.29999999999998,80,True,gestützter explorativer Vergleich

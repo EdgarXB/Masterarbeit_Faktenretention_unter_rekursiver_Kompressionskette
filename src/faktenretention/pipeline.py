@@ -11,24 +11,16 @@ import json
 import sys
 import time
 from faktenretention.request_budget import activate, save_json
-from faktenretention.input_checks import validate_article_keys
+from faktenretention.io import validate_article_keys
 from faktenretention.text_rules import count_words, bounds_for_target, lead_k, direct_prompt, seed_raw, extract_text, extract_thinking, complete_sentence
 
 from faktenretention.io import read_csv, write_csv, sha, safe_output
-from faktenretention.paths import PROJECT_ROOT as PACKAGE
+from faktenretention.io import PROJECT_ROOT as PACKAGE
 from faktenretention.protocol import STAGES, METHODS
 MODELS = {
  'summary':dict(name='thesis-seed:v1',digest='7a66a2f466bf48fdafa7004a7975a7f5fac6e667a6de7d01751aacb98b3f387c'),
  'facts':dict(name='thesis-gemma:v1',digest='6316f0629137b426c9d9b853ffc4c8209589f30ee39aebede6285096c0ff47e7'),
  'qa':dict(name='thesis-qwen38-qa:v1',digest='d80421b9191aff0d4d8ea0911068452f11f3963e3e282c6b9d778932c4b268b3')}
-
-
-
-
-
-
-
-
 
 
 def prepare_articles(source, output, *, limit=None, split='test', resume=False):

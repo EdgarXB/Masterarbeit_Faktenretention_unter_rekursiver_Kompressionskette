@@ -1,0 +1,2 @@
+first,second,stage_target_words,definition,model,adjusted_difference_pp,ci_low_pp,ci_high_pp,n_bootstrap_valid,n_bootstrap_missing,reliable,n_articles,n_reference_points,common_lower,common_upper,raw_same_articles_pp
+auto_cot,plain,75,central95,linear,3.1868017502654515,1.355779994188618,5.040241358442761,10000,0,True,59,118,88.95,156.1,3.255525820200219
