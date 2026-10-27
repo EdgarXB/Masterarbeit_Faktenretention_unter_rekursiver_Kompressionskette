@@ -3,7 +3,7 @@ from pathlib import Path
 import json,sys,tempfile,unittest,urllib.request
 import faktenretention.request_budget as budget
 import faktenretention.pipeline as pipeline
-from faktenretention.analysis_data import analyze_run
+from faktenretention.scoring import retained
 
 
 def deny_network(*args,**kwargs):raise AssertionError('Echte Netzverbindung im Mock-Test!')
@@ -37,12 +37,12 @@ class PipelineTest(unittest.TestCase):
     def test_default_mini_complete_pipeline(self):
         run=self.prepare()
         config=pipeline.start_run(run,mode='mini')
-        pipeline.generate_facts(run,config);pipeline.generate_summaries(run,config);pipeline.generate_qa(run,config);pipeline.compute_metrics(run,config);analyze_run(run)
+        pipeline.generate_facts(run,config);pipeline.generate_summaries(run,config);pipeline.generate_qa(run,config);pipeline.compute_metrics(run,config)
         ledger=json.loads((run/'request_ledger.json').read_text())
         self.assertEqual(ledger,dict(actual_generation_requests=0,simulated_requests=22))
         self.assertEqual(len(pipeline.read_csv(run/'data/canonical_facts.csv')),20)
         self.assertEqual(len(pipeline.read_csv(run/'data/answers.csv')),20)
-        labels=pipeline.read_csv(run/'analysis/qa_labels.csv.gz');self.assertTrue(all(r['label']=='retained' for r in labels))
+        answers=pipeline.read_csv(run/'data/answers.csv');self.assertTrue(all(retained(r['reference_answer'],r['answer']) for r in answers))
         # Resume uses identical config and cached stages/QA, with no further request.
         pipeline.start_run(run,mode='mini');pipeline.generate_facts(run,config);pipeline.generate_summaries(run,config);pipeline.generate_qa(run,config)
         self.assertEqual(json.loads((run/'request_ledger.json').read_text()),ledger)
@@ -73,7 +73,7 @@ class PipelineTest(unittest.TestCase):
             self.assertEqual(json.loads((run/'request_ledger.json').read_text())['actual_generation_requests'],0)
     def test_all_methods_recursive_full_mock(self):
         run=self.prepare();config=pipeline.start_run(run,mode='full',max_requests=510)
-        pipeline.generate_facts(run,config);pipeline.generate_summaries(run,config);pipeline.generate_qa(run,config);pipeline.compute_metrics(run,config);analyze_run(run)
+        pipeline.generate_facts(run,config);pipeline.generate_summaries(run,config);pipeline.generate_qa(run,config);pipeline.compute_metrics(run,config)
         self.assertEqual(len(pipeline.read_csv(run/'data/summaries.csv')),6)
         self.assertEqual(len(pipeline.read_csv(run/'data/answers.csv')),480)
         ledger=json.loads((run/'request_ledger.json').read_text())

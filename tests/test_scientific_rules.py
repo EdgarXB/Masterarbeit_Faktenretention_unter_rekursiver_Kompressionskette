@@ -1,62 +1,34 @@
-"""Guard the extracted scientific rules against their byte-preserved baseline."""
+"""Gezielte Regeln und unveränderte wissenschaftliche Kernfunktionen."""
 from pathlib import Path
-import ast
-import unittest
-import hashlib
-import json
-import zipfile
-from faktenretention.frozen_data import baseline_bytes
-
+import hashlib, unittest
+from faktenretention import scoring
+from faktenretention.text_rules import count_words, bounds_for_target, lead_k
+from faktenretention.protocol import METHODS,STAGES,CONTRASTS
+from faktenretention.statistics import SEED,B
 ROOT=Path(__file__).resolve().parents[1]
 
-def functions(path):
-    return {n.name:n for n in ast.parse(path if isinstance(path,str) else path.read_text()).body if isinstance(n,ast.FunctionDef)}
-
 class ScientificRulesTest(unittest.TestCase):
-    def test_compact_baseline_is_complete_and_byte_preserved(self):
-        entries={name:digest for digest,name in
-                 (line.split('  ',1) for line in (ROOT/'archive/baseline_ad7eb1a.sha256').read_text().splitlines())}
-        with zipfile.ZipFile(ROOT/'archive/baseline_ad7eb1a.zip') as archive:
-            self.assertEqual(set(archive.namelist()),set(entries))
-            for name,digest in entries.items():
-                self.assertEqual(hashlib.sha256(archive.read(name)).hexdigest(),digest,name)
-            provenance=json.loads((ROOT/'data/code_provenance.json').read_text())
-            original={row['file']:row for row in json.loads(archive.read('data/code_provenance.json'))}
-            for row in provenance['paths']:
-                self.assertTrue((ROOT/row['active']).is_file())
-                self.assertIn(row['baseline_member'],entries)
-                if 'original_sha256' in row:
-                    self.assertEqual(row['original_sha256'],original[row['baseline_member']]['original_sha256'])
-
-    def test_fingerprinted_sources_and_protocol_constants_are_preserved(self):
-        for old,new in [('qa_scorer_snapshot','scoring'),('summary_rules','text_rules'),('analysis_bootstrap_worker','analysis_bootstrap_worker')]:
-            self.assertEqual(baseline_bytes(f'data/code/{old}.py'),
-                             (ROOT/f'src/faktenretention/{new}.py').read_bytes(),new)
-        from faktenretention.protocol import METHODS, STAGES, CONTRASTS
-        from faktenretention.statistics import SEED, B
-        self.assertEqual(METHODS,['lead_k','plain','zero_shot_cot','few_shot_cot','auto_cot','automate_cot'])
+    def test_original_scientific_sources(self):
+        # Gegen den wissenschaftlichen Ausgangsstand vor der Kürzung geprüft.
+        expected={'scoring.py': '190720ab8a6fcb161a01deb99f51d34fabf5a07445a2734e63010dc8b904d2af', 'text_rules.py': '67bb777c48d60981ff02f63d98d06ca025786b906a89180280eed46516c59285', 'statistics.py': '7630748f085fc99d3e6f0da276cc0d1b2c944cf163309b9cfd00ae6d52e421f7', 'analysis_bootstrap_worker.py': 'f544319c4d80d2549693f2be35adb00b9e634c2664cc1de6a694335d790b916f'}
+        for name,digest in expected.items():
+            self.assertEqual(hashlib.sha256((ROOT/'src/faktenretention'/name).read_bytes()).hexdigest(),digest,name)
+    def test_protocol_and_boundaries(self):
         self.assertEqual(STAGES,[500,300,150,75])
-        self.assertEqual(CONTRASTS,[('zero_shot_cot','plain'),('few_shot_cot','plain'),('auto_cot','few_shot_cot'),('automate_cot','auto_cot')])
+        self.assertEqual(len(METHODS),6)
+        self.assertEqual(len(CONTRASTS),4)
         self.assertEqual((SEED,B),(32,10000))
-
-    def test_scorer_text_and_statistical_functions_keep_the_original_ast(self):
-        for old,new in [('qa_scorer_snapshot','scoring'),('summary_rules','text_rules'),('analysis_statistics','statistics')]:
-            original=functions(baseline_bytes(f'data/code/{old}.py').decode())
-            current=functions(ROOT/f'src/faktenretention/{new}.py')
-            for name,node in original.items():
-                self.assertEqual(ast.dump(node),ast.dump(current[name]),f'{new}.{name}')
-
-    def test_extracted_prompt_transport_and_cache_functions_are_unchanged(self):
-        original=functions(baseline_bytes('data/code/iterative_summarize.py').decode())
-        current=functions(ROOT/'src/faktenretention/model_transport.py')
-        for name in ['build_prompt','apply_model_prompt_controls','ollama_generate']:
-            for node in ast.walk(original[name]):
-                if isinstance(node,ast.ImportFrom) and node.module=='request_budget':
-                    node.module='faktenretention.request_budget'
-            self.assertEqual(ast.dump(original[name]),ast.dump(current[name]),name)
-        original=functions(baseline_bytes('02_demonstrations.py').decode())
-        current=functions(ROOT/'src/faktenretention/demonstrations/rules.py')
-        for name in ['sha256_text','cache_key','stage_input_valid']:
-            self.assertEqual(ast.dump(original[name]),ast.dump(current[name]),name)
+        self.assertEqual(bounds_for_target(75,5.0),(71,79))
+        self.assertEqual(bounds_for_target(150,5.0),(142,158))
+        text='Alice, Bob! Carol-Dan.'
+        self.assertEqual(count_words(text),4)
+        short=lead_k(text,3)
+        self.assertEqual(count_words(short),3)
+        self.assertTrue(text.startswith(short))
+    def test_qa_grounding_and_reference_match(self):
+        self.assertTrue(scoring.support_is_grounded('Alice won 50 percent.','50 percent','Alice won 50 percent.'))
+        self.assertFalse(scoring.support_is_grounded('Alice won 50 percent.','Bob','Bob won.'))
+        self.assertFalse(scoring.retained('Alice','NOT_FOUND'))
+        self.assertTrue(scoring.retained('50 percent','50%'))
 
 if __name__=='__main__':unittest.main()

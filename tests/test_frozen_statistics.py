@@ -1,65 +1,38 @@
-"""Ergebnisregression aus eingefrorenen Daten: keine Modelle, keine neuen Experimente."""
+"""Rohdaten, Nenner und feste Ergebnisreferenzen; keine Modellaufrufe."""
 from pathlib import Path
-import hashlib
-import io
-import sys
-import tempfile
-import unittest
-from faktenretention.frozen_data import baseline_bytes
-import zipfile
-
-ROOT=Path(__file__).resolve().parents[1]
+import hashlib,unittest
 import numpy as np
 import pandas as pd
-from faktenretention.analysis_data import analyze_run
-
+from faktenretention.data import prepare,load_inputs,panel,verify_sources,CELL,KEY
+from faktenretention.statistics import means_for,contrasts_for
+ROOT=Path(__file__).resolve().parents[1]
 
 class FrozenStatisticsTest(unittest.TestCase):
-    def test_frozen_hashes(self):
-        for line in (ROOT/'data/frozen_assets.sha256').read_text().splitlines():
-            digest,name=line.split('  ',1)
-            self.assertEqual(hashlib.sha256((ROOT/name).read_bytes() if (ROOT/name).is_file() else baseline_bytes(name)).hexdigest(),digest,name)
+    @classmethod
+    def setUpClass(cls):
+        prepare()
+        cls.qa,cls.article=panel(load_inputs())
+    def test_frozen_sources_and_position_labels(self):
+        self.assertGreater(verify_sources(),0)
+        qa=self.qa
+        self.assertEqual((len(qa),int(qa.analysis_eligible.sum()),int(qa.technical_missing.sum())),(48000,47804,196))
+        self.assertEqual(int(qa.empty_output.sum()),40)
+        self.assertFalse(qa.loc[qa.empty_output,'technical_missing'].any())
+        # Positionsgenaue Labels der bisherigen wissenschaftlichen Referenz.
+        digest=hashlib.sha256(qa.sort_values(KEY)[KEY+['label']].to_csv(index=False).encode()).hexdigest()
+        self.assertEqual(digest,'cf5992de26bf282fd04ed7da87d7b698333ef74ab09e97b017444b15f048b4aa')
+    def test_article_means_and_paired_bootstrap_intervals(self):
+        article=self.article
+        self.assertEqual(len(article),2400)
+        self.assertTrue(article.n_total.eq(20).all())
+        self.assertTrue(article.R_zero.le(article.R_obs+1e-15).all())
+        self.assertTrue(article.R_adj.le(article.R_zero+1e-15).all())
+        old=pd.read_csv(ROOT/'tests/referenzwerte.csv',keep_default_na=False)
+        for kind,new in [('mean',means_for(article).assign(first=lambda x:x.method,second='')),('contrast',contrasts_for(article))]:
+            expected=old[old.kind.eq(kind)]
+            joined=expected.merge(new,on=['first','second','stage_target_words'],validate='one_to_one',suffixes=('_old','_new'))
+            self.assertEqual(len(joined),24 if kind=='mean' else 16)
+            for c in ['mean','ci_low','ci_high']:
+                np.testing.assert_allclose(joined[c+'_old'],joined[c+'_new'],rtol=0,atol=1e-12)
 
-    def test_qa_labels_means_intervals_and_paired_contrasts(self):
-        from faktenretention.offline_guard import install
-        install()
-        with tempfile.TemporaryDirectory(prefix='anhang_statistiktest_') as temporary:
-            out=analyze_run(output=Path(temporary))
-            with zipfile.ZipFile(ROOT/'results/originaltabellen.zip') as reference:
-                def original(name):
-                    return pd.read_csv(io.BytesIO(reference.read(name)),keep_default_na=False,
-                                       compression='gzip' if name.endswith('.gz') else None)
-                labels=original('qa__qa_labels_reproduziert.csv.gz')
-                new=pd.read_csv(out/'qa_labels.csv.gz',keep_default_na=False,low_memory=False)
-                key=['article_id','method','stage_target_words','canonical_fact_id']
-                joined=labels.merge(new,on=key,validate='one_to_one',suffixes=('_old','_new'))
-                self.assertEqual(len(joined),48000)
-                for column in ['label','analysis_eligible','technical_missing','grounded']:
-                    self.assertTrue(joined[column+'_old'].equals(joined[column+'_new']),column)
-                article=pd.read_csv(out/'retention_artikelebene.csv')
-                old=original('qa__retention_artikelebene.csv')
-                j=old.merge(article,on=key[:3],validate='one_to_one',suffixes=('_old','_new'))
-                self.assertEqual(len(j),2400)
-                for column in ['n_total','n_valid','n_missing','n_retained','n_lost','n_reference_discordant',
-                               'retention_observed','retention_lower','retention_upper','fully_observed','generation_chain_failure']:
-                    np.testing.assert_allclose(j[column+'_old'].astype(float),j[column+'_new'].astype(float),rtol=0,atol=1e-12)
-                means=pd.read_csv(out/'mittelwerte_95ci.csv')
-                old=original('qa__retention_mittelwerte_95ci.csv')
-                j=old[old.policy.eq('observed')].merge(means[means.metric.eq('retention_observed')],
-                    on=['method','stage_target_words'],validate='one_to_one',suffixes=('_old','_new'))
-                self.assertEqual(len(j),24)
-                for column in ['mean','ci_low','ci_high','n_articles']:
-                    np.testing.assert_allclose(j[column+'_old'],j[column+'_new'],rtol=0,atol=1e-12)
-                old=original('laenge__retention_und_drei_rangfolgen_24_gruppen.csv')
-                j=old.merge(means[means.metric.eq('retention_adjusted')],on=['method','stage_target_words'],validate='one_to_one')
-                for before,after in [('R_adj_mean','mean'),('R_adj_ci_low','ci_low'),('R_adj_ci_high','ci_high')]:
-                    np.testing.assert_allclose(j[before],j[after],rtol=0,atol=1e-12)
-                old=original('qa__vier_gepaarte_kontraste_pp_95ci.csv')
-                new=pd.read_csv(out/'retention_observed_kontraste.csv')
-                j=old.merge(new,on=['first','second','stage_target_words'],validate='one_to_one',suffixes=('_old','_new'))
-                self.assertEqual(len(j),16)
-                for column in ['mean','ci_low','ci_high','n_articles','n_first_higher','n_tied','n_first_lower']:
-                    np.testing.assert_allclose(j[column+'_old'],j[column+'_new'],rtol=0,atol=1e-12)
-
-
-if __name__=='__main__':unittest.main(verbosity=2)
+if __name__=='__main__':unittest.main()

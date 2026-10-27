@@ -1,6 +1,0 @@
-  × No solution found when resolving dependencies:
-  ╰─▶ Because summac>=0.0.4 depends on huggingface-hub<=0.17.0 and
-      transformers==5.15.1 depends on huggingface-hub>=1.5.0,<2.0, we can
-      conclude that summac>=0.0.4 and transformers==5.15.1 are incompatible.
-      And because you require transformers==5.15.1 and summac==0.0.4, we can
-      conclude that your requirements are unsatisfiable.

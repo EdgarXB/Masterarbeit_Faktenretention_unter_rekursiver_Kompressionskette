@@ -119,7 +119,7 @@ def main() -> int:
     args = parse_args()
     args.output_dir.mkdir(parents=True, exist_ok=True)
     candidates = load_jsonl(args.candidates)
-    from faktenretention.input_checks import validate_candidate_keys
+    from faktenretention.io import validate_candidate_keys
     validate_candidate_keys(candidates)
     model = SentenceTransformer(args.model_path, local_files_only=True, device=args.device)
     selected_all: dict[str, list[dict[str, Any]]] = {}

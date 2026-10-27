@@ -10,7 +10,3 @@
 /data/** -text
 /prompts/** -text
 /results/** -text
-/figures/** -text
-# Diese Dateien sind ausführbarer Quellcode, keine eingefrorenen Messwerte.
-/data/code/*.py text eol=lf
-/data/tests/*.py text eol=lf

@@ -1,0 +1,8 @@
+Aspekt,Definition
+Modell,"Gruppiertes binomiales GLM, Logit-Link"
+Effekte,Methoden×Stufen-Zellinterzepte und 99 Artikel-Fixed-Effects
+Textlänge,"Ein linearer Koeffizient pro Stufe, (W−Ziel)/100"
+Bereich,Schnitt der 5.–95. Perzentile
+Unterstützung,"≥20 Beobachtungen je Methode und ≥20 lokal gestützte gepaarte Artikel; ≥5 Ausgaben je Methode im lokalen Band max(5,0.1W)"
+Standardisierung,"Beide beobachteten Wortlängen je gestütztem Artikel, gleiche Artikelgewichte"
+Bootstrap,"10000 Artikelziehungen, Seed 32, 95-%-Perzentilintervalle"

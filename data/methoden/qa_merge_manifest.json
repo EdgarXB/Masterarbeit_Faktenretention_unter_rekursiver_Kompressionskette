@@ -1,0 +1,8 @@
+{
+  "base_qa_sha256": "22d4a6ddab86f5e0440f5fd31425b30a3d120521b2b64ecf601d9b6abba927e2",
+  "new_qa_sha256": "e9b3fe0b7cbbd0728b1844129b25acd489736281115a7af68df2e5be2da8a307",
+  "merged_qa_sha256": "da921fd3768a1ba2ddfdb069e2a9d4a2692383d5c512ecf165c57a0c3e4bbcb7",
+  "retained_historical_units": 32000,
+  "new_plain_units": 8000,
+  "new_few_shot_units": 8000
+}

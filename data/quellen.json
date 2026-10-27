@@ -1,0 +1,199 @@
+{
+  "manuscript": {
+    "name": "2610_02_Masterarbeit.docx",
+    "sha256": "b57134a04ee30f95042b33ffa9f2cebca4ba6d6bc0ecefb76cda02a94c3e5a54"
+  },
+  "data_version": "aktuell_20260930",
+  "replacement": "Plain und Few-Shot-CoT: Neulauf 20260930; übrige Verfahren: final_100_frozen_temperature_0",
+  "files": [
+    {
+      "file": "data/artikel.csv.gz",
+      "sha256": "0eb21224274ebd43361b1af7cdba03b6edab6e352a06855b7e4cb707e80d3fcd",
+      "source": "Unveränderter eingefrorener Datenstand aktuell_20260930"
+    },
+    {
+      "file": "data/fakten.csv.gz",
+      "sha256": "f9e8a0406713ce79ba4dc97d644acc8be5920724993a0b7924da32be9b50fffd",
+      "source": "Unveränderter eingefrorener Datenstand aktuell_20260930"
+    },
+    {
+      "file": "data/zusammenfassungen.csv.gz",
+      "sha256": "dd3380f557745c07ba7eff0de12c601cbd1200eb8a492791f3e303b9ca107633",
+      "source": "Unveränderter eingefrorener Datenstand aktuell_20260930"
+    },
+    {
+      "file": "data/qa_antworten.csv.gz",
+      "sha256": "e88766201d4128cc3d9d29a9eb904d8402f48a5ae8455850ca2b461a98f483eb",
+      "source": "Unveränderter eingefrorener Datenstand aktuell_20260930"
+    },
+    {
+      "file": "data/modellmetriken.csv",
+      "sha256": "50997fc323bce41cf5ccdd56867f8bcbf02ccf3411eb1e4bc59d9c4044e9f6ee",
+      "source": "Unveränderter eingefrorener Datenstand aktuell_20260930"
+    },
+    {
+      "file": "data/generierungszustaende.jsonl.gz",
+      "sha256": "8d893bd24a39a73b1365032c6b8c6375bf5978a74986b428485d85041fddf10e",
+      "source": "eingefrorene_quellen.zip#project/02_Auswertung/hauptexperiment_qa_daten/aktuell_20260930/generation_states.jsonl.gz"
+    },
+    {
+      "file": "data/bootstrap_linear.npz",
+      "sha256": "8fe2a9853b5eec51079a8aac46ffc8845e72b27076a27761a68f36bdda5e02c5",
+      "source": "eingefrorene_quellen.zip#supplement/ergebnisse/03_laengenkontrolle/bootstrap_10000_linear.npz"
+    },
+    {
+      "file": "data/menschliche_faktenrelevanz.csv",
+      "sha256": "690267a7e876b105cd2c46a1bb4517b94eb5e1648da3003a54bf605af2c5556f",
+      "source": "eingefrorene_quellen.zip#project/02_Auswertung/human_validation_faktenrelevanz_ergebnisse.csv"
+    },
+    {
+      "file": "data/human_qa/REVIEWER_INSTRUCTIONS.md",
+      "sha256": "b750fde80db6b06b11aab9f6bb4a015b794c99151013c45837241a55ca32fafb",
+      "source": "eingefrorene_quellen.zip#project/02_Auswertung/human_validation_qa_daten/qa/REVIEWER_INSTRUCTIONS.md"
+    },
+    {
+      "file": "data/human_qa/human_validation_annotation.csv",
+      "sha256": "b41bfb0e7ee4833ac3fc1d2be7a98ed58c5556aa5b929bd1a4b9f3501b362e2d",
+      "source": "eingefrorene_quellen.zip#project/02_Auswertung/human_validation_qa_daten/qa/human_validation_annotation.csv"
+    },
+    {
+      "file": "data/human_qa/internal_model_label_key.csv",
+      "sha256": "1f2c2b89532b8a384c6d9f660c0505b2845dce531d5ab41a0ace947abc731826",
+      "source": "eingefrorene_quellen.zip#project/02_Auswertung/human_validation_qa_daten/qa/internal_model_label_key.csv"
+    },
+    {
+      "file": "data/human_qa/returns/reviewer_01_answers.csv",
+      "sha256": "c9511ac02abae7e8d9aa970cbc9e7658a382c39687a60c6c5f73718f33f0a233",
+      "source": "eingefrorene_quellen.zip#project/02_Auswertung/human_validation_qa_daten/qa/returns/reviewer_01_answers.csv"
+    },
+    {
+      "file": "data/human_qa/returns/reviewer_02_answers.csv",
+      "sha256": "9182938380c07c4b5d97ca1f87693276868fbb3fc51045e363455a34cd56bb4d",
+      "source": "eingefrorene_quellen.zip#project/02_Auswertung/human_validation_qa_daten/qa/returns/reviewer_02_answers.csv"
+    },
+    {
+      "file": "data/human_qa/returns/reviewer_03_answers.csv",
+      "sha256": "c950ebc20e78b165bbe94fc9a17499fdcfcc65d14a72aa2fbada31741cef6822",
+      "source": "eingefrorene_quellen.zip#project/02_Auswertung/human_validation_qa_daten/qa/returns/reviewer_03_answers.csv"
+    },
+    {
+      "file": "data/human_qa/returns/reviewer_04_answers.csv",
+      "sha256": "8408b62c3fb89e6640d3712c0c03d35f4435d3054373f33a10ff3c125c91e68b",
+      "source": "eingefrorene_quellen.zip#project/02_Auswertung/human_validation_qa_daten/qa/returns/reviewer_04_answers.csv"
+    },
+    {
+      "file": "data/human_qa/returns/reviewer_05_answers.csv",
+      "sha256": "e7b56eb39c64551e428f08a028896c5b1231a6b9f4695ed6926b98c7f0ef0148",
+      "source": "eingefrorene_quellen.zip#project/02_Auswertung/human_validation_qa_daten/qa/returns/reviewer_05_answers.csv"
+    },
+    {
+      "file": "data/human_qa/returns/reviewer_06_answers.csv",
+      "sha256": "ce50efb419d3400a8814672ae9e622e2a54e59d9a884fc5e5979a62a321d9c3d",
+      "source": "eingefrorene_quellen.zip#project/02_Auswertung/human_validation_qa_daten/qa/returns/reviewer_06_answers.csv"
+    },
+    {
+      "file": "data/human_qa/returns/reviewer_07_answers.csv",
+      "sha256": "b9e549b9ceb6916549d77517a9d106602bcc70784ac559668170ebbab072ecf2",
+      "source": "eingefrorene_quellen.zip#project/02_Auswertung/human_validation_qa_daten/qa/returns/reviewer_07_answers.csv"
+    },
+    {
+      "file": "data/human_qa/reviewer_app/APP_REVIEWER_INSTRUCTIONS.md",
+      "sha256": "539cfe4c0380f82988dd7beb89d26e02d694f58a62799b8fed1b552b473376d2",
+      "source": "eingefrorene_quellen.zip#project/02_Auswertung/human_validation_qa_daten/qa/reviewer_app/APP_REVIEWER_INSTRUCTIONS.md"
+    },
+    {
+      "file": "data/human_qa/reviewer_app/README_FOR_REVIEWERS.md",
+      "sha256": "762e048199f6bab257ea093e5208b7f0426eadfb33943ee3e06c53bc65e47791",
+      "source": "eingefrorene_quellen.zip#project/02_Auswertung/human_validation_qa_daten/qa/reviewer_app/README_FOR_REVIEWERS.md"
+    },
+    {
+      "file": "data/human_qa/reviewer_app/human_validation_review_app.html",
+      "sha256": "e42387f203298d12cd5829e4d99c3cd10f18c135a64939de6dc771b73caccbee",
+      "source": "eingefrorene_quellen.zip#project/02_Auswertung/human_validation_qa_daten/qa/reviewer_app/human_validation_review_app.html"
+    },
+    {
+      "file": "data/methoden/protocol.json",
+      "sha256": "eecdd0d20ebfa4fa059fc6fe0cd1ecc84257a618cf5016a5198433e1114d70d2",
+      "source": "eingefrorene_quellen.zip#project/02_Auswertung/hauptexperiment_qa_daten/aktuell_20260930/provenienz/protocol.json"
+    },
+    {
+      "file": "data/methoden/result_merge_manifest.json",
+      "sha256": "5158574030c9634be1f081f03b323d0e909d7ac46078ad455d084dabd02cb0b6",
+      "source": "eingefrorene_quellen.zip#project/02_Auswertung/hauptexperiment_qa_daten/aktuell_20260930/provenienz/result_merge_manifest.json"
+    },
+    {
+      "file": "data/methoden/qa_merge_manifest.json",
+      "sha256": "f9c76be6fa4d449db588e4373834b4632721d2503cc262ecd171b3226a08bd25",
+      "source": "eingefrorene_quellen.zip#project/02_Auswertung/hauptexperiment_qa_daten/aktuell_20260930/provenienz/qa/merge_manifest.json"
+    },
+    {
+      "file": "src/faktenretention/scoring.py",
+      "sha256": "190720ab8a6fcb161a01deb99f51d34fabf5a07445a2734e63010dc8b904d2af",
+      "source": "Wissenschaftliche Implementierung vor Bereinigung, Commit c3f728b"
+    },
+    {
+      "file": "src/faktenretention/text_rules.py",
+      "sha256": "67bb777c48d60981ff02f63d98d06ca025786b906a89180280eed46516c59285",
+      "source": "Wissenschaftliche Implementierung vor Bereinigung, Commit c3f728b"
+    },
+    {
+      "file": "src/faktenretention/statistics.py",
+      "sha256": "7630748f085fc99d3e6f0da276cc0d1b2c944cf163309b9cfd00ae6d52e421f7",
+      "source": "Wissenschaftliche Implementierung vor Bereinigung, Commit c3f728b"
+    },
+    {
+      "file": "src/faktenretention/analysis_bootstrap_worker.py",
+      "sha256": "f544319c4d80d2549693f2be35adb00b9e634c2664cc1de6a694335d790b916f",
+      "source": "Wissenschaftliche Implementierung vor Bereinigung, Commit c3f728b"
+    },
+    {
+      "file": "data/demonstrationen.zip",
+      "sha256": "ed8424d2e501a470da10f736feb9188f273a1db3cb358c10fc5a13be7c8bef57",
+      "source": "Ausgewählte Originalmessungen und Materialien; keine alten Endtabellen als Analysedaten"
+    },
+    {
+      "file": "data/modellpilot.zip",
+      "sha256": "9d6ef569eccb29cdebbb849ab21fd6a5b5ca92122a637384c7633ef23daf54a5",
+      "source": "Ausgewählte Originalmessungen und Materialien; keine alten Endtabellen als Analysedaten"
+    },
+    {
+      "file": "data/methodenmaterial.zip",
+      "sha256": "3189bcdf82ecf40d4ade668fe9399a52bdb588a700a7f8b6f04a77f5bbd7a4a1",
+      "source": "Ausgewählte Originalmessungen und Materialien; keine alten Endtabellen als Analysedaten"
+    },
+    {
+      "file": "data/models.json",
+      "sha256": "cce6f68a62fec77157c26f36aaa76a49f80507bdd154fa97f4d29e991bd22e5e",
+      "source": "Unveränderte Modellidentitäten und Bezugsmetadaten"
+    },
+    {
+      "file": "data/MODEL_INVENTORY.json",
+      "sha256": "d5bcb36bb9d41133221aa5b3c202f1a05eb57a1d685e94e580c301c7ba9083b7",
+      "source": "Unveränderte Modellidentitäten und Bezugsmetadaten"
+    },
+    {
+      "file": "data/menschliche_relevanz_quellen.zip",
+      "sha256": "d6dd3ffdfa4f327102285243f76dbf8754fdffa9ac26b19842b16203acda66d4",
+      "source": "salience_validation_package/data: Originaleingaben und fünf pseudonymisierte Rückgaben; Kalibrierungsartikel wird in Notebook 01 ausgeschlossen"
+    },
+    {
+      "file": "data/human_qa/auswahlkandidaten.csv.gz",
+      "sha256": "f4040dcd3cc66808a67095ab6a462016ccf7bd625f10c89c88ef364246ed4d7b",
+      "source": "Originale 2400 QA-Positionen des Mai-Piloten, report/qa_retention_detailed.csv; deterministische Auswahl ergibt exakt HV001–HV060"
+    }
+  ],
+  "original_experiment_packages": [
+    "numpy==2.5.2",
+    "pandas==3.0.5",
+    "torch==2.13.0",
+    "transformers==5.15.1",
+    "rouge-score==0.1.2",
+    "bert-score==0.3.13",
+    "summac==0.0.4",
+    "nltk==3.9.4",
+    "sentencepiece==0.2.2",
+    "scipy==1.18.1",
+    "sentence-transformers==6.0.0",
+    "scikit-learn==1.9.0"
+  ]
+}

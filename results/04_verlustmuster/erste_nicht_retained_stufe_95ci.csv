@@ -1,0 +1,37 @@
+method,category,category_name,estimate,ci_low,ci_high,n_numerator,n_denominator,n_articles_denominator,bootstrap_draws_zero_denominator
+lead_k,500,Erstmals bei 500 Wörtern,0.2435,0.217,0.271,487,2000,100,0
+lead_k,300,Erstmals bei 300 Wörtern,0.266,0.244,0.2885,532,2000,100,0
+lead_k,150,Erstmals bei 150 Wörtern,0.194,0.176,0.212,388,2000,100,0
+lead_k,75,Erstmals bei 75 Wörtern,0.127,0.1115,0.1435,254,2000,100,0
+lead_k,always_retained,Bis 75 durchgehend Retained,0.166,0.149,0.183,332,2000,100,0
+lead_k,undetermined,Nicht eindeutig bestimmbar,0.0035,0.0015,0.006,7,2000,100,0
+plain,500,Erstmals bei 500 Wörtern,0.449,0.4165,0.4825,898,2000,100,0
+plain,300,Erstmals bei 300 Wörtern,0.061,0.0475,0.076,122,2000,100,0
+plain,150,Erstmals bei 150 Wörtern,0.0505,0.037,0.065,101,2000,100,0
+plain,75,Erstmals bei 75 Wörtern,0.1145,0.0915,0.139,229,2000,100,0
+plain,always_retained,Bis 75 durchgehend Retained,0.317,0.29,0.345,634,2000,100,0
+plain,undetermined,Nicht eindeutig bestimmbar,0.008,0.004,0.0125,16,2000,100,0
+zero_shot_cot,500,Erstmals bei 500 Wörtern,0.28,0.253,0.3070124999999998,560,2000,100,0
+zero_shot_cot,300,Erstmals bei 300 Wörtern,0.0515,0.0385,0.0655,103,2000,100,0
+zero_shot_cot,150,Erstmals bei 150 Wörtern,0.1475,0.125,0.172,295,2000,100,0
+zero_shot_cot,75,Erstmals bei 75 Wörtern,0.2445,0.223,0.2665,489,2000,100,0
+zero_shot_cot,always_retained,Bis 75 durchgehend Retained,0.272,0.245,0.2995,544,2000,100,0
+zero_shot_cot,undetermined,Nicht eindeutig bestimmbar,0.0045,0.0015,0.008,9,2000,100,0
+few_shot_cot,500,Erstmals bei 500 Wörtern,0.355,0.327,0.3845,710,2000,100,0
+few_shot_cot,300,Erstmals bei 300 Wörtern,0.041,0.0305,0.0525,82,2000,100,0
+few_shot_cot,150,Erstmals bei 150 Wörtern,0.111,0.094,0.1285,222,2000,100,0
+few_shot_cot,75,Erstmals bei 75 Wörtern,0.1615,0.143,0.1805,323,2000,100,0
+few_shot_cot,always_retained,Bis 75 durchgehend Retained,0.319,0.291,0.3475,638,2000,100,0
+few_shot_cot,undetermined,Nicht eindeutig bestimmbar,0.0125,0.008,0.018,25,2000,100,0
+auto_cot,500,Erstmals bei 500 Wörtern,0.2845,0.259,0.311,569,2000,100,0
+auto_cot,300,Erstmals bei 300 Wörtern,0.044,0.0335,0.0555,88,2000,100,0
+auto_cot,150,Erstmals bei 150 Wörtern,0.114,0.0955,0.1335,228,2000,100,0
+auto_cot,75,Erstmals bei 75 Wörtern,0.1905,0.172,0.2095,381,2000,100,0
+auto_cot,always_retained,Bis 75 durchgehend Retained,0.3585,0.333,0.3835,717,2000,100,0
+auto_cot,undetermined,Nicht eindeutig bestimmbar,0.0085,0.004,0.0135,17,2000,100,0
+automate_cot,500,Erstmals bei 500 Wörtern,0.2645,0.238,0.292,529,2000,100,0
+automate_cot,300,Erstmals bei 300 Wörtern,0.057,0.046,0.068,114,2000,100,0
+automate_cot,150,Erstmals bei 150 Wörtern,0.1575,0.1365,0.1785,315,2000,100,0
+automate_cot,75,Erstmals bei 75 Wörtern,0.1645,0.1455,0.1830124999999998,329,2000,100,0
+automate_cot,always_retained,Bis 75 durchgehend Retained,0.3455,0.317,0.3735,691,2000,100,0
+automate_cot,undetermined,Nicht eindeutig bestimmbar,0.011,0.0055,0.017,22,2000,100,0

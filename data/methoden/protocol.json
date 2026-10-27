@@ -1,0 +1,38 @@
+{
+  "created_at_utc": "2026-09-30T21:32:25Z",
+  "run_signature": "9d21de14cf51f4da4af5f051ab6fa35633f12c2684bdff5251dc42f963cb2920",
+  "status": "new Plain and Few-Shot rerun requested after the frozen historical run",
+  "test_input_sha256": "d64d132fb953893fdf57651918fe7627174e0209fd229273ba7d4a58c8901464",
+  "methods": [
+    "plain",
+    "few_shot_cot"
+  ],
+  "plain_template": "summarize in {target_word_length}",
+  "plain_template_sha256": "a652d57341b07170c46bb872db811780a1932355c4a4861b3a9dd9a432d1b68a",
+  "plain_rendering": "exact instruction, blank line, current recursive stage input",
+  "fewshot_manifest_sha256": "c159947ef92b43db6befcb8e34b016f540b9de83c371841f9bf3fd3301cfc152",
+  "fewshot_prompt_sha256_by_stage": {
+    "500": "57e414045d7e5b13ac30fa9f9a486e91e78027944bdbfe67a22cca7407259e2d",
+    "300": "86d449b880f316bc8ba3012cf1708b42911d744dd6a00c85c738037ef5889929",
+    "150": "3785fe221c91374abe87ba7e273aa62197bfa2a34b9ec5560981b4e454b9173d",
+    "75": "678fbdea3841c7217598eaa5e7bf42118054559f6a8ff64d02c037f8aafe0a67"
+  },
+  "model": "thesis-seed:v1",
+  "model_digest": "7a66a2f466bf48fdafa7004a7975a7f5fac6e667a6de7d01751aacb98b3f387c",
+  "temperature": 0.0,
+  "seed": 32,
+  "top_p": 0.95,
+  "repeat_penalty": 1.0,
+  "num_ctx": 524288,
+  "num_predict": 4096,
+  "native_thinking": false,
+  "single_pass": true,
+  "automatic_retry": false,
+  "targets": [
+    500,
+    300,
+    150,
+    75
+  ],
+  "two_method_order": "alternating by article; each method first for 50 articles"
+}

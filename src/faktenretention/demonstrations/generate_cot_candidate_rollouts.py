@@ -381,7 +381,7 @@ def main() -> int:
     article_dir.mkdir(exist_ok=True)
     with args.input.open(encoding="utf-8", newline="") as handle:
         input_rows = list(csv.DictReader(handle))
-    from faktenretention.input_checks import validate_article_keys
+    from faktenretention.io import validate_article_keys
     validate_article_keys(input_rows)
     if args.limit is not None:
         input_rows = input_rows[: args.limit]

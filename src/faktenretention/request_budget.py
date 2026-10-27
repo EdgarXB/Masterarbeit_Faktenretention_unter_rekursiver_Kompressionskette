@@ -4,10 +4,15 @@ Keine Verbindung und keine Generierung beim Import. Nur activate() schaltet
 explizit ausgewählte Experimentphasen frei. Reservierung erfolgt vor jedem POST.
 """
 from pathlib import Path
-from faktenretention.runtime_checks import require_supported_platform
+import platform
+
 import json
 import os
 import urllib.request
+
+def require_supported_platform():
+    if platform.system() != "Linux":
+        raise SystemExit("Modellläufe benötigen Linux, unter Windows WSL2 (Dateisperren mit fcntl).")
 
 ACTIVE_RUN = None
 SIMULATED_RESPONDER = None  # Ausschließlich vom mitgelieferten Schnittstellentest gesetzt.
