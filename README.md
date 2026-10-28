@@ -30,18 +30,28 @@ Die Notebooks benötigen weder Modellgewichte noch Netzwerkzugriff.
 |---|---|---|
 | `01_menschliche_validierung` | Relevanz, Fragenqualität, Reliabilität, Scorer-Kalibrierung | Abb. 5–7, 19/20; Tab. 5/6 |
 | `02_faktenretention` | QA-Rekonstruktion, Artikelmittel, Kontraste, minimale Labeländerungen | Abb. 8–10; Tab. 15/16/20 |
-| `03_textlaenge` | Wortfenster, Adjustierung, Ränge, Matching und vollständige Matching-Intervalle | Abb. 11–14, 21/22; Tab. 17 |
+| `03_textlaenge` | Wortfenster, Adjustierung, Ränge, Matching und vollständige Matching-Intervalle; lesbare Auto-CoT-Clusterprojektion | Abb. 11–14, 21/22; Tab. 17; Methodenabbildung Auto-CoT |
 | `04_verlustmuster` | Faktenlaufbahnen, Entitätstypen, Lead-k-Präfixe und Rückwechsel | Abb. 15/16/23; Tab. 7, 21–25 |
 | `05_weitere_metriken` | ROUGE/BERTScore/SummaC, artikelweises Kendall-τ-b | Tab. 8; Ergebnistabelle E.1 |
 | `06_laengenregression` | Lineares binomiales GLM, Unterstützung, Standardisierung, Bootstrap | Tab. 18/19; Auto-CoT–Plain bei 75 |
 
-CSV-Tabellen und genau **17 PNG-Ergebnisabbildungen** entstehen unter
+CSV-Tabellen und **18 PNG-Abbildungen** entstehen unter
 `results/<notebookname>/`. Die Notebooks enthalten zusätzlich ihre sichtbaren
 Ausgaben. Notebook 05 und 06 erzeugen keine Grafiken. Notebook 06 liest standardmäßig
 den unveränderten linearen Cache. Sein Fingerprint bindet ihn an Daten,
 Designmatrix, Parameter, Ziehungen, numerischen Worker und Paketversionen.
 Die dortige Option `RECOMPUTE_BOOTSTRAP=True` berechnet ausdrücklich alle 10.000
 Anpassungen neu und schreibt den neuen Cache nach `results/`.
+
+Notebook 03 zeigt die Wortlängen und die Auto-CoT-Clusterprojektion jeweils als
+vier breite Einzelgrafiken mit lesbaren Beschriftungen. Die PNG-Exporte enthalten
+die vier Zielstufen untereinander. Die Wortlängenachsen beginnen bei null, haben
+aber je Zielstufe eigene Obergrenzen. Die Clusterprojektion verwendet die
+unveränderten 2D-Positionen aus `reference/figure_01_autocot_cluster_projection.svg`
+(SHA-256 wird im Notebook geprüft); die Quelle ist die historische Vektorgrafik
+vom 31. August 2026. Clustergrößen und Auswahl-IDs werden mit `demonstrationen.zip`
+abgeglichen. Dies ist eine neue Darstellung der gespeicherten Projektion, keine
+Neuberechnung der historischen Embeddings oder Cluster.
 
 ## Quellen und Definitionen
 
