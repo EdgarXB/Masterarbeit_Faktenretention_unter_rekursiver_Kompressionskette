@@ -38,8 +38,12 @@ Die Notebooks benötigen weder Modellgewichte noch Netzwerkzugriff.
 CSV-Tabellen und **18 PNG-Abbildungen** entstehen unter
 `results/<notebookname>/`. Die Notebooks enthalten zusätzlich ihre sichtbaren
 Ausgaben. Notebook 05 und 06 erzeugen keine Grafiken. Notebook 06 liest standardmäßig
-den unveränderten linearen Cache. Sein Fingerprint bindet ihn an Daten,
-Designmatrix, Parameter, Ziehungen, numerischen Worker und Paketversionen.
+den unveränderten linearen Cache. Das Referenzmanifest `data/bootstrap_linear.json`
+prüft seinen SHA-256 und bindet ihn über den ursprünglichen Fingerprint an Daten,
+Designmatrix, Referenzparameter, Ziehungen, numerischen Worker und Paketversionen.
+Neu geschätzte Modellparameter und lineare Prädiktoren dürfen ausschließlich um
+höchstens `1e-8` absolut vom Referenzfit abweichen, damit CPU-/BLAS-Rundungen den
+identischen Cache nicht ungültig machen. Alle anderen Bindungen bleiben exakt.
 Die dortige Option `RECOMPUTE_BOOTSTRAP=True` berechnet ausdrücklich alle 10.000
 Anpassungen neu und schreibt den neuen Cache nach `results/`.
 

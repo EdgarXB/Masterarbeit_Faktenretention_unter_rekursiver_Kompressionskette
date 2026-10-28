@@ -1,2 +1,2 @@
 model,n_requested,n_success,n_failed,n_warning_fits,max_iterations,seconds_this_run,cache_used,fingerprint
-linear,10000,10000,0,0,4,0.0013236989616416395,True,e82387b6848b834b51be55dc685922e228e3d82ceef682b7b1ba74076c797416
+linear,10000,10000,0,0,4,0.029193266993388534,True,e82387b6848b834b51be55dc685922e228e3d82ceef682b7b1ba74076c797416
