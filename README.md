@@ -43,9 +43,10 @@ Designmatrix, Parameter, Ziehungen, numerischen Worker und Paketversionen.
 Die dortige Option `RECOMPUTE_BOOTSTRAP=True` berechnet ausdrücklich alle 10.000
 Anpassungen neu und schreibt den neuen Cache nach `results/`.
 
-Notebook 03 zeigt die Wortlängen und die Auto-CoT-Clusterprojektion jeweils als
-vier breite Einzelgrafiken mit lesbaren Beschriftungen. Die PNG-Exporte enthalten
-die vier Zielstufen untereinander. Die Wortlängenachsen beginnen bei null, haben
+Notebook 03 zeigt die Wortlängen und die Auto-CoT-Clusterprojektion jeweils im
+2×2-Raster mit lesbaren Beschriftungen, passend für jeweils eine Seite.
+Notebookausgaben und PNG-Exporte verwenden dasselbe Raster.
+Die Wortlängenachsen beginnen bei null, haben
 aber je Zielstufe eigene Obergrenzen. Die Clusterprojektion verwendet die
 unveränderten 2D-Positionen aus `reference/figure_01_autocot_cluster_projection.svg`
 (SHA-256 wird im Notebook geprüft); die Quelle ist die historische Vektorgrafik
