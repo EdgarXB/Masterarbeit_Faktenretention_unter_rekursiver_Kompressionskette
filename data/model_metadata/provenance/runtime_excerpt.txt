@@ -1,0 +1,36 @@
+
+After loading, Ollama `/api/ps` reported:
+
+- exact frozen model digest: `7a66a2f466bf48fdafa7004a7975a7f5fac6e667a6de7d01751aacb98b3f387c`;
+- active context length: `524288`;
+- reported total loaded size: `162,500,590,958` bytes;
+- reported VRAM allocation: `82,447,119,155` bytes.
+
+`nvidia-smi` reported 94,391 MiB used out of 97,887 MiB after loading. System RAM reported 121 GiB
+total, 75 GiB used, and 46 GiB available. Finding: the full native context is technically loadable
+but consumes almost all GPU memory and substantial host memory. Decision: use `num_ctx=524288` for
+all final Seed generation calls as explicitly requested. Seed, Gemma, and GLM phases must run
+sequentially, with no attempt to keep multiple large models loaded concurrently. A later failure
+on a realistic full demonstration prompt would trigger an explicitly logged re-evaluation, not
+an undocumented context reduction.
+
+### 2026-08-24 — Realistic native-context generation and KV-cache precision
+
+The successful four-token allocation preflight did not establish practical throughput. A
+realistic summary request at the same `num_ctx=524288` with Ollama's default `f16` KV cache was
+therefore attempted. It produced no response text within a practically useful interval and was
+manually interrupted. This negative result is retained: the runtime reported a loaded model of
+about 162.5 GB, which necessarily implied substantial CPU offload despite the 97.9-GB GPU.
+
+Ollama's official context documentation states that larger context lengths require more memory
+and recommends avoiding CPU offload for best performance:
+https://docs.ollama.com/context-length. Its FAQ documents `OLLAMA_KV_CACHE_TYPE=q8_0` as using
+approximately half the KV-cache memory of `f16`, normally with very small quality impact, while
+`q4_0` uses approximately one quarter but can incur a larger accuracy loss at long context:
+https://docs.ollama.com/faq. On that basis, the dedicated experiment server was restarted with:
+
+- `OLLAMA_FLASH_ATTENTION=1`;
+- `OLLAMA_KV_CACHE_TYPE=q8_0`;
+- `OLLAMA_NUM_PARALLEL=1`;
+- `OLLAMA_MAX_LOADED_MODELS=1`;
+- endpoint `127.0.0.1:11435`, Ollama version 0.32.6.

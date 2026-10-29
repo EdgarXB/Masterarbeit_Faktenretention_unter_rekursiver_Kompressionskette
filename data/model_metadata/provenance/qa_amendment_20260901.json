@@ -1,0 +1,59 @@
+{
+  "freeze_id": "20260901T174434Z_qa_amendment",
+  "frozen_at_utc": "2026-09-01T17:44:34Z",
+  "status": "frozen_qa_role_amendment",
+  "supersedes_role_from_freeze": "20260820T224700Z",
+  "scope": "QA answerer role only; summarizer and canonical fact/question generator remain unchanged",
+  "reason": "The frozen GLM answerer failed a positive control by returning NOT_FOUND for 14 of 20 questions although all 20 requested facts were explicitly present in the 500-word summary.",
+  "model": {
+    "role": "qa_answerer",
+    "frozen_alias": "thesis-qwen38-qa:v1",
+    "source_alias": "qwen3.8:27b-q4_K_M",
+    "manifest_digest": "d80421b9191aff0d4d8ea0911068452f11f3963e3e282c6b9d778932c4b268b3",
+    "text_weight_blob_sha256": "31629f53165ab6a7dad8c9847dcfd1fdf55829dac1e6e748f4a68581b0033d34",
+    "vision_projector_blob_sha256": "2e968a6af97ce35d8971890b257b9b7edabf20ad91450501fa53162a19ee33eb",
+    "family": "qwen35",
+    "parameter_size": "26.9B",
+    "quantization": "Q4_K_M",
+    "native_context_length": 262144,
+    "renderer": "qwen3.5",
+    "parser": "qwen3.5"
+  },
+  "inference": {
+    "temperature": 0.0,
+    "seed": 32,
+    "num_ctx": 8192,
+    "num_predict": 512,
+    "think": false,
+    "structured_output": true,
+    "technical_recovery_seeds": [32, 33, 34]
+  },
+  "controlled_preflight": {
+    "positive_control": {
+      "article_id": 1,
+      "method": "lead_k",
+      "stage": 500,
+      "questions": 20,
+      "reference_facts_explicitly_present": 20,
+      "answered": 20,
+      "not_found": 0,
+      "grounding_errors": 0,
+      "first_attempt_success": 20
+    },
+    "negative_control": {
+      "article_id": 1,
+      "method": "lead_k",
+      "stage": 75,
+      "questions": 20,
+      "answered": 6,
+      "not_found": 14,
+      "grounding_errors": 0,
+      "first_attempt_success": 20,
+      "context_disambiguation_check": "The answerer correctly rejected question 1_F20 although the token 31st occurred in an unrelated season-goal context."
+    }
+  },
+  "unchanged_roles": {
+    "summarizer_and_cot_trace_generator": "thesis-seed:v1",
+    "canonical_fact_and_question_generator": "thesis-gemma:v1"
+  }
+}

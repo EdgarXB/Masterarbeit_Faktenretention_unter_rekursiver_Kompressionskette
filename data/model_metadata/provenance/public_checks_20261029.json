@@ -1,0 +1,126 @@
+{
+  "checked_on": "2026-10-29",
+  "checks": {
+    "summac_head": {
+      "url": "https://raw.githubusercontent.com/tingofurro/summac/master/summac_conv_vitc_sent_perc_e.bin",
+      "size": 1811,
+      "sha256": "cd880581f59bd47b8968c7f48d754cd617dfe9b256d8d76fdcbc0fa4a3b3c6fe"
+    },
+    "gemma_historical_manifest": {
+      "url": "https://registry.ollama.ai/v2/library/gemma4/manifests/sha256:6316f0629137b426c9d9b853ffc4c8209589f30ee39aebede6285096c0ff47e7",
+      "error": "HTTP Error 404: Not Found"
+    },
+    "gemma_current_manifest": {
+      "url": "https://registry.ollama.ai/v2/library/gemma4/manifests/31b",
+      "size": 1460,
+      "sha256": "17ba34c06c801ba22f6047bab21ced9429c6d43e0e42ecf339b0f3e5a61e8d97",
+      "json": {
+        "schemaVersion": 2,
+        "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
+        "config": {
+          "mediaType": "application/vnd.docker.container.image.v1+json",
+          "digest": "sha256:094d707563aa7cfb0a7ff06906952aed3400959b3624ddf3457f7774259a7e81",
+          "size": 242
+        },
+        "layers": [
+          {
+            "mediaType": "application/vnd.ollama.image.projector",
+            "digest": "sha256:6357a8a2d521e7b3b67d5afd3a6f5094b2712736b5bd6e1c9f17f8e4e6fae9b0",
+            "size": 1200726368,
+            "from": "dhiltgen/gemma4:31b-it-mtp-q4_K_M-llamacpp"
+          },
+          {
+            "mediaType": "application/vnd.ollama.image.model",
+            "digest": "sha256:cd20f2b3f2e30239023189c04e65754b0cc7c38959665ac727461ee470df16cf",
+            "size": 18670033120,
+            "from": "dhiltgen/gemma4:31b-it-mtp-q4_K_M-llamacpp"
+          },
+          {
+            "mediaType": "application/vnd.ollama.image.draft",
+            "digest": "sha256:9ec411cf75f3ab210708dad5adb53d98a151f2c72f0659da97892b8a0a14e3e3",
+            "size": 514687072,
+            "from": "dhiltgen/gemma4:31b-it-mtp-q4_K_M-llamacpp"
+          },
+          {
+            "mediaType": "application/vnd.ollama.image.template",
+            "digest": "sha256:b507b9c2f6ca642bffcd06665ea7c91f235fd32daeefdf875a0f938db05fb315",
+            "size": 13,
+            "from": "dhiltgen/gemma4:31b-it-mtp-q4_K_M-llamacpp"
+          },
+          {
+            "mediaType": "application/vnd.ollama.image.license",
+            "digest": "sha256:7339fa418c9ad3e8e12e74ad0fd26a9cc4be8703f9c110728a992b193be85cb2",
+            "size": 11355,
+            "from": "dhiltgen/gemma4:31b-it-mtp-q4_K_M-llamacpp"
+          },
+          {
+            "mediaType": "application/vnd.ollama.image.params",
+            "digest": "sha256:2365fbb6d97bf654fdda0353b7505baa2254c662122cff0f153e4b47e6220ded",
+            "size": 64
+          }
+        ],
+        "runner": "llamacpp",
+        "format": "gguf"
+      }
+    },
+    "gemma_original_blob_head": {
+      "url": "https://registry.ollama.ai/v2/library/gemma4/blobs/sha256:280af6832eca23cb322c4dcc65edfea98a21b8f8ab07dc7553bd6f7e6e7a3313",
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/octet-stream",
+        "Content-Length": "19868969920"
+      }
+    },
+    "qa_pinned_files": {
+      "url": "https://huggingface.co/api/models/ggml-org/Qwen3.8-27B-GGUF/tree/0669b98607d47046c7c2b3f801011d54a08cfccf?recursive=true&expand=true",
+      "revision": "0669b98607d47046c7c2b3f801011d54a08cfccf",
+      "status": 200,
+      "files": [
+        {
+          "path": "Qwen3.8-27B-Q4_K_M.gguf",
+          "size": 18973870432,
+          "sha256": "31629f53165ab6a7dad8c9847dcfd1fdf55829dac1e6e748f4a68581b0033d34"
+        },
+        {
+          "path": "mmproj-Qwen3.8-27B-Q8_0.gguf",
+          "size": 629247008,
+          "sha256": "2e968a6af97ce35d8971890b257b9b7edabf20ad91450501fa53162a19ee33eb"
+        }
+      ]
+    },
+    "seed_original_blob_head": {
+      "url": "https://registry.ollama.ai/v2/milkey/Seed-OSS-36B-Instruct/blobs/sha256:2d9f3c32a61f2668e012708be7ec04e753e35e366f87b9e4bce89f4d073cfc16",
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/octet-stream",
+        "Content-Length": "21762149536"
+      }
+    },
+    "qa_original_weights_head": {
+      "url": "https://huggingface.co/ggml-org/Qwen3.8-27B-GGUF/resolve/0669b98607d47046c7c2b3f801011d54a08cfccf/Qwen3.8-27B-Q4_K_M.gguf",
+      "status": 200,
+      "headers": {
+        "content-type": "application/octet-stream",
+        "etag": "\"a7086591b9c23bd08cb29e115ba9b0ae453fdc51e9a79c1dafc506860b7b34bf\"",
+        "content-length": "18973870432"
+      }
+    },
+    "qa_original_projector_head": {
+      "url": "https://huggingface.co/ggml-org/Qwen3.8-27B-GGUF/resolve/0669b98607d47046c7c2b3f801011d54a08cfccf/mmproj-Qwen3.8-27B-Q8_0.gguf",
+      "status": 200,
+      "headers": {
+        "content-type": "application/octet-stream",
+        "etag": "\"093a698ea34b00992c445250b3c28b46d2569c456b157804d4814a8b8de032ea\"",
+        "content-length": "629247008"
+      }
+    },
+    "ollama_release": {
+      "url": "https://github.com/ollama/ollama/releases/tag/v0.32.6",
+      "status": 200,
+      "headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "ETag": "W/\"79ce60fbd837326cce38c452a367899b\""
+      }
+    }
+  }
+}
