@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "faktenretention"
 version = "0.1.0"
 description = "Reproducible analysis of recursive compression and fact retention"
-requires-python = ">=3.11"
+requires-python = ">=3.13"
 
 [tool.setuptools.packages.find]
 where = ["src"]

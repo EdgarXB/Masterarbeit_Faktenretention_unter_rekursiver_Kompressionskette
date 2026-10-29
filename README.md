@@ -6,6 +6,25 @@ werden **Lead-k, Plain, Zero-Shot-CoT, Few-Shot-CoT, Auto-CoT und Automate-CoT**
 Jeder Text wird rekursiv auf **500, 300, 150 und 75 Wörter** verdichtet:
 Die Ausgabe einer Stufe bildet die Eingabe der nächsten.
 
+## Was ist reproduzierbar und was nicht
+
+- **Vollständig offline reproduzierbar nach Installation:** statistische
+  Auswertungen, Tabellen und Abbildungen aus den mitgelieferten Daten.
+  Notebook 06 nutzt dabei standardmäßig die gespeicherten Bootstrap-Anpassungen.
+- **Neue Modellläufe nur mit Einschränkungen:** Auch `temperature=0.0` und
+  `seed=32` garantieren keine identischen Ausgaben. Hardware und Laufzeit können
+  die Ergebnisse beeinflussen. Der historische Gemma-Stand entspricht nicht
+  mehr dem heutigen Modelltag; die eingefrorenen Digests sind maßgeblich.
+- **Nicht erneut berechnet:** BERTScore-/SummaC-Inferenz, ursprüngliche
+  Auto-CoT-Embeddings und Cluster (die Grafik verwendet gespeicherte
+  2D-Positionen). Die QA-Retry-Zwischenantworten sind nicht vollständig erhalten.
+- **Bekannter Paketkonflikt:** `summac==0.0.4` verlangt
+  `huggingface-hub<=0.17.0`, während `transformers==5.15.1` eine neuere Version
+  voraussetzt. Die separate SummaC-Installationsvariante ist **ungetestet**.
+
+Belege und Grenzen: [Auswertungsgrundlagen](docs/auswertung_und_einordnung.md)
+und [Modelle und Beschaffung](docs/modelle_und_beschaffung.md).
+
 Das Repository unterstützt zwei Arbeitswege:
 
 - **Vorhandene Ergebnisse nachvollziehen:** Die mitgelieferten Daten auswerten
@@ -25,6 +44,47 @@ Das Repository unterstützt zwei Arbeitswege:
 | [`results/`](results/) | Tabellen, Abbildungen und Ausgabeordner neuer Läufe |
 | [`tests/`](tests/) | Prüfungen der Daten, Bewertungsregeln und Pipeline |
 | [`docs/`](docs/) | Ergänzende Hinweise zu Methodik, Modellen und Einrichtung |
+| [`data/human_qa/`](data/human_qa/) | Pseudonymisierte QA-Bewertungen, Bewertungsoberfläche und Rückgaben unter `returns/` |
+| [`data/methoden/`](data/methoden/) | Studienprotokoll und Zusammenführungsbelege |
+| [`data/model_metadata/`](data/model_metadata/) | Eingefrorene Manifeste, kleine Metadaten-Blobs und Herkunftsbelege unter `provenance/` |
+| `data/prepared/` | Lokal entpackte Analyseeingaben; wird erzeugt und nicht versioniert |
+
+Tabelle 26 des Manuskripts führt `docs/` und die genannten `data/`-Unterordner
+nicht einzeln auf; siehe [Korrekturliste](docs/korrekturliste_manuskript.md).
+
+## Voraussetzungen
+
+Für die Offline-Auswertung: **Python 3.13.15**, [uv](https://docs.astral.sh/uv/getting-started/installation/)
+und die festgelegten Pakete aus `requirements.txt`. Die Projektmetadaten erlauben
+Python **ab 3.13**; geprüft ist der Stand **3.13.15**, wie in der CI.
+Andere Python-Versionen ab 3.13 sind damit nicht automatisch validiert,
+insbesondere für den Bootstrap-Cache.
+
+Nur für neue Modellläufe werden zusätzlich **Ollama 0.32.6**, die
+Experimentumgebung und die drei Modelle aus [`data/models.json`](data/models.json)
+benötigt. Dort stehen die vollständigen Manifest-Digests für `thesis-seed:v1`,
+`thesis-gemma:v1` und `thesis-qwen38-qa:v1`. Die Originalaufzeichnung beschreibt
+**ca. 98 GB VRAM und 121 GiB RAM** als beobachtete Ausstattung, ausdrücklich
+nicht als ermittelte Mindestanforderung. Der unten gezeigte Hauptlauf setzt ein
+Budget von **bis zu 60.000 Requests einschließlich Wiederholungen**; eine neue
+Demonstrationskonstruktion hat ein eigenes Budget. Herkunft und Einrichtung:
+[Modelldokumentation](docs/modelle_und_beschaffung.md).
+
+## Quickstart: Offline-Auswertung
+
+Nach der unten beschriebenen Installation, mit aktivierter `.venv-analysis`,
+genügen diese drei Befehle im Repository:
+
+```bash
+python 05_analyze.py --prepare
+python -m unittest discover -s tests -v
+for notebook in notebooks/*.ipynb; do python -m jupyter nbconvert --execute --to notebook --inplace --ExecutePreprocessor.timeout=900 "$notebook" || break; done
+```
+
+Die Notebooks schreiben Tabellen und Grafiken nach `results/`. Zwei
+Diagnose-CSVs in Notebook 06 enthalten zusätzlich Laufzeiten, die je Ausführung
+abweichen können; die wissenschaftlichen Tabellen bleiben beim dokumentierten
+Paketstand unverändert (siehe [Prüfprotokoll](docs/pruefprotokoll_finalisierung.md)).
 
 ## Vorhandene Daten auswerten
 
@@ -282,3 +342,73 @@ python -m unittest discover -s tests -v
 python 01_prepare.py
 python 02_demonstrations.py
 ```
+
+Die [CI `offline-analysis.yml`](.github/workflows/offline-analysis.yml) installiert
+die Analyseumgebung mit Python 3.13.15, führt die Unittests aus, bereitet die
+Eingaben vor, prüft den Bestand über `01_prepare.py` und `02_demonstrations.py`
+und führt alle sechs Notebooks aus. Die Paketinstallation benötigt Netzwerk;
+die Auswertung verwendet gespeicherte Daten. Die CI führt **keine Modellpipeline**
+aus und prüft keine neue Ollama-, BERTScore-, SummaC- oder Embedding-Inferenz.
+Ein automatischer Vorher/Nachher-Vergleich der Ergebnisdateien ist kein eigener
+CI-Schritt.
+
+## Datenherkunft und Lizenz
+
+Der eigene Programmcode steht unter der [MIT-Lizenz](LICENSE). Diese Lizenz
+erteilt keine zusätzlichen Rechte an fremden Artikeln, Modellgewichten oder
+menschlichen Bewertungen.
+
+| Bestandteil | Herkunft und belegte Lizenzangabe |
+|---|---|
+| Artikel und Highlights | CNN/DailyMail **3.0.0**, siehe Kapitel 3.2 und die Datensatzfelder in den mitgelieferten Artikeln. Die [Datensatzkarte](https://huggingface.co/datasets/abisee/cnn_dailymail) trägt das Label Apache-2.0, nennt im Abschnitt „Licensing Information“ aber ausdrücklich Version **1.0.0**. Die Rechte der hier weitergegebenen 3.0.0-Originaltexte und Highlights bleiben deshalb gesondert zu klären. |
+| Seed-OSS | Die [offizielle Modellkarte](https://huggingface.co/ByteDance-Seed/Seed-OSS-36B-Instruct) nennt Apache-2.0. Die konkret verwendete GGUF-Variante und Digests sind in der [Modelldokumentation](docs/modelle_und_beschaffung.md) zugeordnet. |
+| Gemma 4 | Die [offizielle Modellkarte](https://huggingface.co/google/gemma-4-31B-it) nennt Apache-2.0. Der historische Ollama-Stand enthält zusätzlich einen [Apache-2.0-Lizenztext](data/model_metadata/blobs/sha256-7339fa418c9ad3e8e12e74ad0fd26a9cc4be8703f9c110728a992b193be85cb2), zugeordnet im eingefrorenen Gemma-Manifest. |
+| Qwen3.8 | Die [offizielle Modellkarte](https://huggingface.co/Qwen/Qwen3.8-27B) nennt Apache-2.0; der verwendete GGUF-Stand ist separat über Revision und Hash belegt. |
+| Menschliche Bewertungen | Pseudonymisierte Daten unter `data/human_qa/` sowie in `data/menschliche_faktenrelevanz.csv` und den Quellenarchiven. Eine Veröffentlichungslizenz und der Umfang der Einwilligungen sind im Repo nicht belegt. |
+
+Die externen Lizenzangaben wurden am 29.10.2026 eingesehen. Historische
+Modellartefakte sind anhand der gespeicherten Manifeste zu identifizieren.
+
+### Offen / vom Autor zu klären
+
+- Rechte und Bedingungen der Weitergabe der CNN-/DailyMail-Originaltexte und
+  Highlights im digitalen Anhang abschließend belegen.
+- Einwilligung zur Weitergabe und gewünschte Lizenz der menschlichen Bewertungen
+  bestätigen; Pseudonymisierung ersetzt diesen Nachweis nicht.
+
+## KI-gestützte Erstellung und Zitieren
+
+Gemäß Eidesstattlicher Versicherung und Anhang G von
+`2910_Masterarbeit.docx` erfolgte die technische Implementierung des Programmcodes
+nahezu vollständig mit **ChatGPT Codex**. Wissenschaftliche Konzeption,
+experimentelle Anforderungen sowie Prüfung und Interpretation der Ergebnisse
+lagen beim Verfasser; laut Manuskript hat er den generierten Code geprüft und
+validiert. Der vorliegende Repo-Abgleich ersetzt keine unabhängige Validierung.
+
+[`CITATION.cff`](CITATION.cff) enthält die Zitierangaben der Masterarbeit von
+Edgar Berngardt, Hochschule Düsseldorf, 2026. Für die verwendete Codefassung
+zusätzlich Commit-Hash oder Release angeben.
+
+Der Abgleich mit `2910_Masterarbeit.docx` steht in
+[`docs/abgleich_manuskript.md`](docs/abgleich_manuskript.md), die vorgeschlagenen
+Manuskriptkorrekturen in [`docs/korrekturliste_manuskript.md`](docs/korrekturliste_manuskript.md)
+und die Parameterprüfung in [`docs/abgleich_code_parameter.md`](docs/abgleich_code_parameter.md).
+Das Manuskript selbst ist kein versionierter Bestandteil dieses Repos.
+
+**Vorschlag nach Abschluss der Korrekturen, hier nicht ausgeführt:**
+Auf dem final freigegebenen Branch einen annotierten Abgabe-Tag anlegen und
+optional daraus ein GitHub-Release veröffentlichen:
+
+```bash
+git switch abgabe-finalisierung
+git status --short
+git rev-parse HEAD
+git tag -a v1.0-abgabe -m "Digitaler Anhang zur Masterarbeit – Abgabe 04.11.2026"
+git push origin abgabe-finalisierung
+git push origin v1.0-abgabe
+gh release create v1.0-abgabe --verify-tag --title "Masterarbeit: digitaler Anhang zur Abgabe" --notes "Digitaler Anhang; Reproduktionsumfang und bekannte Grenzen siehe README."
+```
+
+Vor dem Taggen muss `git status --short` leer sein. Tag **und Commit-Hash**
+sollten in **Anhang A.1/F** der Arbeit genannt werden. Ein Tag oder Release
+wurde im Rahmen der Finalisierung nicht erstellt und nichts gepusht.

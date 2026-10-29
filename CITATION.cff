@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "Bitte zitiere die Masterarbeit und ergänze bei Nutzung des Codes den verwendeten Commit oder Release."
+type: software
+title: "Digitaler Anhang: Evaluation von Prompting-Strategien zur Sicherung der Faktenretention bei rekursiven Zusammenfassungen"
+authors:
+  - family-names: Berngardt
+    given-names: Edgar
+    affiliation: Hochschule Düsseldorf
+repository-code: "https://github.com/EdgarXB/Masterarbeit_Faktenretention_unter_rekursiver_Kompressionskette"
+license: MIT
+preferred-citation:
+  type: thesis
+  title: "Evaluation von Prompting-Strategien zur Sicherung der Faktenretention bei rekursiven Zusammenfassungen"
+  authors:
+    - family-names: Berngardt
+      given-names: Edgar
+  year: 2026
+  institution:
+    name: Hochschule Düsseldorf
+  thesis-type: Masterarbeit
