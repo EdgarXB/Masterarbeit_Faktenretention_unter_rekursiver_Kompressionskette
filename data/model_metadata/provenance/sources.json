@@ -1,0 +1,57 @@
+{
+  "model_freeze_20260820.json": {
+    "original_path": "/home/edgar/main/.tools/ollama/experiments/model_freeze/20260820T224700Z/model_freeze.json",
+    "sha256": "ada4fb2fe4c64f4027ed204b7cae29e29d8552765d1440b9056399b73ed1cc9a",
+    "kind": "unchanged_original"
+  },
+  "qa_amendment_20260901.json": {
+    "original_path": "/home/edgar/main/.tools/ollama/experiments/model_freeze/20260901T174434Z_qa_amendment/model_freeze.json",
+    "sha256": "f5768bc601eb3ff906a4d25334e0c47f81e334b89e53a2b58e1b254c05f80704",
+    "kind": "unchanged_original"
+  },
+  "Modelfile.qwen38-27b-q4km": {
+    "original_path": "/home/edgar/main/.tools/ollama/Modelfile.qwen38-27b-q4km",
+    "sha256": "2305d3d45c826ee8b6b1d8e808b438c286adf990b7b48190de35a50266a657d2",
+    "kind": "unchanged_original"
+  },
+  "environment_20260824.json": {
+    "original_path": "/home/edgar/main/.tools/ollama/experiments/autocot_automatecot_100/environment_manifest.json",
+    "sha256": "ae015beaa07e563e0a019832b54e54896890c084fd0ecfbe1a93ae527798d98d",
+    "kind": "unchanged_original"
+  },
+  "source_manifest_seed.json": {
+    "original_path": "/home/edgar/.ollama/models/manifests/registry.ollama.ai/milkey/Seed-OSS-36B-Instruct/q4_K_M",
+    "sha256": "7a66a2f466bf48fdafa7004a7975a7f5fac6e667a6de7d01751aacb98b3f387c",
+    "kind": "unchanged_original"
+  },
+  "source_manifest_gemma.json": {
+    "original_path": "/home/edgar/.ollama/models/manifests/registry.ollama.ai/library/gemma4/31b",
+    "sha256": "6316f0629137b426c9d9b853ffc4c8209589f30ee39aebede6285096c0ff47e7",
+    "kind": "unchanged_original"
+  },
+  "source_manifest_qa.json": {
+    "original_path": "/home/edgar/.ollama/models/manifests/registry.ollama.ai/library/qwen3.8/27b-q4_K_M",
+    "sha256": "d80421b9191aff0d4d8ea0911068452f11f3963e3e282c6b9d778932c4b268b3",
+    "kind": "unchanged_original"
+  },
+  "runtime_excerpt.txt": {
+    "original_path": "/home/edgar/main/.tools/ollama/experiments/autocot_automatecot_100/RESEARCH_LOG.md",
+    "original_lines_inclusive": [
+      205,
+      240
+    ],
+    "original_sha256": "067bbdbae9ce839952c10693b65ea215133d1d6c36b55ee00604245da16d938f",
+    "sha256": "286c05c543d8e0e3a7e898908761e1b2aab49720d917c89686361f03c80e27e9",
+    "kind": "verbatim_excerpt"
+  },
+  "summac_download_excerpt.txt": {
+    "original_path": "/home/edgar/main/.tools/ollama/.venv-metrics/lib/python3.13/site-packages/summac/model_summac.py",
+    "original_lines_inclusive": [
+      244,
+      250
+    ],
+    "original_sha256": "728eaa43c157e6c95b16d5268193b44f3b78535de4f372dcbaa70e8147a1cbf9",
+    "sha256": "f72d2e22e149230d051f572b918ac2b834f5aab91a038ef02f41073b354701da",
+    "kind": "verbatim_excerpt"
+  }
+}

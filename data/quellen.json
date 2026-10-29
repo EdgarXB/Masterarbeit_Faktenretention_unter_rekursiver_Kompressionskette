@@ -37,6 +37,11 @@
       "source": "eingefrorene_quellen.zip#project/02_Auswertung/hauptexperiment_qa_daten/aktuell_20260930/generation_states.jsonl.gz"
     },
     {
+      "file": "data/bootstrap_linear.json",
+      "sha256": "c2c21d5f3542d534906a03ea77714c39f6a8428c63018d2a8ee4738825929763",
+      "source": "Referenzfit lokal gegen den ursprünglichen Cache-Fingerprint e82387b6848b834b51be55dc685922e228e3d82ceef682b7b1ba74076c797416 bytegenau validiert; keine Neuberechnung der Bootstrap-Anpassungen"
+    },
+    {
       "file": "data/bootstrap_linear.npz",
       "sha256": "8fe2a9853b5eec51079a8aac46ffc8845e72b27076a27761a68f36bdda5e02c5",
       "source": "eingefrorene_quellen.zip#supplement/ergebnisse/03_laengenkontrolle/bootstrap_10000_linear.npz"

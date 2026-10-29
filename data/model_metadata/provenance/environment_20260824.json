@@ -1,0 +1,85 @@
+{
+  "created_at_utc": "2026-08-24T12:03:56Z",
+  "platform": "Linux-7.0.0-29-generic-x86_64-with-glibc2.43",
+  "python": "3.13.15",
+  "packages": {
+    "torch": "2.13.0",
+    "sentence-transformers": "6.0.0",
+    "scikit-learn": "1.9.0",
+    "numpy": "2.5.2",
+    "transformers": "5.15.1",
+    "datasets": "5.0.1",
+    "rouge-score": "0.1.2",
+    "bert-score": "0.3.13",
+    "summac": "0.0.4",
+    "pandas": "3.0.5",
+    "pyarrow": "25.0.1"
+  },
+  "commands": {
+    "nvidia_smi": {
+      "argv": [
+        "nvidia-smi",
+        "--query-gpu=name,driver_version,memory.total",
+        "--format=csv,noheader"
+      ],
+      "returncode": 9,
+      "stdout": "NVIDIA-SMI has failed because it couldn't communicate with the NVIDIA driver. Make sure that the latest NVIDIA driver is installed and running.",
+      "stderr": ""
+    },
+    "ollama_version": {
+      "argv": [
+        "/home/edgar/main/.tools/ollama/.tools/ollama/bin/ollama",
+        "--version"
+      ],
+      "returncode": 0,
+      "stdout": "Warning: could not connect to a running Ollama instance\nWarning: client version is 0.32.6",
+      "stderr": ""
+    },
+    "seed_show": {
+      "argv": [
+        "/home/edgar/main/.tools/ollama/.tools/ollama/bin/ollama",
+        "show",
+        "thesis-seed:v1"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Error: Head \"http://127.0.0.1:11434/\": dial tcp 127.0.0.1:11434: socket: operation not permitted"
+    },
+    "gemma_show": {
+      "argv": [
+        "/home/edgar/main/.tools/ollama/.tools/ollama/bin/ollama",
+        "show",
+        "thesis-gemma:v1"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Error: Head \"http://127.0.0.1:11434/\": dial tcp 127.0.0.1:11434: socket: operation not permitted"
+    },
+    "glm_show": {
+      "argv": [
+        "/home/edgar/main/.tools/ollama/.tools/ollama/bin/ollama",
+        "show",
+        "thesis-glm:v1"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Error: Head \"http://127.0.0.1:11434/\": dial tcp 127.0.0.1:11434: socket: operation not permitted"
+    }
+  },
+  "file_sha256": {
+    "prepare_autocot_automatecot_splits.py": "9b9c2fd079a5c8915f204589364250dc92f9865746c14653f46c7e53d4d2c905",
+    "generate_cot_candidate_rollouts.py": "c8a2e6428b9b877a9692c61a81059ddbbb4fad034e68f9d24821143ee8b7c73d",
+    "select_autocot_demonstrations.py": "e906d8427d11df4459fa13e4cc9f3eb0bdb40913fbec4fc543186d88b6c18700",
+    "score_and_prune_automatecot_candidates.py": "0381e1d34981da40c880dd8681907f5a4fc815884fcbf4f862c375e4a9e28c97",
+    "select_automatecot_demonstrations.py": "7390feef166569f38c5d570ac25b4a872568786f4fb3cfe78be7f2194e1dea2b",
+    "run_autocot_automatecot_final.py": "518811e8df48525581231555aba2892d945e6b10307bcb377eb5cc1b01f75eca",
+    "evaluate_autocot_automatecot_metrics.py": "a7958eb37222590a9b07763c75adbd924b69cb60a907969a0c8f38350ea9b9c2",
+    "extract_atomic_facts.py": "1a5925bedeb367000fbe93f776fcc3678ac2d503d0027a414a83c468abff4c93",
+    "answer_summary_questions.py": "8c78f864522677b680daa7dfece0c57f74e1d35d89ebc75f1258b979eb993099",
+    "score_model_selection_batch.py": "9a5cf1bbdeaf78e0750eb9e36c9ba0e9f7de87a5a3f5b1651f5bb10d17afa9c7",
+    "experiments/autocot_automatecot_100/data/candidate_train.csv": "cd005f5feaa902084098b9a6473d40886a0809ec0aad0f950d623891103ec268",
+    "experiments/autocot_automatecot_100/data/selection_validation.csv": "8434794c566781a48bb7299abcc9d5a9027872bcf84317722fc714c50ca8aee3",
+    "experiments/autocot_automatecot_100/data/final_test_100.csv": "d64d132fb953893fdf57651918fe7627174e0209fd229273ba7d4a58c8901464",
+    "experiments/autocot_automatecot_100/data/split_manifest.json": "80d0295884eda93713c78742db710e62a52b6dccd90a68aab220e1e1708ace0a"
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "freeze_id": "20260820T224700Z",
+  "frozen_at_utc": "2026-08-20T22:47:00Z",
+  "status": "frozen",
+  "scope": "Final generative/evaluation model artifacts and their fixed pipeline roles",
+  "runtime": {
+    "engine": "Ollama",
+    "version": "0.32.6",
+    "host": "127.0.0.1:11435"
+  },
+  "models": [
+    {
+      "role": "summarizer_and_cot_trace_generator",
+      "frozen_alias": "thesis-seed:v1",
+      "source_alias": "milkey/Seed-OSS-36B-Instruct:q4_K_M",
+      "manifest_digest": "7a66a2f466bf48fdafa7004a7975a7f5fac6e667a6de7d01751aacb98b3f387c",
+      "weight_blob_sha256": "2d9f3c32a61f2668e012708be7ec04e753e35e366f87b9e4bce89f4d073cfc16",
+      "family": "seed_oss",
+      "parameter_size": "36.2B",
+      "quantization": "Q4_K_M",
+      "native_context_length": 524288
+    },
+    {
+      "role": "canonical_fact_and_question_generator",
+      "frozen_alias": "thesis-gemma:v1",
+      "source_alias": "gemma4:31b",
+      "manifest_digest": "6316f0629137b426c9d9b853ffc4c8209589f30ee39aebede6285096c0ff47e7",
+      "weight_blob_sha256": "280af6832eca23cb322c4dcc65edfea98a21b8f8ab07dc7553bd6f7e6e7a3313",
+      "family": "gemma4",
+      "parameter_size": "31.3B",
+      "quantization": "Q4_K_M",
+      "renderer": "gemma4",
+      "parser": "gemma4"
+    },
+    {
+      "role": "qa_answerer",
+      "frozen_alias": "thesis-glm:v1",
+      "source_alias": "glm-4.7-flash:latest",
+      "manifest_digest": "d1a8a26252f18b34301218d22abd2620a65b85ba4b78987842eb157e01321222",
+      "weight_blob_sha256": "9eba2761cf0b88b8bc11a065a7b5b47f1b13ce820e8e492cb1010b450f9ec950",
+      "family": "glm4moelite",
+      "parameter_size": "29.9B",
+      "quantization": "Q4_K_M",
+      "native_context_length": 202752,
+      "renderer": "glm-4.7",
+      "parser": "glm-4.7"
+    }
+  ],
+  "role_constraints": {
+    "seed": "Only model used to generate evaluated summaries and CoT demonstration candidates",
+    "gemma": "Only model used to generate and rank canonical facts, questions, reference answers and evidence",
+    "glm": "Only model used to answer canonical questions from summaries"
+  },
+  "retained_non_llm_control": "Lead-k deterministic extractive baseline",
+  "excluded_from_final_pipeline": [
+    "Qwen model family",
+    "gpt-oss model family",
+    "DeepSeek model family",
+    "Hermes model family",
+    "Nemotron model family"
+  ],
+  "deferred_not_frozen": [
+    "Auto-CoT clustering method",
+    "embedding model and revision",
+    "number and selection of demonstrations",
+    "distillation format for demonstration traces"
+  ],
+  "reproducibility_defaults_from_controlled_pilot": {
+    "random_seed": 32,
+    "inference_context_length": 8192,
+    "word_tolerance_pct": 5.0,
+    "recursive_targets_words": [500, 300, 150, 75],
+    "seed_cot_thinking_budget_tokens": 512,
+    "seed_summarization": {
+      "temperature": 1.1,
+      "top_p": 0.95,
+      "repeat_penalty": 1.0,
+      "num_predict": 2400,
+      "raw_seed_template": true,
+      "plain_thinking_budget_tokens": 0,
+      "zero_shot_cot_thinking_budget_tokens": 512
+    },
+    "gemma_fact_generation": {
+      "temperature": 0.0,
+      "num_predict": 4096,
+      "think": false,
+      "facts_per_article": 20
+    },
+    "glm_qa": {
+      "temperature": 0.0,
+      "num_predict": 512,
+      "think": false
+    }
+  },
+  "evidence": [
+    "experiments/final_five_article_matrix/20260806T212256Z/FINAL_REPORT.md",
+    "experiments/qwen38_vs_seed/20260820T215255Z/QWEN38_VS_SEED_REPORT.md",
+    "experiments/prompt_comparison/20260810T102300Z_seed_leadk_5_article_pilot/"
+  ]
+}
