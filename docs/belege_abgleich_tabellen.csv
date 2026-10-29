@@ -1,0 +1,798 @@
+tabelle,zeile,spalte,manuskript,repo_wert,status
+5,055917,Core,7,7.0,übereinstimmend
+5,055917,Supporting,9,9.0,übereinstimmend
+5,055917,Peripheral,4,4.0,übereinstimmend
+5,070473,Core,6,6.0,übereinstimmend
+5,070473,Supporting,13,13.0,übereinstimmend
+5,070473,Peripheral,1,1.0,übereinstimmend
+5,137777,Core,5,5.0,übereinstimmend
+5,137777,Supporting,15,15.0,übereinstimmend
+5,137777,Peripheral,0,0.0,übereinstimmend
+5,141898,Core,9,9.0,übereinstimmend
+5,141898,Supporting,4,4.0,übereinstimmend
+5,141898,Peripheral,7,7.0,übereinstimmend
+5,196250,Core,6,6.0,übereinstimmend
+5,196250,Supporting,14,14.0,übereinstimmend
+5,196250,Peripheral,0,0.0,übereinstimmend
+5,Gesamt,Core,33,33.0,übereinstimmend
+5,Gesamt,Supporting,55,55.0,übereinstimmend
+5,Gesamt,Peripheral,12,12.0,übereinstimmend
+6,Ursprünglicher Scorer,richtig,32,32.0,übereinstimmend
+6,Ursprünglicher Scorer,Nenner,52,52.0,übereinstimmend
+6,Ursprünglicher Scorer,Prozent,"61,5",61.53846153846154,übereinstimmend
+6,Erste Iteration,richtig,36,36.0,übereinstimmend
+6,Erste Iteration,Nenner,52,52.0,übereinstimmend
+6,Erste Iteration,Prozent,"69,2",69.23076923076923,übereinstimmend
+6,Finaler Scorer,richtig,41,41.0,übereinstimmend
+6,Finaler Scorer,Nenner,52,52.0,übereinstimmend
+6,Finaler Scorer,Prozent,"78,8",78.84615384615384,übereinstimmend
+7,Lead-k,Anzahl,1.407,1407.0,übereinstimmend
+7,Lead-k,"1.384 (98,4%) Anzahl",1.384,1384.0,übereinstimmend
+7,Lead-k,"1.384 (98,4%) Prozent","98,4",98.36531627576404,übereinstimmend
+7,Lead-k,"21 (1,5%) Anzahl",21,21.0,übereinstimmend
+7,Lead-k,"21 (1,5%) Prozent","1,5",1.49253731343283,übereinstimmend
+7,Lead-k,"2 (0,1%) Anzahl",2,2.0,übereinstimmend
+7,Lead-k,"2 (0,1%) Prozent","0,1",0.14214641080312,übereinstimmend
+7,Plain,Anzahl,1.121,1121.0,übereinstimmend
+7,Plain,"1.064 (94,9%) Anzahl",1.064,1064.0,übereinstimmend
+7,Plain,"1.064 (94,9%) Prozent","94,9",94.91525423728814,übereinstimmend
+7,Plain,"53 (4,7%) Anzahl",53,53.0,übereinstimmend
+7,Plain,"53 (4,7%) Prozent","4,7",4.7279214986619005,übereinstimmend
+7,Plain,"4 (0,4%) Anzahl",4,4.0,übereinstimmend
+7,Plain,"4 (0,4%) Prozent","0,4",0.35682426404995,übereinstimmend
+7,Zero-Shot-CoT,Anzahl,958,958.0,übereinstimmend
+7,Zero-Shot-CoT,"882 (92,1%) Anzahl",882,882.0,übereinstimmend
+7,Zero-Shot-CoT,"882 (92,1%) Prozent","92,1",92.06680584551148,übereinstimmend
+7,Zero-Shot-CoT,"72 (7,5%) Anzahl",72,72.0,übereinstimmend
+7,Zero-Shot-CoT,"72 (7,5%) Prozent","7,5",7.51565762004175,übereinstimmend
+7,Zero-Shot-CoT,"4 (0,4%) Anzahl",4,4.0,übereinstimmend
+7,Zero-Shot-CoT,"4 (0,4%) Prozent","0,4",0.41753653444676,übereinstimmend
+7,Few-Shot-CoT,Anzahl,1.014,1014.0,übereinstimmend
+7,Few-Shot-CoT,"919 (90,6%) Anzahl",919,919.0,übereinstimmend
+7,Few-Shot-CoT,"919 (90,6%) Prozent","90,6",90.6311637080868,übereinstimmend
+7,Few-Shot-CoT,"86 (8,5%) Anzahl",86,86.0,übereinstimmend
+7,Few-Shot-CoT,"86 (8,5%) Prozent","8,5",8.48126232741617,übereinstimmend
+7,Few-Shot-CoT,"9 (0,9%) Anzahl",9,9.0,übereinstimmend
+7,Few-Shot-CoT,"9 (0,9%) Prozent","0,9",0.8875739644970401,übereinstimmend
+7,Auto-CoT,Anzahl,885,885.0,übereinstimmend
+7,Auto-CoT,"789 (89,2%) Anzahl",789,789.0,übereinstimmend
+7,Auto-CoT,"789 (89,2%) Prozent","89,2",89.15254237288136,übereinstimmend
+7,Auto-CoT,"92 (10,4%) Anzahl",92,92.0,übereinstimmend
+7,Auto-CoT,"92 (10,4%) Prozent","10,4",10.3954802259887,übereinstimmend
+7,Auto-CoT,"4 (0,5%) Anzahl",4,4.0,übereinstimmend
+7,Auto-CoT,"4 (0,5%) Prozent","0,5",0.4519774011299399,übereinstimmend
+7,Automate-CoT,Anzahl,958,958.0,übereinstimmend
+7,Automate-CoT,"872 (91,0%) Anzahl",872,872.0,übereinstimmend
+7,Automate-CoT,"872 (91,0%) Prozent","91,0",91.02296450939458,übereinstimmend
+7,Automate-CoT,"81 (8,5%) Anzahl",81,81.0,übereinstimmend
+7,Automate-CoT,"81 (8,5%) Prozent","8,5",8.455114822546971,übereinstimmend
+7,Automate-CoT,"5 (0,5%) Anzahl",5,5.0,übereinstimmend
+7,Automate-CoT,"5 (0,5%) Prozent","0,5",0.5219206680584499,übereinstimmend
+8,Lead-k,W,"75,0",75.0,übereinstimmend
+8,Lead-k,R_obs,"17,3",17.3078947368421,übereinstimmend
+8,Lead-k,R_adj,"17,3",17.29999999999999,übereinstimmend
+8,Lead-k,highlight_rouge1_f1,"37,3",37.26975871613484,übereinstimmend
+8,Lead-k,highlight_rouge2_f1,"14,9",14.91644602439022,übereinstimmend
+8,Lead-k,highlight_rougeL_f1,"22,5",22.5317078171328,übereinstimmend
+8,Lead-k,highlight_bertscore_f1,"92,5",92.54367297887802,übereinstimmend
+8,Lead-k,source_summac,"0,278",0.2776278315484524,übereinstimmend
+8,Plain,W,"105,7",105.7,übereinstimmend
+8,Plain,R_obs,"33,8",33.80029239766082,übereinstimmend
+8,Plain,R_adj,"24,7",24.72411008305135,übereinstimmend
+8,Plain,highlight_rouge1_f1,"31,3",31.30143200783591,übereinstimmend
+8,Plain,highlight_rouge2_f1,"8,6",8.55964766580384,übereinstimmend
+8,Plain,highlight_rougeL_f1,"17,9",17.86157435166823,übereinstimmend
+8,Plain,highlight_bertscore_f1,"91,4",91.37853491306304,übereinstimmend
+8,Plain,source_summac,"0,263",0.2631217405200005,übereinstimmend
+8,Zero-Shot-CoT,W,"80,3",80.35,übereinstimmend
+8,Zero-Shot-CoT,R_obs,"28,9",28.92631578947368,übereinstimmend
+8,Zero-Shot-CoT,R_adj,"26,3",26.337102011914283,übereinstimmend
+8,Zero-Shot-CoT,highlight_rouge1_f1,"30,8",30.847958641059904,übereinstimmend
+8,Zero-Shot-CoT,highlight_rouge2_f1,"8,2",8.16414428660911,übereinstimmend
+8,Zero-Shot-CoT,highlight_rougeL_f1,"18,3",18.266450419011345,übereinstimmend
+8,Zero-Shot-CoT,highlight_bertscore_f1,"90,9",90.901173889637,übereinstimmend
+8,Zero-Shot-CoT,source_summac,"0,262",0.2620328775048255,übereinstimmend
+8,Few-Shot-CoT,W,"104,2",104.16,übereinstimmend
+8,Few-Shot-CoT,R_obs,"34,6",34.55030959752321,übereinstimmend
+8,Few-Shot-CoT,R_adj,"26,1",26.12536242653044,übereinstimmend
+8,Few-Shot-CoT,highlight_rouge1_f1,"30,7",30.712341929745502,übereinstimmend
+8,Few-Shot-CoT,highlight_rouge2_f1,"8,1",8.05560727320972,übereinstimmend
+8,Few-Shot-CoT,highlight_rougeL_f1,"17,4",17.37381869706673,übereinstimmend
+8,Few-Shot-CoT,highlight_bertscore_f1,"91,2",91.21095860004424,übereinstimmend
+8,Few-Shot-CoT,source_summac,"0,264",0.2642320334911346,übereinstimmend
+8,Auto-CoT,W,"115,1",115.08,übereinstimmend
+8,Auto-CoT,R_obs,"39,1",39.07631578947368,übereinstimmend
+8,Auto-CoT,R_adj,"26,9",26.88030168598256,übereinstimmend
+8,Auto-CoT,highlight_rouge1_f1,"31,7",31.73661674542261,übereinstimmend
+8,Auto-CoT,highlight_rouge2_f1,"8,8",8.849241190335,übereinstimmend
+8,Auto-CoT,highlight_rougeL_f1,"17,8",17.77422950439074,übereinstimmend
+8,Auto-CoT,highlight_bertscore_f1,"91,1",91.10049307346344,übereinstimmend
+8,Auto-CoT,source_summac,"0,263",0.2626787693798542,übereinstimmend
+8,Automate-CoT,W,"115,2",115.15,übereinstimmend
+8,Automate-CoT,R_obs,"37,0",36.9906432748538,übereinstimmend
+8,Automate-CoT,R_adj,"25,4",25.44232665635472,übereinstimmend
+8,Automate-CoT,highlight_rouge1_f1,"31,5",31.47607361837531,übereinstimmend
+8,Automate-CoT,highlight_rouge2_f1,"8,2",8.2106393128454,übereinstimmend
+8,Automate-CoT,highlight_rougeL_f1,"17,4",17.3914893784859,übereinstimmend
+8,Automate-CoT,highlight_bertscore_f1,"91,1",91.14979755878448,übereinstimmend
+8,Automate-CoT,source_summac,"0,264",0.2640828081965446,übereinstimmend
+15,Lead-k 500,mean_percent,"75,6",75.58684210526316,übereinstimmend
+15,Lead-k 500,ci_low_percent,"72,8",72.83151315789473,übereinstimmend
+15,Lead-k 500,ci_high_percent,"78,3",78.25532894736843,übereinstimmend
+15,Lead-k 300,mean_percent,"49,4",49.368421052631575,übereinstimmend
+15,Lead-k 300,ci_low_percent,"46,7",46.67875,übereinstimmend
+15,Lead-k 300,ci_high_percent,"52,0",52.03947368421053,übereinstimmend
+15,Lead-k 150,mean_percent,"30,2",30.24210526315789,übereinstimmend
+15,Lead-k 150,ci_low_percent,"28,0",27.978947368421053,übereinstimmend
+15,Lead-k 150,ci_high_percent,"32,5",32.51315789473684,übereinstimmend
+15,Lead-k 75,mean_percent,"17,3",17.3078947368421,übereinstimmend
+15,Lead-k 75,ci_low_percent,"15,6",15.599999999999998,übereinstimmend
+15,Lead-k 75,ci_high_percent,"19,1",19.05,übereinstimmend
+15,Plain 500,mean_percent,"54,9",54.891520467836266,übereinstimmend
+15,Plain 500,ci_low_percent,"51,5",51.5338596491228,übereinstimmend
+15,Plain 500,ci_high_percent,"58,1",58.114795321637416,übereinstimmend
+15,Plain 300,mean_percent,"50,0",50.01052631578947,übereinstimmend
+15,Plain 300,ci_low_percent,"46,7",46.65263157894736,übereinstimmend
+15,Plain 300,ci_high_percent,"53,3",53.25526315789474,übereinstimmend
+15,Plain 150,mean_percent,"45,1",45.10847953216373,übereinstimmend
+15,Plain 150,ci_low_percent,"41,9",41.85776315789474,übereinstimmend
+15,Plain 150,ci_high_percent,"48,3",48.25064327485381,übereinstimmend
+15,Plain 75,mean_percent,"33,8",33.800292397660826,übereinstimmend
+15,Plain 75,ci_low_percent,"30,9",30.94765350877194,übereinstimmend
+15,Plain 75,ci_high_percent,"36,7",36.70556286549708,übereinstimmend
+15,Zero-Shot-CoT 500,mean_percent,"71,9",71.88830409356724,übereinstimmend
+15,Zero-Shot-CoT 500,ci_low_percent,"69,1",69.14118421052632,übereinstimmend
+15,Zero-Shot-CoT 500,ci_high_percent,"74,6",74.598932748538,übereinstimmend
+15,Zero-Shot-CoT 300,mean_percent,"67,9",67.85350877192982,übereinstimmend
+15,Zero-Shot-CoT 300,ci_low_percent,"65,1",65.09469298245614,übereinstimmend
+15,Zero-Shot-CoT 300,ci_high_percent,"70,5",70.54565789473685,übereinstimmend
+15,Zero-Shot-CoT 150,mean_percent,"53,6",53.63157894736843,übereinstimmend
+15,Zero-Shot-CoT 150,ci_low_percent,"50,5",50.52092105263157,übereinstimmend
+15,Zero-Shot-CoT 150,ci_high_percent,"56,7",56.681644736842095,übereinstimmend
+15,Zero-Shot-CoT 75,mean_percent,"28,9",28.926315789473684,übereinstimmend
+15,Zero-Shot-CoT 75,ci_low_percent,"26,1",26.14197368421053,übereinstimmend
+15,Zero-Shot-CoT 75,ci_high_percent,"31,8",31.77105263157895,übereinstimmend
+15,Few-Shot-CoT 500,mean_percent,"64,2",64.19064327485381,übereinstimmend
+15,Few-Shot-CoT 500,ci_low_percent,"61,2",61.21168859649123,übereinstimmend
+15,Few-Shot-CoT 500,ci_high_percent,"67,0",67.03345029239766,übereinstimmend
+15,Few-Shot-CoT 300,mean_percent,"61,0",61.04269005847953,übereinstimmend
+15,Few-Shot-CoT 300,ci_low_percent,"58,1",58.06048976608188,übereinstimmend
+15,Few-Shot-CoT 300,ci_high_percent,"64,0",63.974320175438606,übereinstimmend
+15,Few-Shot-CoT 150,mean_percent,"50,8",50.82777777777777,übereinstimmend
+15,Few-Shot-CoT 150,ci_low_percent,"47,7",47.740621345029226,übereinstimmend
+15,Few-Shot-CoT 150,ci_high_percent,"53,8",53.80324561403509,übereinstimmend
+15,Few-Shot-CoT 75,mean_percent,"34,6",34.55030959752322,übereinstimmend
+15,Few-Shot-CoT 75,ci_low_percent,"31,7",31.66872291021672,übereinstimmend
+15,Few-Shot-CoT 75,ci_high_percent,"37,5",37.48948916408668,übereinstimmend
+15,Auto-CoT 500,mean_percent,"71,3",71.33713450292396,übereinstimmend
+15,Auto-CoT 500,ci_low_percent,"68,6",68.61361111111111,übereinstimmend
+15,Auto-CoT 500,ci_high_percent,"73,9",73.92695175438597,übereinstimmend
+15,Auto-CoT 300,mean_percent,"68,2",68.16198830409355,übereinstimmend
+15,Auto-CoT 300,ci_low_percent,"65,4",65.36578216374268,übereinstimmend
+15,Auto-CoT 300,ci_high_percent,"70,8",70.84448099415205,übereinstimmend
+15,Auto-CoT 150,mean_percent,"58,0",58.0046783625731,übereinstimmend
+15,Auto-CoT 150,ci_low_percent,"54,9",54.92894736842104,übereinstimmend
+15,Auto-CoT 150,ci_high_percent,"61,0",60.99307748538011,übereinstimmend
+15,Auto-CoT 75,mean_percent,"39,1",39.07631578947368,übereinstimmend
+15,Auto-CoT 75,ci_low_percent,"36,4",36.43947368421053,übereinstimmend
+15,Auto-CoT 75,ci_high_percent,"41,7",41.7028947368421,übereinstimmend
+15,Automate-CoT 500,mean_percent,"73,4",73.37602339181285,übereinstimmend
+15,Automate-CoT 500,ci_low_percent,"70,6",70.59735380116959,übereinstimmend
+15,Automate-CoT 500,ci_high_percent,"76,1",76.06578947368419,übereinstimmend
+15,Automate-CoT 300,mean_percent,"69,1",69.11842105263158,übereinstimmend
+15,Automate-CoT 300,ci_low_percent,"66,3",66.3159649122807,übereinstimmend
+15,Automate-CoT 300,ci_high_percent,"71,8",71.81465643274855,übereinstimmend
+15,Automate-CoT 150,mean_percent,"54,0",53.95380116959064,übereinstimmend
+15,Automate-CoT 150,ci_low_percent,"50,7",50.7352850877193,übereinstimmend
+15,Automate-CoT 150,ci_high_percent,"57,1",57.07723684210527,übereinstimmend
+15,Automate-CoT 75,mean_percent,"37,0",36.9906432748538,übereinstimmend
+15,Automate-CoT 75,ci_low_percent,"34,1",34.057821637426905,übereinstimmend
+15,Automate-CoT 75,ci_high_percent,"39,9",39.94736842105263,übereinstimmend
+16,Zero-Shot-CoT − Plain 500,mean,"17,00",16.996783625730995,übereinstimmend
+16,Zero-Shot-CoT − Plain 500,ci_low,"14,29",14.294269005847951,übereinstimmend
+16,Zero-Shot-CoT − Plain 500,ci_high,"19,77",19.76784356725146,übereinstimmend
+16,Zero-Shot-CoT − Plain 300,mean,"17,84",17.84298245614035,übereinstimmend
+16,Zero-Shot-CoT − Plain 300,ci_low,"15,11",15.11313596491228,übereinstimmend
+16,Zero-Shot-CoT − Plain 300,ci_high,"20,57",20.57467105263158,übereinstimmend
+16,Zero-Shot-CoT − Plain 150,mean,"8,52",8.523099415204678,übereinstimmend
+16,Zero-Shot-CoT − Plain 150,ci_low,"5,59",5.58656432748538,übereinstimmend
+16,Zero-Shot-CoT − Plain 150,ci_high,"11,33",11.325445906432748,übereinstimmend
+16,Zero-Shot-CoT − Plain 75,mean,"-4,87",-4.873976608187134,übereinstimmend
+16,Zero-Shot-CoT − Plain 75,ci_low,"-7,57",-7.573983918128655,übereinstimmend
+16,Zero-Shot-CoT − Plain 75,ci_high,"-2,25",-2.247178362573101,übereinstimmend
+16,Few-Shot-CoT − Plain 500,mean,"9,30",9.299122807017543,übereinstimmend
+16,Few-Shot-CoT − Plain 500,ci_low,"6,75",6.754283625730995,übereinstimmend
+16,Few-Shot-CoT − Plain 500,ci_high,"11,88",11.883355263157895,übereinstimmend
+16,Few-Shot-CoT − Plain 300,mean,"11,03",11.03216374269006,übereinstimmend
+16,Few-Shot-CoT − Plain 300,ci_low,"8,51",8.512770467836258,übereinstimmend
+16,Few-Shot-CoT − Plain 300,ci_high,"13,57",13.571769005847951,übereinstimmend
+16,Few-Shot-CoT − Plain 150,mean,"5,72",5.719298245614035,übereinstimmend
+16,Few-Shot-CoT − Plain 150,ci_low,"3,28",3.275423976608188,übereinstimmend
+16,Few-Shot-CoT − Plain 150,ci_high,"8,15",8.146505847953218,übereinstimmend
+16,Few-Shot-CoT − Plain 75,mean,"0,75",0.7500171998624015,übereinstimmend
+16,Few-Shot-CoT − Plain 75,ci_low,"-1,68",-1.6757039043687652,übereinstimmend
+16,Few-Shot-CoT − Plain 75,ci_high,"3,17",3.1704828861369108,übereinstimmend
+16,Auto-CoT − Few-Shot-CoT 500,mean,"7,15",7.146491228070175,übereinstimmend
+16,Auto-CoT − Few-Shot-CoT 500,ci_low,"4,89",4.893530701754386,übereinstimmend
+16,Auto-CoT − Few-Shot-CoT 500,ci_high,"9,48",9.481345029239764,übereinstimmend
+16,Auto-CoT − Few-Shot-CoT 300,mean,"7,12",7.119298245614036,übereinstimmend
+16,Auto-CoT − Few-Shot-CoT 300,ci_low,"4,89",4.9803289473684185,abweichend
+16,Auto-CoT − Few-Shot-CoT 300,ci_high,"9,32",9.317668128654969,übereinstimmend
+16,Auto-CoT − Few-Shot-CoT 150,mean,"7,18",7.176900584795322,übereinstimmend
+16,Auto-CoT − Few-Shot-CoT 150,ci_low,"4,54",4.544429824561403,übereinstimmend
+16,Auto-CoT − Few-Shot-CoT 150,ci_high,"9,83",9.8325,übereinstimmend
+16,Auto-CoT − Few-Shot-CoT 75,mean,"4,53",4.526006191950464,übereinstimmend
+16,Auto-CoT − Few-Shot-CoT 75,ci_low,"2,17",2.171029411764706,übereinstimmend
+16,Auto-CoT − Few-Shot-CoT 75,ci_high,"6,88",6.878703560371516,übereinstimmend
+16,Automate-CoT − Auto-CoT 500,mean,"2,04",2.0388888888888883,übereinstimmend
+16,Automate-CoT − Auto-CoT 500,ci_low,"0,08",0.0779385964912281,übereinstimmend
+16,Automate-CoT − Auto-CoT 500,ci_high,"4,02",4.020891812865494,übereinstimmend
+16,Automate-CoT − Auto-CoT 300,mean,"0,96",0.9564327485380107,übereinstimmend
+16,Automate-CoT − Auto-CoT 300,ci_low,"-1,13",-1.1330628654970765,übereinstimmend
+16,Automate-CoT − Auto-CoT 300,ci_high,"2,98",2.9819152046783617,übereinstimmend
+16,Automate-CoT − Auto-CoT 150,mean,"-4,05",-4.050877192982456,übereinstimmend
+16,Automate-CoT − Auto-CoT 150,ci_low,"-6,50",-6.497441520467835,übereinstimmend
+16,Automate-CoT − Auto-CoT 150,ci_high,"-1,67",-1.6738742690058492,übereinstimmend
+16,Automate-CoT − Auto-CoT 75,mean,"-2,09",-2.085672514619883,übereinstimmend
+16,Automate-CoT − Auto-CoT 75,ci_low,"-4,46",-4.462054093567251,übereinstimmend
+16,Automate-CoT − Auto-CoT 75,ci_high,"0,32",0.3210526315789477,übereinstimmend
+17,Lead-k 500,Mittlere Textlänge,"500,00",500.0,übereinstimmend
+17,Lead-k 500,Std. Abw. Wörter,"0,000",0.0,übereinstimmend
+17,Lead-k 500,Median Wörter,"500,00",500.0,übereinstimmend
+17,Lead-k 500,Q1 Wörter,"500,00",500.0,übereinstimmend
+17,Lead-k 500,Q3 Wörter,"500,00",500.0,übereinstimmend
+17,Lead-k 500,Min. Wörter,500,500.0,übereinstimmend
+17,Lead-k 500,Max. Wörter,500,500.0,übereinstimmend
+17,Lead-k 300,Mittlere Textlänge,"300,00",300.0,übereinstimmend
+17,Lead-k 300,Std. Abw. Wörter,"0,000",0.0,übereinstimmend
+17,Lead-k 300,Median Wörter,"300,00",300.0,übereinstimmend
+17,Lead-k 300,Q1 Wörter,"300,00",300.0,übereinstimmend
+17,Lead-k 300,Q3 Wörter,"300,00",300.0,übereinstimmend
+17,Lead-k 300,Min. Wörter,300,300.0,übereinstimmend
+17,Lead-k 300,Max. Wörter,300,300.0,übereinstimmend
+17,Lead-k 150,Mittlere Textlänge,"150,00",150.0,übereinstimmend
+17,Lead-k 150,Std. Abw. Wörter,"0,000",0.0,übereinstimmend
+17,Lead-k 150,Median Wörter,"150,00",150.0,übereinstimmend
+17,Lead-k 150,Q1 Wörter,"150,00",150.0,übereinstimmend
+17,Lead-k 150,Q3 Wörter,"150,00",150.0,übereinstimmend
+17,Lead-k 150,Min. Wörter,150,150.0,übereinstimmend
+17,Lead-k 150,Max. Wörter,150,150.0,übereinstimmend
+17,Lead-k 75,Mittlere Textlänge,"75,00",75.0,übereinstimmend
+17,Lead-k 75,Std. Abw. Wörter,"0,000",0.0,übereinstimmend
+17,Lead-k 75,Median Wörter,"75,00",75.0,übereinstimmend
+17,Lead-k 75,Q1 Wörter,"75,00",75.0,übereinstimmend
+17,Lead-k 75,Q3 Wörter,"75,00",75.0,übereinstimmend
+17,Lead-k 75,Min. Wörter,75,75.0,übereinstimmend
+17,Lead-k 75,Max. Wörter,75,75.0,übereinstimmend
+17,Plain 500,Mittlere Textlänge,"209,31",209.31,übereinstimmend
+17,Plain 500,Std. Abw. Wörter,"47,305",47.30466374599033,übereinstimmend
+17,Plain 500,Median Wörter,"209,50",209.5,übereinstimmend
+17,Plain 500,Q1 Wörter,"177,00",177.0,übereinstimmend
+17,Plain 500,Q3 Wörter,"233,50",233.5,übereinstimmend
+17,Plain 500,Min. Wörter,121,121.0,übereinstimmend
+17,Plain 500,Max. Wörter,399,399.0,übereinstimmend
+17,Plain 300,Mittlere Textlänge,"175,75",175.75,übereinstimmend
+17,Plain 300,Std. Abw. Wörter,"41,839",41.839127933820826,übereinstimmend
+17,Plain 300,Median Wörter,"169,00",169.0,übereinstimmend
+17,Plain 300,Q1 Wörter,"146,00",146.0,übereinstimmend
+17,Plain 300,Q3 Wörter,"198,00",198.0,übereinstimmend
+17,Plain 300,Min. Wörter,112,112.0,übereinstimmend
+17,Plain 300,Max. Wörter,348,348.0,übereinstimmend
+17,Plain 150,Mittlere Textlänge,"153,13",153.13,übereinstimmend
+17,Plain 150,Std. Abw. Wörter,"32,013",32.012514913875656,übereinstimmend
+17,Plain 150,Median Wörter,"149,00",149.0,übereinstimmend
+17,Plain 150,Q1 Wörter,"128,00",128.0,übereinstimmend
+17,Plain 150,Q3 Wörter,"168,00",168.0,übereinstimmend
+17,Plain 150,Min. Wörter,98,98.0,übereinstimmend
+17,Plain 150,Max. Wörter,273,273.0,übereinstimmend
+17,Plain 75,Mittlere Textlänge,"105,70",105.7,übereinstimmend
+17,Plain 75,Std. Abw. Wörter,"27,932",27.93191578091125,übereinstimmend
+17,Plain 75,Median Wörter,"101,50",101.5,übereinstimmend
+17,Plain 75,Q1 Wörter,"87,00",87.0,übereinstimmend
+17,Plain 75,Q3 Wörter,"122,00",122.0,übereinstimmend
+17,Plain 75,Min. Wörter,51,51.0,übereinstimmend
+17,Plain 75,Max. Wörter,187,187.0,übereinstimmend
+17,Zero-Shot-CoT 500,Mittlere Textlänge,"345,29",345.29,übereinstimmend
+17,Zero-Shot-CoT 500,Std. Abw. Wörter,"50,096",50.09552390335404,übereinstimmend
+17,Zero-Shot-CoT 500,Median Wörter,"344,50",344.5,übereinstimmend
+17,Zero-Shot-CoT 500,Q1 Wörter,"306,00",306.0,übereinstimmend
+17,Zero-Shot-CoT 500,Q3 Wörter,"380,00",380.0,übereinstimmend
+17,Zero-Shot-CoT 500,Min. Wörter,223,223.0,übereinstimmend
+17,Zero-Shot-CoT 500,Max. Wörter,471,471.0,übereinstimmend
+17,Zero-Shot-CoT 300,Mittlere Textlänge,"285,67",285.67,übereinstimmend
+17,Zero-Shot-CoT 300,Std. Abw. Wörter,"40,628",40.62791372612399,übereinstimmend
+17,Zero-Shot-CoT 300,Median Wörter,"287,00",287.0,übereinstimmend
+17,Zero-Shot-CoT 300,Q1 Wörter,"258,50",258.5,übereinstimmend
+17,Zero-Shot-CoT 300,Q3 Wörter,"312,00",312.0,übereinstimmend
+17,Zero-Shot-CoT 300,Min. Wörter,204,204.0,übereinstimmend
+17,Zero-Shot-CoT 300,Max. Wörter,410,410.0,übereinstimmend
+17,Zero-Shot-CoT 150,Mittlere Textlänge,"190,19",190.19,übereinstimmend
+17,Zero-Shot-CoT 150,Std. Abw. Wörter,"37,547",37.54719454475684,übereinstimmend
+17,Zero-Shot-CoT 150,Median Wörter,"189,00",189.0,übereinstimmend
+17,Zero-Shot-CoT 150,Q1 Wörter,"166,00",166.0,übereinstimmend
+17,Zero-Shot-CoT 150,Q3 Wörter,"213,25",213.25,übereinstimmend
+17,Zero-Shot-CoT 150,Min. Wörter,0,0.0,übereinstimmend
+17,Zero-Shot-CoT 150,Max. Wörter,304,304.0,übereinstimmend
+17,Zero-Shot-CoT 75,Mittlere Textlänge,"80,35",80.35,übereinstimmend
+17,Zero-Shot-CoT 75,Std. Abw. Wörter,"16,543",16.542797266911705,übereinstimmend
+17,Zero-Shot-CoT 75,Median Wörter,"80,50",80.5,übereinstimmend
+17,Zero-Shot-CoT 75,Q1 Wörter,"73,00",73.0,übereinstimmend
+17,Zero-Shot-CoT 75,Q3 Wörter,"89,00",89.0,übereinstimmend
+17,Zero-Shot-CoT 75,Min. Wörter,0,0.0,übereinstimmend
+17,Zero-Shot-CoT 75,Max. Wörter,118,118.0,übereinstimmend
+17,Few-Shot-CoT 500,Mittlere Textlänge,"305,53",305.53,übereinstimmend
+17,Few-Shot-CoT 500,Std. Abw. Wörter,"42,214",42.21432927288547,übereinstimmend
+17,Few-Shot-CoT 500,Median Wörter,"306,00",306.0,übereinstimmend
+17,Few-Shot-CoT 500,Q1 Wörter,"279,50",279.5,übereinstimmend
+17,Few-Shot-CoT 500,Q3 Wörter,"334,25",334.25,übereinstimmend
+17,Few-Shot-CoT 500,Min. Wörter,189,189.0,übereinstimmend
+17,Few-Shot-CoT 500,Max. Wörter,432,432.0,übereinstimmend
+17,Few-Shot-CoT 300,Mittlere Textlänge,"270,07",270.07,übereinstimmend
+17,Few-Shot-CoT 300,Std. Abw. Wörter,"35,552",35.55228188843506,übereinstimmend
+17,Few-Shot-CoT 300,Median Wörter,"269,50",269.5,übereinstimmend
+17,Few-Shot-CoT 300,Q1 Wörter,"246,75",246.75,übereinstimmend
+17,Few-Shot-CoT 300,Q3 Wörter,"292,00",292.0,übereinstimmend
+17,Few-Shot-CoT 300,Min. Wörter,169,169.0,übereinstimmend
+17,Few-Shot-CoT 300,Max. Wörter,356,356.0,übereinstimmend
+17,Few-Shot-CoT 150,Mittlere Textlänge,"183,94",183.94,übereinstimmend
+17,Few-Shot-CoT 150,Std. Abw. Wörter,"31,544",31.544043283426216,übereinstimmend
+17,Few-Shot-CoT 150,Median Wörter,"180,00",180.0,übereinstimmend
+17,Few-Shot-CoT 150,Q1 Wörter,"163,50",163.5,übereinstimmend
+17,Few-Shot-CoT 150,Q3 Wörter,"200,00",200.0,übereinstimmend
+17,Few-Shot-CoT 150,Min. Wörter,129,129.0,übereinstimmend
+17,Few-Shot-CoT 150,Max. Wörter,285,285.0,übereinstimmend
+17,Few-Shot-CoT 75,Mittlere Textlänge,"104,16",104.16,übereinstimmend
+17,Few-Shot-CoT 75,Std. Abw. Wörter,"17,292",17.291744979742344,übereinstimmend
+17,Few-Shot-CoT 75,Median Wörter,"102,00",102.0,übereinstimmend
+17,Few-Shot-CoT 75,Q1 Wörter,"94,75",94.75,übereinstimmend
+17,Few-Shot-CoT 75,Q3 Wörter,"113,25",113.25,übereinstimmend
+17,Few-Shot-CoT 75,Min. Wörter,67,67.0,übereinstimmend
+17,Few-Shot-CoT 75,Max. Wörter,189,189.0,übereinstimmend
+17,Auto-CoT 500,Mittlere Textlänge,"349,70",349.7,übereinstimmend
+17,Auto-CoT 500,Std. Abw. Wörter,"54,442",54.44198097910557,übereinstimmend
+17,Auto-CoT 500,Median Wörter,"348,50",348.5,übereinstimmend
+17,Auto-CoT 500,Q1 Wörter,"310,75",310.75,übereinstimmend
+17,Auto-CoT 500,Q3 Wörter,"383,25",383.25,übereinstimmend
+17,Auto-CoT 500,Min. Wörter,214,214.0,übereinstimmend
+17,Auto-CoT 500,Max. Wörter,491,491.0,übereinstimmend
+17,Auto-CoT 300,Mittlere Textlänge,"302,98",302.98,übereinstimmend
+17,Auto-CoT 300,Std. Abw. Wörter,"49,362",49.362190577261245,übereinstimmend
+17,Auto-CoT 300,Median Wörter,"302,50",302.5,übereinstimmend
+17,Auto-CoT 300,Q1 Wörter,"272,00",272.0,übereinstimmend
+17,Auto-CoT 300,Q3 Wörter,"332,50",332.5,übereinstimmend
+17,Auto-CoT 300,Min. Wörter,206,206.0,übereinstimmend
+17,Auto-CoT 300,Max. Wörter,433,433.0,übereinstimmend
+17,Auto-CoT 150,Mittlere Textlänge,"215,39",215.39,übereinstimmend
+17,Auto-CoT 150,Std. Abw. Wörter,"43,806",43.80625272467137,übereinstimmend
+17,Auto-CoT 150,Median Wörter,"209,00",209.0,übereinstimmend
+17,Auto-CoT 150,Q1 Wörter,"181,75",181.75,übereinstimmend
+17,Auto-CoT 150,Q3 Wörter,"235,50",235.5,übereinstimmend
+17,Auto-CoT 150,Min. Wörter,140,140.0,übereinstimmend
+17,Auto-CoT 150,Max. Wörter,332,332.0,übereinstimmend
+17,Auto-CoT 75,Mittlere Textlänge,"115,08",115.08,übereinstimmend
+17,Auto-CoT 75,Std. Abw. Wörter,"20,071",20.071428006552555,übereinstimmend
+17,Auto-CoT 75,Median Wörter,"111,50",111.5,übereinstimmend
+17,Auto-CoT 75,Q1 Wörter,"102,75",102.75,übereinstimmend
+17,Auto-CoT 75,Q3 Wörter,"123,25",123.25,übereinstimmend
+17,Auto-CoT 75,Min. Wörter,81,81.0,übereinstimmend
+17,Auto-CoT 75,Max. Wörter,185,185.0,übereinstimmend
+17,Automate-CoT 500,Mittlere Textlänge,"392,70",392.7,übereinstimmend
+17,Automate-CoT 500,Std. Abw. Wörter,"43,745",43.74478323875957,übereinstimmend
+17,Automate-CoT 500,Median Wörter,"390,50",390.5,übereinstimmend
+17,Automate-CoT 500,Q1 Wörter,"359,00",359.0,übereinstimmend
+17,Automate-CoT 500,Q3 Wörter,"423,75",423.75,übereinstimmend
+17,Automate-CoT 500,Min. Wörter,261,261.0,übereinstimmend
+17,Automate-CoT 500,Max. Wörter,496,496.0,übereinstimmend
+17,Automate-CoT 300,Mittlere Textlänge,"312,95",312.95,übereinstimmend
+17,Automate-CoT 300,Std. Abw. Wörter,"46,321",46.32131411579492,übereinstimmend
+17,Automate-CoT 300,Median Wörter,"310,00",310.0,übereinstimmend
+17,Automate-CoT 300,Q1 Wörter,"278,00",278.0,übereinstimmend
+17,Automate-CoT 300,Q3 Wörter,"346,25",346.25,übereinstimmend
+17,Automate-CoT 300,Min. Wörter,222,222.0,übereinstimmend
+17,Automate-CoT 300,Max. Wörter,435,435.0,übereinstimmend
+17,Automate-CoT 150,Mittlere Textlänge,"200,11",200.11,übereinstimmend
+17,Automate-CoT 150,Std. Abw. Wörter,"40,728",40.72769762134061,übereinstimmend
+17,Automate-CoT 150,Median Wörter,"192,50",192.5,übereinstimmend
+17,Automate-CoT 150,Q1 Wörter,"174,00",174.0,übereinstimmend
+17,Automate-CoT 150,Q3 Wörter,"216,00",216.0,übereinstimmend
+17,Automate-CoT 150,Min. Wörter,140,140.0,übereinstimmend
+17,Automate-CoT 150,Max. Wörter,354,354.0,übereinstimmend
+17,Automate-CoT 75,Mittlere Textlänge,"115,15",115.15,übereinstimmend
+17,Automate-CoT 75,Std. Abw. Wörter,"23,964",23.96393544516848,übereinstimmend
+17,Automate-CoT 75,Median Wörter,"110,00",110.0,übereinstimmend
+17,Automate-CoT 75,Q1 Wörter,"102,00",102.0,übereinstimmend
+17,Automate-CoT 75,Q3 Wörter,"121,50",121.5,übereinstimmend
+17,Automate-CoT 75,Min. Wörter,76,76.0,übereinstimmend
+17,Automate-CoT 75,Max. Wörter,216,216.0,übereinstimmend
+18,Zero-Shot-CoT − Plain 500,original_difference_pp,"17,00",16.996783625730995,übereinstimmend
+18,Zero-Shot-CoT − Plain 500,original_ci_low_pp,"14,29",14.294269005847951,übereinstimmend
+18,Zero-Shot-CoT − Plain 500,original_ci_high_pp,"19,77",19.76784356725146,übereinstimmend
+18,Zero-Shot-CoT − Plain 500,controlled_difference_pp,—,,übereinstimmend
+18,Zero-Shot-CoT − Plain 500,controlled_ci_low_pp,—,,übereinstimmend
+18,Zero-Shot-CoT − Plain 500,controlled_ci_high_pp,—,,übereinstimmend
+18,Zero-Shot-CoT − Plain 500,raw_same_articles_pp,—,,übereinstimmend
+18,Zero-Shot-CoT − Plain 300,original_difference_pp,"17,84",17.84298245614035,übereinstimmend
+18,Zero-Shot-CoT − Plain 300,original_ci_low_pp,"15,11",15.11313596491228,übereinstimmend
+18,Zero-Shot-CoT − Plain 300,original_ci_high_pp,"20,57",20.57467105263158,übereinstimmend
+18,Zero-Shot-CoT − Plain 300,controlled_difference_pp,—,,übereinstimmend
+18,Zero-Shot-CoT − Plain 300,controlled_ci_low_pp,—,,übereinstimmend
+18,Zero-Shot-CoT − Plain 300,controlled_ci_high_pp,—,,übereinstimmend
+18,Zero-Shot-CoT − Plain 300,raw_same_articles_pp,—,,übereinstimmend
+18,Zero-Shot-CoT − Plain 150,original_difference_pp,"8,52",8.523099415204678,übereinstimmend
+18,Zero-Shot-CoT − Plain 150,original_ci_low_pp,"5,59",5.58656432748538,übereinstimmend
+18,Zero-Shot-CoT − Plain 150,original_ci_high_pp,"11,33",11.325445906432748,übereinstimmend
+18,Zero-Shot-CoT − Plain 150,controlled_difference_pp,"2,80",2.79904792866072,übereinstimmend
+18,Zero-Shot-CoT − Plain 150,controlled_ci_low_pp,"0,11",0.1061379039027507,übereinstimmend
+18,Zero-Shot-CoT − Plain 150,controlled_ci_high_pp,"5,51",5.513011270652381,übereinstimmend
+18,Zero-Shot-CoT − Plain 150,raw_same_articles_pp,"5,26",5.262271841219211,übereinstimmend
+18,Zero-Shot-CoT − Plain 75,original_difference_pp,"-4,87",-4.873976608187134,übereinstimmend
+18,Zero-Shot-CoT − Plain 75,original_ci_low_pp,"-7,57",-7.573983918128655,übereinstimmend
+18,Zero-Shot-CoT − Plain 75,original_ci_high_pp,"-2,25",-2.247178362573101,übereinstimmend
+18,Zero-Shot-CoT − Plain 75,controlled_difference_pp,"0,78",0.779441501715695,übereinstimmend
+18,Zero-Shot-CoT − Plain 75,controlled_ci_low_pp,"-1,38",-1.3805453080695729,übereinstimmend
+18,Zero-Shot-CoT − Plain 75,controlled_ci_high_pp,"3,02",3.017171118586254,übereinstimmend
+18,Zero-Shot-CoT − Plain 75,raw_same_articles_pp,"-1,17",-1.171129578331794,übereinstimmend
+18,Few-Shot-CoT − Plain 500,original_difference_pp,"9,30",9.299122807017543,übereinstimmend
+18,Few-Shot-CoT − Plain 500,original_ci_low_pp,"6,75",6.754283625730995,übereinstimmend
+18,Few-Shot-CoT − Plain 500,original_ci_high_pp,"11,88",11.883355263157895,übereinstimmend
+18,Few-Shot-CoT − Plain 500,controlled_difference_pp,—,,übereinstimmend
+18,Few-Shot-CoT − Plain 500,controlled_ci_low_pp,—,,übereinstimmend
+18,Few-Shot-CoT − Plain 500,controlled_ci_high_pp,—,,übereinstimmend
+18,Few-Shot-CoT − Plain 500,raw_same_articles_pp,—,,übereinstimmend
+18,Few-Shot-CoT − Plain 300,original_difference_pp,"11,03",11.03216374269006,übereinstimmend
+18,Few-Shot-CoT − Plain 300,original_ci_low_pp,"8,51",8.512770467836258,übereinstimmend
+18,Few-Shot-CoT − Plain 300,original_ci_high_pp,"13,57",13.571769005847951,übereinstimmend
+18,Few-Shot-CoT − Plain 300,controlled_difference_pp,—,,übereinstimmend
+18,Few-Shot-CoT − Plain 300,controlled_ci_low_pp,—,,übereinstimmend
+18,Few-Shot-CoT − Plain 300,controlled_ci_high_pp,—,,übereinstimmend
+18,Few-Shot-CoT − Plain 300,raw_same_articles_pp,—,,übereinstimmend
+18,Few-Shot-CoT − Plain 150,original_difference_pp,"5,72",5.719298245614035,übereinstimmend
+18,Few-Shot-CoT − Plain 150,original_ci_low_pp,"3,28",3.275423976608188,übereinstimmend
+18,Few-Shot-CoT − Plain 150,original_ci_high_pp,"8,15",8.146505847953218,übereinstimmend
+18,Few-Shot-CoT − Plain 150,controlled_difference_pp,"0,85",0.8489536340897595,übereinstimmend
+18,Few-Shot-CoT − Plain 150,controlled_ci_low_pp,"-1,41",-1.4111285716985775,übereinstimmend
+18,Few-Shot-CoT − Plain 150,controlled_ci_high_pp,"3,13",3.133598519317204,übereinstimmend
+18,Few-Shot-CoT − Plain 150,raw_same_articles_pp,"4,27",4.269005847953218,übereinstimmend
+18,Few-Shot-CoT − Plain 75,original_difference_pp,"0,75",0.7500171998624015,übereinstimmend
+18,Few-Shot-CoT − Plain 75,original_ci_low_pp,"-1,68",-1.6757039043687652,übereinstimmend
+18,Few-Shot-CoT − Plain 75,original_ci_high_pp,"3,17",3.1704828861369108,übereinstimmend
+18,Few-Shot-CoT − Plain 75,controlled_difference_pp,"1,25",1.2549348464742922,übereinstimmend
+18,Few-Shot-CoT − Plain 75,controlled_ci_low_pp,"-0,84",-0.8399878990089069,übereinstimmend
+18,Few-Shot-CoT − Plain 75,controlled_ci_high_pp,"3,46",3.460565956842304,übereinstimmend
+18,Few-Shot-CoT − Plain 75,raw_same_articles_pp,"1,42",1.4155759769794862,übereinstimmend
+18,Auto-CoT − Few-Shot-CoT 500,original_difference_pp,"7,15",7.146491228070175,übereinstimmend
+18,Auto-CoT − Few-Shot-CoT 500,original_ci_low_pp,"4,89",4.893530701754386,übereinstimmend
+18,Auto-CoT − Few-Shot-CoT 500,original_ci_high_pp,"9,48",9.481345029239764,übereinstimmend
+18,Auto-CoT − Few-Shot-CoT 500,controlled_difference_pp,"2,82",2.8213131457441505,übereinstimmend
+18,Auto-CoT − Few-Shot-CoT 500,controlled_ci_low_pp,"0,57",0.5676442967839506,übereinstimmend
+18,Auto-CoT − Few-Shot-CoT 500,controlled_ci_high_pp,"5,08",5.084514419925454,übereinstimmend
+18,Auto-CoT − Few-Shot-CoT 500,raw_same_articles_pp,"4,80",4.796539961013646,übereinstimmend
+18,Auto-CoT − Few-Shot-CoT 300,original_difference_pp,"7,12",7.119298245614036,übereinstimmend
+18,Auto-CoT − Few-Shot-CoT 300,original_ci_low_pp,"4,89",4.9803289473684185,abweichend
+18,Auto-CoT − Few-Shot-CoT 300,original_ci_high_pp,"9,32",9.317668128654969,übereinstimmend
+18,Auto-CoT − Few-Shot-CoT 300,controlled_difference_pp,"3,37",3.369379209694773,übereinstimmend
+18,Auto-CoT − Few-Shot-CoT 300,controlled_ci_low_pp,"1,38",1.3766832473794248,übereinstimmend
+18,Auto-CoT − Few-Shot-CoT 300,controlled_ci_high_pp,"5,44",5.444032331761865,übereinstimmend
+18,Auto-CoT − Few-Shot-CoT 300,raw_same_articles_pp,"7,07",7.066948981649526,übereinstimmend
+18,Auto-CoT − Few-Shot-CoT 150,original_difference_pp,"7,18",7.176900584795322,übereinstimmend
+18,Auto-CoT − Few-Shot-CoT 150,original_ci_low_pp,"4,54",4.544429824561403,übereinstimmend
+18,Auto-CoT − Few-Shot-CoT 150,original_ci_high_pp,"9,83",9.8325,übereinstimmend
+18,Auto-CoT − Few-Shot-CoT 150,controlled_difference_pp,"2,42",2.419334866603445,übereinstimmend
+18,Auto-CoT − Few-Shot-CoT 150,controlled_ci_low_pp,"-0,06",-0.056327797234425,übereinstimmend
+18,Auto-CoT − Few-Shot-CoT 150,controlled_ci_high_pp,"5,03",5.027962391795084,übereinstimmend
+18,Auto-CoT − Few-Shot-CoT 150,raw_same_articles_pp,"3,91",3.969860548807917,abweichend
+18,Auto-CoT − Few-Shot-CoT 75,original_difference_pp,"4,53",4.526006191950464,übereinstimmend
+18,Auto-CoT − Few-Shot-CoT 75,original_ci_low_pp,"2,17",2.171029411764706,übereinstimmend
+18,Auto-CoT − Few-Shot-CoT 75,original_ci_high_pp,"6,88",6.878703560371516,übereinstimmend
+18,Auto-CoT − Few-Shot-CoT 75,controlled_difference_pp,"1,88",1.882024712681176,übereinstimmend
+18,Auto-CoT − Few-Shot-CoT 75,controlled_ci_low_pp,"-0,42",-0.4231209573985093,übereinstimmend
+18,Auto-CoT − Few-Shot-CoT 75,controlled_ci_high_pp,"4,15",4.1529965453093,übereinstimmend
+18,Auto-CoT − Few-Shot-CoT 75,raw_same_articles_pp,"3,45",3.4498355263157894,übereinstimmend
+18,Automate-CoT − Auto-CoT 500,original_difference_pp,"2,04",2.0388888888888883,übereinstimmend
+18,Automate-CoT − Auto-CoT 500,original_ci_low_pp,"0,08",0.0779385964912281,übereinstimmend
+18,Automate-CoT − Auto-CoT 500,original_ci_high_pp,"4,02",4.020891812865494,übereinstimmend
+18,Automate-CoT − Auto-CoT 500,controlled_difference_pp,"-1,91",-1.9118481922866173,übereinstimmend
+18,Automate-CoT − Auto-CoT 500,controlled_ci_low_pp,"-3,94",-3.94499883779323,übereinstimmend
+18,Automate-CoT − Auto-CoT 500,controlled_ci_high_pp,"0,13",0.1349881949444998,übereinstimmend
+18,Automate-CoT − Auto-CoT 500,raw_same_articles_pp,"-0,47",-0.4724880382775124,übereinstimmend
+18,Automate-CoT − Auto-CoT 300,original_difference_pp,"0,96",0.9564327485380107,übereinstimmend
+18,Automate-CoT − Auto-CoT 300,original_ci_low_pp,"-1,13",-1.1330628654970765,übereinstimmend
+18,Automate-CoT − Auto-CoT 300,original_ci_high_pp,"2,98",2.9819152046783617,übereinstimmend
+18,Automate-CoT − Auto-CoT 300,controlled_difference_pp,"-0,24",-0.239893912040648,übereinstimmend
+18,Automate-CoT − Auto-CoT 300,controlled_ci_low_pp,"-2,31",-2.30890096808214,übereinstimmend
+18,Automate-CoT − Auto-CoT 300,controlled_ci_high_pp,"1,75",1.747722966509898,übereinstimmend
+18,Automate-CoT − Auto-CoT 300,raw_same_articles_pp,"1,26",1.264717348927874,übereinstimmend
+18,Automate-CoT − Auto-CoT 150,original_difference_pp,"-4,05",-4.050877192982456,übereinstimmend
+18,Automate-CoT − Auto-CoT 150,original_ci_low_pp,"-6,50",-6.497441520467835,übereinstimmend
+18,Automate-CoT − Auto-CoT 150,original_ci_high_pp,"-1,67",-1.6738742690058492,übereinstimmend
+18,Automate-CoT − Auto-CoT 150,controlled_difference_pp,"-1,80",-1.7970279879886446,übereinstimmend
+18,Automate-CoT − Auto-CoT 150,controlled_ci_low_pp,"-4,05",-4.046779370163354,übereinstimmend
+18,Automate-CoT − Auto-CoT 150,controlled_ci_high_pp,"0,36",0.3554955643593589,übereinstimmend
+18,Automate-CoT − Auto-CoT 150,raw_same_articles_pp,"-4,16",-4.159250783964741,übereinstimmend
+18,Automate-CoT − Auto-CoT 75,original_difference_pp,"-2,09",-2.085672514619883,übereinstimmend
+18,Automate-CoT − Auto-CoT 75,original_ci_low_pp,"-4,46",-4.462054093567251,übereinstimmend
+18,Automate-CoT − Auto-CoT 75,original_ci_high_pp,"0,32",0.3210526315789477,übereinstimmend
+18,Automate-CoT − Auto-CoT 75,controlled_difference_pp,"-2,15",-2.1501746415516645,übereinstimmend
+18,Automate-CoT − Auto-CoT 75,controlled_ci_low_pp,"-4,23",-4.229315283019846,übereinstimmend
+18,Automate-CoT − Auto-CoT 75,controlled_ci_high_pp,"-0,01",-0.010746487661296,übereinstimmend
+18,Automate-CoT − Auto-CoT 75,raw_same_articles_pp,"-2,79",-2.789473684210526,übereinstimmend
+20,Zero-Shot-CoT − Plain 500,original_difference_pp,"17,00",16.996783625730995,übereinstimmend
+20,Zero-Shot-CoT − Plain 500,min_strict_reverse,332,332.0,übereinstimmend
+20,Zero-Shot-CoT − Plain 500,min_reverse_percent_valid,"8,34",8.335425558624152,übereinstimmend
+20,Zero-Shot-CoT − Plain 300,original_difference_pp,"17,84",17.84298245614035,übereinstimmend
+20,Zero-Shot-CoT − Plain 300,min_strict_reverse,348,348.0,übereinstimmend
+20,Zero-Shot-CoT − Plain 300,min_reverse_percent_valid,"8,74",8.73932697137117,übereinstimmend
+20,Zero-Shot-CoT − Plain 150,original_difference_pp,"8,52",8.523099415204678,übereinstimmend
+20,Zero-Shot-CoT − Plain 150,min_strict_reverse,163,163.0,übereinstimmend
+20,Zero-Shot-CoT − Plain 150,min_reverse_percent_valid,"4,09",4.091365461847389,übereinstimmend
+20,Zero-Shot-CoT − Plain 75,original_difference_pp,"-4,87",-4.873976608187134,übereinstimmend
+20,Zero-Shot-CoT − Plain 75,min_strict_reverse,95,95.0,übereinstimmend
+20,Zero-Shot-CoT − Plain 75,min_reverse_percent_valid,"2,38",2.379759519038076,übereinstimmend
+20,Few-Shot-CoT − Plain 500,original_difference_pp,"9,30",9.299122807017543,übereinstimmend
+20,Few-Shot-CoT − Plain 500,min_strict_reverse,175,175.0,übereinstimmend
+20,Few-Shot-CoT − Plain 500,min_reverse_percent_valid,"4,40",4.403623553095119,übereinstimmend
+20,Few-Shot-CoT − Plain 300,original_difference_pp,"11,03",11.032163742690058,übereinstimmend
+20,Few-Shot-CoT − Plain 300,min_strict_reverse,212,212.0,übereinstimmend
+20,Few-Shot-CoT − Plain 300,min_reverse_percent_valid,"5,32",5.322621139844339,übereinstimmend
+20,Few-Shot-CoT − Plain 150,original_difference_pp,"5,72",5.719298245614035,übereinstimmend
+20,Few-Shot-CoT − Plain 150,min_strict_reverse,106,106.0,übereinstimmend
+20,Few-Shot-CoT − Plain 150,min_reverse_percent_valid,"2,67",2.668009061162849,übereinstimmend
+20,Few-Shot-CoT − Plain 75,original_difference_pp,"0,75",0.7500171998624011,übereinstimmend
+20,Few-Shot-CoT − Plain 75,min_strict_reverse,14,14.0,übereinstimmend
+20,Few-Shot-CoT − Plain 75,min_reverse_percent_valid,"0,35",0.3512293025589563,übereinstimmend
+20,Auto-CoT − Few-Shot-CoT 500,original_difference_pp,"7,15",7.146491228070175,übereinstimmend
+20,Auto-CoT − Few-Shot-CoT 500,min_strict_reverse,134,134.0,übereinstimmend
+20,Auto-CoT − Few-Shot-CoT 500,min_reverse_percent_valid,"3,37",3.3736153071500503,übereinstimmend
+20,Auto-CoT − Few-Shot-CoT 300,original_difference_pp,"7,12",7.119298245614036,übereinstimmend
+20,Auto-CoT − Few-Shot-CoT 300,min_strict_reverse,134,134.0,übereinstimmend
+20,Auto-CoT − Few-Shot-CoT 300,min_reverse_percent_valid,"3,37",3.365143144148669,übereinstimmend
+20,Auto-CoT − Few-Shot-CoT 150,original_difference_pp,"7,18",7.176900584795321,übereinstimmend
+20,Auto-CoT − Few-Shot-CoT 150,min_strict_reverse,135,135.0,übereinstimmend
+20,Auto-CoT − Few-Shot-CoT 150,min_reverse_percent_valid,"3,40",3.3987915407854983,übereinstimmend
+20,Auto-CoT − Few-Shot-CoT 75,original_difference_pp,"4,53",4.526006191950464,übereinstimmend
+20,Auto-CoT − Few-Shot-CoT 75,min_strict_reverse,86,86.0,übereinstimmend
+20,Auto-CoT − Few-Shot-CoT 75,min_reverse_percent_valid,"2,16",2.155388471177945,übereinstimmend
+20,Automate-CoT − Auto-CoT 500,original_difference_pp,"2,04",2.0388888888888888,übereinstimmend
+20,Automate-CoT − Auto-CoT 500,min_strict_reverse,38,38.0,übereinstimmend
+20,Automate-CoT − Auto-CoT 500,min_reverse_percent_valid,"0,96",0.9554940910233845,übereinstimmend
+20,Automate-CoT − Auto-CoT 300,original_difference_pp,"0,96",0.9564327485380116,übereinstimmend
+20,Automate-CoT − Auto-CoT 300,min_strict_reverse,18,18.0,übereinstimmend
+20,Automate-CoT − Auto-CoT 300,min_reverse_percent_valid,"0,45",0.4530581424616159,übereinstimmend
+20,Automate-CoT − Auto-CoT 150,original_difference_pp,"-4,05",-4.0508771929824565,übereinstimmend
+20,Automate-CoT − Auto-CoT 150,min_strict_reverse,77,77.0,übereinstimmend
+20,Automate-CoT − Auto-CoT 150,min_reverse_percent_valid,"1,94",1.935646053293112,übereinstimmend
+20,Automate-CoT − Auto-CoT 75,original_difference_pp,"-2,09",-2.085672514619883,übereinstimmend
+20,Automate-CoT − Auto-CoT 75,min_strict_reverse,39,39.0,übereinstimmend
+20,Automate-CoT − Auto-CoT 75,min_reverse_percent_valid,"0,98",0.976709241172051,übereinstimmend
+21,NUMBER,n_facts,526,526.0,übereinstimmend
+21,NUMBER,share_percent,"26,30",26.3,übereinstimmend
+21,NUMBER,n_articles,96,96.0,übereinstimmend
+21,NUMBER,median_facts_per_present_article,"5,00",5.0,übereinstimmend
+21,NUMBER,max_facts_per_present_article,13,13.0,übereinstimmend
+21,PERSON,n_facts,420,420.0,übereinstimmend
+21,PERSON,share_percent,"21,00",21.0,übereinstimmend
+21,PERSON,n_articles,97,97.0,übereinstimmend
+21,PERSON,median_facts_per_present_article,"4,00",4.0,übereinstimmend
+21,PERSON,max_facts_per_present_article,13,13.0,übereinstimmend
+21,LOCATION,n_facts,255,255.0,übereinstimmend
+21,LOCATION,share_percent,"12,75",12.75,übereinstimmend
+21,LOCATION,n_articles,93,93.0,übereinstimmend
+21,LOCATION,median_facts_per_present_article,"3,00",3.0,übereinstimmend
+21,LOCATION,max_facts_per_present_article,6,6.0,übereinstimmend
+21,DATE_TIME,n_facts,216,216.0,übereinstimmend
+21,DATE_TIME,share_percent,"10,80",10.8,übereinstimmend
+21,DATE_TIME,n_articles,90,90.0,übereinstimmend
+21,DATE_TIME,median_facts_per_present_article,"2,00",2.0,übereinstimmend
+21,DATE_TIME,max_facts_per_present_article,7,7.0,übereinstimmend
+21,OTHER,n_facts,181,181.0,übereinstimmend
+21,OTHER,share_percent,"9,05",9.05,übereinstimmend
+21,OTHER,n_articles,74,74.0,übereinstimmend
+21,OTHER,median_facts_per_present_article,"2,00",2.0,übereinstimmend
+21,OTHER,max_facts_per_present_article,9,9.0,übereinstimmend
+21,OBJECT,n_facts,168,168.0,übereinstimmend
+21,OBJECT,share_percent,"8,40",8.4,übereinstimmend
+21,OBJECT,n_articles,67,67.0,übereinstimmend
+21,OBJECT,median_facts_per_present_article,"1,00",1.0,übereinstimmend
+21,OBJECT,max_facts_per_present_article,12,12.0,übereinstimmend
+21,ORG,n_facts,154,154.0,übereinstimmend
+21,ORG,share_percent,"7,70",7.7,übereinstimmend
+21,ORG,n_articles,77,77.0,übereinstimmend
+21,ORG,median_facts_per_present_article,"2,00",2.0,übereinstimmend
+21,ORG,max_facts_per_present_article,7,7.0,übereinstimmend
+21,EVENT,n_facts,80,80.0,übereinstimmend
+21,EVENT,share_percent,"4,00",4.0,übereinstimmend
+21,EVENT,n_articles,53,53.0,übereinstimmend
+21,EVENT,median_facts_per_present_article,"1,00",1.0,übereinstimmend
+21,EVENT,max_facts_per_present_article,4,4.0,übereinstimmend
+22,NUMBER,lead_k,"80,4",80.41825095057035,übereinstimmend
+22,NUMBER,plain,"65,8",65.83969465648855,übereinstimmend
+22,NUMBER,zero_shot_cot,"78,5",78.51711026615969,übereinstimmend
+22,NUMBER,few_shot_cot,"72,8",72.81368821292776,übereinstimmend
+22,NUMBER,auto_cot,"78,1",78.05343511450383,übereinstimmend
+22,NUMBER,automate_cot,"80,2",80.19047619047619,übereinstimmend
+22,PERSON,lead_k,"70,5",70.50359712230215,übereinstimmend
+22,PERSON,plain,"47,8",47.83653846153846,übereinstimmend
+22,PERSON,zero_shot_cot,"66,1",66.10576923076923,übereinstimmend
+22,PERSON,few_shot_cot,"57,7",57.729468599033815,übereinstimmend
+22,PERSON,auto_cot,"64,9",64.90384615384616,übereinstimmend
+22,PERSON,automate_cot,"69,3",69.30455635491607,übereinstimmend
+22,LOCATION,lead_k,"75,3",75.29411764705883,übereinstimmend
+22,LOCATION,plain,"43,9",43.92156862745098,übereinstimmend
+22,LOCATION,zero_shot_cot,"65,4",65.35433070866141,übereinstimmend
+22,LOCATION,few_shot_cot,"57,5",57.53968253968254,übereinstimmend
+22,LOCATION,auto_cot,"65,0",64.96062992125984,übereinstimmend
+22,LOCATION,automate_cot,"67,7",67.71653543307087,übereinstimmend
+22,DATE_TIME,lead_k,"73,5",73.48837209302326,übereinstimmend
+22,DATE_TIME,plain,"47,0",46.97674418604651,übereinstimmend
+22,DATE_TIME,zero_shot_cot,"67,0",66.97674418604652,übereinstimmend
+22,DATE_TIME,few_shot_cot,"56,5",56.54205607476636,übereinstimmend
+22,DATE_TIME,auto_cot,"67,1",67.12962962962963,übereinstimmend
+22,DATE_TIME,automate_cot,"65,6",65.58139534883722,übereinstimmend
+22,OTHER,lead_k,"72,8",72.77777777777777,übereinstimmend
+22,OTHER,plain,"55,6",55.55555555555556,übereinstimmend
+22,OTHER,zero_shot_cot,"74,6",74.58563535911603,übereinstimmend
+22,OTHER,few_shot_cot,"67,4",67.41573033707866,übereinstimmend
+22,OTHER,auto_cot,"72,6",72.62569832402235,übereinstimmend
+22,OTHER,automate_cot,"71,1",71.11111111111111,übereinstimmend
+22,OBJECT,lead_k,"76,2",76.19047619047619,übereinstimmend
+22,OBJECT,plain,"56,3",56.2874251497006,übereinstimmend
+22,OBJECT,zero_shot_cot,"73,1",73.05389221556887,übereinstimmend
+22,OBJECT,few_shot_cot,"63,5",63.47305389221557,übereinstimmend
+22,OBJECT,auto_cot,"72,9",72.89156626506023,übereinstimmend
+22,OBJECT,automate_cot,"79,5",79.51807228915662,übereinstimmend
+22,ORG,lead_k,"76,0",75.97402597402598,übereinstimmend
+22,ORG,plain,"60,4",60.3896103896104,übereinstimmend
+22,ORG,zero_shot_cot,"76,6",76.62337662337663,übereinstimmend
+22,ORG,few_shot_cot,"73,4",73.37662337662337,übereinstimmend
+22,ORG,auto_cot,"77,9",77.92207792207793,übereinstimmend
+22,ORG,automate_cot,"81,7",81.69934640522875,übereinstimmend
+22,EVENT,lead_k,"81,2",81.25,übereinstimmend
+22,EVENT,plain,"60,8",60.75949367088608,übereinstimmend
+22,EVENT,zero_shot_cot,"75,0",75.0,übereinstimmend
+22,EVENT,few_shot_cot,"59,5",59.49367088607595,übereinstimmend
+22,EVENT,auto_cot,"74,7",74.68354430379746,übereinstimmend
+22,EVENT,automate_cot,"65,8",65.82278481012658,übereinstimmend
+23,NUMBER,lead_k,"51,8",51.8095238095238,übereinstimmend
+23,NUMBER,plain,"63,0",63.04761904761905,übereinstimmend
+23,NUMBER,zero_shot_cot,"75,8",75.80952380952381,übereinstimmend
+23,NUMBER,few_shot_cot,"72,2",72.24334600760456,übereinstimmend
+23,NUMBER,auto_cot,"76,3",76.33587786259542,übereinstimmend
+23,NUMBER,automate_cot,"77,7",77.67175572519083,übereinstimmend
+23,PERSON,lead_k,"42,7",42.72076372315035,übereinstimmend
+23,PERSON,plain,"42,9",42.92565947242206,übereinstimmend
+23,PERSON,zero_shot_cot,"61,4",61.39088729016786,übereinstimmend
+23,PERSON,few_shot_cot,"51,7",51.67464114832536,übereinstimmend
+23,PERSON,auto_cot,"61,0",60.96385542168675,übereinstimmend
+23,PERSON,automate_cot,"63,8",63.76811594202898,übereinstimmend
+23,LOCATION,lead_k,"51,4",51.37254901960784,übereinstimmend
+23,LOCATION,plain,"38,0",38.03921568627451,übereinstimmend
+23,LOCATION,zero_shot_cot,"60,6",60.629921259842526,übereinstimmend
+23,LOCATION,few_shot_cot,"54,3",54.330708661417326,übereinstimmend
+23,LOCATION,auto_cot,"61,6",61.5686274509804,übereinstimmend
+23,LOCATION,automate_cot,"64,7",64.70588235294117,übereinstimmend
+23,DATE_TIME,lead_k,"50,7",50.697674418604656,übereinstimmend
+23,DATE_TIME,plain,"40,7",40.65420560747663,übereinstimmend
+23,DATE_TIME,zero_shot_cot,"62,8",62.7906976744186,übereinstimmend
+23,DATE_TIME,few_shot_cot,"54,0",53.95348837209303,übereinstimmend
+23,DATE_TIME,auto_cot,"64,4",64.35185185185185,übereinstimmend
+23,DATE_TIME,automate_cot,"62,8",62.7906976744186,übereinstimmend
+23,OTHER,lead_k,"47,5",47.513812154696126,übereinstimmend
+23,OTHER,plain,"47,2",47.22222222222222,übereinstimmend
+23,OTHER,zero_shot_cot,"67,6",67.59776536312849,übereinstimmend
+23,OTHER,few_shot_cot,"64,4",64.44444444444444,übereinstimmend
+23,OTHER,auto_cot,"67,2",67.22222222222223,übereinstimmend
+23,OTHER,automate_cot,"67,8",67.77777777777779,übereinstimmend
+23,OBJECT,lead_k,"47,6",47.61904761904761,übereinstimmend
+23,OBJECT,plain,"51,5",51.51515151515152,übereinstimmend
+23,OBJECT,zero_shot_cot,"71,4",71.42857142857143,übereinstimmend
+23,OBJECT,few_shot_cot,"56,3",56.2874251497006,übereinstimmend
+23,OBJECT,auto_cot,"66,3",66.26506024096386,übereinstimmend
+23,OBJECT,automate_cot,"68,3",68.26347305389223,übereinstimmend
+23,ORG,lead_k,"54,5",54.54545454545454,übereinstimmend
+23,ORG,plain,"54,5",54.54545454545454,übereinstimmend
+23,ORG,zero_shot_cot,"72,7",72.72727272727273,übereinstimmend
+23,ORG,few_shot_cot,"70,6",70.58823529411765,übereinstimmend
+23,ORG,auto_cot,"77,9",77.92207792207793,übereinstimmend
+23,ORG,automate_cot,"75,7",75.6578947368421,übereinstimmend
+23,EVENT,lead_k,"56,2",56.25,übereinstimmend
+23,EVENT,plain,"58,8",58.75,übereinstimmend
+23,EVENT,zero_shot_cot,"70,0",70.0,übereinstimmend
+23,EVENT,few_shot_cot,"60,0",60.0,übereinstimmend
+23,EVENT,auto_cot,"70,9",70.88607594936708,übereinstimmend
+23,EVENT,automate_cot,"63,6",63.63636363636363,übereinstimmend
+24,NUMBER,lead_k,"33,1",33.07984790874524,übereinstimmend
+24,NUMBER,plain,"57,5",57.52380952380952,übereinstimmend
+24,NUMBER,zero_shot_cot,"64,4",64.44866920152091,übereinstimmend
+24,NUMBER,few_shot_cot,"62,5",62.523900573613766,übereinstimmend
+24,NUMBER,auto_cot,"69,3",69.27480916030534,übereinstimmend
+24,NUMBER,automate_cot,"64,6",64.57142857142857,übereinstimmend
+24,PERSON,lead_k,"25,5",25.476190476190467,übereinstimmend
+24,PERSON,plain,"38,7",38.70192307692308,übereinstimmend
+24,PERSON,zero_shot_cot,"46,9",46.9047619047619,übereinstimmend
+24,PERSON,few_shot_cot,"42,2",42.16867469879518,übereinstimmend
+24,PERSON,auto_cot,"48,9",48.91566265060241,übereinstimmend
+24,PERSON,automate_cot,"46,5",46.52278177458033,übereinstimmend
+24,LOCATION,lead_k,"32,7",32.677165354330704,übereinstimmend
+24,LOCATION,plain,"31,3",31.349206349206348,übereinstimmend
+24,LOCATION,zero_shot_cot,"43,9",43.92156862745098,übereinstimmend
+24,LOCATION,few_shot_cot,"41,2",41.17647058823529,übereinstimmend
+24,LOCATION,auto_cot,"48,4",48.4251968503937,übereinstimmend
+24,LOCATION,automate_cot,"47,1",47.05882352941176,übereinstimmend
+24,DATE_TIME,lead_k,"30,7",30.69767441860465,übereinstimmend
+24,DATE_TIME,plain,"34,9",34.88372093023256,übereinstimmend
+24,DATE_TIME,zero_shot_cot,"52,6",52.55813953488372,übereinstimmend
+24,DATE_TIME,few_shot_cot,"43,7",43.72093023255814,übereinstimmend
+24,DATE_TIME,auto_cot,"54,4",54.4186046511628,übereinstimmend
+24,DATE_TIME,automate_cot,"50,7",50.697674418604656,übereinstimmend
+24,OTHER,lead_k,"26,0",25.96685082872928,übereinstimmend
+24,OTHER,plain,"45,3",45.30386740331492,übereinstimmend
+24,OTHER,zero_shot_cot,"52,2",52.24719101123596,übereinstimmend
+24,OTHER,few_shot_cot,"54,1",54.14364640883977,übereinstimmend
+24,OTHER,auto_cot,"57,5",57.4585635359116,übereinstimmend
+24,OTHER,automate_cot,"55,3",55.3072625698324,übereinstimmend
+24,OBJECT,lead_k,"22,2",22.15568862275449,übereinstimmend
+24,OBJECT,plain,"46,7",46.706586826347305,übereinstimmend
+24,OBJECT,zero_shot_cot,"50,0",50.0,übereinstimmend
+24,OBJECT,few_shot_cot,"52,7",52.72727272727272,übereinstimmend
+24,OBJECT,auto_cot,"60,2",60.24096385542169,übereinstimmend
+24,OBJECT,automate_cot,"53,6",53.57142857142857,übereinstimmend
+24,ORG,lead_k,"39,0",38.96103896103896,übereinstimmend
+24,ORG,plain,"49,4",49.35064935064935,übereinstimmend
+24,ORG,zero_shot_cot,"57,1",57.14285714285714,übereinstimmend
+24,ORG,few_shot_cot,"53,9",53.94736842105263,übereinstimmend
+24,ORG,auto_cot,"63,0",62.98701298701299,übereinstimmend
+24,ORG,automate_cot,"54,5",54.54545454545454,übereinstimmend
+24,EVENT,lead_k,"37,5",37.5,übereinstimmend
+24,EVENT,plain,"56,4",56.41025641025641,übereinstimmend
+24,EVENT,zero_shot_cot,"56,2",56.25,übereinstimmend
+24,EVENT,few_shot_cot,"50,6",50.63291139240506,übereinstimmend
+24,EVENT,auto_cot,"59,0",58.97435897435898,übereinstimmend
+24,EVENT,automate_cot,"50,0",50.0,übereinstimmend
+25,NUMBER,lead_k,"17,5",17.490494296577943,übereinstimmend
+25,NUMBER,plain,"45,9",45.9047619047619,übereinstimmend
+25,NUMBER,zero_shot_cot,"35,2",35.17110266159696,übereinstimmend
+25,NUMBER,few_shot_cot,"43,9",43.91634980988593,übereinstimmend
+25,NUMBER,auto_cot,"49,2",49.23954372623574,übereinstimmend
+25,NUMBER,automate_cot,"43,5",43.536121673003805,übereinstimmend
+25,PERSON,lead_k,"13,6",13.571428571428571,übereinstimmend
+25,PERSON,plain,"28,8",28.84615384615384,übereinstimmend
+25,PERSON,zero_shot_cot,"24,6",24.58233890214797,übereinstimmend
+25,PERSON,few_shot_cot,"27,4",27.40384615384615,übereinstimmend
+25,PERSON,auto_cot,"31,0",30.95238095238095,übereinstimmend
+25,PERSON,automate_cot,"31,2",31.17505995203837,übereinstimmend
+25,LOCATION,lead_k,"22,4",22.35294117647059,übereinstimmend
+25,LOCATION,plain,"22,4",22.35294117647059,übereinstimmend
+25,LOCATION,zero_shot_cot,"22,7",22.74509803921568,übereinstimmend
+25,LOCATION,few_shot_cot,"27,8",27.84313725490196,übereinstimmend
+25,LOCATION,auto_cot,"29,8",29.80392156862745,übereinstimmend
+25,LOCATION,automate_cot,"31,8",31.76470588235294,übereinstimmend
+25,DATE_TIME,lead_k,"16,7",16.74418604651162,übereinstimmend
+25,DATE_TIME,plain,"26,9",26.851851851851848,übereinstimmend
+25,DATE_TIME,zero_shot_cot,"26,9",26.851851851851848,übereinstimmend
+25,DATE_TIME,few_shot_cot,"31,0",31.01851851851852,übereinstimmend
+25,DATE_TIME,auto_cot,"35,6",35.64814814814814,übereinstimmend
+25,DATE_TIME,automate_cot,"31,6",31.62790697674418,übereinstimmend
+25,OTHER,lead_k,"14,4",14.3646408839779,übereinstimmend
+25,OTHER,plain,"27,6",27.62430939226519,übereinstimmend
+25,OTHER,zero_shot_cot,"28,9",28.88888888888888,übereinstimmend
+25,OTHER,few_shot_cot,"33,1",33.14917127071823,übereinstimmend
+25,OTHER,auto_cot,"38,1",38.12154696132597,übereinstimmend
+25,OTHER,automate_cot,"39,8",39.77900552486187,übereinstimmend
+25,OBJECT,lead_k,"13,7",13.69047619047619,übereinstimmend
+25,OBJECT,plain,"35,1",35.11904761904761,übereinstimmend
+25,OBJECT,zero_shot_cot,"24,4",24.4047619047619,übereinstimmend
+25,OBJECT,few_shot_cot,"31,9",31.92771084337349,übereinstimmend
+25,OBJECT,auto_cot,"38,3",38.32335329341317,übereinstimmend
+25,OBJECT,automate_cot,"34,7",34.73053892215569,übereinstimmend
+25,ORG,lead_k,"21,4",21.42857142857142,übereinstimmend
+25,ORG,plain,"37,0",37.01298701298701,übereinstimmend
+25,ORG,zero_shot_cot,"33,8",33.76623376623376,übereinstimmend
+25,ORG,few_shot_cot,"43,1",43.13725490196078,übereinstimmend
+25,ORG,auto_cot,"45,5",45.454545454545446,übereinstimmend
+25,ORG,automate_cot,"44,2",44.15584415584415,übereinstimmend
+25,EVENT,lead_k,"27,5",27.500000000000004,übereinstimmend
+25,EVENT,plain,"40,5",40.50632911392405,übereinstimmend
+25,EVENT,zero_shot_cot,"36,2",36.25,übereinstimmend
+25,EVENT,few_shot_cot,"32,9",32.91139240506329,übereinstimmend
+25,EVENT,auto_cot,"45,6",45.56962025316455,übereinstimmend
+25,EVENT,automate_cot,"40,0",40.0,übereinstimmend
