@@ -272,3 +272,40 @@ Installation getestet und ist kein als kompatibel aufgelöster Paketstand. Eine
 unabhängig installierbare Gesamtumgebung bleibt gesondert zu prüfen. Die genannte
 CPU-Probe validiert weder GPU-Ausführung noch alle Metrikfälle oder einen gesamten
 LLM-Experimentlauf.
+
+### Separate dritte Umgebung: ungetestete Installationsvariante
+
+**Status am 29.10.2026: ungetestet als vollständige Neuinstallation.**
+Die folgende Variante isoliert den absichtlich übergangenen Abhängigkeitskonflikt
+von `.venv-analysis` und `.venv-experiment`. Sie löst ihn nicht auf und ist keine
+nachgewiesen funktionierende Gesamtumgebung:
+
+```bash
+uv venv --python 3.13.15 .venv-summac
+uv pip sync --python .venv-summac/bin/python requirements-experiment.txt
+uv pip install --python .venv-summac/bin/python --no-deps -r requirements-summac.txt
+uv pip install --python .venv-summac/bin/python --no-deps -e .
+uv pip check --python .venv-summac/bin/python
+```
+
+[`requirements-summac.txt`](../requirements-summac.txt) fixiert SummaC 0.0.4
+und Protobuf 7.36.0. Letztere Version wurde in der vorhandenen historischen
+Metrikumgebung aus den Paketmetadaten abgelesen; Protobuf ist eine deklarierte
+SummaC-Abhängigkeit, fehlt aber in `requirements-experiment.txt`.
+`--no-deps` umgeht bewusst den Resolver. Bei `uv pip check` ist daher weiterhin
+der Konflikt `huggingface-hub<=0.17.0` zu erwarten. Der Befehl ist eine Diagnose,
+kein hier zugesicherter erfolgreicher Installationstest.
+
+Während der Finalisierung wurde eine frische Umgebung unter `/tmp` angelegt
+und `uv pip sync --offline ... requirements-experiment.txt` mit dem vorhandenen
+lokalen uv-Cache versucht. Der Resolver fand die Paketliste, die Installation
+scheiterte jedoch am nicht gecachten Wheel **`nvidia-nvjitlink==13.4.92`**.
+Die anschließenden Installations- und Import-/Inferenzschritte wurden deshalb
+in dieser frischen Umgebung nicht ausgeführt. Es gab keine Downloads und
+keine neue SummaC-Inferenz. In der bestehenden historischen Umgebung bestätigte
+`uv pip check` den dokumentierten SummaC-/Hub-Konflikt.
+
+Für eine spätere vollständig offline installierbare Umgebung müssen alle
+passenden Wheels und die oben beschriebenen Modell-/Tokenizerressourcen
+separat bereitgestellt werden. Eine dritte Umgebung allein macht den
+widersprüchlich deklarierten Paketstand nicht kompatibel.

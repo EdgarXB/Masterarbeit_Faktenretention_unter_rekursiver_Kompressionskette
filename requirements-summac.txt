@@ -1,0 +1,5 @@
+# UNGETESTETER Zusatz zur separaten .venv-summac, siehe docs/modelle_und_beschaffung.md.
+# Nach requirements-experiment.txt bewusst nur mit --no-deps installieren.
+# protobuf-Version aus der vorhandenen historischen Metrikumgebung abgelesen.
+protobuf==7.36.0
+summac==0.0.4

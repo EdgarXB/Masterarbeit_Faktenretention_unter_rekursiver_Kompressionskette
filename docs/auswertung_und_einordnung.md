@@ -2,8 +2,10 @@
 
 Diese Ergänzung zur [README](../README.md) beschreibt den Datenstand,
 die wissenschaftlichen Definitionen und Hinweise zum Manuskript.
-Grundlage ist die Masterarbeit `2610_02_Masterarbeit.docx`; das Manuskript
-selbst wird nicht mitgeliefert.
+Grundlage ist das vom Autor benannte Abgabemanuskript
+`2910_Masterarbeit.docx` (Stand 29.10.2026). Es wurde lokal für den
+[Manuskriptabgleich](abgleich_manuskript.md) eingesehen, wird aber nicht
+mitversioniert. Der Abgleich nennt den Prüfstand und die Grenzen der Prüfung.
 
 ## Datenstand und Kennzahlen
 
@@ -65,7 +67,7 @@ Cluster werden dabei nicht neu berechnet.
 | 02 – Faktenretention | Abb. 8–10; Tab. 15/16/20 |
 | 03 – Textlänge | Abb. 11–14, 21/22; Tab. 17; Methodenabbildung Auto-CoT |
 | 04 – Verlustmuster | Abb. 15/16/23; Tab. 7, 21–25 |
-| 05 – Weitere Metriken | Tab. 8; Ergebnistabelle E.1 |
+| 05 – Weitere Metriken | Tab. 8; Kendall-τ-b-Export `anhang_E_1_kendall_tau_b.csv` ohne gleichnamige Tabelle im aktuellen Manuskript; dessen E.1 enthält Tab. 21 |
 | 06 – Längenregression | Tab. 18/19; Auto-CoT–Plain bei 75 Wörtern |
 
 ## Grenzen und Hinweise zum Manuskript
@@ -76,12 +78,28 @@ Historisch fehlen vollständige Cluster-Embeddings und alle QA-Retry-Zwischenant
 diese werden nicht nachträglich erfunden. Gespeicherte BERTScore-/SummaC-Werte werden
 statistisch ausgewertet; ihre ursprüngliche Inferenz wird dadurch nicht neu validiert.
 
-Vom Autor zu prüfen: E.1 wird angekündigt, enthält im maßgeblichen Manuskript aber
-keine Tabelle; der CSV-Export steht in Notebook 05. In Tabelle 18 lautet die untere
-unadjustierte Intervallgrenze Auto-CoT–Few-Shot bei 300 Wörtern 4,98; Rohdaten und
-Tabelle 16 ergeben 4,89. Die persönliche Passage in Notebook 02 zum Rückgang vom
-Original benötigt eine Überarbeitung, weil keine Original-QA-Baseline gemessen wurde.
-Der berichtete 500-Wort-Abstand von 0,08 pp gehört zu Zero-Shot-CoT–Auto-CoT,
-nicht zu den beiden führenden generativen Methoden. Die Lead-k-Angaben 21/1.407
-und 22/1.999 verwenden unterschiedliche, in Notebook 04
-reproduzierte Bezugsgruppen und werden deshalb beide erhalten.
+Der aktuelle Abgleich ersetzt die Hinweise zum früheren Manuskriptstand:
+
+- Anhang E.1 existiert und enthält Tabelle 21 zur Entitätsverteilung. Eine
+  „Tabelle E.1“ wird im aktuellen Manuskript nicht referenziert. Der historisch
+  benannte Kendall-Export aus Notebook 05 ist davon zu unterscheiden.
+- Tabellen 16 und 18 nennen für die untere unadjustierte Intervallgrenze
+  Auto-CoT–Few-Shot-CoT bei **300 Wörtern 4,89 pp**. Die aktuelle Repo-Auswertung,
+  `tests/referenzwerte.csv` und eine unabhängige Nachrechnung ergeben jedoch
+  **4,9803289473684185 pp**, gerundet **4,98**. **4,89** gehört zur **500-Wort-Stufe**.
+- Tabelle 18 nennt für Auto-CoT–Few-Shot-CoT bei **150 Wörtern** auf den
+  Supportartikeln unadjustiert **3,91 pp**; der Repo-Wert beträgt **3,969861 pp**,
+  gerundet **3,97**.
+- Notebook 02 beschreibt jetzt ausschließlich Änderungen zwischen gemessenen
+  Kompressionsstufen. Eine Original-QA-Baseline liegt nicht vor. Entsprechende
+  Aussagen über den größten Rückgang vom Original stehen noch in Kapitel 4/5.
+- Der berichtete adjustierte 500-Wort-Abstand von **0,08 pp** gehört zu
+  **Zero-Shot-CoT–Auto-CoT**. Die führenden generativen Verfahren sind dort
+  Automate-CoT und Zero-Shot-CoT mit **5,64 pp** Abstand.
+- Die Lead-k-Angaben **21/1.407** und **22/1.999** haben unterschiedliche,
+  in Notebook 04 reproduzierte Bezugsgruppen. Das Manuskript beschreibt beide
+  Gruppen an verschiedenen Stellen; ein expliziter Querverweis wäre hilfreich.
+
+Fundstellen, weitere Abweichungen und Änderungsvorschläge stehen in der
+[Korrekturliste](korrekturliste_manuskript.md). Wissenschaftliche Rechenregeln,
+Rohdaten und gespeicherte Caches wurden bei diesem Abgleich nicht geändert.

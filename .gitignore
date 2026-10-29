@@ -17,3 +17,9 @@ results/gemeinsame_auswertung/
 data/prepared/
 results/notebooks/
 results/model-resources/
+
+# Lokales Abgabemanuskript; kein Bestandteil des digitalen Anhangs.
+/2910_Masterarbeit.docx
+.env
+.env.local
+.env.*.local
