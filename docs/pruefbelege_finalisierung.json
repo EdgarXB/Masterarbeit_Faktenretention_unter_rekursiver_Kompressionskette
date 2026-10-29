@@ -1,0 +1,122 @@
+{
+  "data": {
+    "files_checked": 377,
+    "new_files": [],
+    "all_original_bytes_preserved": true
+  },
+  "runtime_differences": [
+    {
+      "file": "results/06_laengenregression/C_modelldiagnostik.csv",
+      "changed_columns": [
+        "fit_seconds"
+      ],
+      "original": [
+        {
+          "fit_seconds": 0.0472159869968891
+        }
+      ],
+      "after": [
+        {
+          "fit_seconds": 0.0472525369987124
+        }
+      ]
+    },
+    {
+      "file": "results/06_laengenregression/bootstrap_anpassungsdiagnostik.csv",
+      "changed_columns": [
+        "seconds_this_run"
+      ],
+      "original": [
+        {
+          "seconds_this_run": 0.0291932669933885
+        }
+      ],
+      "after": [
+        {
+          "seconds_this_run": 0.029049816999759
+        }
+      ]
+    }
+  ],
+  "results": {
+    "files_checked": 47142,
+    "new_files": [],
+    "all_original_bytes_preserved": true
+  },
+  "versioned_results_files": 74,
+  "versioned_results_csvs": 56,
+  "tests_before": {
+    "tests": 24,
+    "result": "OK"
+  },
+  "tests_after": {
+    "tests": 24,
+    "result": "OK"
+  },
+  "notebooks_before": [
+    {
+      "notebook": "notebooks/01_menschliche_validierung.ipynb",
+      "returncode": 0,
+      "seconds": 2.7
+    },
+    {
+      "notebook": "notebooks/02_faktenretention.ipynb",
+      "returncode": 0,
+      "seconds": 3.5
+    },
+    {
+      "notebook": "notebooks/03_textlaenge.ipynb",
+      "returncode": 0,
+      "seconds": 5.9
+    },
+    {
+      "notebook": "notebooks/04_verlustmuster.ipynb",
+      "returncode": 0,
+      "seconds": 4.4
+    },
+    {
+      "notebook": "notebooks/05_weitere_metriken.ipynb",
+      "returncode": 0,
+      "seconds": 3.2
+    },
+    {
+      "notebook": "notebooks/06_laengenregression.ipynb",
+      "returncode": 0,
+      "seconds": 3.5
+    }
+  ],
+  "notebooks_after": [
+    {
+      "notebook": "notebooks/01_menschliche_validierung.ipynb",
+      "returncode": 0,
+      "seconds": 2.7
+    },
+    {
+      "notebook": "notebooks/02_faktenretention.ipynb",
+      "returncode": 0,
+      "seconds": 3.5
+    },
+    {
+      "notebook": "notebooks/03_textlaenge.ipynb",
+      "returncode": 0,
+      "seconds": 5.9
+    },
+    {
+      "notebook": "notebooks/04_verlustmuster.ipynb",
+      "returncode": 0,
+      "seconds": 4.3
+    },
+    {
+      "notebook": "notebooks/05_weitere_metriken.ipynb",
+      "returncode": 0,
+      "seconds": 3.2
+    },
+    {
+      "notebook": "notebooks/06_laengenregression.ipynb",
+      "returncode": 0,
+      "seconds": 3.5
+    }
+  ],
+  "numeric_manuscript_checks": 797,
+  "numeric_manuscript_differences": 3
+}
