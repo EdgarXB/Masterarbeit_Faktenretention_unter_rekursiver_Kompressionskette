@@ -36,15 +36,21 @@ Modell- und Datenzugriffe blieben für den Lauf im Offline-Modus.
 `scripts/compare_analysis_results.py` vergleicht alle CSV-Dateien eines
 Referenz-Ergebnisverzeichnisses mit gleichnamigen neu erzeugten Tabellen.
 Fehlende Tabellen, veränderte fachliche Werte, Spalten oder Zeilen führen zu
-einem Fehler. Nur `fit_seconds` in `C_modelldiagnostik.csv` und
+einem Fehler. `fit_seconds` in `C_modelldiagnostik.csv` und
 `seconds_this_run` in `bootstrap_anpassungsdiagnostik.csv` sind ausgenommen,
-weil sie die Dauer des jeweiligen Laufs messen. Die Ausnahme betrifft keine
-anderen Spalten. Der Vergleich prüft Tabellenwerte, nicht die Pixel der PNGs.
+weil sie die Dauer des jeweiligen Laufs messen. Für `covariance_rank` derselben
+Modelldiagnostik wird eine Abweichung um höchstens eins zugelassen und gemeldet.
+Der GitHub-Lauf vom 31.10.2026 ergab hier 24 statt 23: Bei einer lokalen
+Nachprüfung lag der nächstfolgende Singulärwert bei etwa 1,7e-15, nahe der
+standardmäßigen numerischen Rangschwelle von etwa 3,2e-15. Der numerisch
+ermittelte Rang kann daher mit der linearen Algebra-Bibliothek variieren.
+Alle übrigen Diagnose- und Ergebnisspalten bleiben Teil des Vergleichs.
+Der Vergleich prüft Tabellenwerte, nicht die Pixel der PNGs.
 
 Der Offline-CI-Workflow sichert die Referenzergebnisse vor dem Notebooklauf,
 entfernt in seinem temporären Checkout die alten Tabellen, führt die sechs
 Notebooks getrennt aus und vergleicht anschließend die neu geschriebenen
-Tabellen. Zwei Unit-Tests prüfen, dass fehlende Tabellen und fachliche
-Änderungen erkannt werden und die definierte Laufzeitausnahme funktioniert.
-Der geänderte Workflow wurde lokal nachvollzogen; ein neuer GitHub-Actions-Lauf
-für den noch nicht committeten Arbeitsstand liegt nicht vor.
+Tabellen. Unit-Tests prüfen fehlende Tabellen, fachliche Änderungen, die
+Laufzeitausnahme und die begrenzte Rangtoleranz. Der GitHub-Lauf zum Commit
+`e7c1ebf` führte alle sechs Notebooks aus und meldete 55/56 Tabellen als
+übereinstimmend; die einzige gemeldete Differenz war der Kovarianzrang.
