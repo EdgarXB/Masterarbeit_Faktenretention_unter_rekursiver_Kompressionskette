@@ -52,8 +52,8 @@ def load_inputs(directory=None):
     assert len(frames['articles']) == 100 and len(frames['facts']) == 2000
     assert len(frames['summaries']) == 600 and len(frames['answers']) == 48000
     assert len(frames['metrics']) == 2400 and len(frames['states']) == 600
-    for row in frames['articles'].itertuples():
-        assert hashlib.sha256(row.article.encode()).hexdigest() == row.article_sha256
+    # Die Originaltexte sind nicht Bestandteil des digitalen Anhangs.
+    assert frames['articles'].article.eq('[ORIGINALTEXT ENTFERNT]').all()
     expected = {m:'plain_fewshot_rerun_20260930' if m in ['plain','few_shot_cot'] else
                 'final_100_frozen_temperature_0' for m in METHODS}
     assert frames['summaries'].collection_phase.eq(frames['summaries'].method.map(expected)).all()
@@ -68,13 +68,25 @@ def length_values(inputs):
         state=rec['state'];row=lookup.loc[(rec['article_id'],rec['method'])]
         assert state['complete'] and state['source_sha256'] == row.article_sha256
         assert [s['target_words'] for s in state['stages']] == STAGES
-        previous=row.article;chain_failure=False
+        previous=None;chain_failure=False
         for stage in state['stages']:
             target=stage['target_words'];selected=stage['selected'];text=selected['response']
-            assert text == row[f'summary_{target}'] and stage['input_text'] == previous
+            assert text == row[f'summary_{target}']
+            if previous is None:
+                assert stage['input_text'] == '[ORIGINALTEXT ENTFERNT]'
+                input_words = int(stage['input_word_count'])
+                input_sha256 = row.article_sha256
+                empty_input = input_words == 0
+                stage_input = ''
+            else:
+                assert stage['input_text'] == previous
+                input_words = count_words(previous)
+                input_sha256 = hashlib.sha256(previous.encode()).hexdigest()
+                empty_input = not previous.strip()
+                stage_input = previous
             W=count_words(text);U,O=WINDOWS[target]
             assert W == int(row[f'summary_{target}_word_count']) == selected['response_word_count']
-            assert count_words(previous) == stage['input_word_count']
+            assert input_words == stage['input_word_count']
             under,over=max(U-W,0),max(W-O,0);D=(under+over)/target
             hit=U<=W<=O;empty=not text.strip();chain_failure=chain_failure or empty
             assert selected['word_window_success'] == hit
@@ -87,12 +99,12 @@ def length_values(inputs):
                 under_D=under/target,over_D=over/target,window_hit=hit,
                 stored_D_available='word_window_violation_rate' in selected,
                 window_status='under' if under else 'over' if over else 'within',
-                empty_output=empty,empty_input=not previous.strip(),chain_failure=chain_failure,
+                empty_output=empty,empty_input=empty_input,chain_failure=chain_failure,
                 complete=state['complete'],complete_sentence=selected['ends_with_complete_sentence'],
                 attempts=len(stage['attempts']),done_reason=selected.get('done_reason','deterministic'),
-                source_state_file=rec['source_file'],input_words=count_words(previous),
-                input_sha256=hashlib.sha256(previous.encode()).hexdigest(),
-                output_sha256=hashlib.sha256(text.encode()).hexdigest(),stage_input=previous))
+                source_state_file=rec['source_file'],input_words=input_words,
+                input_sha256=input_sha256,
+                output_sha256=hashlib.sha256(text.encode()).hexdigest(),stage_input=stage_input))
             previous=text
     frame=pd.DataFrame(records)
     assert len(frame)==2400 and not frame.duplicated(CELL).any()

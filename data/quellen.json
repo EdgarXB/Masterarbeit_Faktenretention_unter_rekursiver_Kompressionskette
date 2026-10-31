@@ -8,8 +8,8 @@
   "files": [
     {
       "file": "data/artikel.csv.gz",
-      "sha256": "0eb21224274ebd43361b1af7cdba03b6edab6e352a06855b7e4cb707e80d3fcd",
-      "source": "Unveränderter eingefrorener Datenstand aktuell_20260930"
+      "sha256": "130af8447859ef95000311f6bffe9ffe315a416bbefbf1ee4159a72ffaaf5983",
+      "source": "Unveränderter eingefrorener Datenstand aktuell_20260930; Originaltexte und Highlights für digitale Weitergabe entfernt"
     },
     {
       "file": "data/fakten.csv.gz",
@@ -18,8 +18,8 @@
     },
     {
       "file": "data/zusammenfassungen.csv.gz",
-      "sha256": "dd3380f557745c07ba7eff0de12c601cbd1200eb8a492791f3e303b9ca107633",
-      "source": "Unveränderter eingefrorener Datenstand aktuell_20260930"
+      "sha256": "51d314d62415d1baf980c6e00c0d4fccb6ed2dc3fe753313bc61ac265eef5628",
+      "source": "Unveränderter eingefrorener Datenstand aktuell_20260930; Originaltexte und Highlights für digitale Weitergabe entfernt"
     },
     {
       "file": "data/qa_antworten.csv.gz",
@@ -33,8 +33,8 @@
     },
     {
       "file": "data/generierungszustaende.jsonl.gz",
-      "sha256": "8d893bd24a39a73b1365032c6b8c6375bf5978a74986b428485d85041fddf10e",
-      "source": "eingefrorene_quellen.zip#project/02_Auswertung/hauptexperiment_qa_daten/aktuell_20260930/generation_states.jsonl.gz"
+      "sha256": "6062b2a16234936aff0a0284e677a54891a79ccf3ca267f18d1644129fefd0fa",
+      "source": "eingefrorene_quellen.zip#project/02_Auswertung/hauptexperiment_qa_daten/aktuell_20260930/generation_states.jsonl.gz; Originaltexte und Highlights für digitale Weitergabe entfernt"
     },
     {
       "file": "data/bootstrap_linear.json",
@@ -153,13 +153,13 @@
     },
     {
       "file": "data/demonstrationen.zip",
-      "sha256": "ed8424d2e501a470da10f736feb9188f273a1db3cb358c10fc5a13be7c8bef57",
-      "source": "Ausgewählte Originalmessungen und Materialien; keine alten Endtabellen als Analysedaten"
+      "sha256": "16ee5aa6fac6c89574cbf34e83c1ef4339976828c72137cf2ec03f6a18070468",
+      "source": "Ausgewählte Originalmessungen und Materialien; keine alten Endtabellen als Analysedaten; Originaltexte und Highlights für digitale Weitergabe entfernt; lokale Rechnerpfade entfernt"
     },
     {
       "file": "data/modellpilot.zip",
-      "sha256": "9d6ef569eccb29cdebbb849ab21fd6a5b5ca92122a637384c7633ef23daf54a5",
-      "source": "Ausgewählte Originalmessungen und Materialien; keine alten Endtabellen als Analysedaten"
+      "sha256": "51bbd30fb8b76394d6f3357079564b26215f437b04c79012810afe16a9c5fc1e",
+      "source": "Ausgewählte Originalmessungen und Materialien; keine alten Endtabellen als Analysedaten; Originaltexte und Highlights für digitale Weitergabe entfernt; lokale Rechnerpfade entfernt"
     },
     {
       "file": "data/methodenmaterial.zip",
@@ -178,8 +178,8 @@
     },
     {
       "file": "data/menschliche_relevanz_quellen.zip",
-      "sha256": "d6dd3ffdfa4f327102285243f76dbf8754fdffa9ac26b19842b16203acda66d4",
-      "source": "salience_validation_package/data: Originaleingaben und fünf pseudonymisierte Rückgaben; Kalibrierungsartikel wird in Notebook 01 ausgeschlossen"
+      "sha256": "067c756ccd5fb283db5437c8215fd71f3dc43f65eafca5dd109c88272979b13f",
+      "source": "salience_validation_package/data: Originaleingaben und fünf pseudonymisierte Rückgaben; Kalibrierungsartikel wird in Notebook 01 ausgeschlossen; Originaltexte und Highlights für digitale Weitergabe entfernt"
     },
     {
       "file": "data/human_qa/auswahlkandidaten.csv.gz",

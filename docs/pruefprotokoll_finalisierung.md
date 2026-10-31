@@ -1,5 +1,11 @@
 # Prüfprotokoll der Abgabe-Finalisierung
 
+**Historische Momentaufnahme:** Branch, Dateigrößen, Testzahlen und Befunde
+unten beziehen sich auf den damaligen Prüfstand. Der spätere
+[PDF-Abgleich](abgleich_manuskript.md#ergänzung-später-vorliegendes-pdf) und
+die [Reproduzierbarkeitsabnahme](abnahme_reproduzierbarkeit.md) dokumentieren
+neuere Prüfungen; aktuelle Releasehinweise stehen in der README.
+
 Prüfdatum: **29.10.2026**. Ausgangscommit:
 `78bcdea` (`Dokumentiere Experimentabläufe und genaue Modellbeschaffung`).
 Arbeitsbranch: **`abgabe-finalisierung`**. Keine Modellläufe, kein Push,
@@ -48,13 +54,13 @@ Python-Version oder jede andere Plattform bereits geprüft wäre.
 Notebookaufruf je Datei (in frischem Kernel):
 
 ```bash
-.venv-analysis/bin/python -m jupyter nbconvert --execute --to notebook --output-dir /tmp/abgabe-finalisierung/before --ExecutePreprocessor.timeout=900 notebooks/01_menschliche_validierung.ipynb
+.venv-analysis/bin/python -m jupyter nbconvert --execute --to notebook --output-dir results/validation/abgabe-finalisierung/before --ExecutePreprocessor.timeout=900 notebooks/01_menschliche_validierung.ipynb
 ```
 
 Dieselbe Form wurde für alle sechs Dateien, nach der Änderung mit dem
-Ausgabeordner `/tmp/abgabe-finalisierung/after`, ausgeführt. Die Tabellen und
+Ausgabeordner `results/validation/abgabe-finalisierung/after`, ausgeführt. Die Tabellen und
 Grafiken wurden dabei wie vorgesehen nach `results/` geschrieben. Die ausgeführten
-Notebookkopien liegen unter `/tmp`; die versionierten Notebooks behalten ihre
+Notebookkopien lagen in einem temporären Verzeichnis; die versionierten Notebooks behalten ihre
 ursprünglichen Codezellen und gespeicherten Outputs. Im JSON-Diff der beiden
 bearbeiteten Notebooks ändern sich nur die genannten Markdown-Zellen.
 
@@ -132,28 +138,18 @@ Home-/Windows-Benutzerpfade und der lokale Benutzername. Das ist eine
 Mustersuche, kein vollständiger Beweis der Abwesenheit beliebiger Geheimnisse.
 
 **Keine Schlüssel-/Private-Key-/Credential-Zuweisung nach diesen Mustern gefunden.**
-Absolute Benutzerpfade wurden in folgenden elf Dateien/Archivmitgliedern
-gefunden; acht davon enthalten den lokalen Benutzernamen:
+Die ursprüngliche Prüfung meldete lokale Benutzerpfade in Provenienzdateien
+und in Manifesten der Demonstrations- und Pilotarchive. Diese Rechnerpfade
+wurden inzwischen entfernt. Historische Download-IDs und Prüfsummen sowie
+archivinterne Referenzen bleiben erhalten; die Umgebungsaufzeichnung ist als
+pfadbereinigte Fassung gekennzeichnet. Drei gemeldete Vorkommen waren Teile
+englischen Fließtexts und keine Dateipfade.
 
-| Datei / Archivmitglied | Befund |
-|---|---|
-| `data/model_metadata/provenance/sources.json` | 9 Originalpfade |
-| `data/model_metadata/provenance/environment_20260824.json` | 4 Home-Pfade |
-| `data/modellpilot.zip::manifest.json` | 1 Home-Pfad |
-| `data/demonstrationen.zip::auto_cot_selection/auto_cot_selection_report.json` | 1 Home-Pfad |
-| `data/demonstrationen.zip::automate_cot_pruning/automate_cot_pruned_pools.json` | 1 Home-Pfad |
-| `data/demonstrationen.zip::automate_cot_pruning/automate_cot_pruning_audit.jsonl` | 1 Home-Pfad |
-| `data/demonstrationen.zip::candidate_rollouts/manifest.json` | 1 Home-Pfad |
-| `data/demonstrationen.zip::candidate_rollouts/stage_candidates.jsonl` | 1 Home-Pfad |
-| `data/demonstrationen.zip::data/split_manifest.json` | 5 Home-Pfade |
-| `data/demonstrationen.zip::data/split_manifest_v14_200.json` | 5 Home-Pfade |
-| `data/demonstrationen.zip::validation_rollouts/manifest.json` | 1 Home-Pfad |
-
-Diese Originalbelege bleiben gemäß Aufgabenregel unverändert. Autorennennung
+Das Ergebnis der damaligen Prüfung ist eine Momentaufnahme. Autorennennung
 und Pseudonyme der Bewertenden sind von geheimen Zugangsdaten zu unterscheiden.
 Die Prüfung ersetzt keinen Nachweis einer Veröffentlichungseinwilligung.
 
-Größte versionierte Dateien: `data/demonstrationen.zip` **16.253.766 Bytes**,
+Größte versionierte Dateien zum damaligen Prüfzeitpunkt: `data/demonstrationen.zip` **16.253.766 Bytes**,
 `data/bootstrap_linear.npz` **7.317.202 Bytes**,
 `data/generierungszustaende.jsonl.gz` **2.040.307 Bytes**,
 `notebooks/03_textlaenge.ipynb` **1.917.044 Bytes**. Keine versionierte Datei

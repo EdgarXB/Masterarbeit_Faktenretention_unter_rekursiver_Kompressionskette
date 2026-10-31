@@ -1,10 +1,19 @@
 # Modelle und Beschaffung
 
+**Ergänzung vom 31.10.2026:** Die in
+[Neuen Lauf einrichten](reproduktion_neuer_lauf.md) beschriebene separate
+Installation mit `--no-deps` wurde frisch erstellt. Ein echter Drei-Artikel-Lauf
+und anschließend BERTScore und SummaC für alle 72 Zusammenfassungen wurden auf
+Linux/CUDA ausgeführt. Der nachfolgende Stand vom 29.10. ist historisch; der
+deklarierte Paketkonflikt bleibt bestehen.
+
 Diese Anleitung rekonstruiert die Modellzuordnung aus den ursprünglichen
 Experimentdateien und lokalen Ollama-Manifesten. Die Belege sind nach
 [`data/model_metadata/provenance/`](../data/model_metadata/provenance/) kopiert;
-[`sources.json`](../data/model_metadata/provenance/sources.json) nennt Originalpfade
-und SHA-256. Die Experimenteingaben und eingefrorenen Manifeste bleiben unverändert.
+[`sources.json`](../data/model_metadata/provenance/sources.json) nennt die
+historischen Quelldateinamen und SHA-256; lokale Rechnerpfade wurden entfernt.
+Für die bereinigte Umgebungsaufzeichnung sind ursprüngliche und aktuelle
+Prüfsumme getrennt dokumentiert.
 Die Gewichte werden extern beschafft. Öffentliche Metadaten und die kleine
 SummaC-Checkpointdatei wurden am **29. Oktober 2026** geprüft; große Gewichte
 wurden dafür nicht erneut heruntergeladen.
@@ -28,6 +37,49 @@ Die [Quellmanifeste für Seed](../data/model_metadata/provenance/source_manifest
 [Qwen](../data/model_metadata/provenance/source_manifest_qa.json) stimmen bytegenau
 mit den jeweiligen eingefrorenen `thesis-*`-Manifesten überein. Damit sind die
 Quellnamen über die vollständigen Manifest-Digests zugeordnet.
+
+### Offline-Abgleich der finalen Modellrollen
+
+Der Test `tests/test_model_provenance.py` prüft die bytespezifischen Digests
+der drei mitgelieferten Manifeste gegen `data/models.json` und den Freeze
+beziehungsweise die QA-Änderung. Er prüft außerdem die Hashes und Größen der
+mitgelieferten kleinen Konfigurations-, Template-, Lizenz- und Parameter-Blobs
+sowie die Gewichts- und Projektor-Digests in den Manifesten. Die großen
+Gewichtsdateien und der Projektor werden nicht mitgeliefert und wurden bei
+diesem Offline-Abgleich nicht selbst eingelesen oder neu gehasht.
+Beim lesenden Abgleich am 31.10.2026 stimmten zusätzlich die lokal vorhandenen
+Ollama-Alias-Manifestdateien aller drei Rollen mit diesen Digests überein.
+Das ist eine Beobachtung auf dem damaligen Rechner, kein Nachweis für andere
+Installationen; ein laufender Ollama-Server wurde dafür nicht abgefragt.
+
+| Finale Rolle | Ollama-Manifest-SHA-256 | Beleg in den finalen Daten |
+|---|---|---|
+| Seed: generative Zusammenfassungen | `7a66a2f466bf48fdafa7004a7975a7f5fac6e667a6de7d01751aacb98b3f387c` | 500 Artikel-Verfahren-Zeilen; Lead-k ist deterministisch |
+| Gemma: kanonische Fakten und Fragen | `6316f0629137b426c9d9b853ffc4c8209589f30ee39aebede6285096c0ff47e7` | 2.000 kanonische Fakten |
+| Qwen: finale QA-Antworten | `d80421b9191aff0d4d8ea0911068452f11f3963e3e282c6b9d778932c4b268b3` | 48.000 QA-Positionen, einschließlich technischer Fehlwerte |
+
+Die gespeicherten Aliasnamen in den Daten und der Abgleich der Manifestbytes
+belegen die dokumentierte Zuordnung; sie beweisen nicht, dass die entfernten
+Gewichtsbytes bei jedem historischen Aufruf erneut gehasht wurden. Der
+ursprüngliche Freeze nennt GLM und schließt Qwen aus; diese historische Aussage
+wird nur für die QA-Rolle durch die spätere Änderung überholt und bleibt als
+Originalbeleg erhalten.
+
+| Phase | Dokumentierte Einstellungen und Prüfgrenze |
+|---|---|
+| Finale Zusammenfassungen | Seed: Temperatur 0, Seed 32, `top_p=0.95`, `repeat_penalty=1.0`, `num_ctx=524288`, `num_predict=4096`, ein Versuch je Stufe. Für Plain/Few-Shot sind diese Werte im Rerun-Protokoll belegt; Temperatur, Seed, Versuche und Wrapper-Flag sind für alle 2.000 generativen Stufen gespeichert und geprüft. |
+| Thinking im Hauptlauf | Zero-Shot nutzt den Seed-Raw-Wrapper mit instruiertem Budget 1.024 und Reflection-Intervall 512; die anderen generativen Verfahren nutzen den Wrapper ohne aktives Thinking-Budget. Die Werte sind Promptanweisungen, keine Garantie modellseitiger Einhaltung. |
+| Kandidaten und Optimierung | Historisch gelten dafür eigene Einstellungen, darunter Temperatur 1,1 und ein instruiertes Thinking-Budget von 512; sie sind nicht mit dem finalen Summary-Lauf gleichzusetzen. |
+| Fakten | Gemma: Temperatur 0, Basis-Seed 32, Kontext 8.192, maximal 4.096 Ausgabetoken; 24 Kandidaten angefordert, 20 gültige Fakten je Artikel übernommen. Die Pipeline verwendet bei Bedarf weitere Versuche. |
+| QA | Qwen: Temperatur 0, Basis-Seed 32, Kontext 8.192, maximal 512 Ausgabetoken, `think=false`; technische Wiederholungen verwenden Seeds 32, 33 und 34. Nicht alle Zwischenantworten sind archiviert. |
+
+Parameterbelege sind das [Rerun-Protokoll](../data/methoden/protocol.json),
+die [QA-Änderung](../data/model_metadata/provenance/qa_amendment_20260901.json),
+die gespeicherten Generierungszustände und der
+[Code-/Manuskriptabgleich](abgleich_code_parameter.md). Pilotparameter des
+ersten Freeze gelten nicht automatisch für den finalen Hauptlauf. Die
+Kontext- und Tokenwerte bezeichnen konfigurierte Anforderungen; eine
+modellseitige Durchsetzung wurde hier nicht neu gemessen.
 
 ### Qwen: Modellname und Architekturbezeichnung
 
@@ -64,11 +116,11 @@ und Hashes kompletter Ollama-Manifeste sind unterschiedliche Prüfwerte.
 | QA-Projektor | [mmproj-Qwen3.8-27B-Q8_0.gguf, feste Revision](https://huggingface.co/ggml-org/Qwen3.8-27B-GGUF/resolve/0669b98607d47046c7c2b3f801011d54a08cfccf/mmproj-Qwen3.8-27B-Q8_0.gguf) | `2e968a6af97ce35d8971890b257b9b7edabf20ad91450501fa53162a19ee33eb` |
 
 Die historische Qwen-Revision wurde anhand der veröffentlichten LFS-SHA-256 und
-Dateigrößen zugeordnet. Der aktuelle `main`-Stand hat inzwischen ein anderes
-Textgewicht. Ebenso liefert der heutige Gemma-Tag einen anderen Manifest- und
-Gewichtsstand. `ollama pull gemma4:31b` oder das unveränderte QA-Modelfile mit
-einem heutigen `main`-Download reichen deshalb für die exakte Rekonstruktion
-nicht aus. Der historische Gemma-Manifestabruf nach Digest ergab HTTP 404, der
+Dateigrößen zugeordnet. Bei der Prüfung am 29.10.2026 hatte `main` ein anderes
+Textgewicht; auch der damals abgefragte Gemma-Tag lieferte einen anderen Manifest-
+und Gewichtsstand. Ein Download nach veränderlichen Tags ist deshalb nicht als
+exakte Rekonstruktion belegt: Nach dem Download müssen die Digests geprüft
+werden. Der historische Gemma-Manifestabruf nach Digest ergab damals HTTP 404, der
 Abruf seines Gewichtsblobs per HEAD dagegen HTTP 200. Das Manifest und seine
 kleinen Metadaten liegen bereits im Repository.
 
@@ -265,15 +317,12 @@ Checkpoint- und Tokenizerdateien lieferte für den identischen Satz
 `All keys matched successfully`. Der Code enthält dafür bereits die Kompatibilität
 mit der entfernten `batch_encode_plus`-Schnittstelle.
 
-`uv pip install --python .venv-experiment/bin/python --no-deps summac==0.0.4`
-wäre eine bewusste Umgehung der SummaC-Abhängigkeitsprüfung nach Installation von
-`requirements-experiment.txt`. Dieser Weg wurde hier nicht als frische vollständige
-Installation getestet und ist kein als kompatibel aufgelöster Paketstand. Eine
-unabhängig installierbare Gesamtumgebung bleibt gesondert zu prüfen. Die genannte
-CPU-Probe validiert weder GPU-Ausführung noch alle Metrikfälle oder einen gesamten
-LLM-Experimentlauf.
+Die Installation von `summac==0.0.4` mit `--no-deps` nach
+`requirements-experiment.txt` umgeht die widersprüchlichen Paketmetadaten.
+Diese Variante wurde später auf Linux/CUDA für den Drei-Artikel-Lauf getestet;
+sie ist weiterhin kein durch einen Resolver widerspruchsfrei aufgelöster Paketstand.
 
-### Separate dritte Umgebung: ungetestete Installationsvariante
+### Historischer Stand der separaten Umgebung vom 29.10.2026
 
 **Status am 29.10.2026: ungetestet als vollständige Neuinstallation.**
 Die folgende Variante isoliert den absichtlich übergangenen Abhängigkeitskonflikt

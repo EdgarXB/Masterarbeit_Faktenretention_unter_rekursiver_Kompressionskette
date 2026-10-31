@@ -221,7 +221,7 @@ def generate_qa(run, config):
     scorer.score_qa(run/'data/answers.csv',run/'qa_report')
 
 
-def compute_metrics(run, config, *, semantic=None):
+def compute_metrics(run, config, *, semantic=None, summac_device='cpu'):
     run=Path(run)
     semantic=config['semantic_metrics'] if semantic is None else semantic
     if semantic:
@@ -229,8 +229,9 @@ def compute_metrics(run, config, *, semantic=None):
         metric_resources.configure(config['resources'])
         import faktenretention.metrics as original
         run_original(original.main,['--results',run/'data/summaries.csv','--output-dir',run/'metrics',
-            '--bertscore-model',metric_resources.local_model('bertscore'),'--summac-device','cpu','--stages',*config['stages']])
+            '--bertscore-model',metric_resources.local_model('bertscore'),'--summac-device',summac_device,'--stages',*config['stages']])
         write_csv(run/'data/metrics_detailed.csv',read_csv(run/'metrics/metrics_detailed.csv'))
+        save_json(run/'metrics_status.json',dict(rouge='recomputed',bertscore='recomputed',summac='recomputed',summac_device=summac_device,fabricated_scores=False))
         return
     # Dieselben lexikalischen Werte; semantische Werte bleiben ausdrücklich fehlend.
     from rouge_score import rouge_scorer

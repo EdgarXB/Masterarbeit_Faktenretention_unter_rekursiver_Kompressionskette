@@ -25,7 +25,7 @@ def cache_key(
         "target": target,
         "ordered_demo_ids": [demo["candidate_id"] for demo in demos],
         "ordered_demo_content_sha256": [
-            sha256_text(json.dumps({
+            demo.get('original_demo_content_sha256') or sha256_text(json.dumps({
                 "input_text": demo["input_text"],
                 "thinking": demo["thinking"],
                 "response": demo["response"],
@@ -33,8 +33,8 @@ def cache_key(
             for demo in demos
         ],
         "validation_candidate_id": validation["candidate_id"],
-        "input_sha256": sha256_text(str(validation["input_text"])),
-        "highlights_sha256": sha256_text(str(validation["highlights"])),
+        "input_sha256": validation.get('original_input_sha256') or sha256_text(str(validation["input_text"])),
+        "highlights_sha256": validation.get('original_highlights_sha256') or sha256_text(str(validation["highlights"])),
         "model_digest": MODEL_DIGEST,
         "seed": SEED,
         "num_ctx": num_ctx,

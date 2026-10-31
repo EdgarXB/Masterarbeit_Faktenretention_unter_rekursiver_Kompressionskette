@@ -1,5 +1,12 @@
 # Korrekturliste zum Abgabemanuskript
 
+**Historischer Stand vom 29.10.2026:** Die nachstehenden Ist-Werte und
+Vorschläge beziehen sich auf die damalige DOCX-Version. Im später vorliegenden
+PDF sind mehrere Zahlenpunkte bereits behoben; andere Präzisierungen bleiben
+offen. Der neue [stichprobenweise PDF-Abgleich](abgleich_manuskript.md#ergänzung-später-vorliegendes-pdf)
+trennt diese Befunde. Die Liste wurde als historisches Prüfprotokoll nicht
+nachträglich in eine vollständig erledigte Liste umgeschrieben.
+
 Grundlage: `2910_Masterarbeit.docx`, vom Autor bestätigt, geprüft am 29.10.2026.
 Das Manuskript wurde ausschließlich gelesen. Seitenzahlen stammen aus den
 gespeicherten Verzeichnissen; Abschnitt und Textzitat sind die maßgebliche

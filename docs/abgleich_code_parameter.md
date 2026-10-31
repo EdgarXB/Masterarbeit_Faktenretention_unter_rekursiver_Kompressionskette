@@ -1,5 +1,17 @@
 # Abgleich der Codeparameter mit dem Manuskript
 
+**Historisches Prüfprotokoll:** Die Tabelle dokumentiert den Stand vom
+29.10.2026 und die damaligen Dateizeilen. Im später vorliegenden PDF wurden
+einzelne Stellen stichprobenweise nachgeprüft: Tabelle 19 ergänzt inzwischen
+lokal gestützte Artikelpaare und ±10 % an beiden Wortlängen, nennt aber den
+Mindestabstand von fünf Wörtern nicht ausdrücklich; Kapitel 3.6.1 nennt
+weiterhin Fragen statt normalisierter Fakttexte als Duplikatschlüssel. Der
+[aktuelle PDF-Befund](abgleich_manuskript.md#ergänzung-später-vorliegendes-pdf)
+ergänzt den folgenden unveränderten historischen Abgleich. Die aktuellen
+Modellrollen und Wrapperparameter sind in der
+[Modelldokumentation](modelle_und_beschaffung.md#offline-abgleich-der-finalen-modellrollen)
+zusammengefasst.
+
 Geprüft am **29.10.2026** gegen **`2910_Masterarbeit.docx`**. Rein lesender
 Review von `src/faktenretention/`, Einstiegsskripten und den einschlägigen
 Auswertungszellen. Es wurden keine Modellanfragen gestartet. Angaben zu

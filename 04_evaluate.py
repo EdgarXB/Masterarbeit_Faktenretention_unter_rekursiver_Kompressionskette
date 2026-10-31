@@ -14,16 +14,22 @@ def main():
     p.add_argument('--run',type=Path)
     p.add_argument('--generate-qa',action='store_true')
     p.add_argument('--model-metrics',action='store_true')
+    p.add_argument('--resources',type=Path,help='Ressourcen-JSON für eine nachträgliche Metrikberechnung')
+    p.add_argument('--summac-device',choices=['cpu','cuda'],default='cpu')
     p.add_argument('--execute',action='store_true')
     a=p.parse_args()
     if a.generate_qa or a.model_metrics:
-        from faktenretention.pipeline import generate_qa, compute_metrics
+        from faktenretention.pipeline import generate_qa, compute_metrics, load_resources
         from faktenretention.request_budget import activate
         if not(a.run and a.execute):p.error('Modellphasen benötigen --run und --execute')
         config=json.loads((a.run/'execution.json').read_text())
-        activate(a.run,config)
-        if a.generate_qa:generate_qa(a.run,config)
-        if a.model_metrics:compute_metrics(a.run,config,semantic=True)
+        if a.generate_qa:
+            activate(a.run,config)
+            generate_qa(a.run,config)
+        if a.model_metrics:
+            if a.resources:
+                config={**config, 'resources':load_resources(a.resources)}
+            compute_metrics(a.run,config,semantic=True,summac_device=a.summac_device)
     else:
         from faktenretention.offline_guard import install
         install()

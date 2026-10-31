@@ -45,7 +45,8 @@ def audit_cached_optimization(archive, base, report):
                 assert math.isclose(sum(losses)/len(losses),expected,abs_tol=1e-12)
                 comparisons += 1
     return dict(unique_cached_generations=len(keys), reproduced_combination_losses=comparisons,
-                cache_keys_verified=True, optimization_rerun=False)
+                cache_keys_verified=True, redacted_content_hashes_use_archived_values=True,
+                optimization_rerun=False)
 
 
 def audit():
@@ -98,8 +99,9 @@ def audit():
         stage = manifest['stages'][str(target)]
         assert len(eligible) == stage['common_eligible_pool_size']
         assert [row['candidate_id'] for row in selected] == stage['ordered_selected_candidate_ids']
-        assert build_prompt(int(target), selected) == prompt.read_text()
-    result = dict(optimization_cache_audit=optimization, stages=checks, final_fewshot_hashes_verified=True, final_fewshot_selection_reproduced=True, llm_generation_calls=0,
+        if int(target) != 500:
+            assert build_prompt(int(target), selected) == prompt.read_text()
+    result = dict(optimization_cache_audit=optimization, stages=checks, final_fewshot_hashes_verified=True, final_fewshot_selection_reproduced=True, redacted_500_prompt_text_reconstructed=False, llm_generation_calls=0,
                   optimization_rerun=False)
     print(json.dumps(result,indent=2))
     print('Finale Few-Shot-Prompts und vier historische Optimierungsprotokolle geprüft.')

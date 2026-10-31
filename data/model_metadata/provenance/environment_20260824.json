@@ -28,7 +28,7 @@
     },
     "ollama_version": {
       "argv": [
-        "/home/edgar/main/.tools/ollama/.tools/ollama/bin/ollama",
+        "ollama",
         "--version"
       ],
       "returncode": 0,
@@ -37,7 +37,7 @@
     },
     "seed_show": {
       "argv": [
-        "/home/edgar/main/.tools/ollama/.tools/ollama/bin/ollama",
+        "ollama",
         "show",
         "thesis-seed:v1"
       ],
@@ -47,7 +47,7 @@
     },
     "gemma_show": {
       "argv": [
-        "/home/edgar/main/.tools/ollama/.tools/ollama/bin/ollama",
+        "ollama",
         "show",
         "thesis-gemma:v1"
       ],
@@ -57,7 +57,7 @@
     },
     "glm_show": {
       "argv": [
-        "/home/edgar/main/.tools/ollama/.tools/ollama/bin/ollama",
+        "ollama",
         "show",
         "thesis-glm:v1"
       ],
@@ -81,5 +81,6 @@
     "experiments/autocot_automatecot_100/data/selection_validation.csv": "8434794c566781a48bb7299abcc9d5a9027872bcf84317722fc714c50ca8aee3",
     "experiments/autocot_automatecot_100/data/final_test_100.csv": "d64d132fb953893fdf57651918fe7627174e0209fd229273ba7d4a58c8901464",
     "experiments/autocot_automatecot_100/data/split_manifest.json": "80d0295884eda93713c78742db710e62a52b6dccd90a68aab220e1e1708ace0a"
-  }
+  },
+  "path_redaction": "Historische absolute Rechnerpfade entfernt; Befehlsname erhalten."
 }

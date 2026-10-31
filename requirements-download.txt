@@ -1,0 +1,2 @@
+# Zusatz zur Experimentumgebung für die Auswahl der Parquet-Datensplits.
+pyarrow==24.0.0

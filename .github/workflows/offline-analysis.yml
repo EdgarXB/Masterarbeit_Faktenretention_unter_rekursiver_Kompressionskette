@@ -18,9 +18,14 @@ jobs:
       - run: uv pip install --python .venv-analysis/bin/python --no-deps -e .
       - run: .venv-analysis/bin/python -m unittest discover -s tests -v
       - run: .venv-analysis/bin/python 05_analyze.py --prepare
+      - run: .venv-analysis/bin/python scripts/validate_wissenschaftliche_integritaet.py
       - run: .venv-analysis/bin/python 01_prepare.py
       - run: .venv-analysis/bin/python 02_demonstrations.py
       - run: |
+          cp -a results /tmp/thesis-results-reference
+          find results -type f -name '*.csv' -delete
+          mkdir -p /tmp/thesis-notebooks
           for notebook in notebooks/*.ipynb; do
-            .venv-analysis/bin/python -m jupyter nbconvert --execute --to notebook --inplace --ExecutePreprocessor.timeout=900 "$notebook"
+            .venv-analysis/bin/python -m jupyter nbconvert --execute --to notebook --output-dir /tmp/thesis-notebooks --ExecutePreprocessor.timeout=900 "$notebook" || exit 1
           done
+          .venv-analysis/bin/python scripts/compare_analysis_results.py --reference /tmp/thesis-results-reference --generated results

@@ -1,5 +1,31 @@
 # Abgleich des Abgabemanuskripts mit dem Repository
 
+## Ergänzung: später vorliegendes PDF
+
+Am 31.10.2026 wurde das lokal vorliegende, nicht versionierte
+`Masterarbeit_Final_V1.pdf` stichprobenweise an den zuvor beanstandeten Stellen
+nachgeprüft. SHA-256:
+`2045e2006191d0cd7cc588f02a9d8741bb90697f7b957de452b4a39acedb13ac`.
+Der ältere vollständige Abgleich und seine Einzelbelege unten bleiben als
+historische Momentaufnahme erhalten; ihre alten Statusangaben beziehen sich
+auf die damalige DOCX-Datei, nicht automatisch auf dieses PDF.
+
+| Punkt | Befund im späteren PDF |
+|---|---|
+| Tabellen 16 und 18, Auto-CoT minus Few-Shot bei 300 | Die Untergrenze steht nun in beiden Tabellen mit **4,98**; die frühere Abweichung ist an diesen Stellen behoben. |
+| Tabelle 18, Auto-CoT minus Few-Shot bei 150, Supportartikel | **3,97**; die frühere Abweichung ist behoben. |
+| Kapitel 4.1.1, Kappa-Maximum | Der Fließtext nennt **0,435**; die frühere Abweichung ist behoben. |
+| Kapitel 4.3.2, führende Verfahren bei 500 | Jetzt **5,64 pp [3,12; 8,16]** statt der falsch zugeordneten 0,08 pp. Eine unabhängige Nachrechnung für Automate-CoT minus Zero-Shot-CoT ergibt 5,643294 pp und [3,122039; 8,162318]; diese Stelle stimmt gerundet. |
+| Kapitel 4.2.1 und 5.1 | Die Formulierung zum größten Rückgang auf der ersten Stufe bleibt. Ohne Original-QA-Baseline sind dort erster Nichtnachweis und gemessener Retentionsrückgang weiterhin zu unterscheiden. |
+| Kapitel 3.6.1 | Der Fließtext nennt weiterhin Fragen als Duplikatschlüssel; Code und Tabelle 12 verwenden normalisierte Fakttexte. |
+| Tabelle 19 | Die Tabelle nennt nun mindestens 20 lokal gestützte Artikelpaare und ein Umfeld von ±10 % an beiden Wortlängen. Der implementierte Mindestabstand von fünf Wörtern ist dort nicht ausdrücklich genannt. |
+| Lead-k-Bezugsgruppen und Verzeichnisstände | Ein ausdrücklicher Abgleich der unterschiedlichen Rückwechsel-Nenner und aller Verzeichniseinträge wurde bei dieser Stichprobe nicht vollständig nachgewiesen. |
+
+Weitere vorgeschlagene Präzisierungen gelten nicht pauschal als erledigt.
+Das PDF wurde weder bearbeitet noch vollständig erneut gegen alle 797 früheren
+Einzelbelege abgeglichen. Die Befunde beziehen sich ausschließlich auf die
+durch Hash identifizierte lokale Datei.
+
 Prüfstand: **29.10.2026**, vom Autor benannte Datei **`2910_Masterarbeit.docx`**.
 SHA-256 der unverändert gelesenen Datei:
 `4b4282f4260532db367f742ef55c3fecab5c9b47276670a79be71c515ae2ba04`.
