@@ -3,8 +3,8 @@
 Dieser Weg erzeugt neue Daten. Die Auswertung der mitgelieferten historischen
 Ergebnisse ohne Modellinferenz ist im [README](../README.md) beschrieben.
 Die drei Ollama-Manifeste sind eingefroren; neue Modellantworten können trotzdem
-von den historischen Antworten abweichen. Die ursprünglichen CNN/DailyMail-Texte
-sind kein Bestandteil des Repositories.
+von den historischen Antworten abweichen. Originalartikel sind in den Analyse-Datentabellen entfernt; Ausnahmen in
+Prompts und Bewertungsmasken sind in der README beschrieben.
 
 ## 1. Umgebung und Ressourcen
 
@@ -86,7 +86,9 @@ Für eine neue Demonstrationskonstruktion getrennte Trainings- und
 Validierungssplits auswählen. Die Konstruktion verlangt mindestens 130 geeignete
 Trainingsartikel und genau 30 Validierungsartikel; sie schließt weitere technische
 Eignungsbedingungen ein und kann deswegen auch mit dieser Anzahl scheitern.
-Beispiel:
+Die Zahl der Trainingsartikel ist nicht nach oben begrenzt; die Generierung
+endet, sobald die Eignungsschwellen erfüllt sind. Im folgenden Beispiel werden
+240 Trainingsartikel ausgewählt:
 
 ```bash
 python scripts/select_articles.py --split train --count 240 --seed 32 \

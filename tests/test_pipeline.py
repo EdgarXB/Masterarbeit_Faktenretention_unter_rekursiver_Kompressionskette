@@ -92,7 +92,7 @@ class ConstructionControlTest(unittest.TestCase):
             root=Path(temporary);out=root/'bank'
             def articles(path,n,prefix):
                 pipeline.write_csv(path,[dict(article=(prefix+str(i)+' ')+('word '*799),highlights='A reference.') for i in range(n)])
-            articles(root/'train.csv',130,'Train');articles(root/'validation.csv',30,'Validation')
+            articles(root/'train.csv',241,'Train');articles(root/'validation.csv',30,'Validation')
             def phase(name):
                 def main():
                     args=sys.argv[1:];calls.append((name,args))
@@ -121,6 +121,7 @@ class ConstructionControlTest(unittest.TestCase):
                 with self.assertRaisesRegex(RuntimeError,'simulated interruption'):
                     pipeline.construct_demonstrations(root/'train.csv',root/'validation.csv',out,resources={},max_requests=100000,verify_models=False)
                 paths=[out/'candidate_input/data/articles.csv',out/'validation_input/data/articles.csv']
+                self.assertEqual(len(pipeline.read_csv(paths[0])),241)
                 unchanged=[(path.stat().st_mtime_ns,pipeline.sha(path)) for path in paths]
                 calls.clear()
                 budget.save_json(out/'request_ledger.json',dict(actual_generation_requests=0,simulated_requests=3))

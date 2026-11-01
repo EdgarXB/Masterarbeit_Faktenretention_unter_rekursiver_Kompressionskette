@@ -1,56 +1,10 @@
 # Modelle und Beschaffung
 
-**Ergänzung vom 31.10.2026:** Die in
-[Neuen Lauf einrichten](reproduktion_neuer_lauf.md) beschriebene separate
-Installation mit `--no-deps` wurde frisch erstellt. Ein echter Drei-Artikel-Lauf
-und anschließend BERTScore und SummaC für alle 72 Zusammenfassungen wurden auf
-Linux/CUDA ausgeführt. Der nachfolgende Stand vom 29.10. ist historisch; der
-deklarierte Paketkonflikt bleibt bestehen.
+Für neue Läufe beschreibt [Neuen Lauf einrichten](reproduktion_neuer_lauf.md)
+die Installation, Downloads und Einstellungen. Die Offline-Auswertung
+verwendet gespeicherte Modellbewertungen und benötigt keine Modellgewichte.
 
-Diese Anleitung rekonstruiert die Modellzuordnung aus den ursprünglichen
-Experimentdateien und lokalen Ollama-Manifesten. Die Belege sind nach
-[`data/model_metadata/provenance/`](../data/model_metadata/provenance/) kopiert;
-[`sources.json`](../data/model_metadata/provenance/sources.json) nennt die
-historischen Quelldateinamen und SHA-256; lokale Rechnerpfade wurden entfernt.
-Für die bereinigte Umgebungsaufzeichnung sind ursprüngliche und aktuelle
-Prüfsumme getrennt dokumentiert.
-Die Gewichte werden extern beschafft. Öffentliche Metadaten und die kleine
-SummaC-Checkpointdatei wurden am **29. Oktober 2026** geprüft; große Gewichte
-wurden dafür nicht erneut heruntergeladen.
-
-## Die drei LLMs
-
-| Rolle | Erwarteter lokaler Name | Ursprüngliche Quelle | Variante |
-|---|---|---|---|
-| Zusammenfassungen und CoT-Kandidaten | `thesis-seed:v1` | [`milkey/Seed-OSS-36B-Instruct:q4_K_M`](https://ollama.com/milkey/Seed-OSS-36B-Instruct:q4_K_M) | Seed-OSS 36.2B, GGUF Q4_K_M |
-| Kanonische Fakten, Fragen, Referenzantworten | `thesis-gemma:v1` | [`gemma4:31b`](https://ollama.com/library/gemma4:31b) | Gemma 4 31.3B, GGUF Q4_K_M, historischer Stand |
-| Antworten auf kanonische Fragen aus Summaries | `thesis-qwen38-qa:v1` | lokaler Name `qwen3.8:27b-q4_K_M`, aufgebaut aus [`ggml-org/Qwen3.8-27B-GGUF`](https://huggingface.co/ggml-org/Qwen3.8-27B-GGUF) | 26.9B, GGUF Q4_K_M plus Q8_0-Projektor |
-
-Der [Freeze vom 20. August](../data/model_metadata/provenance/model_freeze_20260820.json)
-belegt Seed und Gemma. Die [Änderung vom 1. September](../data/model_metadata/provenance/qa_amendment_20260901.json)
-ersetzt ausschließlich den früheren GLM-Answerer durch Qwen. Die alten GLM-Angaben
-und Pilotparameter im ersten Freeze sind deshalb keine Anleitung für den finalen
-QA-Lauf oder die späteren Summaryparameter; dafür gelten Pipeline und Laufprotokolle.
-
-Die [Quellmanifeste für Seed](../data/model_metadata/provenance/source_manifest_seed.json),
-[Gemma](../data/model_metadata/provenance/source_manifest_gemma.json) und
-[Qwen](../data/model_metadata/provenance/source_manifest_qa.json) stimmen bytegenau
-mit den jeweiligen eingefrorenen `thesis-*`-Manifesten überein. Damit sind die
-Quellnamen über die vollständigen Manifest-Digests zugeordnet.
-
-### Offline-Abgleich der finalen Modellrollen
-
-Der Test `tests/test_model_provenance.py` prüft die bytespezifischen Digests
-der drei mitgelieferten Manifeste gegen `data/models.json` und den Freeze
-beziehungsweise die QA-Änderung. Er prüft außerdem die Hashes und Größen der
-mitgelieferten kleinen Konfigurations-, Template-, Lizenz- und Parameter-Blobs
-sowie die Gewichts- und Projektor-Digests in den Manifesten. Die großen
-Gewichtsdateien und der Projektor werden nicht mitgeliefert und wurden bei
-diesem Offline-Abgleich nicht selbst eingelesen oder neu gehasht.
-Beim lesenden Abgleich am 31.10.2026 stimmten zusätzlich die lokal vorhandenen
-Ollama-Alias-Manifestdateien aller drei Rollen mit diesen Digests überein.
-Das ist eine Beobachtung auf dem damaligen Rechner, kein Nachweis für andere
-Installationen; ein laufender Ollama-Server wurde dafür nicht abgefragt.
+## Sprachmodelle
 
 | Finale Rolle | Ollama-Manifest-SHA-256 | Beleg in den finalen Daten |
 |---|---|---|
@@ -58,12 +12,19 @@ Installationen; ein laufender Ollama-Server wurde dafür nicht abgefragt.
 | Gemma: kanonische Fakten und Fragen | `6316f0629137b426c9d9b853ffc4c8209589f30ee39aebede6285096c0ff47e7` | 2.000 kanonische Fakten |
 | Qwen: finale QA-Antworten | `d80421b9191aff0d4d8ea0911068452f11f3963e3e282c6b9d778932c4b268b3` | 48.000 QA-Positionen, einschließlich technischer Fehlwerte |
 
-Die gespeicherten Aliasnamen in den Daten und der Abgleich der Manifestbytes
-belegen die dokumentierte Zuordnung; sie beweisen nicht, dass die entfernten
-Gewichtsbytes bei jedem historischen Aufruf erneut gehasht wurden. Der
-ursprüngliche Freeze nennt GLM und schließt Qwen aus; diese historische Aussage
-wird nur für die QA-Rolle durch die spätere Änderung überholt und bleibt als
-Originalbeleg erhalten.
+Die Manifeste und Konfigurationsbelege liegen unter
+[`data/model_metadata/`](../data/model_metadata/), die Modellzuordnung in
+[`data/models.json`](../data/models.json). Die großen Gewichte sind nicht
+enthalten; das Downloadskript prüft die SHA-256-Werte. Aktuelle Tags können
+vom historischen Stand abweichen. Die spätere
+[QA-Änderung](../data/model_metadata/provenance/qa_amendment_20260901.json)
+ersetzt den ursprünglich vorgesehenen GLM-Answerer durch Qwen.
+
+Die Bezeichnung Qwen3.8 bezeichnet das verwendete GGUF-Gewicht;
+`qwen35`/`qwen3.5` bezeichnet dessen Architektur und Renderer, nicht ein
+austauschbares `qwen3.5:27b`-Modell.
+
+## Einstellungen
 
 | Phase | Dokumentierte Einstellungen und Prüfgrenze |
 |---|---|
@@ -73,40 +34,12 @@ Originalbeleg erhalten.
 | Fakten | Gemma: Temperatur 0, Basis-Seed 32, Kontext 8.192, maximal 4.096 Ausgabetoken; 24 Kandidaten angefordert, 20 gültige Fakten je Artikel übernommen. Die Pipeline verwendet bei Bedarf weitere Versuche. |
 | QA | Qwen: Temperatur 0, Basis-Seed 32, Kontext 8.192, maximal 512 Ausgabetoken, `think=false`; technische Wiederholungen verwenden Seeds 32, 33 und 34. Nicht alle Zwischenantworten sind archiviert. |
 
-Parameterbelege sind das [Rerun-Protokoll](../data/methoden/protocol.json),
-die [QA-Änderung](../data/model_metadata/provenance/qa_amendment_20260901.json),
-die gespeicherten Generierungszustände und der
-[Code-/Manuskriptabgleich](abgleich_code_parameter.md). Pilotparameter des
-ersten Freeze gelten nicht automatisch für den finalen Hauptlauf. Die
-Kontext- und Tokenwerte bezeichnen konfigurierte Anforderungen; eine
-modellseitige Durchsetzung wurde hier nicht neu gemessen.
+Die Budgets für Thinking und Reflection sind Promptinstruktionen, keine
+garantierten Modellgrenzen. Details enthalten das
+[Rerun-Protokoll](../data/methoden/protocol.json) und die
+[historischen Modellbelege](../data/model_metadata/provenance/).
 
-### Qwen: Modellname und Architekturbezeichnung
-
-Das [originale Modelfile](../data/model_metadata/provenance/Modelfile.qwen38-27b-q4km)
-enthält gemeinsam:
-
-```text
-FROM hf.co/ggml-org/Qwen3.8-27B-GGUF:Q4_K_M
-TEMPLATE {{ .Prompt }}
-RENDERER qwen3.5
-PARSER qwen3.5
-PARAMETER presence_penalty 1.5
-PARAMETER temperature 1
-PARAMETER top_k 20
-PARAMETER top_p 0.95
-```
-
-`qwen35`/`qwen3.5` sind also bereits im Original die Architektur-/Rendererangaben
-des unter dem Namen Qwen3.8 bezogenen Artefakts. Ein Download von `qwen3.5:27b`
-würde ein anderes Gewicht liefern. Die Laufparameter, insbesondere QA-Temperatur
-0 und Seed 32, setzt die Pipeline zusätzlich zu diesen Modelldefaults.
-
-### Exakte Gewichtsquellen
-
-Die vollständigen erwarteten Datei-Hashes stehen im unveränderten
-[`MODEL_INVENTORY.json`](../data/MODEL_INVENTORY.json). Hashes von Gewichtsdateien
-und Hashes kompletter Ollama-Manifeste sind unterschiedliche Prüfwerte.
+## Gewichtsquellen
 
 | Datei | Exakte öffentliche Quelle | Erwarteter SHA-256 |
 |---|---|---|
@@ -115,124 +48,7 @@ und Hashes kompletter Ollama-Manifeste sind unterschiedliche Prüfwerte.
 | QA-Textgewicht | [Qwen3.8-27B-Q4_K_M.gguf, feste Revision](https://huggingface.co/ggml-org/Qwen3.8-27B-GGUF/resolve/0669b98607d47046c7c2b3f801011d54a08cfccf/Qwen3.8-27B-Q4_K_M.gguf) | `31629f53165ab6a7dad8c9847dcfd1fdf55829dac1e6e748f4a68581b0033d34` |
 | QA-Projektor | [mmproj-Qwen3.8-27B-Q8_0.gguf, feste Revision](https://huggingface.co/ggml-org/Qwen3.8-27B-GGUF/resolve/0669b98607d47046c7c2b3f801011d54a08cfccf/mmproj-Qwen3.8-27B-Q8_0.gguf) | `2e968a6af97ce35d8971890b257b9b7edabf20ad91450501fa53162a19ee33eb` |
 
-Die historische Qwen-Revision wurde anhand der veröffentlichten LFS-SHA-256 und
-Dateigrößen zugeordnet. Bei der Prüfung am 29.10.2026 hatte `main` ein anderes
-Textgewicht; auch der damals abgefragte Gemma-Tag lieferte einen anderen Manifest-
-und Gewichtsstand. Ein Download nach veränderlichen Tags ist deshalb nicht als
-exakte Rekonstruktion belegt: Nach dem Download müssen die Digests geprüft
-werden. Der historische Gemma-Manifestabruf nach Digest ergab damals HTTP 404, der
-Abruf seines Gewichtsblobs per HEAD dagegen HTTP 200. Das Manifest und seine
-kleinen Metadaten liegen bereits im Repository.
-
-[`public_checks_20261029.json`](../data/model_metadata/provenance/public_checks_20261029.json)
-enthält die Prüfung der öffentlichen Quellen. Die dortige Gewichtszuordnung
-beruht auf Remote-Metadaten; nach jedem tatsächlichen Download muss der Inhalt
-zusätzlich gegen den angegebenen SHA-256 geprüft werden.
-
-### Lokale Ollama-Namen mit den gespeicherten Manifesten einrichten
-
-Die Quellen wurden ursprünglich auf lokale Namen eingefroren. Für Seed ist
-`ollama pull milkey/Seed-OSS-36B-Instruct:q4_K_M` gefolgt von
-`ollama cp milkey/Seed-OSS-36B-Instruct:q4_K_M thesis-seed:v1` der direkte Weg,
-sofern der Manifest-Digest weiterhin übereinstimmt. Bei Gemma und Qwen lässt
-sich der genaue Stand mit den gespeicherten Manifesten rekonstruieren:
-
-1. Die vier Dateien aus der Tabelle nach `results/model-resources/ollama/blobs/`
-   herunterladen. Jede Datei dort als `sha256-<vollständiger Datei-Hash>` speichern.
-2. Vor dem Start eines Servers für dieses neue Modellverzeichnis das folgende
-   lokale Skript im Repository ausführen. Es prüft alle vier Downloads und die
-   kleinen Metadaten und installiert die drei eingefrorenen Manifeste. Es lädt
-   nichts herunter und überschreibt bei abweichendem Inhalt keine Dateien.
-
-```python
-from pathlib import Path
-import hashlib
-import json
-import shutil
-
-metadata = Path('data/model_metadata')
-store = Path('results/model-resources/ollama')
-models = json.loads(Path('data/models.json').read_text())
-
-def digest(path):
-    value = hashlib.sha256()
-    with path.open('rb') as stream:
-        for block in iter(lambda: stream.read(1024 * 1024), b''):
-            value.update(block)
-    return value.hexdigest()
-
-copies = {}
-for model in models.values():
-    name, tag = model['name'].split(':')
-    manifest = metadata / 'manifests' / name / tag
-    assert digest(manifest) == model['digest'], manifest
-    info = json.loads(manifest.read_text())
-    for layer in [info['config'], *info['layers']]:
-        filename = layer['digest'].replace(':', '-')
-        target = store / 'blobs' / filename
-        source = metadata / 'blobs' / filename
-        if not source.is_file():
-            source = target  # Die separat heruntergeladenen Gewichte.
-        assert source.stat().st_size == layer['size'], source
-        assert digest(source) == layer['digest'].split(':', 1)[1], source
-        if source != target:
-            copies[target] = source
-    copies[store / 'manifests/registry.ollama.ai/library' / name / tag] = manifest
-
-for target, source in copies.items():
-    if target.exists():
-        assert target.read_bytes() == source.read_bytes(), target
-for target, source in copies.items():
-    target.parent.mkdir(parents=True, exist_ok=True)
-    shutil.copyfile(source, target)
-print('Drei eingefrorene Modelle für Ollama eingerichtet:', store.resolve())
-```
-
-Die Wiederherstellung nutzt Ollamas lokales Blob-/Manifestformat, wie es in den
-Originaldateien vorliegt. Ein Import mit `ollama create` unter einer anderen
-Ollama-Version kann neue Konfigurations- und Manifestbytes erzeugen. Maßgeblich
-bleibt der von `/api/tags` gemeldete Digest; die Pipeline lehnt Abweichungen ab.
-
-## Ollama-Laufzeit
-
-Der originale [Modell-Freeze](../data/model_metadata/provenance/model_freeze_20260820.json)
-und die [Umgebungsaufzeichnung](../data/model_metadata/provenance/environment_20260824.json)
-nennen **Ollama 0.32.6**. `requires: 0.20.0` in der Gemma-Konfiguration ist eine
-Mindestanforderung. Bezug der Laufzeit: [Ollama-Releases](https://github.com/ollama/ollama/releases/tag/v0.32.6).
-Die ursprünglichen Servereinstellungen stehen im
-[Auszug des Forschungslogs](../data/model_metadata/provenance/runtime_excerpt.txt).
-Nach Installation der passenden Laufzeit kann der separate Modellspeicher so
-verwendet werden:
-
-```bash
-export OLLAMA_HOST=127.0.0.1:11435
-export OLLAMA_MODELS="$PWD/results/model-resources/ollama"
-export OLLAMA_FLASH_ATTENTION=1
-export OLLAMA_KV_CACHE_TYPE=q8_0
-export OLLAMA_NUM_PARALLEL=1
-export OLLAMA_MAX_LOADED_MODELS=1
-ollama serve
-```
-
-Das Experiment fordert für Seed `num_ctx=524288`; die Originalaufzeichnung
-beschreibt einen Rechner mit etwa 98 GB GPU-Speicher und 121 GiB RAM. Diese
-Beobachtung ist keine ermittelte Mindestanforderung für andere Rechner.
-
-In einem zweiten Terminal lässt sich der Modellstand ohne Generierung prüfen:
-
-```python
-from pathlib import Path
-import json
-import urllib.request
-
-with urllib.request.urlopen('http://127.0.0.1:11435/api/tags', timeout=10) as response:
-    installed = {m['name']: m['digest'] for m in json.load(response)['models']}
-for model in json.loads(Path('data/models.json').read_text()).values():
-    assert installed.get(model['name']) == model['digest'], model['name']
-    print('OK', model['name'], model['digest'])
-```
-
-## Embedding, BERTScore, SummaC und Tokenizerdaten
+## Metrikressourcen
 
 | Ressourcenschlüssel | Quelle | Festgelegte Revision bzw. Prüfsumme |
 |---|---|---|
@@ -242,119 +58,8 @@ for model in json.loads(Path('data/models.json').read_text()).values():
 | `summac_head` | [`summac_conv_vitc_sent_perc_e.bin`](https://github.com/tingofurro/summac/blob/master/summac_conv_vitc_sent_perc_e.bin) | SHA-256 `cd880581f59bd47b8968c7f48d754cd617dfe9b256d8d76fdcbc0fa4a3b3c6fe` |
 | `nltk_data` | NLTK-Downloader, Paket `punkt_tab` | englische Dateien unter `tokenizers/punkt_tab/english/` |
 
-Modellnamen/Revisionen sind durch das ursprüngliche Inventar und die Originalcaches
-belegt. Der 1.811 Byte große SummaC-Checkpoint stimmt lokal und als öffentlicher
-Download bytegenau mit dem erwarteten Hash überein. Die URL findet sich auch im
-[Code der ursprünglich installierten SummaC-Bibliothek](../data/model_metadata/provenance/summac_download_excerpt.txt).
-Die historische Revision
-der NLTK-Datendateien ist nicht separat versioniert dokumentiert; der Code fordert
-ausdrücklich die englischen `punkt_tab`-Dateien an.
-
-Nach Einrichtung der Experimentumgebung beschafft der folgende ausdrücklich
-ausgeführte Python-Block die drei Modellrevisionen, den Checkpoint und die
-Tokenizerdaten. Er schreibt eine direkt für `--resources` verwendbare JSON-Datei:
-
-```python
-from pathlib import Path
-import hashlib
-import json
-import urllib.request
-import nltk
-from huggingface_hub import snapshot_download
-from faktenretention.metric_resources import REVISIONS, HEAD_SHA256
-
-root = Path('results/model-resources').resolve()
-root.mkdir(parents=True, exist_ok=True)
-repos = {
-    'embedding': 'sentence-transformers/all-MiniLM-L6-v2',
-    'bertscore': 'distilroberta-base',
-    'summac_nli': 'tals/albert-xlarge-vitaminc-mnli',
-}
-resources = {}
-for role, repo in repos.items():
-    relative = Path(role) / REVISIONS[role]
-    snapshot_download(
-        repo_id=repo, revision=REVISIONS[role], local_dir=root / relative,
-        allow_patterns=['*.json', '*.safetensors', '*.txt', '*.model', '1_Pooling/*'],
-    )
-    resources[role] = str(relative)
-
-filename = 'summac_conv_vitc_sent_perc_e.bin'
-url = 'https://raw.githubusercontent.com/tingofurro/summac/master/' + filename
-with urllib.request.urlopen(url, timeout=60) as response:
-    checkpoint = response.read()
-assert hashlib.sha256(checkpoint).hexdigest() == HEAD_SHA256
-(root / filename).write_bytes(checkpoint)
-resources['summac_head'] = filename
-nltk.download('punkt_tab', download_dir=str(root / 'nltk_data'), raise_on_error=True)
-resources['nltk_data'] = 'nltk_data'
-(root / 'resources.json').write_text(json.dumps(resources, indent=2) + '\n')
-print(root / 'resources.json')
-```
-
-Die `*.txt`-Auswahl schließt auch `merges.txt` und `vocab.txt` ein. Die Verzeichnisse
-heißen nach ihrer Revision und werden von `metric_resources.local_model` akzeptiert.
-Die Dateipfade in `resources.json` werden relativ zu dieser JSON-Datei aufgelöst.
-Bei späteren Experimentaufrufen angeben:
-`--resources results/model-resources/resources.json`.
-Die Pipeline selbst behält ihre Offline-Schalter und lädt keine Modelle implizit.
-
-## Paketkonflikt und überprüfte Grenzen
-
-Der historische Metrikstand enthält gleichzeitig `summac==0.0.4`,
-`transformers==5.15.1` und eine neuere `huggingface-hub`-Version. Die deklarierten
-Abhängigkeiten widersprechen sich: SummaC verlangt `huggingface-hub<=0.17.0`,
-Transformers verlangt `huggingface-hub>=1.5.0,<2.0`. Die vorhandene Originalumgebung
-ist also kein Beleg für einen mit einem Resolver sauber installierbaren Paketstand.
-
-Die [CPU-Probe](../data/model_metadata/provenance/summac_cpu_check_20261029.json)
-der ursprünglichen lokalen Metrikumgebung verwendete Python 3.13.15, Torch 2.13.0,
-Transformers 5.15.1, Hugging-Face-Hub 1.28.0, NLTK 3.9.4 und SummaC 0.0.4 geprüft.
-Ein CPU-Aufruf des aktuellen Refactor-Codes mit den ursprünglichen lokalen NLI-,
-Checkpoint- und Tokenizerdateien lieferte für den identischen Satz
-`Alice founded the company in London in 2010.` den endlichen Wert
-`0.20476575195789337`. Die Bibliothek meldete beim Laden des Heads
-`All keys matched successfully`. Der Code enthält dafür bereits die Kompatibilität
-mit der entfernten `batch_encode_plus`-Schnittstelle.
-
-Die Installation von `summac==0.0.4` mit `--no-deps` nach
-`requirements-experiment.txt` umgeht die widersprüchlichen Paketmetadaten.
-Diese Variante wurde später auf Linux/CUDA für den Drei-Artikel-Lauf getestet;
-sie ist weiterhin kein durch einen Resolver widerspruchsfrei aufgelöster Paketstand.
-
-### Historischer Stand der separaten Umgebung vom 29.10.2026
-
-**Status am 29.10.2026: ungetestet als vollständige Neuinstallation.**
-Die folgende Variante isoliert den absichtlich übergangenen Abhängigkeitskonflikt
-von `.venv-analysis` und `.venv-experiment`. Sie löst ihn nicht auf und ist keine
-nachgewiesen funktionierende Gesamtumgebung:
-
-```bash
-uv venv --python 3.13.15 .venv-summac
-uv pip sync --python .venv-summac/bin/python requirements-experiment.txt
-uv pip install --python .venv-summac/bin/python --no-deps -r requirements-summac.txt
-uv pip install --python .venv-summac/bin/python --no-deps -e .
-uv pip check --python .venv-summac/bin/python
-```
-
-[`requirements-summac.txt`](../requirements-summac.txt) fixiert SummaC 0.0.4
-und Protobuf 7.36.0. Letztere Version wurde in der vorhandenen historischen
-Metrikumgebung aus den Paketmetadaten abgelesen; Protobuf ist eine deklarierte
-SummaC-Abhängigkeit, fehlt aber in `requirements-experiment.txt`.
-`--no-deps` umgeht bewusst den Resolver. Bei `uv pip check` ist daher weiterhin
-der Konflikt `huggingface-hub<=0.17.0` zu erwarten. Der Befehl ist eine Diagnose,
-kein hier zugesicherter erfolgreicher Installationstest.
-
-Während der Finalisierung wurde eine frische Umgebung unter `/tmp` angelegt
-und `uv pip sync --offline ... requirements-experiment.txt` mit dem vorhandenen
-lokalen uv-Cache versucht. Der Resolver fand die Paketliste, die Installation
-scheiterte jedoch am nicht gecachten Wheel **`nvidia-nvjitlink==13.4.92`**.
-Die anschließenden Installations- und Import-/Inferenzschritte wurden deshalb
-in dieser frischen Umgebung nicht ausgeführt. Es gab keine Downloads und
-keine neue SummaC-Inferenz. In der bestehenden historischen Umgebung bestätigte
-`uv pip check` den dokumentierten SummaC-/Hub-Konflikt.
-
-Für eine spätere vollständig offline installierbare Umgebung müssen alle
-passenden Wheels und die oben beschriebenen Modell-/Tokenizerressourcen
-separat bereitgestellt werden. Eine dritte Umgebung allein macht den
-widersprüchlich deklarierten Paketstand nicht kompatibel.
+Die historische NLTK-Datenrevision ist nicht separat belegt. SummaC 0.0.4
+verlangt `huggingface-hub<=0.17.0`, Transformers 5.15.1 dagegen `>=1.5.0`.
+Die getestete Installation umgeht diesen Metadatenkonflikt mit `--no-deps`;
+`pip check` meldet ihn weiterhin. Bei einem Drei-Artikel-Test wurden BERTScore
+und SummaC für alle 72 Zusammenfassungen auf Linux/CUDA berechnet.

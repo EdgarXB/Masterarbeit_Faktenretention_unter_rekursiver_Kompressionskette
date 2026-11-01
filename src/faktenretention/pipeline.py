@@ -263,11 +263,11 @@ def construct_demonstrations(train, validation, output, *, resources, max_reques
     output=safe_output(output)
     metric_resources.configure(resources)
     embedding=metric_resources.local_model('embedding');metric_resources.summac_resources()
-    train_file=prepare_articles(train,output/'candidate_input',limit=240,split='train',resume=True)
+    train_file=prepare_articles(train,output/'candidate_input',split='train',resume=True)
     validation_file=prepare_articles(validation,output/'validation_input',limit=30,split='validation',resume=True)
     training=read_csv(train_file);validating=read_csv(validation_file)
     if len(training)<130 or len(validating)!=30:
-        raise ValueError('Originales Kandidatenprotokoll benötigt mindestens 130 Trainings- und genau 30 Validierungsartikel; maximal 240 Training.')
+        raise ValueError('Das Kandidatenprotokoll benötigt mindestens 130 Trainings- und genau 30 Validierungsartikel.')
     train_hashes={r['article_sha256'] for r in training};validation_hashes={r['article_sha256'] for r in validating}
     if train_hashes & validation_hashes:raise ValueError('Trainings-/Validierungsartikel überschneiden sich.')
     config=dict(mode='full',article_ids=['train:'+r['dataset_index'] for r in training]+['validation:'+r['dataset_index'] for r in validating],

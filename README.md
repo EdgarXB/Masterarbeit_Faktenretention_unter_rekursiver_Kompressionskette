@@ -4,57 +4,12 @@ Dieses Repository ist der digitale Anhang zur Untersuchung, wie gut Fakten bei
 der schrittweisen Kürzung von Nachrichtentexten erhalten bleiben. Verglichen
 werden **Lead-k, Plain, Zero-Shot-CoT, Few-Shot-CoT, Auto-CoT und Automate-CoT**.
 Jeder Text wird rekursiv auf **500, 300, 150 und 75 Wörter** verdichtet:
-Die Ausgabe einer Stufe bildet die Eingabe der nächsten.
+Die Ausgabe einer Stufe bildet dabei die direkte Eingabe der nächsten.
 
-**Stand:** Digitaler Anhang im Arbeitsstand vor abschließender Freigabe;
-offene Rechte- und Manuskriptfragen stehen unten. Einstieg: diese README für
-Einrichtung und Grenzen, [Notebooks](notebooks/) für die Auswertung und
-[Auswertung und Einordnung](docs/auswertung_und_einordnung.md) für Daten und Metriken.
+**Einstieg:** Diese README beschreibt Einrichtung und Grenzen. Die [Notebooks](notebooks/)
+enthalten die Auswertung; das [Integritätsprotokoll](docs/pruefung_wissenschaftliche_datenintegritaet.md)
+fasst Datenstand und Prüfungen zusammen.
 
-Die Artikel und Highlights in den Datentabellen, Generierungszuständen und
-Demonstrationsarchiven wurden durch `[ORIGINALTEXT ENTFERNT]` ersetzt. Die
-Analysen nutzen weiterhin gespeicherte Wortzahlen, Hashes und Ergebnisse.
-Die unveränderten 500-Wörter-Prompts enthalten vollständige Quelltexte als
-Demonstrationen; Lead-k enthält wortgleiche Artikelauszüge. Im
-`data/methodenmaterial.zip` zeigen die historischen Bewertungsmasken
-`manuskript_image20.png` und `manuskript_image21.png` zusätzlich Originaltext
-beziehungsweise einen Originalauszug als Bild. **Der Bestand ist daher noch
-nicht frei von Originaltexten.**
-Für neue Läufe mit Quelldaten müssen diese separat bereitgestellt werden.
-Die ursprünglichen Texte sind zudem in älteren Git-Versionen vorhanden.
-
-Rechnergebundene Pfade wurden aus den veröffentlichten Provenienzdaten und
-Archivmanifesten entfernt. Historische Prüfsummen in diesen Manifesten beziehen
-sich weiterhin auf die ursprünglichen Experimentdateien; sie sind keine
-Prüfsummen der bereinigten Kopien im Anhang. Die Prüfsummen des aktuellen
-Analysebestands stehen in `data/quellen.json`.
-
-## Was ist reproduzierbar und was nicht
-
-- **Offline-Auswertung nach Installation geprüft:** Die sechs Notebooks
-  berechnen Tabellen und Abbildungen aus den mitgelieferten Daten. Notebook 06
-  nutzt standardmäßig gespeicherte Bootstrap-Anpassungen; Modellbewertungen
-  werden dabei nicht erneut durch Inferenz erzeugt.
-- **Neue Modellläufe nur mit Einschränkungen:** Auch `temperature=0.0` und
-  `seed=32` garantieren keine identischen Ausgaben. Hardware und Laufzeit können
-  die Ergebnisse beeinflussen. Der am 29.10.2026 geprüfte Gemma-Modelltag
-  unterschied sich vom historischen Stand; die eingefrorenen Digests sind maßgeblich.
-- **Historische Zwischenschritte:** Die ursprünglichen Auto-CoT-Embeddings und
-  Cluster wurden nicht neu berechnet (die Grafik verwendet gespeicherte
-  2D-Positionen). Die QA-Retry-Zwischenantworten sind nicht vollständig erhalten.
-- **Neuer Drei-Artikel-Test:** Generierung, QA, ROUGE, BERTScore und SummaC
-  wurden mit den historischen Modellrollen auf einem Linux-Rechner ausgeführt.
-  Das ist kein Nachweis identischer historischer Modellantworten.
-- **Bekannter Paketkonflikt:** `summac==0.0.4` verlangt
-  `huggingface-hub<=0.17.0`, während `transformers==5.15.1` eine neuere Version
-  voraussetzt. Die getestete Installation umgeht diesen Metadatenkonflikt bewusst
-  mit `--no-deps`; sie löst ihn nicht auf.
-
-Belege und Grenzen: [Auswertungsgrundlagen](docs/auswertung_und_einordnung.md),
-[Modelle und Beschaffung](docs/modelle_und_beschaffung.md) sowie die
-[Bestandsprüfung des digitalen Anhangs](docs/bestandspruefung_digitaler_anhang.md).
-Die [Reproduzierbarkeitsabnahme](docs/abnahme_reproduzierbarkeit.md)
-dokumentiert den abschließenden Test der Analyseumgebung und Ergebnisse.
 
 Das Repository unterstützt zwei Arbeitswege:
 
@@ -79,9 +34,6 @@ Das Repository unterstützt zwei Arbeitswege:
 | [`data/methoden/`](data/methoden/) | Studienprotokoll und Zusammenführungsbelege |
 | [`data/model_metadata/`](data/model_metadata/) | Eingefrorene Manifeste, kleine Metadaten-Blobs und Herkunftsbelege unter `provenance/` |
 | `data/prepared/` | Lokal entpackte Analyseeingaben; wird erzeugt und nicht versioniert |
-
-Tabelle 26 des Manuskripts führt `docs/` und die genannten `data/`-Unterordner
-nicht einzeln auf; siehe [Korrekturliste](docs/korrekturliste_manuskript.md).
 
 ## Voraussetzungen
 
@@ -116,7 +68,7 @@ mkdir -p results/notebooks/ausgefuehrt
 Die Notebooks schreiben Tabellen und Grafiken nach `results/`. Zwei
 Diagnose-CSVs in Notebook 06 enthalten zusätzlich Laufzeiten, die je Ausführung
 abweichen können; die wissenschaftlichen Tabellen bleiben beim dokumentierten
-Paketstand unverändert (siehe [Prüfprotokoll](docs/pruefprotokoll_finalisierung.md)).
+Paketstand innerhalb der dokumentierten Toleranzen überein (siehe [Integritätsprotokoll](docs/pruefung_wissenschaftliche_datenintegritaet.md)).
 
 ## Vorhandene Daten auswerten
 
@@ -128,9 +80,7 @@ werden keine Sprachmodelle und nach der Installation kein Netzwerkzugriff benöt
 ### Installation und Vorbereitung
 
 Die Auswertung wurde unter Linux mit **Python 3.13.15** geprüft. Unter Windows
-kann WSL2 verwendet werden. Die folgenden Befehle werden im Repository ausgeführt
-und setzen den Paketmanager [uv](https://docs.astral.sh/uv/getting-started/installation/)
-voraus:
+kann WSL2 verwendet werden. Die folgenden Befehle werden im Repository ausgeführt:
 
 ```bash
 uv python install 3.13.15
@@ -159,16 +109,7 @@ unabhängig in einem frischen Kernel gestartet werden.
 | [06 – Längenregression](notebooks/06_laengenregression.ipynb) | Methodenvergleiche unter statistischer Kontrolle der Textlänge |
 
 Tabellen und Abbildungen werden unter `results/<notebookname>/` gespeichert.
-Alle Notebooks lassen sich auch über das Terminal ausführen. Der folgende
-Befehl legt Notebookkopien unter dem ignorierten `results/notebooks/` ab;
-Ergebnistabellen und Abbildungen unter `results/` werden neu geschrieben:
-
-```bash
-mkdir -p results/notebooks/ausgefuehrt
-(for notebook in notebooks/*.ipynb; do
-  python -m jupyter nbconvert --execute --to notebook --output-dir results/notebooks/ausgefuehrt --ExecutePreprocessor.timeout=900 "$notebook" || exit 1
-done)
-```
+Der Quickstart oben führt alle Notebooks im Terminal aus und speichert ihre Kopien unter `results/notebooks/`.
 
 Die statistischen Auswertungen werden aus den bereitgestellten Eingaben neu
 berechnet. BERTScore und SummaC werden aus gespeicherten Modellbewertungen
@@ -177,7 +118,7 @@ Bootstrap-Modellanpassungen; mit `RECOMPUTE_BOOTSTRAP=True` können diese neu
 geschätzt werden. Für den vorhandenen Cache sind die angegebenen Python- und
 Paketversionen erforderlich.
 
-## Neue Experimente durchführen
+## Neues Experiment durchführen
 
 Der Ablauf verbindet fünf Schritte:
 
@@ -205,12 +146,6 @@ uv pip install --python .venv-experiment/bin/python --no-deps -e .
 source .venv-experiment/bin/activate
 ```
 
-**Für SummaC besteht noch ein Abhängigkeitskonflikt.** Neue Demonstrationen und
-vollständige Modellmetriken setzen eine entsprechend eingerichtete und geprüfte
-SummaC-Umgebung voraus; die Details stehen in der verlinkten Anleitung.
-Der angegebene Experiment-Paketstand ohne SummaC ist für Fakten-/Fragegenerierung,
-Zusammenfassungen, QA und ROUGE vorgesehen. Ein neuer Drei-Artikel-Lauf wurde
-mit nachträglich berechneten Modellmetriken getestet.
 
 Für eine geführte Einrichtung mit explizitem Download der eingefrorenen Modelle,
 zufälliger Auswahl aus Train/Validierung/Test und nachträglicher Berechnung
@@ -244,7 +179,8 @@ Bei Verwendung der mitgelieferten Prompts kann dieser Schritt übersprungen
 werden. Für eine neue Konstruktion werden getrennte Trainings- und
 Validierungsdateien im oben beschriebenen Format benötigt. Nach der Auswahl
 müssen mindestens **130 Trainingsartikel und genau 30 Validierungsartikel**
-vorliegen; verwendet werden höchstens 240 Trainingsartikel.
+vorliegen. Die Trainingsartikel unterliegen keiner festen Obergrenze; die
+Generierung stoppt, sobald die Eignungsschwellen erreicht sind.
 
 ```bash
 python 02_demonstrations.py \
@@ -304,53 +240,16 @@ zur Datensatzgröße passen. Ohne ausdrückliche Ausführungsflags prüfen die
 Einstiege `01_prepare.py` bis `04_evaluate.py` lediglich den Bestand
 beziehungsweise bewerten gespeicherte Antworten.
 
-### 5. Komponenten getrennt ausführen
-
-Fakten-/Fragegenerierung, Zusammenfassungen und QA können auch einzeln gestartet
-werden. Dazu im Repository ein Python-Skript mit folgendem Inhalt ausführen:
-
-```python
-from pathlib import Path
-from faktenretention.pipeline import (
-    prepare_articles, start_run, generate_facts,
-    generate_summaries, generate_qa, compute_metrics,
-)
-
-run = Path('results/einzelschritte')
-if not (run / 'data/articles.csv').exists():
-    prepare_articles('meine_daten/test.csv', run)
-
-config = start_run(run, mode='full', max_requests=60000)
-generate_facts(run, config)
-```
-
-Der letzte Aufruf führt nur die Fakten-/Fragegenerierung durch. Für weitere
-Schritte denselben Lauf mit identischen Einstellungen öffnen und den letzten
-Aufruf ersetzen:
-
-| Aufruf | Aufgabe |
-|---|---|
-| `generate_facts(run, config)` | Kanonische Fakten-/Fragepaare aus den Artikeln erzeugen |
-| `generate_summaries(run, config)` | Rekursive Zusammenfassungen erstellen |
-| `generate_qa(run, config)` | Fragen aus den Zusammenfassungen beantworten und QA-Kennzahlen berechnen; benötigt Fakten und Zusammenfassungen |
-| `compute_metrics(run, config)` | ROUGE und Längendiagnostik aus den Zusammenfassungen berechnen |
-
-Das Beispiel verwendet die mitgelieferten Prompts. Für eigene Demonstrationen
-bei `start_run` und `generate_summaries` zusätzlich denselben `bank`-Pfad
-übergeben. Die Laufaktivierung über `start_run` bleibt erforderlich, da die
-Komponenten ein gemeinsames Anfragebudget verwenden.
-
-Vorhandene QA-Antworten eines Laufs können ohne Modellaufrufe neu klassifiziert
-werden:
+### 5. Gespeicherte Antworten und Modellmetriken
 
 ```bash
 python 04_evaluate.py --run results/hauptexperiment
+python 04_evaluate.py --run results/hauptexperiment --model-metrics --execute \
+  --resources results/model-resources/resources.json --summac-device cuda
 ```
 
-Mit `--generate-qa --execute` lassen sich QA-Antworten erzeugen oder fortsetzen.
-`--model-metrics --execute` berechnet BERTScore und SummaC zusätzlich zu den
-weiteren Metriken. Mit `--resources PFAD` kann die Ressourcenkonfiguration auch
-nachträglich angegeben werden; ein laufender Ollama-Server ist dafür nicht nötig.
+Der erste Befehl klassifiziert gespeicherte QA-Antworten, der zweite berechnet
+BERTScore und SummaC. Modellmetriken benötigen keinen laufenden Ollama-Server.
 
 ### Ergebnisse neuer Läufe weiterverwenden
 
@@ -360,8 +259,7 @@ QA-Kennzahlen; `evaluation/` enthält die mit `04_evaluate.py` erzeugten Labels.
 Die Laufprotokolle dokumentieren Einstellungen und verbrauchte Modellanfragen.
 
 **Die sechs Notebooks sind auf den mitgelieferten Studiendatensatz zugeschnitten.**
-Neue Läufe werden nicht automatisch übernommen. Für ihre statistische Auswertung
-müssen Datenzugriff, Prüfungen und gegebenenfalls das Analysedesign angepasst werden.
+Neue Läufe werden nicht automatisch übernommen.
 
 ## Wissenschaftliche Einordnung und Prüfungen
 
@@ -370,8 +268,8 @@ Artikel-Bootstraps beschrieben. Technisch fehlende QA-Antworten werden von
 beobachteten Faktenverlusten getrennt. Die Analysen berücksichtigen außerdem
 die tatsächliche Textlänge und die Abhängigkeit der rekursiven Stufen.
 
-[Auswertungsgrundlagen und Hinweise](docs/auswertung_und_einordnung.md) erläutert
-die Kennzahlen, den Datenstand und die Grenzen der Interpretation.
+Das [Integritätsprotokoll](docs/pruefung_wissenschaftliche_datenintegritaet.md) beschreibt
+den Datenstand, die Kennzahlen und die Grenzen der Prüfung.
 [Modelle und Beschaffung](docs/modelle_und_beschaffung.md) enthält die technischen
 Einrichtungsschritte und Herkunftsbelege.
 
@@ -385,7 +283,7 @@ python 02_demonstrations.py
 
 Die [CI `offline-analysis.yml`](.github/workflows/offline-analysis.yml) installiert
 die Analyseumgebung mit Python 3.13.15, führt die Unittests aus, bereitet die
-Eingaben vor, prüft den Bestand über `01_prepare.py` und `02_demonstrations.py`
+Eingaben vor, prüft den Bestand über `01_prepare.py` und `02_demonstrations.py`,
 führt alle sechs Notebooks aus und vergleicht ihre Ergebnistabellen mit den
 eingefrorenen Referenzen. Die Paketinstallation benötigt Netzwerk;
 die Auswertung verwendet gespeicherte Daten. Die CI führt **keine Modellpipeline**
@@ -399,21 +297,11 @@ menschlichen Bewertungen.
 
 | Bestandteil | Herkunft und belegte Lizenzangabe |
 |---|---|
-| Artikel und Highlights | CNN/DailyMail **3.0.0**, siehe Kapitel 3.2. Originaltexte und Highlights wurden aus den Datentabellen entfernt; Originaltext verbleibt in den unveränderten 500-Wörter-Prompts, den genannten Maskenbildern und der Git-Historie. Die [Datensatzkarte](https://huggingface.co/datasets/abisee/cnn_dailymail) trägt das Label Apache-2.0, nennt im Abschnitt „Licensing Information“ aber ausdrücklich Version **1.0.0**. Die Weitergaberechte bleiben gesondert zu klären. |
+| Artikel und Highlights | CNN/DailyMail **3.0.0**, siehe Kapitel 3.2. Originaltexte und Highlights wurden aus den Datentabellen entfernt; Originaltext verbleibt in den unveränderten 500-Wörter-Prompts, in den Bewertungsmasken `manuskript_image20.png` und `manuskript_image21.png` unter `data/methodenmaterial.zip`, in Lead-k-Auszügen und in der Git-Historie. |
 | Seed-OSS | Die [offizielle Modellkarte](https://huggingface.co/ByteDance-Seed/Seed-OSS-36B-Instruct) nennt Apache-2.0. Die konkret verwendete GGUF-Variante und Digests sind in der [Modelldokumentation](docs/modelle_und_beschaffung.md) zugeordnet. |
 | Gemma 4 | Die [offizielle Modellkarte](https://huggingface.co/google/gemma-4-31B-it) nennt Apache-2.0. Der historische Ollama-Stand enthält zusätzlich einen [Apache-2.0-Lizenztext](data/model_metadata/blobs/sha256-7339fa418c9ad3e8e12e74ad0fd26a9cc4be8703f9c110728a992b193be85cb2), zugeordnet im eingefrorenen Gemma-Manifest. |
 | Qwen3.8 | Die [offizielle Modellkarte](https://huggingface.co/Qwen/Qwen3.8-27B) nennt Apache-2.0; der verwendete GGUF-Stand ist separat über Revision und Hash belegt. |
-| Menschliche Bewertungen | Pseudonymisierte Daten unter `data/human_qa/` sowie in `data/menschliche_faktenrelevanz.csv` und den Quellenarchiven. Eine Veröffentlichungslizenz und der Umfang der Einwilligungen sind im Repo nicht belegt. |
-
-Die externen Lizenzangaben wurden am 29.10.2026 eingesehen. Historische
-Modellartefakte sind anhand der gespeicherten Manifeste zu identifizieren.
-
-### Offen / vom Autor zu klären
-
-- Rechte und Bedingungen der Weitergabe der CNN-/DailyMail-Originaltexte und
-  Highlights im digitalen Anhang abschließend belegen.
-- Einwilligung zur Weitergabe und gewünschte Lizenz der menschlichen Bewertungen
-  bestätigen; Pseudonymisierung ersetzt diesen Nachweis nicht.
+| Menschliche Bewertungen | Pseudonymisierte Daten unter `data/human_qa/` sowie in `data/menschliche_faktenrelevanz.csv` und den Quellenarchiven. |
 
 ## KI-gestützte Erstellung und Zitieren
 
@@ -421,37 +309,8 @@ Gemäß Eidesstattlicher Versicherung und Anhang G des vorliegenden
 PDF-Manuskripts erfolgte die technische Implementierung des Programmcodes
 nahezu vollständig mit **ChatGPT Codex**. Wissenschaftliche Konzeption,
 experimentelle Anforderungen sowie Prüfung und Interpretation der Ergebnisse
-lagen beim Verfasser; laut Manuskript hat er den generierten Code geprüft und
-validiert. Anhang G nennt außerdem ChatGPT zur Unterstützung von Recherche und
-Textüberarbeitung sowie LanguageTool und Grammarly zur Sprachkorrektur; Auswahl,
-fachliche Prüfung und Verantwortung lagen beim Verfasser. Der vorliegende
-Repo-Abgleich ersetzt keine unabhängige Validierung.
+lagen beim Verfasser.
 
 [`CITATION.cff`](CITATION.cff) enthält die Zitierangaben der Masterarbeit von
 Edgar Berngardt, Hochschule Düsseldorf, 2026. Für die verwendete Codefassung
 zusätzlich Commit-Hash oder Release angeben.
-
-Der historische Abgleich mit `2910_Masterarbeit.docx` und der ergänzende
-Stichprobenabgleich mit dem später vorliegenden PDF stehen in
-[`docs/abgleich_manuskript.md`](docs/abgleich_manuskript.md), die vorgeschlagenen
-Manuskriptkorrekturen in [`docs/korrekturliste_manuskript.md`](docs/korrekturliste_manuskript.md)
-und die Parameterprüfung in [`docs/abgleich_code_parameter.md`](docs/abgleich_code_parameter.md).
-Das Manuskript selbst ist kein versionierter Bestandteil dieses Repos.
-
-**Vorschlag nach Abschluss der Korrekturen, hier nicht ausgeführt:**
-Auf dem final freigegebenen Branch einen annotierten Abgabe-Tag anlegen und
-optional daraus ein GitHub-Release veröffentlichen:
-
-```bash
-git switch main
-git status --short
-git rev-parse HEAD
-git tag -a v1.0-abgabe -m "Digitaler Anhang zur Masterarbeit – Abgabe 04.11.2026"
-git push origin main
-git push origin v1.0-abgabe
-gh release create v1.0-abgabe --verify-tag --title "Masterarbeit: digitaler Anhang zur Abgabe" --notes "Digitaler Anhang; Reproduktionsumfang und bekannte Grenzen siehe README."
-```
-
-Vor dem Taggen muss `git status --short` leer sein. Tag **und Commit-Hash**
-sollten in **Anhang A.1/F** der Arbeit genannt werden. Ein Tag oder Release
-wurde im Rahmen der Finalisierung nicht erstellt und nichts gepusht.
